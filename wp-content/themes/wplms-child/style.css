@@ -1,0 +1,152 @@
+/*
+Theme Name:     WPLMS-child
+Theme URI:      http:// guilhermewp.com.br
+Description:    Tema filho para o wplms
+Author:         Guilherme Fonseca
+Author URI:     http://guilhermewp.com.br
+Template:       wplms
+Version:        0.1.0
+*/
+
+@import url("../wplms/style.css");
+
+/*AJUSTE DE CORES e FONTES*/
+@font-face {
+  font-family: "adam";
+  src: url("fonts/ADAM.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+.cores h1, .cores h2, .cores h3, .cores h4, .cores h5, .cores h6, .cores p, .cores a, .cores span
+{color: #fff;}
+h1, h2, h3, h4, h5, h6, #headertop a, nav .menu li a, .info-top, .apoio p, #footermenu, .widget .menu li a {font-family:'adam','Open Sans', 'Helvetica Neue',sans-serif!important; font-weight: normal;
+  font-style: normal;}
+.info-top, .apoio p {font-weight: bold;}
+
+/*TOPO E INTRO*/
+#headertop .homeicon img {max-height: 66px;}
+#headertop, .pagesidebar, #vibe_bp_login, #pmpro_confirmation_table thead, .pmpro_checkout thead th, #pmpro_levels_table thead, .boxed #headertop .container {border-bottom: 1px solid #eeeeee;}
+#logo img {padding-bottom: 13px; margin-top: 5px;}
+.apoio {width: 70%;float: right; margin: 0 auto;}
+.apoio p{text-align: right; color: #fc630e; text-transform: uppercase; padding-right: 87px;}
+.apoio img {padding-left: 50px; float: right;}
+.unicef-logo {padding-top: 15px;}
+.intro_home > .vc_col-sm-12 {background-image: url(http://guilhermewp.com.br/modelo/wp-content/uploads/2015/04/grid.png);}
+/*icons intro*/
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-background-color-white.vc_icon_element-outline {
+border-top-left-radius: inherit;
+border-top-right-radius: inherit;
+}
+/*AJUSTE MENU E LOGO - TAMANHO*/
+.col-md-9 {
+margin-bottom:10px;
+}
+/*.col-md-3 {width: 19%;}*/
+nav .menu li a {margin-bottom: 10px;}
+/*nav .sub-menu li a {padding: 10px;}*/
+.col-md-9 {padding-top: 0px;}
+/*Proximos cursos*/
+.widget_course_list li h6 span {display: none;}
+.widget_course_list li img {max-width: 66px;}
+/*icons intro*/
+/*F I M  -  TOPO E INTRO*/
+
+/*Botão de busca*/
+#searchsubmit {width: 100%; background-color: rgb(0, 126, 0);}
+.widget ul li {border-style:none;}
+.chosen-container-single .chosen-single {width: 100%}
+/*.widget ul li {width: 49%;}*/
+/*MENU WIDGET*/
+.menu-paginas ul li {width: 80px; color: #808081;}
+.menu-paginas a {color: #808081 !important;}
+
+/*Botoes POSTS*/
+.vc_btn-juicy_pink, a.vc_btn-juicy_pink {background-color:#50485b !important;}
+
+
+/* Páginas comuns - categorias e etc.. */
+#title, #memberstitle{
+  background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/pages-udof-dark.jpg);
+  /*background-color: rgb(49, 205, 49);*/
+  margin-top: -5px;
+  padding: 99px 0 0;
+  color: #fff;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.breadcrumbs a {color:#fc630e!important;}
+
+.pagetitle h1 {color: #fff; margin-top: -33px}
+.pagetitle h5 {color: #fff;}
+.breadcrumbs a {color: #fff;}
+/*F i m PÁGINAS*/
+
+/*PAGINAS-VISUAL COMPOESER TOPO*/
+.top_page_vc h2{color: #fff;}
+.top_page_vc p{color: #fff;}
+/*SLIDER DE POSTS*/
+.box_open_content {max-height: 556px;}
+.wpb_gallery .wpb_flexslider .flex-direction-nav a {color: #fff;}
+.flexslider .slides img {max-height: 422px;}
+.wpb_gallery .wpb_flexslider .flex-control-nav {display: none; bottom: -4px!important;}
+/*POSTS HOME GRID*/
+.vc_gitem-zone {height: 240px; background-size: 100% 100%!important;}
+.vc_gitem-post-data p {color: #464261;}
+
+/*Tabs*/
+.wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav a {
+border: 1px solid blanchedalmond;
+border-left: 3px solid green;
+  padding: 0.5em 4em;
+}
+.wpb_content_element .wpb_tabs_nav li.ui-tabs-active a {border-bottom-style: none;}
+
+.slider_contents {width: 64%;}
+/*Widgets_home_news*/
+
+.flexslider {border-style:none !important;}
+.wpb_posts_slider .flex-caption{background-color:#464261 !important; /*background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/grid.png?id=218); background-color: rgb(102, 150, 237)!important;*/}
+
+/*Depoimento home*/
+.sldr_title {text-align:center; font-size:33px !important;}
+.testimonial_slider__round.testimonial_slider_set {top:-36px; margin-bottom:-40px;}
+.depos pre {border-style: none;}
+.testimonial_slider__round .testimonial_nav_arrow_wrap{width: 40px; height: 40px; display: block !important; float: right; margin-right: 20px;}
+.testimonial_slider__round .testimonial_nav_arrow_wrap a {width:26px!important; height:26px!important; bottom: 90%!important;}
+
+/*PARCEIROS*/
+.vc_separator h4 {font-size: 170% !important;}
+.parceiros_slider img{padding-right: 20px;}
+/*FOOTER*/
+footer {background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/fundo_fotter.png);
+ background-repeat: no-repeat !important;
+ background-position: center !important;
+ background-size: cover !important;
+ margin-top: -30px;
+}
+#footerlogo {max-width: 142px; margin: 10px 10px 0 0;}
+
+/*AJUSTE MARGIN BUDYPRESS*/
+#content #buddypress {margin-bottom: 100px;}
+/*NEWSLETTER*/
+.newsletter {width: 100%; max-width: 1170px; margin: 0 auto;}
+.et_bloom .et_bloom_1_field p.et_bloom_popup_input {width: 64%}
+.et_bloom .et_bloom_form_content button {width: 16%;}
+.et_bloom .et_bloom_optin_1 .et_bloom_form_content {
+background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/news-bg.png);
+background-position: 890px 0px;
+  background-size: 249px 111px;
+  background-repeat: no-repeat;
+}
+.et_bloom .et_bloom_form_container.et_bloom_form_text_light .et_bloom_form_content input, .et_bloom .et_bloom_optin_1 h2 {color: #5a5a5a;}
+.et_bloom .et_bloom_form_header h2 {color: #5a5a5a;}
+/*TAGS HOME*/
+.tagcloud a {color: #464261; font-size:14px !important; background-color: #f5f5f5;}
+.hashtitle h4 {color:#5a5a5a; display: none; }
+.hash {width: 13% !important;}
+.trending p{font-size: 12px; text-align: right;}
+.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-background-color-mulled_wine.vc_icon_element-outline {border-style: none;}
+
+.calendario_cursos img {max-height: 195px;}
+.wpb_text_column ul {list-style: none;}
