@@ -9,7 +9,6 @@ Version:        0.1.0
 */
 
 @import url("../wplms/style.css");
-
 /*AJUSTE DE CORES e FONTES*/
 @font-face {
   font-family: "adam";
@@ -22,16 +21,39 @@ Version:        0.1.0
 h1, h2, h3, h4, h5, h6, #headertop a, nav .menu li a, .info-top, .apoio p, #footermenu, .widget .menu li a {font-family:'adam','Open Sans', 'Helvetica Neue',sans-serif!important; font-weight: normal;
   font-style: normal;}
 .info-top, .apoio p {font-weight: bold;}
+/*#headertop .topmenu {padding-top: 24px;}*/
+/*  MENU MOBILE*/
 
+@media (max-width: 1199px) {
+#logo img {margin-top: 21px!important;}
+.col-md-9 {
+  width: 75%;
+}
+nav .menu li a {font-size: 14px!important; padding: 24px 0 24px 0;}
+}
+#main-menu-item-1008, #main-menu-item-1009, #main-menu-item-1010, #main-menu-item-1026 {
+	background-color: #7f8c8d;
+}
+#trigger {top: 166px;}
 /*TOPO E INTRO*/
+.login-topbar {background-color: green!important; border-color: #ffffff!important;}
 #headertop .homeicon img {max-height: 66px;}
-#headertop, .pagesidebar, #vibe_bp_login, #pmpro_confirmation_table thead, .pmpro_checkout thead th, #pmpro_levels_table thead, .boxed #headertop .container {border-bottom: 1px solid #eeeeee;}
+#headertop li {background-color: #86c14a; padding: 5px; margin-left: 2px; font-size: 13px;}
+#headertop li:hover {background-color: #4d7520;}
+#bpavatar {max-width: 80px;}
+#vbp-login-form {background-color: #ccc;}
+#vibe_bp_login li {background-color: inherit;}
+#vibe_bp_login li a{color: #4D7520!important;}
+#headertop li a {color: #fff;}
+/*#headertop, .pagesidebar, #vibe_bp_login, #pmpro_confirmation_table thead, .pmpro_checkout thead th, #pmpro_levels_table thead, .boxed #headertop .container {border-bottom: 1px solid #eeeeee;}*/
 #logo img {padding-bottom: 13px; margin-top: 5px;}
-.apoio {width: 70%;float: right; margin: 0 auto;}
-.apoio p{text-align: right; color: #fc630e; text-transform: uppercase; padding-right: 87px;}
-.apoio img {padding-left: 50px; float: right;}
-.unicef-logo {padding-top: 15px;}
-.intro_home > .vc_col-sm-12 {background-image: url(http://guilhermewp.com.br/modelo/wp-content/uploads/2015/04/grid.png);}
+
+.apoio {width: 45%;float: right; margin: 0 auto;}
+.apoio p{text-align: right; margin-top: 15px; color: #757575; text-transform: uppercase;}
+.apoio img {margin-left: 15px; float: right;}
+img.unicef-logo {width: 140px; padding-top: 15px;}
+img.uefa-logo {width: 64px;}
+.intro_home {background: url(http://guilhermewp.com.br/modelo/wp-content/uploads/2015/04/grid.png) repeat!important;}
 /*icons intro*/
 .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-background-color-white.vc_icon_element-outline {
 border-top-left-radius: inherit;
@@ -42,28 +64,31 @@ border-top-right-radius: inherit;
 margin-bottom:10px;
 }
 /*.col-md-3 {width: 19%;}*/
-nav .menu li a {margin-bottom: 10px;}
+nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
 /*nav .sub-menu li a {padding: 10px;}*/
 .col-md-9 {padding-top: 0px;}
 /*Proximos cursos*/
+.proximos-cursos {background-color: #F7F7F7;}
+.proximos-cursos p{text-align: left;}
 .widget_course_list li h6 span {display: none;}
 .widget_course_list li img {max-width: 66px;}
 /*icons intro*/
+/*LAYER SLIDER*/
+.ls-gpuhack {background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/06/pattern-slider-home.png);}
 /*F I M  -  TOPO E INTRO*/
-
 /*Botão de busca*/
 #searchsubmit {width: 100%; background-color: rgb(0, 126, 0);}
 .widget ul li {border-style:none;}
 .chosen-container-single .chosen-single {width: 100%}
 /*.widget ul li {width: 49%;}*/
 /*MENU WIDGET*/
-.menu-paginas ul li {width: 80px; color: #808081;}
+#menu-sub-menu-paginas {padding: 5px; height: 44px;}
+.menu-paginas ul li {display: inline; padding: 20px; color: #808081;}
 .menu-paginas a {color: #808081 !important;}
-
 /*Botoes POSTS*/
+.block_media img {max-width: 365px; min-height: 230px;}
+.vc_gitem-post-data h4{margin-left: 8px;}
 .vc_btn-juicy_pink, a.vc_btn-juicy_pink {background-color:#50485b !important;}
-
-
 /* Páginas comuns - categorias e etc.. */
 #title, #memberstitle{
   background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/pages-udof-dark.jpg);
@@ -75,25 +100,39 @@ nav .menu li a {margin-bottom: 10px;}
   background-position: center !important;
   background-size: cover !important;
 }
+/*BREADCUMBS GUILHERME*/
+.col-md-3 .breadcrumbs {
+  padding: 20px 0 10px;
+  width: 100%;
+  float: right;
+  }
 .breadcrumbs a {color:#fc630e!important;}
-
 .pagetitle h1 {color: #fff; margin-top: -33px}
 .pagetitle h5 {color: #fff;}
 .breadcrumbs a {color: #fff;}
 /*F i m PÁGINAS*/
-
 /*PAGINAS-VISUAL COMPOESER TOPO*/
 .top_page_vc h2{color: #fff;}
 .top_page_vc p{color: #fff;}
 /*SLIDER DE POSTS*/
-.box_open_content {max-height: 556px;}
+/*.box_open_content {max-height: 556px;}*/
+.vc_col-sm-8 {max-height: 556px;}
 .wpb_gallery .wpb_flexslider .flex-direction-nav a {color: #fff;}
 .flexslider .slides img {max-height: 422px;}
 .wpb_gallery .wpb_flexslider .flex-control-nav {display: none; bottom: -4px!important;}
 /*POSTS HOME GRID*/
-.vc_gitem-zone {height: 240px; background-size: 100% 100%!important;}
-.vc_gitem-post-data p {color: #464261;}
 
+.vc_grid-item-zone-c-right .vc_gitem-animated-block {
+  float: left!important;
+  width: 24%!important;
+}
+.vc_grid-item-zone-c-right .vc_gitem-zone-c {
+  float: right!important;
+  width: 76%!important;
+}
+
+.vc_gitem-zone {height: 240px; background-size: 100% 100%!important;}
+.vc_gitem-post-data p {color: #464261; line-height: 1.5em;}
 /*Tabs*/
 .wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav a {
 border: 1px solid blanchedalmond;
@@ -101,24 +140,23 @@ border-left: 3px solid green;
   padding: 0.5em 4em;
 }
 .wpb_content_element .wpb_tabs_nav li.ui-tabs-active a {border-bottom-style: none;}
-
 .slider_contents {width: 64%;}
 /*Widgets_home_news*/
-
 .flexslider {border-style:none !important;}
 .wpb_posts_slider .flex-caption{background-color:#464261 !important; /*background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/grid.png?id=218); background-color: rgb(102, 150, 237)!important;*/}
-
 /*Depoimento home*/
 .sldr_title {text-align:center; font-size:33px !important;}
 .testimonial_slider__round.testimonial_slider_set {top:-36px; margin-bottom:-40px;}
 .depos pre {border-style: none;}
+pre {border-style: none!important;}
+pre {background-color: #fff;}
 .testimonial_slider__round .testimonial_nav_arrow_wrap{width: 40px; height: 40px; display: block !important; float: right; margin-right: 20px;}
 .testimonial_slider__round .testimonial_nav_arrow_wrap a {width:26px!important; height:26px!important; bottom: 90%!important;}
-
 /*PARCEIROS*/
 .vc_separator h4 {font-size: 170% !important;}
 .parceiros_slider img{padding-right: 20px;}
 /*FOOTER*/
+
 footer {background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/fundo_fotter.png);
  background-repeat: no-repeat !important;
  background-position: center !important;
@@ -126,7 +164,6 @@ footer {background-image: url(http://udof2015.javalidigital.com.br/wp-content/up
  margin-top: -30px;
 }
 #footerlogo {max-width: 142px; margin: 10px 10px 0 0;}
-
 /*AJUSTE MARGIN BUDYPRESS*/
 #content #buddypress {margin-bottom: 100px;}
 /*NEWSLETTER*/
@@ -147,6 +184,85 @@ background-position: 890px 0px;
 .hash {width: 13% !important;}
 .trending p{font-size: 12px; text-align: right;}
 .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner.vc_icon_element-background-color-mulled_wine.vc_icon_element-outline {border-style: none;}
-
 .calendario_cursos img {max-height: 195px;}
 .wpb_text_column ul {list-style: none;}
+.home_search_conteudo-aberto input[type=text] {
+width:80% !important;
+}
+.home_search_conteudo-aberto input[type=submit] {
+width:19% !important;
+display:inline
+}
+
+.et_bloom .et_bloom_form_container .et_bloom_form_content span, .et_bloom .et_bloom_form_content #mc_embed_signup .mc-field-group label, .et_bloom .et_bloom_form_content #mc_embed_signup .mc-field-group strong, .et_bloom .et_bloom_form_aweber .af-body label.previewLabel, .et_bloom .et_bloom_form_campaign_monitor .et_bloom_form_content label, .et_bloom .mimi_field label {
+/*margin-bottom: 2px !important;*/
+margin-top: 7px;
+}
+
+header #searchdiv.active #searchform {margin-top: 34px;}
+header #searchicon {padding: 0px;}
+#headertop > header > div > div > div.col-md-9.col-sm-9 { max-height: 36px;}
+#headertop.fixed {box-shadow: 3px 3px 3px #ccc;}
+/*news-paginas internas*/
+#content > div > div > div > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1430773399491 > div > div > div:nth-child(3) > div > div > div > div > div > div > div > div.et_bloom_form_content.et_bloom_1_field.et_bloom_bottom_inline > form > p {width: 80%;}
+.busca {max-width: 0px; width: 20%; float: right;}
+.col-md-8 {width: 66%; float: right;}
+#headertop {padding: 0px;}
+.busca, .col-md-8 {display: inline-block;}
+header #searchdiv.active #searchform {width: 800px;}
+.vc_column_container .vc_btn {margin-top: 6px!important;}
+.gestao h5 {margin-top: -6px!important;}
+
+ div > div > div > div > div > div > div > div.et_bloom_form_content.et_bloom_1_field > form > button {width: 66px!important; height: 42px!important;}
+div > div > div > div > div > div > div > div.et_bloom_form_content.et_bloom_1_field > form > p {width: 76%!important;}
+.et_bloom .et_bloom_form_right.et_bloom_inline_1_field .et_bloom_form_header, .et_bloom .et_bloom_form_left.et_bloom_inline_1_field .et_bloom_form_header {min-height: 88px!important;}
+.et_bloom .et_bloom_form_right .et_bloom_form_content form {top: 50%!important; float:none!important;}
+
+/*CURSOS HOME - DEFININDO PARA APARECER APENAS AS INFORMAÇÕES COM ICONES.*/
+div > div > div > div.vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: none!important;}
+
+li.icones {list-style: none; display: inline-block!important;}
+
+/*PAGINA NOSSOS CURSOS - DEFINIR QUE O TEXTO COMPLETO APAREÇA*/
+/*#content > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1435090380184 > div > div > div:nth-child(3) > div > div > div > div > div > div > div > div.vc_gitem-zone.vc_gitem-zone-c.vc_custom_1419242120132 > div > div > div > div.vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}*/
+
+div > div > div > div.vc_custom_heading..matricula-resumo.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}
+
+div > div > div > div.vc_custom_heading.matricula-resumo.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}
+
+#content > div > div.vc_row.wpb_row.vc_row-fluid.sobreudof.vc_custom_1436213454478 > div {background: rgba( 0, 0, 0, 0.6 )!important;}
+.sobreudof h4, .sobreudof h3, .sobreudof p{color:#fff!important;}
+.students_undertaking {display: none!important;}
+
+
+.course_details-custom {
+	padding:10px!important;
+  position: relative!important;
+  font-size: 12px!important;
+}
+.course_details {margin-top: 0px!important;}
+.full_desc .link, .small_desc .link {display: none!important;}
+.vc_gitem-post-meta-label {font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;}
+[class^="icon-"], [class*=" icon-"] {
+  padding-right: 0em!important;
+}
+div.testimonial_content_wrap > div > span {font-size:11px!important;}
+.testimonial_slider__round .testimonial_slideri {margin-top:10px!important;}
+/*CURSOS HOME GRID*/
+.vc_gitem-post-data h4 {margin-left: 0px!important;}
+/*SINGLE CUOUSE PAGE*/
+.single-curso-page {width: 75%!important; clear: both!important;}
+.woocommerce div.product form.cart .button, .woocommerce #content div.product form.cart .button, .woocommerce-page div.product form.cart .button, .woocommerce-page #content div.product form.cart .button {padding: 15px 35px 15px 35px!important; background-color: #e74c3c!important;}
+#buddypress div#item-header {display: none;}
+.woocommerce .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce-page #content .quantity input.qty {
+	width: 52px!important;
+	height: 43px!important;
+}
+p.price {background-color: #2ecc71!important;}
+span.amount {
+  padding: 7px!important;
+}
+div.summary.entry-summary > div:nth-child(3) > p > ins > span, div.summary.entry-summary > div:nth-child(3) > p > del > span {color: #fff!important;}
+.titulo-prod-curso {font-size: 21px!important;}
+.woocommerce .woocommerce-tabs h2, .woocommerce .related h2 {display: none!important;}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active, .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active {background-color: #2ecc71!important;}

@@ -1839,7 +1839,7 @@ vc_map( array(
 						array( 'text', __( 'Full content', 'js_composer' ) )
 					)
 				),
-				array( 'link', __( 'Read more link', 'js_composer' ) )
+				array( 'link', __( 'Leia mais', 'js_composer' ) )
 			)
 		),
 		array(
@@ -1930,7 +1930,7 @@ vc_map( array(
 						array( 'text', __( 'Full content', 'js_composer' ) )
 					)
 				),
-				array( 'link', __( 'Read more link', 'js_composer' ) )
+				array( 'link', __( 'Leia mais', 'js_composer' ) )
 			)
 		),
 		array(

@@ -11,4 +11,4 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 <span><?php vibe_breadcrumbs(); ?></span>
-<h1 itemprop="name" class="product_title entry-title"><?php the_title(); ?></h1>
+<h1 class="titulo-prod-curso" itemprop="name" class="product_title entry-title"><?php the_title(); ?></h1>

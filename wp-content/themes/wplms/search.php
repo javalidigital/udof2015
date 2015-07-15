@@ -31,7 +31,6 @@ if (isset($_GET["post_type"]) && $_GET["post_type"] == 'course'){
             <div class="content">
                 <?php
                     if ( have_posts() ) : while ( have_posts() ) : the_post();
-
                     $categories = get_the_category();
                     $cats='<ul>';
                     if($categories){

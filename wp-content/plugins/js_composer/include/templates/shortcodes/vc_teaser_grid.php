@@ -178,7 +178,7 @@ while ( $my_query->have_posts() ) {
 
 	// Read more link
 	if ( $grid_link != 'link_no' ) {
-		$link = '<a class="more-link" href="' . get_permalink( $post_id ) . '"' . $link_target . ' title="' . sprintf( esc_attr__( 'Permalink to %s', 'js_composer' ), the_title_attribute( 'echo=0' ) ) . '">' . __( "Read more", "js_composer" ) . '</a>';
+		$link = '<a class="more-link" href="' . get_permalink( $post_id ) . '"' . $link_target . ' title="' . sprintf( esc_attr__( 'Permalink to %s', 'js_composer' ), the_title_attribute( 'echo=0' ) ) . '">' . __( "Leia mais", "js_composer" ) . '</a>';
 	}
 
 	// Thumbnail logic

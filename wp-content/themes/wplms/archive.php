@@ -79,12 +79,12 @@ get_header();
     			</div>
     		</div>
     		<div class="col-md-3 col-sm-4">
-    			<div class="sidebar">
+    			<!-- <div class="sidebar">
                     <?php
-                    $sidebar = apply_filters('wplms_sidebar','mainsidebar');
-                    if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
-                    <?php endif; ?>
-    			</div>
+                    //$sidebar = apply_filters('wplms_sidebar','mainsidebar');
+                    //if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
+                   // <?php //endif; ?>
+    			</div> -->
     		</div>
         </div>
 	</div>

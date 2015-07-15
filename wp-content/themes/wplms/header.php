@@ -68,6 +68,13 @@ wp_head();
                                 printf( __( '<a href="%s" class="vbpregister" title="'.__('Create an account','vibe').'">'.__('Sign Up','vibe').'</a> ', 'vibe' ), site_url( BP_REGISTER_SLUG . '/' ) );
                             endif; ?>
                             </li>
+                            
+                                <li><?php 
+                                        $course_search=vibe_get_option('course_search');
+                                        if(isset($course_search) && $course_search)
+                                            echo '<input type="hidden" value="course" name="post_type" />';
+                                    ?>
+                                    </li>
                         </ul>
                     <?php
                     endif;

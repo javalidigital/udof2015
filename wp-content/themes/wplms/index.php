@@ -49,7 +49,7 @@ get_header();
                                     </p>
                                 </div>
                                 <p>'.get_the_excerpt().'</p>
-                                <a href="'.get_permalink().'" class="link">Read More</a>
+                                <a href="'.get_permalink().'" class="link">Leia mais</a>
                             </div>
                         </div>';
                     endwhile;

@@ -60,7 +60,7 @@
 <script type="text/html" id="vc_teaser-link">
 	<div class="vc_teaser-control vc_teaser-ctr-{{ name }}" data-control="{{ name }}" id="vc_teaser-link-control">
 		<div class="vc_move"></div>
-		<a href="#"><?php _e( 'Read more', "js_composer" ) ?></a>
+		<a href="#"><?php _e( 'Leia mais', "js_composer" ) ?></a>
 	</div>
 </script>
 <script type="text/html" id="vc_teaser-custom-image-block">

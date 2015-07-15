@@ -44,10 +44,35 @@ wp_head();
         <div id="headertop" class="<?php if(isset($fix) && $fix){echo 'fix';} ?>">
             <div class="container">
                 <div class="row">
+                     <header class="busca">
+            <div class="container busca">
+                <div class="row busca">
+                    <div class="col-md-3 col-sm-3 col-xs-12 search-gwp">
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <div id="searchicon"><i class="icon-search-2"></i></div>
+                        <div id="searchdiv">
+                            <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                                <div><label class="screen-reader-text" for="s">Search for:</label>
+                                    <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e('Hit enter to search...','vibe'); ?>" />
+                                    <?php 
+                                        $course_search=vibe_get_option('course_search');
+                                        if(isset($course_search) && $course_search)
+                                            echo '<input type="hidden" value="course" name="post_type" />';
+                                    ?>
+                                    <input type="submit" id="searchsubmit" value="Search" />
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
                     <div class="col-md-4 col-sm-3"><div style="margin: 0px 10px; display: inline-block; *display: inline; *zoom:1;">
-<i class="gdlr-icon icon-phone" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> <span class="info-top">(11) 2709-2335</span></i>
+<!-- <i class="gdlr-icon icon-phone" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> <span class="info-top">(11) 2709-2335</span></i>
 </div><div style="margin: 0px 10px ; display: inline-block; *display: inline;  *zoom:1;">
-<i class="gdlr-icon icon-envelope" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> <span class="info-top">atendimento@universidadedofutebol.com.br</span></i>
+<i class="gdlr-icon icon-envelope" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> <span class="info-top">atendimento@universidadedofutebol.com.br</span></i> -->
 </div>
                        <a href="<?php echo vibe_site_url(); ?>" class="homeicon"><img src="<?php  echo apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png'); ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a> 
                     </div>
@@ -56,16 +81,16 @@ wp_head();
                     if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
                         ?>
                         <ul class="topmenu">
-                            <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); bp_loggedin_user_avatar( 'type=full' ); ?><?php bp_loggedin_user_fullname(); ?></a></li>
+                            <li class="login-topbar"><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); bp_loggedin_user_avatar( 'type=full' ); ?><?php bp_loggedin_user_fullname(); ?></a></li>
                             <?php do_action('wplms_header_top_login'); ?>
                         </ul>
                     <?php
                     else :
                         ?>
                         <ul class="topmenu">
-                            <li><a href="#login" class="smallimg vbplogin"><?php _e('Login','vibe'); ?></a></li>
-                            <li><?php if ( function_exists('bp_get_signup_allowed') && bp_get_signup_allowed() ) :
-                                printf( __( '<a href="%s" class="vbpregister" title="'.__('Create an account','vibe').'">'.__('Sign Up','vibe').'</a> ', 'vibe' ), site_url( BP_REGISTER_SLUG . '/' ) );
+                            <li class="login-topbar"><a href="#login" class="smallimg vbplogin"><?php _e('Login','vibe'); ?></a></li>
+                            <li class="login-topbar"><?php if ( function_exists('bp_get_signup_allowed') && bp_get_signup_allowed() ) :
+                                printf( __( '<a href="%s" class="vbpregister" title="'.__('Create an account','vibe').'">'.__('Registre-se','vibe').'</a> ', 'vibe' ), site_url( BP_REGISTER_SLUG . '/' ) );
                             endif; ?>
                             </li>
                         </ul>
@@ -90,8 +115,9 @@ wp_head();
                    </div>
                 </div>
             </div>
+            <!-- -->
         </div>
-        <header>
+          <header>
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-12">
@@ -114,23 +140,9 @@ wp_head();
                         ?>
                     </div>
                     <div class="apoio"><p>Apoio educacional</p>
-                   <img class="unicef-logo" src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">  <img src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA">
+                    <img class="uefa-logo" src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA"> <img class="unicef-logo" src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">
                         </div>
                     <div class="col-md-9 col-sm-9">
-                        <div id="searchicon"><i class="icon-search-2"></i></div>
-                        <div id="searchdiv">
-                            <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                                <div><label class="screen-reader-text" for="s">Search for:</label>
-                                    <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e('Hit enter to search...','vibe'); ?>" />
-                                    <?php 
-                                        $course_search=vibe_get_option('course_search');
-                                        if(isset($course_search) && $course_search)
-                                            echo '<input type="hidden" value="course" name="post_type" />';
-                                    ?>
-                                    <input type="submit" id="searchsubmit" value="Search" />
-                                </div>
-                            </form>
-                        </div>
                         <?php
                             $args = apply_filters('wplms-main-menu',array(
                                  'theme_location'  => 'main-menu',
@@ -148,3 +160,4 @@ wp_head();
                 </div>
             </div>
         </header>
+

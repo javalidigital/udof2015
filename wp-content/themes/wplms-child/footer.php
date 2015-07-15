@@ -1,4 +1,4 @@
-<div class="newsletter">
+<div class="newsletter" style="display:none;">
 <?php 
 echo
 do_shortcode('[et_bloom_inline optin_id="optin_1"]'
@@ -46,5 +46,14 @@ wp_footer();
 <?php
 echo vibe_get_option('google_analytics');
 ?>
+   <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
 </body>
 </html>

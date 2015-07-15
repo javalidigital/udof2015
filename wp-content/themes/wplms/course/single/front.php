@@ -60,11 +60,11 @@ do_action('wplms_before_course_description');
 			$middle = strrpos(substr($content, 0, $limit), " ");
 
 			if(strlen($content) < $limit){
-				$more_flag = 0;
+				$more_flag = 10;
 			}
 			$check_vc=strpos( $post->post_content, '[vc_row]' );
 			if ( isset($check_vc) ) {
-				$more_flag=0;
+				$more_flag=10;
 				echo apply_filters('the_content',$content);
 			}else{
 				echo apply_filters('the_content',substr($content, 0, $middle));
