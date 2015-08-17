@@ -12,12 +12,6 @@ if(!isset($title) || !$title || (vibe_validate($title))){
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-8">
-                <div class="pagetitle">
-                    <h1><?php the_title(); ?></h1>
-                    <?php the_sub_title(); ?>
-                </div>
-            </div>
-             <div class="col-md-3 col-sm-4">
                  <?php 
                     $breadcrumbs=get_post_meta(get_the_ID(),'vibe_breadcrumbs',true);
                     if(!isset($breadcrumbs) || !$breadcrumbs || vibe_validate($breadcrumbs)){
@@ -25,6 +19,13 @@ if(!isset($title) || !$title || (vibe_validate($title))){
                     }   
                 ?>
             </div>
+            <div class="col-md-9 col-sm-8">
+                <div class="pagetitle">
+                     <h1><?php the_category(); ?></h1>
+                    <?php the_sub_title(); ?>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -34,7 +35,7 @@ if(!isset($title) || !$title || (vibe_validate($title))){
 ?>
 <section id="content">
     <div class="container">
-        
+        <h1><?php the_title(); ?></h1>
         <div class="row">
             <?php
                 $template = get_post_meta(get_the_ID(),'vibe_template',true);

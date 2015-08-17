@@ -49,7 +49,46 @@ $woocommerce_loop['loop']++;
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 		<h3><?php the_title(); ?></h3>
-            </a>   
+		                                    <!-- PRAGINAS - LOOP - CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL -->
+                    <!-- CAMPO - INICIO -->
+                                        <?php $inicio = get_post_custom_values( 'inicio' ); ?>
+                                    <?php if( !empty($inicio) ) : ?>
+                                <div class="course_details_destaques">
+                                    <ul>
+                                        <li class="course_details-custom"><i class="fa fa-calendar"></i> Início: <?php echo $inicio[0]; ?></li>
+                                    </ul>
+                                </div><!-- end INICIO -->
+                                    <?php endif; ?>
+                                    <!-- CAMPO - DURACAO -->
+                                        <?php $duracao = get_post_custom_values( 'duracao' ); ?>
+                                    <?php if( !empty($duracao) ) : ?>
+                                <div class="course_details_destaques">
+                                    <ul>
+                                        <li class="course_details-custom"><i class="fa fa-tachometer"></i> Duração: <?php echo $duracao[0]; ?></li>
+                                    </ul>
+                                </div><!-- end DURACAO -->
+                                    <?php endif; ?>
+                                        <!-- CAMPO - CARGA-HORARIA -->
+                                        <?php $carga_horaria = get_post_custom_values( 'carga_horaria' ); ?>
+                                    <?php if( !empty($carga_horaria) ) : ?>
+                                <div class="course_details_destaques">
+                                    <ul>
+                                        <li class="course_details-custom"><i class="fa fa-clock-o"></i> Carga Horária: <?php echo $carga_horaria[0]; ?></li>
+                                    </ul>
+                                </div><!-- end CARGA HORARIA -->
+                                    <?php endif; ?>
+                                        <!-- CAMPO - FORMATO -->
+                                        <?php $formato = get_post_custom_values( 'formato' ); ?>
+                                    <?php if( !empty($formato) ) : ?>
+                                <div class="course_details_destaques">
+                                    <ul>
+                                        <li class="course_details-custom"><i class="fa fa-wifi"></i> Formato: <?php echo $formato[0]; ?></li>
+                                    </ul>
+                                </div><!-- end FORMATO-->
+                                    <?php endif; ?>
+                        <!-- F I M *** CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL *** -->
+           </a>
+
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook

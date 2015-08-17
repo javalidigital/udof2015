@@ -1,4 +1,4 @@
-/*
+ 	/*
 Theme Name:     WPLMS-child
 Theme URI:      http:// guilhermewp.com.br
 Description:    Tema filho para o wplms
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6, #headertop a, nav .menu li a, .info-top, .apoio p, #foot
 nav .menu li a {font-size: 14px!important; padding: 24px 0 24px 0;}
 }
 #main-menu-item-1008, #main-menu-item-1009, #main-menu-item-1010, #main-menu-item-1026 {
-	background-color: #7f8c8d;
+  background-color: #7f8c8d;
 }
 #trigger {top: 166px;}
 /*TOPO E INTRO*/
@@ -94,7 +94,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
   background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/pages-udof-dark.jpg);
   /*background-color: rgb(49, 205, 49);*/
   margin-top: -5px;
-  padding: 99px 0 0;
+  /*padding: 99px 0 0;*/
   color: #fff;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -115,6 +115,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
 .top_page_vc h2{color: #fff;}
 .top_page_vc p{color: #fff;}
 /*SLIDER DE POSTS*/
+h2{font-size: 20px!important;}
 /*.box_open_content {max-height: 556px;}*/
 .vc_col-sm-8 {max-height: 556px;}
 .wpb_gallery .wpb_flexslider .flex-direction-nav a {color: #fff;}
@@ -141,6 +142,10 @@ border-left: 3px solid green;
 }
 .wpb_content_element .wpb_tabs_nav li.ui-tabs-active a {border-bottom-style: none;}
 .slider_contents {width: 64%;}
+/*NEWS PRODUTOS*/
+body > div.et_bloom_flyin.et_bloom_optin.et_bloom_resize.et_bloom_flyin_right.et_bloom_optin_3.et_bloom_auto_popup.et_bloom_visible.et_bloom_animated > div > div > div.et_bloom_form_content.et_bloom_1_field.et_bloom_bottom_stacked > form > p {width: 100%!important;}
+
+body > div.et_bloom_flyin.et_bloom_optin.et_bloom_resize.et_bloom_flyin_right.et_bloom_optin_3.et_bloom_auto_popup.et_bloom_visible.et_bloom_animated > div > div > div.et_bloom_form_content.et_bloom_1_field.et_bloom_bottom_stacked > form > button {margin: 0 auto!important;}
 /*Widgets_home_news*/
 .flexslider {border-style:none !important;}
 .wpb_posts_slider .flex-caption{background-color:#464261 !important; /*background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/grid.png?id=218); background-color: rgb(102, 150, 237)!important;*/}
@@ -176,6 +181,12 @@ background-position: 890px 0px;
   background-size: 249px 111px;
   background-repeat: no-repeat;
 }
+#content > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1435334930203.vc_row-no-padding > div > div > div > div > div > div > div > div.et_bloom_header_outer > div > div > p {
+  font-size: 17px;
+  color: #fff!important;
+  font-family: 'adam';
+}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1435334930203.vc_row-no-padding > div > div > div > div > div > div > div > div.et_bloom_form_content.et_bloom_1_field > form > p > input {padding: 12px !important;}
 .et_bloom .et_bloom_form_container.et_bloom_form_text_light .et_bloom_form_content input, .et_bloom .et_bloom_optin_1 h2 {color: #5a5a5a;}
 .et_bloom .et_bloom_form_header h2 {color: #5a5a5a;}
 /*TAGS HOME*/
@@ -219,50 +230,165 @@ div > div > div > div > div > div > div > div.et_bloom_form_content.et_bloom_1_f
 .et_bloom .et_bloom_form_right .et_bloom_form_content form {top: 50%!important; float:none!important;}
 
 /*CURSOS HOME - DEFININDO PARA APARECER APENAS AS INFORMAÇÕES COM ICONES.*/
-div > div > div > div.vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: none!important;}
+/*div > div > div > div.vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: none!important;}
 
 li.icones {list-style: none; display: inline-block!important;}
 
 /*PAGINA NOSSOS CURSOS - DEFINIR QUE O TEXTO COMPLETO APAREÇA*/
-/*#content > div > div.vc_row.wpb_row.vc_row-fluid.vc_custom_1435090380184 > div > div > div:nth-child(3) > div > div > div > div > div > div > div > div.vc_gitem-zone.vc_gitem-zone-c.vc_custom_1419242120132 > div > div > div > div.vc_custom_heading.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}*/
 
-div > div > div > div.vc_custom_heading..matricula-resumo.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}
-
-div > div > div > div.vc_custom_heading.matricula-resumo.vc_gitem-post-data.vc_gitem-post-data-source-post_excerpt > p:nth-child(2) {display: block!important;}
-
-#content > div > div.vc_row.wpb_row.vc_row-fluid.sobreudof.vc_custom_1436213454478 > div {background: rgba( 0, 0, 0, 0.6 )!important;}
-.sobreudof h4, .sobreudof h3, .sobreudof p{color:#fff!important;}
-.students_undertaking {display: none!important;}
-
-
-.course_details-custom {
-	padding:10px!important;
-  position: relative!important;
-  font-size: 12px!important;
-}
-.course_details {margin-top: 0px!important;}
-.full_desc .link, .small_desc .link {display: none!important;}
+h4.block_title + .date {display: none;}
+#content > div > div > div > div > div.v_module.vibe_post_grid.v_first.destaque > div.vibe_grid > ul > li > div > div.block_content > h4 {padding-bottom: 10px!important;}
 .vc_gitem-post-meta-label {font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;}
 [class^="icon-"], [class*=" icon-"] {
   padding-right: 0em!important;
 }
-div.testimonial_content_wrap > div > span {font-size:11px!important;}
+.testimonial_slider__round .testimonial_content_wrap {height: auto!important;}
+div.testimonial_content_wrap > div > span {font-size:15px!important;}
 .testimonial_slider__round .testimonial_slideri {margin-top:10px!important;}
+.testimonial_slider__round .testimonial_by_wrap {
+  position: absolute!important;
+  bottom: 0%!important;
+}
+/*.testimonial_avatar img {min-width: 150px!important; height: 150px!important;}*/
 /*CURSOS HOME GRID*/
 .vc_gitem-post-data h4 {margin-left: 0px!important;}
+.vc_gitem-post-data {margin-bottom: 0px!important;}
 /*SINGLE CUOUSE PAGE*/
 .single-curso-page {width: 75%!important; clear: both!important;}
-.woocommerce div.product form.cart .button, .woocommerce #content div.product form.cart .button, .woocommerce-page div.product form.cart .button, .woocommerce-page #content div.product form.cart .button {padding: 15px 35px 15px 35px!important; background-color: #e74c3c!important;}
+.woocommerce div.product form.cart .button, .woocommerce #content div.product form.cart .button, .woocommerce-page div.product form.cart .button, .woocommerce-page #content div.product form.cart .button {padding: 15px 35px 15px 35px!important; background-color: #fc630e!important;}
 #buddypress div#item-header {display: none;}
 .woocommerce .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce-page #content .quantity input.qty {
-	width: 52px!important;
-	height: 43px!important;
+  width: 52px!important;
+  height: 43px!important;
 }
-p.price {background-color: #2ecc71!important;}
+.btn-matricula {width: 100%!important;}
 span.amount {
-  padding: 7px!important;
+  color: #fc630e!important;
 }
 div.summary.entry-summary > div:nth-child(3) > p > ins > span, div.summary.entry-summary > div:nth-child(3) > p > del > span {color: #fff!important;}
 .titulo-prod-curso {font-size: 21px!important;}
 .woocommerce .woocommerce-tabs h2, .woocommerce .related h2 {display: none!important;}
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active, .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active {background-color: #2ecc71!important;}
+/*.vc_gitem-post-data {min-height: 75px!important;}*/
+
+.valor-reais {
+  width: 285px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4c7420;
+  border: dotted 1px #828282;
+  padding: 10px;
+  margin: 30px auto 0;
+  }
+  .valor-reais-date {
+  display: inline-block;
+  text-align: left;
+  color: #737373;
+}
+.valor-reais-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #737373;
+  }
+  .webdoor-box-summary-payment-icons {
+  list-style-type: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+.webdoor-box-summary-payment-icons li {
+  display: inline!important;
+  margin-right: 7px!important;
+  padding: 0!important;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/*TESTE DEPOIMENTOS*/
+.testimonial_slider__round .testimonial_outer_wrap {height: auto!important;}
+/*BOTÃO COMPRAR - CURSOS SINGLE SHORTCODE*/
+#tab-description > div > div > div > p > a {
+  width: 100%;
+  text-align: center;
+  background-color: #6dab3c;
+  padding: 15px;
+  background-color: #6dab3c!important;
+  padding: 10px 16px!important;
+    font-size: 18px!important;
+    line-height: 1.33!important;
+    border-radius: 6px!important;
+    -webkit-box-shadow: 0 5px 0 #53812d!important;
+    box-shadow: 0 5px 0 #53812d!important;
+    margin-bottom: 5px!important;
+
+}
+p.product.woocommerce.add_to_cart_inline {border-style: none!important;}
+p.product.woocommerce.add_to_cart_inline > .amount {display: none!important;}
+/*EQUIPE*/
+.tmm_member {border-bottom: none; border-color: #2ecc71!important;}
+.tmm_desc {display: none;}
+.tmm_member .tmm_photo {
+  border-radius: 0%!important;
+    background-color: #fff!important;
+}
+
+/*************NOSSOS CURSOS TESTANDO PRODUTOS*********/
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li {width: 100%;}
+/*.course_details_destaques*/ #content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div div > div.woocommerce > div > ul > li > div > a > div {
+    float: right!important;
+  width: 47%!important;
+    font-size: 5px!important;
+}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div div > div.woocommerce > div > ul > li > div > a:hover > div {color: #333333;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.woocommerce.columns-4 > div > ul > li.product > div > a:hover, #content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > a:hover {color: #333333;}
+/*.course_details_destaques li*/ #content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li > div > a > div > ul > li {
+      font-size: 12px;
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li > div > a:hover > div > ul > li:hover {color: #333333;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li > div > a > img {
+      width: 49%!important;
+    float: left!important;
+}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li > div > a > span, .woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale {display: none;}
+#content > div > div > div > div > div.woocommerce > ul > li > div > a > span {display: none;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest > div > div > div.woocommerce > div > ul > li > div > a.button.add_to_cart_button.product_type_simple {background-color: #fc630e!important;}
+/************TODOS OS CURSOS*********/
+.woocommerce ul.products li:hover a.button {color: #fff!important;}
+#title > div > div > div.col-md-9.col-sm-8 > h1 {color: #FFF!important;}
+#global > div.pusher > section.main > div > div > div.col-md-9.col-sm-8 > div > div.yit-wcan-container > ul > li > div > a > div > ul > li {display: none!important;}
+#global > div.pusher > section.main > div > div > div.col-md-9.col-sm-8 > div > div.yit-wcan-container > ul > li > div > a.button.add_to_cart_button.product_type_simple {background-color: #fc630e!important; border: none!important;}
+#global > div.pusher > section.main > div > div > div.col-md-3.col-sm-4 > div > div:nth-child(1) > form > div > div.price_slider_amount > button {background-color: #16a085!important;}
+.ui-slider .ui-slider-handle, .price_slider .ui-slider-range {background: #16a085!important;}
+.products .product_info {background-color: #fff;
+    padding: 5px;
+    box-shadow: 2px 2px 2px #ecf0f1;}
+
+/********NOSSOS CURSOS TOPO CURSOS EM DESTAQUE************/
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.woocommerce.columns-4 > div > ul > li.product > div > a > img {width: 40%!important; float: left;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.woocommerce.columns-4 > div > ul > li.product > div > a > div {width: 51%; float: right; font-size: 11px; text-align: left;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.woocommerce.columns-4 > div > ul > li.product > div > span > span {float: left; padding-top: 10px;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.woocommerce.columns-4 > div > ul > li.product > div > a.button.add_to_cart_button.product_type_simple {background-color: #fc630e!important;}
+
+
+/********H O M E - CURSOS DESTAQUES************/
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo> div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > a> img {width: 40%!important; float: left;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > a > div {width: 51%; float: right; font-size: 11px; text-align: left;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > span > span {float: left; padding-top: 10px;}
+#content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > a.button.add_to_cart_button.product_type_simple {background-color: #fc630e!important;}
+
+/************POSTS TITLE****/
+#title > div > div > div:nth-child(1) {margin-bottom: 68px; padding: 0px 42px!important;}
+#title > div > div > div:nth-child(1) > ul {width: 120%!important;}
+h4 {font-size: 15px!important;}
+#title > div > div > div.col-md-9.col-sm-8 > div > h1 > ul > li > a {padding: 30px;}
+#content > div > h1 {font-size: 20px!important;padding: 0px 30px!important;}
+#content > div > div > div.col-md-9.col-sm-8 > div > div > div.excerpt.thumb > h3 {font-size: 15px!important;}
+/*******S I N G L E POST - CATEGORIA TITLE*******/
+#title > div > div > div.col-md-9.col-sm-8 > div > h1 > ul > li > a {color: #fff!important;}
