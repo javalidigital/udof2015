@@ -94,12 +94,13 @@ if(isset($page_array['members'])){
 
 									<label for="members-order-by"><?php _e( 'Order By:', 'vibe' ); ?></label>
 									<select id="members-order-by">
-										<option value="active"><?php _e( 'Last Active', 'vibe' ); ?></option>
-										<option value="newest"><?php _e( 'Newest Registered', 'vibe' ); ?></option>
+									<?php $default_selection = apply_filters('wplms_members_default_order',''); ?>
+										<option value="active" <?php selected('active',$default_selection); ?>><?php _e( 'Last Active', 'vibe' ); ?></option>
+										<option value="newest" <?php selected('newest',$default_selection); ?>><?php _e( 'Newest Registered', 'vibe' ); ?></option>
 
 										<?php if ( bp_is_active( 'xprofile' ) ) : ?>
 
-											<option value="alphabetical"><?php _e( 'Alphabetical', 'vibe' ); ?></option>
+											<option value="alphabetical" <?php selected('alphabetical',$default_selection); ?>><?php _e( 'Alphabetical', 'vibe' ); ?></option>
 
 										<?php endif; ?>
 

@@ -14,9 +14,11 @@ class WPLMS_Dashboard{
 		add_post_type_support( 'news', 'front-end-editor' );
 		add_filter('wplms_course_nav_menu',array($this,'wplms_course_news_menu'));
 		add_filter('wplms_course_locate_template',array($this,'wplms_course_news_template'),10,2);
+		add_action('wplms_load_templates',array($this,'wplms_course_show_news'));
 	}
 
-	function init(){
+	function init(){ 
+		if ( !defined( 'WPLMS_DASHBOARD_SLUG' ) )
 		define ( 'WPLMS_DASHBOARD_SLUG', 'dashboard' );
 	}
 
@@ -37,7 +39,10 @@ class WPLMS_Dashboard{
 
 	function setup_nav(){
 		global $bp;
-		$access = apply_filters('wplms_student_dashboard_access',bp_is_my_profile());
+		$access= 0;
+		if(function_exists('bp_is_my_profile'))
+			$access = apply_filters('wplms_student_dashboard_access',bp_is_my_profile());
+
         bp_core_new_nav_item( array( 
             'name' => __('Dashboard', 'wplms-dashboard' ), 
             'slug' => WPLMS_DASHBOARD_SLUG, 
@@ -78,12 +83,18 @@ class WPLMS_Dashboard{
 		return $links;
 	}
 	function wplms_course_news_template($template,$action){
-		if(!isset($action) || $action != 'news')
-			return $template;
+      if($action == 'news'){ 
+          $template= array(get_template_directory('course/single/plugins.php'));
+      }
+      return $template;
+    }
+    function wplms_course_show_news(){
+    	$course_id=get_the_ID();
+      	if(!isset($_GET['action']) || ($_GET['action'] != 'news'))
+        return;
 
-		$template = dirname( __FILE__ ).'/news_template.php';
-		return $template;
-	}
+    	require_once('news_template.php');
+    }
 }
 
 new WPLMS_Dashboard();

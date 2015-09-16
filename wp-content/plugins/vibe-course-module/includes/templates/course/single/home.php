@@ -6,7 +6,7 @@
  *
  * @author 		VibeThemes
  * @package 	vibe-course-module/templates
- * @version     1.8
+ * @version     1.9.6
  */
 
 	get_header( 'buddypress' );
@@ -118,7 +118,7 @@
 
 						bp_course_check_course_complete();
 						$user_id=get_current_user_id();
-						do_action('badgeos_wplms_submit_course',$post->ID);
+						do_action('wplms_submit_course',$post->ID,$user_id);
 						
 					// Looking at home location
 					}else if ( bp_is_course_home() ){

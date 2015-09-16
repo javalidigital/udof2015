@@ -237,7 +237,7 @@ jQuery(document).ready(function($) {
             $(this).trigger('change');
     });
     
-    $( ".vibe-form-select-hide" ).livequery( function() {
+    $( ".vibe-form-select-hide" ).livequery( function() { 
         $('#vibe-sc-form-live-preview').show();
         var hide_val = parseInt($(this).attr('rel-hide'));
         var parent = $(this).parent().parent().parent();
@@ -262,7 +262,7 @@ jQuery(document).ready(function($) {
     $( "#vibe_options" ).livequery( function() {
         $(this).parent().parent().hide();
     });
- /*
+
     $('#vibe_type').live('change', function() {
         var crow=$(this).parent().parent().next();
        if($(this).val() == 'select'){
@@ -271,6 +271,6 @@ jQuery(document).ready(function($) {
        }else{
            crow.hide();
        }
-    });*/
+    });
 });
 

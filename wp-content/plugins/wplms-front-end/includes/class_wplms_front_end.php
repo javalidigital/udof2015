@@ -2,7 +2,7 @@
 
 class WPLMS_Front_End {
 	
-	const VERSION = '1.9.1';
+	const VERSION = '1.9.4';
 
 	private static $instance;
 	
@@ -105,6 +105,9 @@ class WPLMS_Front_End {
 
     function wplms_edit_course_menu_link($nav_menu){
         $pageid = vibe_get_option('create_course');
+        if(function_exists('icl_object_id'))
+            $pageid = icl_object_id($pageid, 'page', true);
+        
         $user_id=get_current_user_id();
         global $post;
             if(isset($pageid) && $pageid && ( $post->post_author == $user_id || current_user_can('manage_options'))){
@@ -329,11 +332,7 @@ class WPLMS_Front_End {
         foreach($course_setting as $key=>$value){
             $prev_val=get_post_meta($course_id,$key,true);
             if($prev_val != $value){
-                if(!update_post_meta($course_id,$key,$value)){
-                    $flag = 1;
-                    $message = __('Unable to save course setting : ','wplms-front-end').str_replace('vibe_','',$key).$_POST['vibe_course_auto_eval'];
-                    break;
-                }
+                update_post_meta($course_id,$key,$value);
             }   
         }
 
@@ -599,12 +598,10 @@ class WPLMS_Front_End {
         }
         
        // $curriculum=array(serialize($curriculum)); // Backend Compatiblity
-        if(update_post_meta($course_id,'vibe_course_curriculum',$curriculum)){
-           echo $course_id;
-           do_action('wplms_course_curriculum_updated',$course_id,$curriculum);
-        }else{
-            _e('Unable to save curriculum, please contact site admin','wplms-front-end');
-        }
+        update_post_meta($course_id,'vibe_course_curriculum',$curriculum);
+        echo $course_id;
+        do_action('wplms_course_curriculum_updated',$course_id,$curriculum);
+        
         die();
     }
 
@@ -627,6 +624,7 @@ class WPLMS_Front_End {
             _e('Invalid Course Instructor','wplms-front-end');
              die();
         }
+
         $pricing = json_decode(stripslashes($_POST['pricing']));
 
         $vibe_course_free=$pricing->vibe_course_free;
@@ -639,12 +637,17 @@ class WPLMS_Front_End {
             update_post_meta($course_id,'vibe_course_free',$vibe_course_free);
             echo 1;
         }
-        if(isset($pricing->vibe_mycred_points) && is_numeric($pricing->vibe_mycred_points)){
-            update_post_meta($course_id,'vibe_mycred_points',$pricing->vibe_mycred_points);
-            update_post_meta($course_id,'vibe_mycred_subscription',$pricing->vibe_mycred_subscription);
-            update_post_meta($course_id,'vibe_mycred_duration',$pricing->vibe_mycred_duration);
-            do_action('wplms_course_pricing_mycred_updated',$course_id,$pricing->vibe_mycred_points,$pricing->vibe_mycred_subscription,$pricing->vibe_mycred_duration);
+
+        if(isset($pricing->vibe_coming_soon) && $pricing->vibe_coming_soon == 'S'){
+            update_post_meta($course_id,'vibe_coming_soon','S');
+            echo $course_id;
+            die();
+        }else{
+            update_post_meta($course_id,'vibe_coming_soon','H');
         }
+        
+        do_action('wplms_course_pricing_save',$course_id,$pricing);
+
         if(isset($pricing->vibe_product)){
             $vibe_product=$pricing->vibe_product;
             $vibe_product_price=$pricing->vibe_product_price;
@@ -673,9 +676,9 @@ class WPLMS_Front_End {
                 $products_meta = array();
                 
             if(!in_array($course_id,$products_meta)){
-                array_push($product_meta, $course_id);
+                array_push($products_meta, $course_id);
             }
-            update_post_meta($vibe_product,'vibe_courses',$product_meta);    
+            update_post_meta($vibe_product,'vibe_courses',$products_meta);    
             echo $vibe_product;
             do_action('wplms_course_pricing_product_updated',$course_id,$vibe_product);
         }
@@ -884,8 +887,8 @@ class WPLMS_Front_End {
                 $course_pricing['vibe_subscription'] = get_post_meta($course_pricing['vibe_product'],'vibe_subscription',true);
                 $course_pricing['vibe_duration'] = get_post_meta($course_pricing['vibe_product'],'vibe_duration',true);   
             }
-            
             $course_pricing['vibe_pmpro_membership'] = vibe_sanitize(get_post_meta($course_id,'vibe_pmpro_membership',false));
+            
 
         }
         return $course_pricing;
@@ -950,24 +953,56 @@ class WPLMS_Front_End {
             ?>
             <li><label><?php _e('Unit assignments','wplms-front-end'); ?></label>
                 <h3><?php _e('Connect Assignments','wplms-front-end'); ?></h3>
-                <select id="vibe_assignment" class="chosen" multiple>
-                        <option value=""><?php _e('None','wplms-front-end'); ?></option>
-                        <?php
-                            $args= array(
-                            'post_type'=> 'wplms-assignment',
-                            'numberposts'=> -1
-                            );
-                            $args = apply_filters('wplms_frontend_cpt_query',$args);
-                            $kposts=get_posts($args);
+                <ul id="assignments_list">
+                    <?php
 
-                            if(is_Array($kposts))
-                            foreach ( $kposts as $kpost ){
-                                echo '<option value="' . $kpost->ID . '" '.(in_array($kpost->ID,$unit_settings['vibe_assignment'])?'selected':'').' data-link="'.get_permalink($kpost->ID).'">' . $kpost->post_title . '</option>';
-                            }
-                        ?>
-                </select>
-                <a href="<?php echo (($unit_settings['vibe_assignment'] == '')?get_permalink($unit_settings['vibe_assignment']).'edit/':''); ?>" id="assignment_link" class="right link <?php echo (($unit_settings['vibe_assignment'] == '')?'hide':''); ?>" target="_blank"><i class="icon-edit"></i> <?php _e('Edit Assignment','wplms-front-end'); ?></a>
+                            $args= array(
+                                'post_type'=> 'wplms-assignment',
+                                'numberposts'=> -1
+                                );
+                                $args = apply_filters('wplms_frontend_cpt_query',$args);
+                                $kposts=get_posts($args);
+
+                    foreach($unit_settings['vibe_assignment'] as $assignment){
+                        echo '<li data-id="'.$assignment.'"> 
+                                <strong><i class="icon-text-document"></i>'.get_the_title($assignment).'</strong>';
+                            echo '
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-course dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="'.get_permalink($assignment).'edit/" target="_blank" class="edit_unit">'.__('Edit Assignment','wplms-front-end').'</a></li>
+                                    <li><a href="'.get_permalink($assignment).'" target="_blank" class="edit_unit">'.__('Preview Assignment','wplms-front-end').'</a></li>
+                                    <li><a class="remove">'.__('Remove','wplms-front-end').'</a></li>
+                                    <li><a class="delete">'.__('Delete','wplms-front-end').'</a></li>
+                                </ul>
+                            </div>
+                        </li>';
+                    }
+
+                    echo '<li class="hide"> 
+                                <strong><select id="vibe_assignment">
+                                    <option value="">'.__('None','wplms-front-end').'</option>';
+                                    if(is_Array($kposts))
+                                        foreach ( $kposts as $kpost ){
+                                            echo '<option value="' . $kpost->ID . '">' . $kpost->post_title . '</option>';
+                                        }
+                            echo '</select></strong>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-course dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="" target="_blank" class="edit_unit">'.__('Edit Assignment','wplms-front-end').'</a></li>
+                                    <li><a href="" target="_blank" class="preview_unit">'.__('Preview Assignment','wplms-front-end').'</a></li>
+                                    <li><a class="remove">'.__('Remove','wplms-front-end').'</a></li>
+                                    <li><a class="delete">'.__('Delete','wplms-front-end').'</a></li>
+                                </ul>
+                            </div>
+                        </li>';
+
+                    ?>    
+                </ul>
+                <hr />
                  <ul class="new_assignment_actions">
+                    <li><a class="link add_existing_assignment"><?php _e('ADD EXISTING ASSIGNMENT','wplms-front-end'); ?></a></li>
                     <li><a class="link add_new_assignment"><?php _e('ADD NEW ASSIGNMENT','wplms-front-end'); ?></a></li>
                     <li><input type="text" name="new_assignment_title" class="new_assignment_title mid_box left" placeholder="<?php _e('Add the Assignment title','wplms-front-end'); ?>"/>
                         <div class="btn-group">
@@ -1046,8 +1081,9 @@ class WPLMS_Front_End {
         $vibe_free = $_POST['vibe_free'];
         $vibe_duration = $_POST['vibe_duration'];
 
-        if(isset($_POST['vibe_assignment']))
+        if(isset($_POST['vibe_assignment'])){
             $vibe_assignment = $_POST['vibe_assignment'];    
+        }
 
         if(isset($_POST['vibe_forum']))
             $vibe_forum = $_POST['vibe_forum'];   
@@ -1079,10 +1115,20 @@ class WPLMS_Front_End {
         update_post_meta($unit_id,'vibe_free',$vibe_free);
         update_post_meta($unit_id,'vibe_duration',$vibe_duration);
         
-        if(isset($vibe_assignment) && $flag)  
-            if(is_array($vibe_assignment) && isset($vibe_assignment)){              
-                update_post_meta($unit_id,'vibe_assignment',$vibe_assignment);
-            }    
+        if(isset($vibe_assignment) && $flag){
+            $vibe_assignment = json_decode(stripslashes($vibe_assignment));
+            $assignments = array();
+            if(is_array($vibe_assignment)){
+                foreach($vibe_assignment as $c){
+                    $assignments[]= $c->id;
+                }
+            }
+            
+
+            if(is_array($assignments) && isset($assignments)){   
+                update_post_meta($unit_id,'vibe_assignment',$assignments);
+            }
+        }  
 
         if(isset($vibe_forum) && $flag) 
             if(is_numeric($vibe_forum)){
@@ -1093,11 +1139,14 @@ class WPLMS_Front_End {
             if($vibe_forum == 'add_group_child_forum' && $flag){
                
                 $group_id = get_post_meta($course_id,'vibe_group',true);
-                if(isset($group_id)){
+                if(isset($group_id) && is_numeric($groupd_id)){
                     $forum_id = groups_get_groupmeta( $group_id, 'forum_id');
                     if(is_array($forum_id))
                         $forum_id=$forum_id[0];
-                    
+                }else{
+                    $forum_id = get_post_meta($course_id,'vibe_forum',true);
+                }
+                if(isset($forum_id) && is_numeric($forum_id)){
                     $forum_settings = array(
                         'post_title' => stripslashes( $unit_post['post_title'] ),
                         'post_content' => stripslashes( $unit_post['post_excerpt'] ),
@@ -1267,7 +1316,7 @@ class WPLMS_Front_End {
          <li>
             <label><?php _e('QUIZ SUB-TITLE','wplms-front-end'); ?></label>
             <div id="vibe_subtitle" data-editable="true" data-name="content" data-max-length="250" data-text-options="true">
-            <p><?php echo $quiz_settings['vibe_subtitle']; ?></p>
+            <p><?php echo strip_tags($quiz_settings['vibe_subtitle'], '<br><br/>');; ?></p>
             </div>
         </li><li>    
             <label><?php _e('CONNECTED COURSE','wplms-front-end'); ?></label>
@@ -1286,7 +1335,7 @@ class WPLMS_Front_End {
                         ?>
             </select>
         </li><li><label><?php _e('QUIZ DURATION','wplms-front-end'); ?></label>
-              <input type="number" class="small_box" id="vibe_duration" value="<?php echo $quiz_settings['vibe_duration']; ?>" /> <?php $quiz_duration_parameter = apply_filters('vibe_quiz_duration_parameter',60); echo calculate_duration_time($quiz_duration_parameter); ?>
+            <input type="number" class="small_box" id="vibe_duration" value="<?php echo $quiz_settings['vibe_duration']; ?>" /> <?php $quiz_duration_parameter = apply_filters('vibe_quiz_duration_parameter',60); echo calculate_duration_time($quiz_duration_parameter); ?>
         </li>
         <li><label><?php _e('QUIZ EVALUATION','wplms-front-end'); ?></label>
             <div class="switch">
@@ -1341,7 +1390,7 @@ class WPLMS_Front_End {
             </div>
         </li>
         <?php 
-            do_action('wplms_front_end_quiz_settings',$quiz_settings);
+            do_action('wplms_front_end_quiz_settings_action',$quiz_settings);
         ?>
         </ul>
         </article>
@@ -1438,6 +1487,18 @@ class WPLMS_Front_End {
         }
         
         update_post_meta($quiz_id,'vibe_quiz_questions',$questions);
+        
+        if(isset($_POST['extras'])){
+            $obj = json_decode(stripslashes($_POST['extras']));
+            $marks = array();
+            if(is_array($obj) && isset($obj)){
+                foreach($obj as $extra){
+                    update_post_meta($quiz_id,$extra->element,$extra->value);
+                }
+            }
+        }
+
+        do_action('wplms_front_end_save_quiz_settings_extras',$quiz_id);
 
         _e('Quiz Settings saved','wplms-front-end');
 
@@ -1548,7 +1609,7 @@ class WPLMS_Front_End {
             </li>
             <li><h3><?php _e('Correct Answer','wplms-front-end'); ?></h3><input type="text" id="vibe_question_answer" class="very_large_box" value="<?php echo $question_settings['vibe_question_answer']; ?>" /></li>
             <li><h3><?php _e('Answer Hint','wplms-front-end'); ?></h3><input type="text" id="vibe_question_hint" class="very_large_box" value="<?php echo $question_settings['vibe_question_hint']; ?>" /></li>
-            <li><h3><?php _e('Answer Explaination','wplms-front-end'); ?></h3>
+            <li><h3><?php _e('Answer Explanation','wplms-front-end'); ?></h3>
                 <article class="live-edit" data-model="article" data-id="1" data-url="/articles">
                     <div id="vibe_question_explaination" data-editable="true" data-name="content" data-max-length="350" data-text-options="true">
                         <?php echo $question_settings['vibe_question_explaination']; ?>
@@ -1600,10 +1661,11 @@ class WPLMS_Front_End {
              die();
         }
 
-        foreach($question_settings as $key => $value){
-            if($value != $_POST[$key] && $_POST[$key]){
-                if($key != 'vibe_question_options')
+        foreach($question_settings as $key => $value){ //print_r($key.' = '.$value.' != '.$_POST[$key]);
+            if($value !== $_POST[$key] && $_POST[$key] != ''){
+                if($key != 'vibe_question_options'){
                     update_post_meta($qid,$key,$_POST[$key]);
+                }
             }
         }
 
@@ -1642,8 +1704,12 @@ class WPLMS_Front_End {
         $assignment_settings=apply_filters('wplms_front_end_assignment_vars',$assignment_settings);
         $assignment_id = wp_insert_post($assignment_settings);  
 
-        echo '<option value="'.$assignment_id.'" data-link="'.get_permalink($assignment_id).'" selected>'.$title.'</option>';
-
+        $assignment_array = array(
+            'id'=>$assignment_id,
+            'title' => $title,
+            'link' => get_permalink($assignment_id)
+            );
+        echo json_encode($assignment_array);
         die();
     }
 

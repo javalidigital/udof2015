@@ -21,6 +21,8 @@ function bp_course_register_widgets() {
     register_widget('BP_Course_Search_Widget');
     register_widget('BP_Course_Stats_Widget');
     register_widget('BP_Course_Filter_Widget');
+    register_widget('BP_Course_Reviews_Widget');
+    register_widget('BP_Course_Related_Courses_Widget');
 }
 
 class BP_Course_Widget extends WP_Widget {
@@ -86,10 +88,11 @@ class BP_Course_Widget extends WP_Widget {
 	global $post;
 	switch($style){
 		     	case 'list':
+
 		     	echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID,'thumbnail').'<h6>'.get_the_title($post->ID).'<span>'.__('by','vibe').' '.bp_core_get_user_displayname($post->post_author).'</span></h6></a></li>';
 		     	break;
 		     	case 'list1':
-		     	echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID,'thumbnail').'<h6>'.get_the_title($post->ID).'<span>'.bp_course_get_course_meta().'</span></h6></a></li>';
+		     	echo '<li itemscope itemtype="http://schema.org/Product"><a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID,'thumbnail').'<h6><em itemprop="name">'.get_the_title($post->ID).'</em><span>'.bp_course_get_course_meta().'</span></h6></a></li>';
 		     	break;
 		     	case 'carousel':
 		     	echo '<li>';
@@ -268,8 +271,6 @@ class BP_Instructor_Widget extends WP_Widget {
 
 
 class BP_Course_Search_Widget extends WP_Widget {
-
-
 
 	function BP_Course_Search_Widget() {
 	  $widget_ops = array( 'classname' => 'buddypress-course-search-widget', 'description' => 'Displays Advanced search for Courses.' );
@@ -545,8 +546,7 @@ class BP_Course_Filter_Widget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		global $bp,$wpdb;
-		$id= $bp->pages->course->id;
-		if(!is_page($id))
+		if(!bp_is_page(BP_COURSE_SLUG))
 			return;
 
 		extract( $args );
@@ -572,9 +572,11 @@ class BP_Course_Filter_Widget extends WP_Widget {
 				echo '<ul class="category_filter">';
 				foreach($categories as $category){
 					if(!in_array($category->slug,$exclude_array)){
-						echo '<li><input id="'.$category->slug.'" type="checkbox" class="bp-course-category-filter" name="bp-course-category-filter" value="'.$category->slug.'" /> <label for="'.$category->slug.'">'.$category->name.'</label>';
 						$sub_args=array('orderby'=>'count','order'=>'DESC','child_of'=>$category->term_id);
 						$sub_categories =  get_terms('course-cat',$sub_args);	
+
+						echo '<li>'.((isset($sub_categories) && is_Array($sub_categories) && count($sub_categories))?'<span></span>':'').'<input id="'.$category->slug.'" type="checkbox" class="bp-course-category-filter" name="bp-course-category-filter" value="'.$category->slug.'" /> <label for="'.$category->slug.'">'.$category->name.'</label>';
+						
 						if(isset($sub_categories) && is_Array($sub_categories) && count($sub_categories)){
 							echo '<ul class="sub_categories">';
 							foreach($sub_categories as $sub_category){
@@ -706,4 +708,348 @@ class BP_Course_Filter_Widget extends WP_Widget {
 	}
 }
 
-?>
+
+class BP_Course_Reviews_Widget extends WP_Widget {
+
+
+
+	function BP_Course_Reviews_widget() {
+	  $widget_ops = array( 'classname' => 'Course Reviews Widget', 'description' => 'Displays Courses Reviews in single, list & carousel formats.' );
+	  $control_ops = array( 'width' => 250, 'height' => 350,'id_base' => 'bp_course_reviews_widget');
+	  $this->WP_Widget( 'bp_course_reviews_widget',  __('Course Reviews Widget','vibe'), $widget_ops, $control_ops);
+	  }
+
+	function widget( $args, $instance ) {
+		global $bp;
+		extract( $args );
+
+		extract( $instance, EXTR_SKIP );
+		echo $before_widget;
+		if(isset($title) && $title !='')
+		echo $before_title .
+		     $title .
+		     $after_title; 
+
+		     //Preparing Query
+		     
+		     global $wpdb;
+
+		     if(isset($ids) && $ids !='' && strlen($ids) > 5){
+		     	$review_ids = explode(',',$ids);
+		     	$comments = new WP_Comment_Query(array( 'ID' => $review_ids ) );
+		     }else{
+
+		     	$qargs = array('post_type' => 'course');
+		     	if(isset($course) && $course !='' && $course != 'none'){
+		     		$qargs['post_id'] = $course;
+		     	}
+		     	if($orderby == 'comment_date_gmt' || $orderby == 'rand'){
+		     		$qargs['orderby'] = $orderby;
+		     	}else{
+		     		$qargs['orderby']='meta_value';
+		     		$qargs['meta_key'] = $orderby;
+		     	}
+
+		     	$qargs['number'] = $max_items;
+		     	$qargs['order'] = $order;
+
+		     	$comment_query = new WP_Comment_Query($qargs);
+
+		     }
+
+		     switch($style){
+		     	case 'carousel':
+		     		echo '<div class="widget_carousel flexslider  no-ajax"><ul class="slides">';
+		     	break;
+		     	default:
+		     		echo '<ul class="widget_reviews_list no-ajax">';
+		     	break;
+		     }
+		     ?>     
+	<?php
+
+	$comments = $comment_query->query( $qargs );
+	if($comments){
+		foreach($comments as $comment){
+			switch($style){
+		     	case 'list':
+		     	echo '<li>';
+		     	$course = '<a href="'.get_permalink($comment->comment_post_ID).'">'.get_the_title($comment->comment_post_ID).'</a>';
+		     	$title = get_comment_meta($comment->comment_ID,'review_title',true);
+		     	$rating = get_comment_meta($comment->comment_ID,'review_rating',true);
+		     	if(isset($comment->user_id) && $comment->user_id){ 
+		     		$avatar = get_avatar($comment->user_id);
+		     		$name = bp_core_get_user_displayname($comment->user_id);
+		     	}else{
+		     		$default = vibe_get_option('default_avatar');
+		     		$avatar = '<img src="'.$default.'" alt="'.__('Default avatar','vibe').'" />';
+		     		$name = $comment->comment_author;
+		     	}
+		     	echo $avatar;
+		     	echo '<div class="list_course_review"><small>'.$name.' - '.$course.'</small>';
+		     	echo '<h4>'.$title.'<span>'.bp_course_display_rating($rating).'</span></h4></div>';
+	     		echo '</li>';
+		     	break;
+		     	default:
+		     	echo '<li><div class="course_review">'; 
+		     	$course = '<a href="'.get_permalink($comment->comment_post_ID).'">'.get_the_title($comment->comment_post_ID).'</a>';
+		     	$title = get_comment_meta($comment->comment_ID,'review_title',true);
+		     	$rating = get_comment_meta($comment->comment_ID,'review_rating',true);
+		     	echo '<small>'.$course.'</small>';
+		     	echo '<h4>'.$title.'<span>'.bp_course_display_rating($rating).'</span></h4>';	
+		     	echo $comment->comment_content;	
+		     	if(isset($comment->user_id) && $comment->user_id){ 
+		     		$avatar = get_avatar($comment->user_id);
+		     		$name = bp_core_get_user_displayname($comment->user_id);
+		     	}else{
+		     		$default = vibe_get_option('default_avatar');
+		     		$avatar = '<img src="'.$default.'" alt="'.__('Default avatar','vibe').'" />';
+		     		$name = $comment->comment_author;
+		     	}
+		     	
+		     	echo '<div class="review_author">'.$avatar.'<h5>'.$name.'</h5>';
+		     	echo '</div></li>';
+		     	break;
+		     }
+		}
+	}
+
+	?>
+	<?php
+		switch($style){
+		     	case 'carousel':
+		     		echo '</ul></div>';
+		     	break;
+		     	default:
+		     		echo '</ul>';
+		     	break;
+		     }
+	?>
+	<?php echo $after_widget; ?>
+	<?php
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['style'] = strip_tags( $new_instance['style'] );
+		$instance['course'] = strip_tags( $new_instance['course'] );
+		$instance['orderby'] = strip_tags( $new_instance['orderby'] );
+		$instance['order'] = strip_tags( $new_instance['order'] );
+		$instance['ids'] = strip_tags( $new_instance['ids'] );
+		$instance['max_items'] = strip_tags( $new_instance['max_items'] );
+		
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$defaults = array( 'title'=> 'Course Reviews','style' => 'single','orderby'=>'name','order'=>'ASC','category'=>'','course'=>'','ids'=>'', 'max_items' => 5 );
+
+		$instance = wp_parse_args( (array) $instance, $defaults );
+
+		extract( $instance, EXTR_SKIP );
+
+		?>
+		<p><label for="bp-course-reviews-widget-title"><?php _e( 'Widget Title', 'vibe' ); ?> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" style="width: 30%" /></label></p>
+		<p><label for="bp-course-reviews-widget-course"><?php _e( 'Course ID (optional)', 'vibe' ); ?> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'course' ); ?>" name="<?php echo $this->get_field_name( 'course' ); ?>" type="text" value="<?php echo esc_attr( $course ); ?>" style="width: 30%" /></label>
+		</p>
+		<p><label for="bp-course-reviews-widget-style"><?php _e( 'Style', 'vibe' ); ?> 
+		<select id="<?php echo $this->get_field_id( 'style' ); ?>" name="<?php echo $this->get_field_name( 'style' ); ?>">
+			<option value="single" <?php selected('single',esc_attr( $style )); ?>><?php _e('Single','vibe'); ?></option>
+			<option value="list" <?php selected('list',esc_attr( $style )); ?>><?php _e('List','vibe'); ?></option>
+			<option value="carousel" <?php selected('carousel',esc_attr( $style )); ?>><?php _e('Carousel','vibe'); ?></option>
+		</select>
+		</p>
+		<p><label for="bp-course-reviews-widget-orderby"><?php _e( 'Order By', 'vibe' ); ?> 
+		<select id="<?php echo $this->get_field_id( 'orderby' ); ?>" name="<?php echo $this->get_field_name( 'orderby' ); ?>">
+			<option value="comment_date_gmt" <?php selected('comment_date_gmt',$orderby); ?>><?php _e('Recent','vibe'); ?></option>
+			<option value="rand" <?php selected('rand',$orderby); ?>><?php _e('Random','vibe'); ?></option>
+			<option value="review_rating" <?php selected('review_rating',$orderby ); ?>><?php _e('Rating','vibe'); ?></option>
+		</select>
+		</p>
+		<p><label for="bp-course-reviews-widget-order"><?php _e( 'Sort ', 'vibe' ); ?> 
+		<select id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'order' ); ?>">
+			<option value="ASC" <?php selected('ASC',esc_attr( $order )); ?>><?php _e('Ascending','vibe'); ?></option>
+			<option value="DESC" <?php selected('DESC',esc_attr( $order )); ?>><?php _e('Decending','vibe'); ?></option>
+		</select>
+		</p>
+		<p><label for="bp-course-reviews-widget-ids"><?php _e( 'Specific Reviews/Comments (enter comma saperated ids)', 'vibe' ); ?> <input class="widefat" id="<?php echo $this->get_field_id( 'ids' ); ?>" name="<?php echo $this->get_field_name( 'ids' ); ?>" type="text" value="<?php echo esc_attr( $ids ); ?>" style="width: 30%" /></label></p>
+		<p><label for="bp-course-reviews-widget-max"><?php _e( 'Number of Reviews to show', 'vibe' ); ?> <input class="widefat" id="<?php echo $this->get_field_id( 'max_items' ); ?>" name="<?php echo $this->get_field_name( 'max_items' ); ?>" type="text" value="<?php echo esc_attr( $max_items ); ?>" style="width: 30%" /></label></p>
+	<?php
+	
+	}
+}
+
+
+class BP_Course_Related_Courses_Widget extends WP_Widget {
+
+
+
+	function BP_Course_Related_Courses_Widget() {
+	  $widget_ops = array( 'classname' => 'buddypress-related-course-widget', 'description' => 'Displays related courses for Course.' );
+	  $control_ops = array( 'width' => 250, 'height' => 350,'id_base' => 'bp_course_related_courses_widget');
+	  $this->WP_Widget( 'bp_course_related_courses_widget',  __('BuddyPress Related Courses Widget','vibe'), $widget_ops, $control_ops);
+	  }
+
+	function widget( $args, $instance ) {
+		global $bp,$wpdb;
+
+		extract( $args );
+		extract( $instance, EXTR_SKIP );
+
+		echo $before_widget;
+		if(isset($title) && $title !='')
+		echo $before_title .
+		     $title .
+		     $after_title; 
+
+		    echo '<div class="widget_carousel flexslider  no-ajax"><ul class="slides">';
+
+		    if(isset($course) && $course !='' && strlen($course) > 1){
+		     	$course_ids = explode(',',$course);
+		     	$the_query = new WP_Query(array( 'ID' => $course_ids ) );
+		    }else{
+		    	global $post;
+		    	$args = array('post_type' => 'course','post__not_in'=>array($post->ID),'posts_per_page'=>$number);
+
+		    	if($category){
+		    		if(is_singular('course')){
+		    			global $post;
+		    			$terms_list = wp_get_post_terms($post->ID, 'course-cat', array("fields" => "all"));
+
+		    			if(isset($terms_list) && is_array($terms_list)){
+		    				$args['tax_query'] = array('relation'=> 'AND' );
+		    				$terms_slug_array = array();
+		    				foreach($terms_list as $term){
+		    					$terms_slug_array[]=$term->slug;
+		    				}
+		    				$args['tax_query'][]= array(
+		    						'taxonomy' => 'course-cat',
+									'field'    => 'slug',
+									'terms'    =>$terms_slug_array,
+		    						);
+		    			}
+		    			
+		    		}
+		    	}
+		    	if($instructor){
+		    		global $post;
+		    		if(is_singular('course')){
+		    			$instructor_ids = apply_filters('wplms_course_instructor',get_post_field('post_author',$post->ID),$post->ID);
+		    			if(is_numeric($instructor_ids)){
+		    				$instructor_ids = array($instructor_ids);
+		    			}
+		    			$args['author__in'] = $instructor_ids;
+		    		}
+		    	}
+		    	if($level){
+		    		if(is_singular('course')){
+		    			$terms_list = wp_get_post_terms(get_the_ID(), 'level', array("fields" => "all"));
+		    			if(isset($terms_list) && is_array($terms_list)){
+		    				if(!isset($args['tax_query']['relation']))
+		    					$args['tax_query']=array('relation'=> 'AND' );
+		    				$terms_slug_array = array();
+		    				foreach($terms_list as $term){
+		    					$terms_slug_array[]=$term->slug;
+		    				}
+		    				$args['tax_query'][]= array(
+		    						'taxonomy' => 'level',
+									'field'    => 'slug',
+									'terms'    =>$terms_slug_array,
+		    						);
+		    			}
+		    			
+		    		}
+		    	}
+		    	if($linkage){
+		    		if(is_singlular('course')){
+		    			$terms_list = wp_get_post_terms(get_the_ID(), 'linkage', array("fields" => "all"));
+		    			if(isset($terms_list) && is_array($terms_list)){
+		    				if(!isset($args['tax_query']['relation']))
+		    					$args['tax_query']= array('relation'=> 'AND' );
+		    				$terms_slug_array = array();
+		    				foreach($terms_list as $term){
+		    					$terms_slug_array[]=$term->slug;
+		    				}
+		    				$args['tax_query'][]= array(
+		    						'taxonomy' => 'linkage',
+									'field'    => 'slug',
+									'terms'    =>$terms_slug_array,
+		    						);
+		    			}
+		    			
+		    		}
+		    	}
+		    	$the_query = new WP_Query($args);
+		    }
+		    if($the_query->have_posts()){
+			    while($the_query->have_posts()):$the_query->the_post();
+			    echo '<li>';
+			    echo thumbnail_generator($the_query->post,'course2',3,0,0,0);
+	            echo '</li>';
+	            endwhile;
+	        }else{
+	        	echo '<div class="message">'.__('No related courses found !','vibe').'</div>';
+	        }
+            wp_reset_postdata();
+            echo '</ul></div>';
+	 echo $after_widget; ?>
+	<?php
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['category'] = strip_tags( $new_instance['category'] );
+		$instance['instructor'] = strip_tags( $new_instance['instructor'] );
+		$instance['level'] = strip_tags( $new_instance['level'] );
+		$instance['linkage'] = strip_tags( $new_instance['linkage'] );
+		$instance['number'] = strip_tags( $new_instance['number'] );
+		$instance['course'] = strip_tags( $new_instance['course'] );
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$defaults = array( 
+			'title'=> 'Related Courses Widget',
+			'category' => 0,
+			'instructor' => 0,
+			'level' => 0,
+			'linkage' => 0,
+			'number' => 3,
+			'course' => '',
+			 );
+
+		$instance = wp_parse_args( (array) $instance, $defaults );
+		extract( $instance, EXTR_SKIP );
+		$title = esc_attr($instance['title']);
+		$category = esc_attr($instance['category']);
+		$instructor = esc_attr($instance['instructor']);
+		$level = esc_attr($instance['level']);
+		$linkage = esc_attr($instance['linkage']);
+		$number = esc_attr($instance['number']);
+		$course = esc_attr($instance['course']);
+		?>
+		<p><label for="bp-course-related-courses-widget-title"><?php _e( 'Widget Title', 'vibe' ); ?> <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" style="width: 30%" /></label></p>
+		<p><label for="bp-course-related-courses-category"><?php _e( 'Show from same Course Category', 'vibe' ); ?> <input class="checkbox" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="checkbox" value="1"  <?php checked($category,1,true) ?>/></label></p>
+		<p><label for="bp-courserelated-courses-instructor"><?php _e( 'Show from same Instructor', 'vibe' ); ?> <input class="checkbox" id="<?php echo $this->get_field_id( 'instructor' ); ?>" name="<?php echo $this->get_field_name( 'instructor' ); ?>" type="checkbox" value="1"  <?php checked($instructor,1,true) ?>/></label></p>
+		<?php
+			if(vibe_get_option('level')){
+		?>
+		<p><label for="bp-course-related-courses-level"><?php _e( 'Show from same Course Level', 'vibe' ); ?> <input class="checkbox" id="<?php echo $this->get_field_id( 'level' ); ?>" name="<?php echo $this->get_field_name( 'level' ); ?>" type="checkbox" value="1"  <?php checked($category,1,true) ?>/></label></p>
+		<?php
+		}
+		if(vibe_get_option('linkage')){
+		?>
+		<p><label for="bp-courserelated-courses-linkage"><?php _e( 'Show from same Linkage', 'vibe' ); ?> <input class="checkbox" id="<?php echo $this->get_field_id( 'linkage' ); ?>" name="<?php echo $this->get_field_name( 'linkage' ); ?>" type="checkbox" value="1"  <?php checked($instructor,1,true) ?>/></label></p>
+		<?php
+		}
+		?>
+		<p><label for="bp-course-related-courses-widget-number"><?php _e( 'Numer of Courses', 'vibe' ); ?> <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" style="width: 30%" /></label></p>
+		<p><label for="bp-course-related-courses-widget-course"><?php _e( 'Comma saperated courses', 'vibe' ); ?> <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'course' ); ?>" type="text" value="<?php echo esc_attr( $course ); ?>" style="width: 30%" /></label></p>
+		<?php
+	}
+}

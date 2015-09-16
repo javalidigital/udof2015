@@ -69,7 +69,7 @@ get_header();
                                         </p>
                                     </div>
                                     <p>'.get_the_excerpt().'</p>
-                                    <a href="'.get_permalink().'" class="link">'.__('Saiba mais','vibe').'</a>
+                                    <a href="'.get_permalink().'" class="link">'.__('Read More','vibe').'</a>
                                 </div>
                             </div>';
                         endwhile;
@@ -79,12 +79,12 @@ get_header();
     			</div>
     		</div>
     		<div class="col-md-3 col-sm-4">
-    			<!-- <div class="sidebar">
+    			<div class="sidebar">
                     <?php
-                    //$sidebar = apply_filters('wplms_sidebar','mainsidebar');
-                    //if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
-                   // <?php //endif; ?>
-    			</div> -->
+                    $sidebar = apply_filters('wplms_sidebar','mainsidebar');
+                    if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
+                    <?php endif; ?>
+    			</div>
     		</div>
         </div>
 	</div>

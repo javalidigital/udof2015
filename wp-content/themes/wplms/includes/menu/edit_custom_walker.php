@@ -140,7 +140,7 @@ class Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu  {
 	                        ?>" class="item-move-down"><abbr title="<?php esc_attr_e('Move down','vibe'); ?>">&#8595;</abbr></a>
 	                    </span>
 	                    <a class="item-edit" id="edit-<?php echo $item_id; ?>" title="<?php esc_attr_e('Edit Menu Item','vibe'); ?>" href="<?php
-	                        echo ( isset( $_GET['edit-menu-item'] ) && $item_id == $_GET['edit-menu-item'] ) ? admin_url( 'nav-menus.php' ) : add_query_arg( 'edit-menu-item', $item_id, remove_query_arg( $removed_args, admin_url( 'nav-menus.php#menu-item-settings-' . $item_id ) ) );
+	                        echo ( isset( $_GET['edit-menu-item'] ) && $item_id == $_GET['edit-menu-item'] ) ? admin_url( 'nav-menus.php' ) : esc_url(add_query_arg( 'edit-menu-item', $item_id, remove_query_arg( $removed_args, admin_url( 'nav-menus.php#menu-item-settings-' . $item_id ) ) ) );
 	                    ?>"><?php _e( 'Edit Menu Item','vibe' ); ?></a>
 	                </span>
 	            </dt>

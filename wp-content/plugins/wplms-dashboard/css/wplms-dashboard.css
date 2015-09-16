@@ -760,6 +760,18 @@ label.sales_labels{
 	float:left;text-transform: uppercase;
 	margin-right:20px;
 }
+
+/*========================================================================*/
+/*   01. WPLMS MYMODULES
+/*========================================================================*/
+
+.wplms_dash_mymodules .tab-pane li,
+.wplms_dash_instructing_modules .tab-pane li {
+  padding: 6px 0;
+  border-bottom: 1px solid #EFEFEF;
+  font-size: 12px;
+}
+
 /*========================================================================*/
 /*   01. Notes & Discussion
 /*========================================================================*/

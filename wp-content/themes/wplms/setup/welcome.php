@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class WPLMS_Admin_Welcome {
 
 	private $plugin;
-	public $major_version='1.9.3';
+	public $major_version='1.9.8';
 	/**
 	 * __construct function.
 	 *
@@ -116,13 +116,20 @@ class WPLMS_Admin_Welcome {
 		$sidebars = get_option('sidebars_widgets');
 		echo base64_encode(serialize($sidebars));*/
 		/*global $wpdb;
-		$results =  $wpdb->get_results("SELECT option_name from wplms_options where option_name LIKE 'widget_%'");
+		$results =  $wpdb->get_results("SELECT option_name from {$wpdb->options} where option_name LIKE 'widget_%'");
 		$widgets = array();
 		foreach($results as $result){
 			$widgets[$result->option_name]=get_option($result->option_name);
 		}
-		echo base64_encode(serialize($widgets));
+		print_r(base64_encode(serialize($widgets)));
 		*/
+		/*global $wpdb;
+		$results =  $wpdb->get_results("SELECT option_name from {$wpdb->options} where option_name LIKE 'mycred_%'");
+		$mycred = array();
+		foreach($results as $result){
+			$mycred[$result->option_name]=get_option($result->option_name);
+		}
+		print_r(base64_encode(serialize($mycred)));*/
 		?>
 		<h1><?php printf( __( 'Welcome to WPLMS %s', 'vibe' ), $this->major_version ); ?></h1>
 
@@ -197,7 +204,12 @@ class WPLMS_Admin_Welcome {
 							<span><?php _e('OR','vibe'); ?> </span>
 							<?php
 								$disabled=0;
-								if (is_plugin_active('LayerSlider/layerslider.php') && is_plugin_active('wplms-events/wplms-events.php') && is_plugin_active('wplms-assignments/wplms-assignments.php') && is_plugin_active('wplms-front-end/wplms-front-end.php') && is_plugin_active('woocommerce/woocommerce.php')) { 
+								$plugin_flag=1;
+								if(is_plugin_active('LayerSlider/layerslider.php') && is_plugin_active('wplms-events/wplms-events.php') && is_plugin_active('wplms-assignments/wplms-assignments.php') && is_plugin_active('wplms-front-end/wplms-front-end.php') && is_plugin_active('woocommerce/woocommerce.php')){
+									$plugin_flag=0;
+								}
+								$plugin_flag=apply_filters('wplms_setup_plugins',$plugin_flag);
+								if (!$plugin_flag) { 
 									?>
 									<a class="button button-primary button-hero sample_data_install <?php echo (($disabled)?'disabled':''); ?>" data-file="sampledata"><?php _e('Setup Theme with Sample Data','vibe'); ?><?php echo (($disabled)?'<span>'.__('Please enable all the plugins','vibe').'</span>':''); ?></a>
 								<?php }else{
@@ -267,14 +279,14 @@ class WPLMS_Admin_Welcome {
 			<div class="changelog">
 				<div class="wplms-feature feature-rest feature-section col two-col">
 					<div class="col-1">
-						<h4><?php _e( '28 Bugs fixes and Updates', 'vibe' ); ?></h4>
+						<h4><?php _e( '24 bug fixes & updates', 'vibe' ); ?></h4>
 						<p><?php _e( 'We fixed some pending issues. Refer to change log for complete list of issues/bugs fixed in the update.', 'vibe' ); ?></p>
-						<a href="http://support.vibethemes.com/solution/articles/1000173022-1-9-3" class="button"><?php _e( 'Check issue log ', 'vibe' ); ?></a>
+						<a href="http://support.vibethemes.com/solution/articles/1000199001-1-9-8" class="button"><?php _e( 'Check issue log ', 'vibe' ); ?></a>
 					</div>
 					<div class="col-2">
-						<h4><?php _e( 'Maintenance Update', 'vibe' ); ?></h4>
-						<p><?php _e( 'We focussed on bug fixes in this update. Strong focus on translation bugs was given and ', 'vibe' ); ?></p>
-						<a href="http://support.vibethemes.com/solution/articles/1000173022-1-9-3" class="button"><?php _e( 'Check update log ', 'vibe' ); ?></a>
+						<h4><?php _e( 'Bug Fixes Update', 'vibe' ); ?></h4>
+						<p><?php _e( 'We focussed on Bug fixing and code optimisation in this update. Architechtural improvements were made for coming updates.', 'vibe' ); ?></p>
+						<a href="http://support.vibethemes.com/solution/articles/1000199001-1-9-8" class="button"><?php _e( 'Check update log ', 'vibe' ); ?></a>
 					</div>
 				</div>
 			</div>
@@ -282,35 +294,36 @@ class WPLMS_Admin_Welcome {
 				<h3><?php _e( 'What\'s New in WPLMS', 'vibe' ); ?><span style="float:right;"><a href="https://www.youtube.com/playlist?list=PL8n4TGA_rwD_5jqsgXIxXOk1H6ar-SVCV" class="button button-primary" target="_blank"><?php _e('WPLMS Video Playlist','vibe'); ?></a></span></h3>
 				<div class="wplms-feature feature-section col three-col">
 					<div>
-						<h4><?php _e( 'Instructor/Student Menus', 'vibe' ); ?></h4>
-						<p><img src="http://i.imgur.com/kX52fTL.png'; ?>" /></p>
+						<h4><?php _e( 'Quiz view', 'vibe' ); ?></h4>
+						<p><img src="<?php echo VIBE_URL.'/setup/data/uploads/new/quiz_view.gif'; ?>" /></p>
 					</div>
 					<div>
-						<h4><?php _e( 'WPLMS Menu Items', 'vibe' ); ?></h4>
-						<p><img src="http://i.imgur.com/78PYIWk.png" /></p>
+						<h4><?php _e( 'Updated Google Fonts', 'vibe' ); ?></h4>
+						<p><img src="<?php echo VIBE_URL.'/setup/data/uploads/new/new_fonts.png'; ?>" /></p>
+						<a href="http://support.vibethemes.com/solution/articles/1000194458-google-api-key-for-font-manager-and-usage" class="button">Tutorial</a>
 					</div>
 					<div class="last-feature">
-						<h4><?php _e( 'Points System Theme', 'vibe' ); ?></h4>
-						<p><img src="<?php echo VIBE_URL.'/setup/data/uploads/new/points_system.png'; ?>" /></p>
-						<a href="http://support.vibethemes.com/solution/articles/1000173024-one-click-setup-for-points-system" class="button" target="_blank"><?php _e('Tutorial','vibe'); ?></a>
+						<h4><?php _e( 'Single Quiz Revamp', 'vibe' ); ?></h4>
+						<p><img src="<?php echo VIBE_URL.'/setup/data/uploads/new/new_quiz.png'; ?>" /></p>
 					</div>
 				</div>
 			</div>
 			<div class="changelog">
 				<div class="feature-section col three-col">
 					<div>
-						<h4><?php _e( 'WPLMS White (Points System) theme', 'vibe' ); ?></h4>
-						<p><?php _e( 'We\'ve released a new child theme for WPLMS called WPLMS White. It is essentially a minimal, plain white theme focussing on clarity of content. This theme comes with inbuilt MyCred & WPLMS MyCred Addon plugins with points system integration.', 'vibe' ); ?></p>
-						<a href="http://support.vibethemes.com/solution/articles/1000168503-one-click-setup-for-child-one-theme"><?php _e( 'Video Tutorial','vibe'); ?></a>
+						<h4><?php _e( 'EDD Addon', 'vibe' ); ?></h4>
+						<p><?php _e( 'Easy Digital Downloads add on released for WPLMS.', 'vibe' ); ?></p>
+						<a href="https://github.com/VibeThemes/WPLMS-Edd" class="button">Download</a>
 					</div>
 					<div>
-						<h4><?php _e( 'WPLMS BadgeOs Addon Plugin Updated', 'vibe' ); ?></h4>
-						<p><?php _e( 'BadgeOs addon plugin updated with few critical fixes. Make sure you download the plugin from <a href="http://support.vibethemes.com/solution/articles/1000165080-badgeos-integration-with-wplms">this link</a> and replace the existing one in your setup.', 'vibe' ); ?></p>
+						<h4><?php _e( 'Updated Documentation ', 'vibe' ); ?></h4>
+						<p><?php _e( 'Documentation has been updated. We\'ve added shortcodes list and developer documentation. For most updated documentation we recommend checking the online documentation doc.', 'vibe' ); ?></p>
+						<a href="vibethemes.com/envato/wplms/documentation/"><?php _e( 'Check documentation','vibe'); ?></a>
 					</div>
 					<div class="last-feature">
 						<h4><?php _e( 'Translation Collaboration', 'vibe' ); ?></h4>
 						<p><?php _e( 'It is really difficult to maintain translations in a versatible project as WPLMS. Therefore we ask our suers to email us translation files at support@vibethemes.com .', 'vibe' ); ?></p>
-						<a href="http://support.vibethemes.com/solution/articles/1000168471-1-9-2"><?php _e( 'Check Translation files status','vibe'); ?></a>
+						<a href="http://support.vibethemes.com/solution/categories/1000126528/folders/1000210639/articles/1000178998-1-9-4"><?php _e( 'Check Translation files status','vibe'); ?></a>
 					</div>
 				</div>
 			</div>

@@ -69,7 +69,9 @@ jQuery(document).ready(function($) {
 
       $('#widget-tabs a').click(function (e) {
         e.preventDefault();
-        $(this).tab('show');
+        if((typeof $().tab == 'function')){
+          $(this).tab('show');
+        }
       });
 
     $('#footernotification').each(function() {
@@ -96,10 +98,11 @@ jQuery(document).ready(function($) {
       event.preventDefault();
       $(this).fadeOut(200);
     })
-    $('.tip').tooltip(); 
-    $('.nav-tabs li:first a').tab('show');
-
-
+    if((typeof $().tooltip == 'function')){
+      $('.tip').tooltip();   
+      $('.nav-tabs li:first a').tab('show');
+    }
+        
     $('.course_description').on('click','#more_desc',function(event) {
       event.preventDefault();
         $(this).fadeOut('fast');
@@ -110,6 +113,56 @@ jQuery(document).ready(function($) {
       event.preventDefault();
         $('.full_desc').fadeOut('fast'); 
         $('#more_desc').fadeIn('fast');
+    });
+
+    $('#signup_password, #account_password').each(function(){
+      var label;
+      var $this = $(this);
+      if($(this).hasClass('form_field')){
+        label =  $('label[for="signup_password"]');
+      }else{
+        label =  $('label[for="account_password"]');
+      }
+      $(this).keyup(function() {
+        
+        if(label.find('span').length){ 
+          label.find('span').html((checkStrength($this.val(),label)));
+        }else{
+          label.append('<span>'+(checkStrength($this.val(),label))+'</span>');
+        }
+      });
+      function checkStrength(password,label) {
+        var strength = 0
+        if (password.length < 6) {
+        label.removeClass();
+        label.addClass('short');
+        return BP_DTheme.too_short
+        }
+        if (password.length > 7) strength += 1
+        // If password contains both lower and uppercase characters, increase strength value.
+        if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1
+        // If it has numbers and characters, increase strength value.
+        if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
+        // If it has one special character, increase strength value.
+        if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+        // If it has two special characters, increase strength value.
+        if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+        // Calculated strength value, we can return messages
+        // If value is less than 2
+        if (strength < 2) {
+          label.removeClass();
+          label.addClass('weak');
+          return BP_DTheme.weak
+        } else if (strength == 2) {
+          label.removeClass();
+          label.addClass('good');
+          return BP_DTheme.good
+        } else {
+          label.removeClass()
+          label.addClass('strong')
+          return BP_DTheme.strong
+        }
+      }
     });
 }); // END ready
 
@@ -171,6 +224,8 @@ jQuery(document).ready(function($){
   });
 });// END ready
 
+//* To be Removed in next update
+
 jQuery(document).ready(function($){  
 
   $('.v_parallax_block').each(function(){
@@ -180,6 +235,21 @@ jQuery(document).ready(function($){
       var ptop = $bgobj.parent().position().top;
       var adjust = parseInt($bgobj.attr('data-adjust'));
       var height = $bgobj.height();
+
+      var v_parallax_block_height = $bgobj.find('.parallax_content').height();
+      if(height<v_parallax_block_height)
+        height = v_parallax_block_height;
+
+
+      if(rev == 2){
+        
+      }else{
+        var $parent = $bgobj.parent().parent();
+        if($parent.hasClass('stripe')){
+            $parent.css('height',height+'px');
+        }
+      }
+      
       $(window).scroll(function(e) {
           e.preventDefault();
           var $window = jQuery(window);
@@ -187,26 +257,29 @@ jQuery(document).ready(function($){
           var coords;
            if(rev != undefined){
                if(rev == 2){
+                yPos = Math.round((($window.scrollTop()-ptop)/i));
                 $bgobj.parent().css('-webkit-transform', 'translateY('+yPos+'px)');
                 $bgobj.parent().css('transform', 'translateY('+yPos+'px)');
                }else if(rev == 1){
-                  yPos = yPos  + adjust;
+                  yPos = yPos  - adjust;
                   coords = '50% '+yPos+ 'px';
-                  $bgobj.css({backgroundPosition: coords});
-                }else{ 
+                  $bgobj.css('background-position', coords);
+                }else{
                   yPos =  adjust - yPos;
-                  coords = '50% '+yPos + 'px';
-                  $bgobj.css({backgroundPosition: coords});
+                  coords = '50% '+yPos + 'px';//console.log(coords);
+                  $bgobj.css('background-position', coords);
                 }
             }
       }); 
     });   
-  });   
-  
+});   
+//* To be Removed in next update
+
 //vibe_carousel flexslider direction horizontal  columns1
 jQuery(document).ready(function($){    
  
 
+//* To be Removed in next update
 $('section.stripe').each(function(){
         var style = $(this).find('.v_column.stripe_container .v_module').attr('data-class');
         if(style){style='stripe '+style;
@@ -219,6 +292,7 @@ $('section.stripe').each(function(){
             $(this).attr('class',style);
         }
     });
+//* To be Removed in next update
 
 //WooCommerce payment expand fix
  $('.payment_methods.methods >li').click(function(){

@@ -8,6 +8,7 @@
 /*
 /*========================================================================*/
  
+ .rtl nav .sub-menu li > .sub-menu { left: auto; right: 100%; }
 /*========================================================================*/
 /*   01. CAROUSELS
 /*========================================================================*/
@@ -17,7 +18,13 @@
 	left: 66px;
 	right:auto;
 }
-
+.right{
+	float:left;
+}
+.left{
+	float:right;
+}
+.notes_list>li img,
 nav .menu li{
 	float:right;
 }
@@ -92,6 +99,9 @@ header #searchform:after{left:10px;right:auto;}
 #vibe_bp_login{left:80px;right:auto;}
 #vibe_bp_login:after{left:20px;right:auto;}
 #buddypress div.item-list-tabs#subnav ul li.switch_view{float:left;}
+.notes_list>li img{
+	margin: 0 0 0 20px;
+}
 /*========================================================================*/
 /*   02. COURSE
 /*========================================================================*/
@@ -228,6 +238,21 @@ width: 100%;}
 	text-align: right;
 }
 .certifications ul.slides>li,.certifications li i{float:right;}
+
+.quiz_title .quiz_meta{
+	float:left;
+}
+.unit_title .print_unit, .quiz_title .print_unit,
+.unit_title .print_unit+span, .quiz_title .print_unit+span{
+	float:right;  margin-left: 5px;
+}
+.curriculum_check li span{
+	right:auto;
+	left:0;
+}
+.course_students li .progress{
+	margin:10px 85px 0 0;
+}
 /*========================================================================*/
 /*   03. BBPress
 /*========================================================================*/

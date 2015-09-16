@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPLMS Front End\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 14:18+0530\n"
-"PO-Revision-Date: 2015-03-31 14:18+0530\n"
+"POT-Creation-Date: 2015-05-26 15:27+0530\n"
+"PO-Revision-Date: 2015-05-26 15:27+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: Olymproject <info@olymproject.org>\n"
 "Language: ru\n"
@@ -293,7 +293,7 @@ msgstr "Комментариев больше нет."
 #: front-end-editor/class-wp-front-end-editor.php:472
 #: front-end-editor/class-wp-front-end-editor.php:605
 #: front-end-editor/class-wp-front-end-editor.php:1175
-#: includes/class_wplms_front_end.php:976
+#: includes/class_wplms_front_end.php:1016
 msgid "Publish"
 msgstr "Опубликовать"
 
@@ -681,16 +681,16 @@ msgstr "Редактировать курс"
 #: includes/class_wplms_front_end.php:552
 #: includes/class_wplms_front_end.php:580
 #: includes/class_wplms_front_end.php:616
-#: includes/class_wplms_front_end.php:758
-#: includes/class_wplms_front_end.php:797
-#: includes/class_wplms_front_end.php:822
-#: includes/class_wplms_front_end.php:1056
-#: includes/class_wplms_front_end.php:1357
+#: includes/class_wplms_front_end.php:767
+#: includes/class_wplms_front_end.php:806
+#: includes/class_wplms_front_end.php:831
+#: includes/class_wplms_front_end.php:1097
 #: includes/class_wplms_front_end.php:1411
-#: includes/class_wplms_front_end.php:1470
-#: includes/class_wplms_front_end.php:1599
-#: includes/class_wplms_front_end.php:1625
-#: includes/class_wplms_front_end.php:1814
+#: includes/class_wplms_front_end.php:1465
+#: includes/class_wplms_front_end.php:1536
+#: includes/class_wplms_front_end.php:1665
+#: includes/class_wplms_front_end.php:1691
+#: includes/class_wplms_front_end.php:1884
 msgid "Security check Failed. Contact Administrator."
 msgstr "Ошибка системы безопасности. Свяжитесь с администратором."
 
@@ -712,10 +712,10 @@ msgstr "Невозможно создать курс, свяжитесь с ад
 #: includes/class_wplms_front_end.php:557
 #: includes/class_wplms_front_end.php:585
 #: includes/class_wplms_front_end.php:621
-#: includes/class_wplms_front_end.php:763
-#: includes/class_wplms_front_end.php:802
-#: includes/class_wplms_front_end.php:827
-#: includes/class_wplms_front_end.php:1061
+#: includes/class_wplms_front_end.php:772
+#: includes/class_wplms_front_end.php:811
+#: includes/class_wplms_front_end.php:836
+#: includes/class_wplms_front_end.php:1102
 msgid "Invalid Course id, please edit a course"
 msgstr "Недопустимый идентификатор курса, пожалуйста, отредактируйте"
 
@@ -725,7 +725,7 @@ msgstr "Недопустимый идентификатор курса, пожа
 #: includes/class_wplms_front_end.php:508
 #: includes/class_wplms_front_end.php:591
 #: includes/class_wplms_front_end.php:627
-#: includes/class_wplms_front_end.php:769
+#: includes/class_wplms_front_end.php:778
 msgid "Invalid Course Instructor"
 msgstr "Недопустимый инструктор курса "
 
@@ -748,17 +748,21 @@ msgstr "Открытый модуль"
 
 #: includes/class_wplms_front_end.php:471
 #: includes/class_wplms_front_end.php:526
-#: includes/class_wplms_front_end.php:977
-#: includes/class_wplms_front_end.php:1181
-#: includes/class_wplms_front_end.php:1219
-#: includes/class_wplms_front_end.php:1375
+#: includes/class_wplms_front_end.php:980
+#: includes/class_wplms_front_end.php:1000
+#: includes/class_wplms_front_end.php:1017
+#: includes/class_wplms_front_end.php:1235
+#: includes/class_wplms_front_end.php:1273
+#: includes/class_wplms_front_end.php:1429
 msgid "Remove"
 msgstr "Удалить"
 
 #: includes/class_wplms_front_end.php:472
 #: includes/class_wplms_front_end.php:527
-#: includes/class_wplms_front_end.php:1182
-#: includes/class_wplms_front_end.php:1376
+#: includes/class_wplms_front_end.php:981
+#: includes/class_wplms_front_end.php:1001
+#: includes/class_wplms_front_end.php:1236
+#: includes/class_wplms_front_end.php:1430
 msgid "Delete"
 msgstr "Удалить"
 
@@ -771,17 +775,17 @@ msgid "Edit Quiz"
 msgstr "Изменить тест"
 
 #: includes/class_wplms_front_end.php:547
-#: includes/class_wplms_front_end.php:1465
+#: includes/class_wplms_front_end.php:1531
 msgid "Can not delete"
 msgstr "Невозможно удалить"
 
 #: includes/class_wplms_front_end.php:563
-#: includes/class_wplms_front_end.php:1476
+#: includes/class_wplms_front_end.php:1542
 msgid "Instructor can not delete this unit/quiz"
 msgstr "Инструктор не может удалить этот модуль/тест"
 
 #: includes/class_wplms_front_end.php:571
-#: includes/class_wplms_front_end.php:1484
+#: includes/class_wplms_front_end.php:1550
 msgid "Unable to delete"
 msgstr "Невозможно удалить"
 
@@ -790,510 +794,523 @@ msgid "Unable to save curriculum, please contact site admin"
 msgstr ""
 "Невозможно сохранить план обучения, пожалуйста, свяжитесь с администратором "
 
-#: includes/class_wplms_front_end.php:694
+#: includes/class_wplms_front_end.php:703
 msgid "Invalid Product specs"
 msgstr "Недопустимая спецификация товара "
 
-#: includes/class_wplms_front_end.php:745
+#: includes/class_wplms_front_end.php:754
 msgid "Unable to create product and pricing for course"
 msgstr "Невозможно создать продукт и ценник для курса "
 
-#: includes/class_wplms_front_end.php:781
+#: includes/class_wplms_front_end.php:790
 msgid "Course successfully updated."
 msgstr "Курс успешно обновлён."
 
-#: includes/class_wplms_front_end.php:782
+#: includes/class_wplms_front_end.php:791
 msgid "View Course"
 msgstr "Просмотр курса"
 
-#: includes/class_wplms_front_end.php:784
-#: includes/class_wplms_front_end.php:811
-#: includes/class_wplms_front_end.php:871
+#: includes/class_wplms_front_end.php:793
+#: includes/class_wplms_front_end.php:820
+#: includes/class_wplms_front_end.php:880
 msgid "Unable to update Course, contact Site admin"
 msgstr "Невозможно обновить курс, свяжитесь с администратором "
 
-#: includes/class_wplms_front_end.php:809
+#: includes/class_wplms_front_end.php:818
 msgid "Course Offline."
 msgstr ""
 
-#: includes/class_wplms_front_end.php:832
+#: includes/class_wplms_front_end.php:841
 msgid "Course deletion not allowed"
 msgstr ""
 
-#: includes/class_wplms_front_end.php:843
+#: includes/class_wplms_front_end.php:852
 #, fuzzy
 msgid "Unable to delete curriclum"
 msgstr "Невозможно удалить"
 
-#: includes/class_wplms_front_end.php:869
+#: includes/class_wplms_front_end.php:878
 #, fuzzy
 msgid "Course Deleted."
 msgstr "Особое поле удалено. "
 
-#: includes/class_wplms_front_end.php:912
+#: includes/class_wplms_front_end.php:921
 msgid "Unit Settings"
 msgstr "Настройки модуля"
 
-#: includes/class_wplms_front_end.php:915
+#: includes/class_wplms_front_end.php:924
 msgid "Unit Type"
 msgstr "Тип модуля"
 
-#: includes/class_wplms_front_end.php:916
+#: includes/class_wplms_front_end.php:925
 msgid "Select Unit Type"
 msgstr "Выбрать тип модуля"
 
-#: includes/class_wplms_front_end.php:920
+#: includes/class_wplms_front_end.php:929
 msgid "Video"
 msgstr "Видео"
 
-#: includes/class_wplms_front_end.php:921
+#: includes/class_wplms_front_end.php:930
 msgid "Audio"
 msgstr "Аудио"
 
-#: includes/class_wplms_front_end.php:922
+#: includes/class_wplms_front_end.php:931
 msgid "Podcast"
 msgstr "Запись"
 
-#: includes/class_wplms_front_end.php:923
+#: includes/class_wplms_front_end.php:932
 msgid "General"
 msgstr "Общий"
 
-#: includes/class_wplms_front_end.php:931
+#: includes/class_wplms_front_end.php:940
 msgid "Free Unit"
 msgstr "Открытый модуль"
 
-#: includes/class_wplms_front_end.php:932
+#: includes/class_wplms_front_end.php:941
 msgid "Make Unit Free"
 msgstr "Сделать модуль открытым"
 
-#: includes/class_wplms_front_end.php:935
-#: includes/class_wplms_front_end.php:1695
+#: includes/class_wplms_front_end.php:944
+#: includes/class_wplms_front_end.php:1765
 msgid "NO"
 msgstr "НЕТ"
 
-#: includes/class_wplms_front_end.php:937
-#: includes/class_wplms_front_end.php:1693
+#: includes/class_wplms_front_end.php:946
+#: includes/class_wplms_front_end.php:1763
 msgid "YES"
 msgstr "ДА"
 
-#: includes/class_wplms_front_end.php:943
+#: includes/class_wplms_front_end.php:952
 msgid "Unit Duration"
 msgstr "Продолжительность модуля"
 
-#: includes/class_wplms_front_end.php:944
+#: includes/class_wplms_front_end.php:953
 msgid "Duration of Unit"
 msgstr "Продолжительность модуля"
 
-#: includes/class_wplms_front_end.php:951
+#: includes/class_wplms_front_end.php:960
 msgid "Unit assignments"
 msgstr "Задание к модулю"
 
-#: includes/class_wplms_front_end.php:952
+#: includes/class_wplms_front_end.php:961
 msgid "Connect Assignments"
 msgstr "Подключить задание"
 
-#: includes/class_wplms_front_end.php:954
-#: includes/class_wplms_front_end.php:991
-#: includes/class_wplms_front_end.php:1194
-#: includes/class_wplms_front_end.php:1703
-msgid "None"
-msgstr "Отсутсвует"
-
-#: includes/class_wplms_front_end.php:969
+#: includes/class_wplms_front_end.php:978
+#: includes/class_wplms_front_end.php:998
 msgid "Edit Assignment"
 msgstr "Редактировать задание"
 
-#: includes/class_wplms_front_end.php:971
+#: includes/class_wplms_front_end.php:979
+#: includes/class_wplms_front_end.php:999
+#, fuzzy
+msgid "Preview Assignment"
+msgstr "Редактировать задание"
+
+#: includes/class_wplms_front_end.php:989
+#: includes/class_wplms_front_end.php:1031
+#: includes/class_wplms_front_end.php:1248
+#: includes/class_wplms_front_end.php:1773
+msgid "None"
+msgstr "Отсутсвует"
+
+#: includes/class_wplms_front_end.php:1010
+#, fuzzy
+msgid "ADD EXISTING ASSIGNMENT"
+msgstr "ДОБАВИТЬ НОВОЕ ЗАДАНИЕ"
+
+#: includes/class_wplms_front_end.php:1011
 msgid "ADD NEW ASSIGNMENT"
 msgstr "ДОБАВИТЬ НОВОЕ ЗАДАНИЕ"
 
-#: includes/class_wplms_front_end.php:972
+#: includes/class_wplms_front_end.php:1012
 msgid "Add the Assignment title"
 msgstr "Добавить название к заданию"
 
-#: includes/class_wplms_front_end.php:988
+#: includes/class_wplms_front_end.php:1028
 msgid "Unit Forum"
 msgstr "Форум модуля"
 
-#: includes/class_wplms_front_end.php:989
+#: includes/class_wplms_front_end.php:1029
 msgid "Connect a Forum"
 msgstr "Подключить форум"
 
-#: includes/class_wplms_front_end.php:992
+#: includes/class_wplms_front_end.php:1032
 msgid "Add new child forum in Course forum"
 msgstr "Новый дочерний форум к форуму курса "
 
-#: includes/class_wplms_front_end.php:993
+#: includes/class_wplms_front_end.php:1033
 msgid "Add new forum"
 msgstr "Новый форум"
 
-#: includes/class_wplms_front_end.php:1013
+#: includes/class_wplms_front_end.php:1053
 msgid "SAVE UNIT SETTINGS"
 msgstr "СОХРАНИТЬ НАСТРОЙКИ МОДУЛЯ"
 
-#: includes/class_wplms_front_end.php:1066
+#: includes/class_wplms_front_end.php:1107
 msgid "Invalid Unit id, please edit a course"
 msgstr "Неверный id модуля, пожалуйста, измените курс"
 
-#: includes/class_wplms_front_end.php:1072
+#: includes/class_wplms_front_end.php:1113
 msgid "Invalid Unit Instructor"
 msgstr "Неверный инструктор модуля"
 
-#: includes/class_wplms_front_end.php:1135
+#: includes/class_wplms_front_end.php:1189
 msgid "Settings Saved"
 msgstr "Настройки сохранены"
 
-#: includes/class_wplms_front_end.php:1137
+#: includes/class_wplms_front_end.php:1191
 msgid "Unable to save settings"
 msgstr "Невозможно сохранить настройки"
 
-#: includes/class_wplms_front_end.php:1161
+#: includes/class_wplms_front_end.php:1215
 msgid "Manage Quiz Questions"
 msgstr "Управление вопросами теста"
 
-#: includes/class_wplms_front_end.php:1164
+#: includes/class_wplms_front_end.php:1218
 msgid "ADD QUESTION"
 msgstr "ДОБАВИТЬ ВОПРОС"
 
-#: includes/class_wplms_front_end.php:1175
-#: includes/class_wplms_front_end.php:1370
+#: includes/class_wplms_front_end.php:1229
+#: includes/class_wplms_front_end.php:1424
 msgid "Question "
 msgstr "Вопрос"
 
-#: includes/class_wplms_front_end.php:1179
-#: includes/class_wplms_front_end.php:1374
+#: includes/class_wplms_front_end.php:1233
+#: includes/class_wplms_front_end.php:1428
 msgid "Edit Question"
 msgstr "Изменить вопрос"
 
-#: includes/class_wplms_front_end.php:1180
+#: includes/class_wplms_front_end.php:1234
 #, fuzzy
 msgid "Preview Question"
 msgstr "Изменить вопрос"
 
-#: includes/class_wplms_front_end.php:1185
-#: includes/class_wplms_front_end.php:1379
+#: includes/class_wplms_front_end.php:1239
+#: includes/class_wplms_front_end.php:1433
 msgid "MARKS : "
 msgstr "ОЦЕНКИ : "
 
-#: includes/class_wplms_front_end.php:1195
+#: includes/class_wplms_front_end.php:1249
 msgid "ADD A NEW QUESTION"
 msgstr "ДОБАВИТЬ НОВЫЙ ВОПРОС"
 
-#: includes/class_wplms_front_end.php:1211
+#: includes/class_wplms_front_end.php:1265
 msgid "Marks : "
 msgstr "Оценки : "
 
-#: includes/class_wplms_front_end.php:1213
+#: includes/class_wplms_front_end.php:1267
 msgid "Question Title : "
 msgstr "Название вопроса : "
 
-#: includes/class_wplms_front_end.php:1214
+#: includes/class_wplms_front_end.php:1268
 msgid "Enter title for reference"
 msgstr "Введите заголовок для справки "
 
-#: includes/class_wplms_front_end.php:1218
+#: includes/class_wplms_front_end.php:1272
 msgid "Publish Question"
 msgstr "Опубликовать вопрос"
 
-#: includes/class_wplms_front_end.php:1225
-#: includes/class_wplms_front_end.php:1348
+#: includes/class_wplms_front_end.php:1279
+#: includes/class_wplms_front_end.php:1402
 msgid "SAVE QUIZ SETTINGS"
 msgstr "СОХРАНИТЬ НАСТРОКИ ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1248
+#: includes/class_wplms_front_end.php:1302
 msgid "Enter a Quiz sub-title"
 msgstr "Введите подзаголовок теста "
 
-#: includes/class_wplms_front_end.php:1258
+#: includes/class_wplms_front_end.php:1312
 msgid "Enter a Quiz Completion message"
 msgstr "Текст сообщение об окончании теста"
 
-#: includes/class_wplms_front_end.php:1264
+#: includes/class_wplms_front_end.php:1318
 msgid "Quiz Settings"
 msgstr "Настройки теста"
 
-#: includes/class_wplms_front_end.php:1268
+#: includes/class_wplms_front_end.php:1322
 msgid "QUIZ SUB-TITLE"
 msgstr "ПОЗАГОЛОВОК ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1273
+#: includes/class_wplms_front_end.php:1327
 msgid "CONNECTED COURSE"
 msgstr "ПОДКЛЮЧЕННЫЕ КУРСЫ"
 
-#: includes/class_wplms_front_end.php:1288
+#: includes/class_wplms_front_end.php:1342
 msgid "QUIZ DURATION"
 msgstr "ПРОДОЛЖИТЕЛЬНОСТЬ ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1291
+#: includes/class_wplms_front_end.php:1345
 msgid "QUIZ EVALUATION"
 msgstr "ОЦЕНКА ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1294
+#: includes/class_wplms_front_end.php:1348
 msgid "AUTO"
 msgstr "АВТОМАТИЧЕСКАЯ"
 
-#: includes/class_wplms_front_end.php:1296
+#: includes/class_wplms_front_end.php:1350
 msgid "MANUAL"
 msgstr "ВРУЧНУЮ"
 
-#: includes/class_wplms_front_end.php:1300
+#: includes/class_wplms_front_end.php:1354
 msgid "QUIZ QUESTIONS TYPE"
 msgstr "ТИП ВОПРОСОВ ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1303
+#: includes/class_wplms_front_end.php:1357
 msgid "DYNAMIC"
 msgstr "ДИНАМИЧЕСКИЙ"
 
-#: includes/class_wplms_front_end.php:1305
+#: includes/class_wplms_front_end.php:1359
 msgid "STATIC"
 msgstr "СТАТИЧЕСКИЙ"
 
-#: includes/class_wplms_front_end.php:1309
+#: includes/class_wplms_front_end.php:1363
 msgid "SELECT QUESTION TAGS"
 msgstr "ЯРЛЫКИ ДЛЯ ВОПРОСА "
 
-#: includes/class_wplms_front_end.php:1320
+#: includes/class_wplms_front_end.php:1374
 msgid "NUMER OF QUESTIONS"
 msgstr "КОЛИЧЕСТВО ВОПРОСОВ"
 
-#: includes/class_wplms_front_end.php:1323
+#: includes/class_wplms_front_end.php:1377
 msgid "MARKS PER QUESTION"
 msgstr "ОЦЕНКИ ЗА ВОПРОСЫ"
 
-#: includes/class_wplms_front_end.php:1326
+#: includes/class_wplms_front_end.php:1380
 msgid "QUIZ RETAKES"
 msgstr "ПОВТОРНОЕ ПРОХОЖДЕНИЕ"
 
-#: includes/class_wplms_front_end.php:1327
+#: includes/class_wplms_front_end.php:1381
 msgid " Retakes"
 msgstr "Повторения"
 
-#: includes/class_wplms_front_end.php:1329
+#: includes/class_wplms_front_end.php:1383
 msgid "QUESTIONS ORDER"
 msgstr "ПОРЯДОК ВОПРОСОВ"
 
-#: includes/class_wplms_front_end.php:1332
+#: includes/class_wplms_front_end.php:1386
 msgid "RANDOM"
 msgstr "ПРОИЗВОЛЬНЫЙ"
 
-#: includes/class_wplms_front_end.php:1334
+#: includes/class_wplms_front_end.php:1388
 msgid "SEQUENTIAL"
 msgstr "ПОСЛЕДОВАТЕЛЬНЫЙ"
 
-#: includes/class_wplms_front_end.php:1338
+#: includes/class_wplms_front_end.php:1392
 msgid "QUIZ COMPLETION MESSAGE"
 msgstr "СООБЩЕНИЕ ОБ ОКОНЧАНИИ ТЕСТА"
 
-#: includes/class_wplms_front_end.php:1363
+#: includes/class_wplms_front_end.php:1417
 #, php-format
 msgid "Add Content for %s"
 msgstr "Добавить комментарий для %s"
 
-#: includes/class_wplms_front_end.php:1416
+#: includes/class_wplms_front_end.php:1470
 msgid "Invalid Quiz"
 msgstr "Недопустимый тест "
 
-#: includes/class_wplms_front_end.php:1442
+#: includes/class_wplms_front_end.php:1508
 msgid "Quiz Settings saved"
 msgstr "Настройки теста сохранены"
 
-#: includes/class_wplms_front_end.php:1505
+#: includes/class_wplms_front_end.php:1571
 msgid "True or False"
 msgstr "Верно или неверно"
 
-#: includes/class_wplms_front_end.php:1506
+#: includes/class_wplms_front_end.php:1572
 msgid "Multiple Choice"
 msgstr "Множественный выбор"
 
-#: includes/class_wplms_front_end.php:1507
+#: includes/class_wplms_front_end.php:1573
 msgid "Multiple Correct"
 msgstr "Множественный верный"
 
-#: includes/class_wplms_front_end.php:1508
+#: includes/class_wplms_front_end.php:1574
 msgid "Sort Answers"
 msgstr "Сортировать ответы "
 
-#: includes/class_wplms_front_end.php:1509
+#: includes/class_wplms_front_end.php:1575
 msgid "Match Answers"
 msgstr "Соответствие ответов"
 
-#: includes/class_wplms_front_end.php:1510
+#: includes/class_wplms_front_end.php:1576
 msgid "Fill in the Blank"
 msgstr "Заполнение пропусков"
 
-#: includes/class_wplms_front_end.php:1511
+#: includes/class_wplms_front_end.php:1577
 msgid "Dropdown Select"
 msgstr "Выбор из списка"
 
-#: includes/class_wplms_front_end.php:1512
+#: includes/class_wplms_front_end.php:1578
 msgid "Small Text"
 msgstr "Короткий текст"
 
-#: includes/class_wplms_front_end.php:1513
+#: includes/class_wplms_front_end.php:1579
 msgid "Large Text"
 msgstr "Текстовый блок"
 
-#: includes/class_wplms_front_end.php:1517
+#: includes/class_wplms_front_end.php:1583
 msgid "QUESTION SETTINGS"
 msgstr "НАСТРОЙКИ ВОПРОСА"
 
-#: includes/class_wplms_front_end.php:1519
+#: includes/class_wplms_front_end.php:1585
 msgid "Question Type"
 msgstr "Тип вопроса "
 
-#: includes/class_wplms_front_end.php:1530
+#: includes/class_wplms_front_end.php:1596
 msgid "ADD OPTION"
 msgstr "ДОБАВИТЬ"
 
-#: includes/class_wplms_front_end.php:1540
+#: includes/class_wplms_front_end.php:1606
 msgid "Click to select as Correct answer"
 msgstr "Нажмите для выбора правильного ответа "
 
-#: includes/class_wplms_front_end.php:1549
+#: includes/class_wplms_front_end.php:1615
 msgid "Correct Answer"
 msgstr "Верный ответ "
 
-#: includes/class_wplms_front_end.php:1550
+#: includes/class_wplms_front_end.php:1616
 msgid "Answer Hint"
 msgstr "Подсказка к ответу"
 
-#: includes/class_wplms_front_end.php:1551
-msgid "Answer Explaination"
+#: includes/class_wplms_front_end.php:1617
+#, fuzzy
+msgid "Answer Explanation"
 msgstr "Пояснение ответа "
 
-#: includes/class_wplms_front_end.php:1559
+#: includes/class_wplms_front_end.php:1625
 msgid "SAVE QUESTION SETTINGS"
 msgstr "СОХРАНИТЬ НАСТРОЙКИ ОТВЕТОВ "
 
-#: includes/class_wplms_front_end.php:1594
+#: includes/class_wplms_front_end.php:1660
 msgid "Unable to save, incorrect question"
 msgstr "Невозможно сохранить, неверный вопрос "
 
-#: includes/class_wplms_front_end.php:1618
+#: includes/class_wplms_front_end.php:1684
 msgid "Question settings successfully saved"
 msgstr "Настройки вопроса успешно сохранены "
 
-#: includes/class_wplms_front_end.php:1632
+#: includes/class_wplms_front_end.php:1698
 msgid "Unable to save, incorrect unit"
 msgstr "Невозможно сохранить, неверный модуль "
 
-#: includes/class_wplms_front_end.php:1672
+#: includes/class_wplms_front_end.php:1742
 msgid "ASSIGNMENT SETTINGS"
 msgstr "НАСТРОЙКИ ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1676
+#: includes/class_wplms_front_end.php:1746
 msgid "ASSIGNMENT SUB-TITLE"
 msgstr "ПОДЗАГОЛОВОК ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1682
+#: includes/class_wplms_front_end.php:1752
 msgid "ASSIGNMENT MARKS"
 msgstr "ОЦЕНКИ ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1683
+#: includes/class_wplms_front_end.php:1753
 msgid "Assignment Maximum Marks"
 msgstr "Максимальный бал за задание"
 
-#: includes/class_wplms_front_end.php:1683
+#: includes/class_wplms_front_end.php:1753
 msgid "MARKS"
 msgstr "ОЦЕНКИ"
 
-#: includes/class_wplms_front_end.php:1686
+#: includes/class_wplms_front_end.php:1756
 msgid "ASSIGNMENT DURATION"
 msgstr "ПРОДОЛЖИТЕЛЬНОСТЬ ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1687
+#: includes/class_wplms_front_end.php:1757
 msgid "Enter Assignment Duration"
 msgstr "Введите продолжительность задания"
 
-#: includes/class_wplms_front_end.php:1689
+#: includes/class_wplms_front_end.php:1759
 msgid "ASSIGNMENT EVALUATION"
 msgstr "ОЦЕНКА ВЫПОЛНЕНИЯ ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1690
+#: includes/class_wplms_front_end.php:1760
 msgid "Include in Course Evaluation"
 msgstr "Включить в оценку прохождения курса"
 
-#: includes/class_wplms_front_end.php:1700
+#: includes/class_wplms_front_end.php:1770
 msgid "ASSIGNMENT COURSE"
 msgstr "ЗАДАННЫЙ КУРС"
 
-#: includes/class_wplms_front_end.php:1701
+#: includes/class_wplms_front_end.php:1771
 msgid "Select Assignment Course"
 msgstr "Выбрать курс в качестве задания "
 
-#: includes/class_wplms_front_end.php:1718
+#: includes/class_wplms_front_end.php:1788
 msgid "ASSIGNMENT SUBMISISON TYPE"
 msgstr "ТИП ОТПРАВКИ ЗАДАНИЯ"
 
-#: includes/class_wplms_front_end.php:1720
+#: includes/class_wplms_front_end.php:1790
 msgid "UPLOAD"
 msgstr "ЗАГРУЗИТЬ"
 
-#: includes/class_wplms_front_end.php:1721
+#: includes/class_wplms_front_end.php:1791
 msgid "TEXTAREA"
 msgstr "ТЕКСТОВЫЙ БЛОК"
 
-#: includes/class_wplms_front_end.php:1724
+#: includes/class_wplms_front_end.php:1794
 msgid "ATTACHMENT TYPE"
 msgstr "ПРИЛОЖЕНИЕ"
 
-#: includes/class_wplms_front_end.php:1769
+#: includes/class_wplms_front_end.php:1839
 msgid "Attachment Size"
 msgstr "Размер приложения "
 
-#: includes/class_wplms_front_end.php:1770
+#: includes/class_wplms_front_end.php:1840
 msgid "Maximum attachment size"
 msgstr "Максимальный объем приложения "
 
-#: includes/class_wplms_front_end.php:1770
+#: includes/class_wplms_front_end.php:1840
 msgid " MBs"
 msgstr "Мб"
 
-#: includes/class_wplms_front_end.php:1773
+#: includes/class_wplms_front_end.php:1843
 msgid "SAVE SETTINGS"
 msgstr "СОХРАНИТЬ НАСТРОЙКИ"
 
-#: includes/class_wplms_front_end.php:1819
+#: includes/class_wplms_front_end.php:1889
 msgid "Invalid details"
 msgstr "Неверные детали"
 
-#: includes/class_wplms_front_end.php:1825
+#: includes/class_wplms_front_end.php:1895
 msgid "Invalid Assignment author"
 msgstr "Неверное присвоение автора"
 
-#: includes/class_wplms_front_end.php:1834
+#: includes/class_wplms_front_end.php:1904
 msgid "SETTINGS SAVED"
 msgstr "НАСТРОЙКИ СОХРАНЕНЫ"
 
-#: includes/class_wplms_front_end.php:1846
+#: includes/class_wplms_front_end.php:1916
 msgid "ADD PACKAGE"
 msgstr "ДОБАВИТЬ АРХИВ "
 
-#: includes/class_wplms_front_end.php:1850
+#: includes/class_wplms_front_end.php:1920
 msgid "Seconds"
 msgstr "Секунд "
 
-#: includes/class_wplms_front_end.php:1851
+#: includes/class_wplms_front_end.php:1921
 msgid "Minutes"
 msgstr "Минут"
 
-#: includes/class_wplms_front_end.php:1852
+#: includes/class_wplms_front_end.php:1922
 msgid "Hours"
 msgstr "Часов"
 
-#: includes/class_wplms_front_end.php:1853
+#: includes/class_wplms_front_end.php:1923
 msgid "Days"
 msgstr "Дней"
 
-#: includes/class_wplms_front_end.php:1854
+#: includes/class_wplms_front_end.php:1924
 msgid "Weeks"
 msgstr "Недель"
 
-#: includes/class_wplms_front_end.php:1855
+#: includes/class_wplms_front_end.php:1925
 msgid "Months"
 msgstr "Месяцев"
 
-#: includes/class_wplms_front_end.php:1856
+#: includes/class_wplms_front_end.php:1926
 msgid "Years"
 msgstr "Лет"
 

@@ -1,3 +1,189 @@
+* version1.9.8
+* Welcome changes
+* Notes and discussion unit comment action
+* Timestamp Fix start course date
+* Woocommerce Template update
+* Quiz passing score bug fix
+* Filter in single quizzes, option to sell quizzes
+* enqueu_script chosen-js in options panel
+* Google Fronts space replaced by + bug fix
+* Notes & Discussion styling and dom changes
+* Course Seats count, 0 check removed.
+* Notes replies loading multiple times
+* Manual Course Submissions not appearing in Course - Admin - Submissions
+* Notes and discussion hidden from non-logged in users
+* Exists Check on Tab and Tooltip function
+* Notes and discussion hidden from non-logged in users
+* version1.9.7
+* Language files updated
+* Unit direct access fix with filter
+* language files updated
+* Yoast SEO Title fix for Course directory
+* Welcome changes
+* Retakes class on retakes language
+* Hooks for Course Batches plugin
+* z-index fix in course pricing
+* Pagination in course results
+* Link changes from Forums to Support panel
+* WPLMS Dashboard in Menu
+* 1.9.7
+* Quiz passing score bug fix
+* Count membership ids fix
+* VC js fix
+* Google Fonts revamp
+* RTL Bug fix
+* Max students course renew bug fix
+* Added submission meta
+* Timestamp and direct access to next page in units bug fix
+* Course short description moved
+* Alter removed
+* Added submission meta
+* Timepassed bug fix
+* Email template Warning on object
+* Remove unused css
+* version1.9.6.2
+* version1.9.6.2
+* version update for home file
+* textarea assignment bug fix
+* version update for home file
+* 1.9.6.1
+* Sharing display fatal error on blog posts
+* Changelog.txt
+* Welcome page changes
+* Bug fix for WP Logout
+* Missing argument 2 bug fix in logout
+* Convert object to array on mail template
+* version1.9.6
+* Translation files updated
+* Logout redirect to home page
+* Style changes and bug fixes
+* Free course pre-required course but on Auto subscribe off
+* Sync Student count feature
+* Drip feed next unit bug
+* Remove template checks in units and questions
+* assignment submission comment supports heading tags
+* register page sidebar
+* BuddyPress versioning
+* Unit and Question check
+* CSS fixes
+* Remove Current course from pre required courses
+* Get correct student count in admin section
+* Assignment text area in WP Editor
+* Remove extra hook for submit course
+* View mail in new tab setting
+* Default Certificate Bug fix
+* Changes in options panel
+* Notifications and Messages updated for BP 2.3
+* Activity refactor
+* chosen js call
+* Private course button for PMPRo bug fix
+* Parallax bug fix
+* chosen minified
+* BP 2.3 update
+* respond.min.js bug fix
+* action on course review submission
+* BBPress edit reply topic  bug fix
+* CSS customizer changes
+* Email template page
+* Default style for Select boxes
+* improvements in buddypress
+* chosen minified css added
+* Course directory index page title not appearing bug fix
+* version1.9.5
+* version1.9.5
+* Welcome changes
+* Members directory default order
+* Assignment Title and spelling correction in results page
+* Forums template added
+* Featured image in events
+* Security key and Instructor status added
+* WooCommerce email without commission
+* Language files
+* Password strength meter
+* BuddyPress widgets design change
+* Filter on Course Categories widget
+* Post type support for BP
+* Style changes
+* Style changes
+* Theme customizer link fixes
+* Login status
+* New features and Bug fixes in func.php
+* Login dropdown css fix
+* Filter on registration link
+* Groups create title bug
+* Time filter in unit duration
+* BBPress forum design integration
+* version 1.9.4
+* Welcome text
+* Language update
+* Welcome changes
+* Create course auto remove default text
+* Notes and discussion simple
+* Certificate PDF
+* Notes and discussion style
+* Unit classes
+* Filters for one click setup
+* Condistional retakes
+* Responsive parallax
+* Multisite fixes
+* Precourse check at take this course
+* RTL Fixes
+* Unit comments
+* Cart fixes
+* WooCart default margin top
+* Unit comments
+* Responsive course button
+* Back to 3.0 bootstrap
+* Widget language change
+* fixes
+* Admin fixes, permissions in single question
+* More options for options panel sidebar exporter
+* Added filter to order appearance of courses.
+* esc_url in query arg
+* Widgets/sidebar import/export
+* Show correct answer flag
+* Signup password suggestion
+* jQuery UI Touch for drag and sort questions
+* esc_url in add_query_args
+* For static Background in Customizer changes
+* Course reset fixes and other small bug fixes
+* customiser fixes
+* Woocommerce shopping cart mobile fixes
+* Registration page
+* RTL Fixes
+* Multiple Instructor course css fixes
+* Old bootstrap file
+* Bootstrap updated
+* Welcome changes
+* version1.9.3
+* Translation files
+* Language changes
+* Start page next quiz fix
+* BuddyPress text domain changed to Vibe
+* Login screen custom CSS
+* Social buttons in WooCommerce products
+* ID column fixes in WP Admin
+* customiser changes
+* various styling fixes
+* Padding in unit timeline
+* Assignment submitted notification
+* tincan block in options panel
+* Unit header call with course id
+* More bug in single posts
+* Members only page
+* Posts select field with custom post type option
+* New Parallax effect
+* Hero button customiser colors
+* Notice removed
+* Invalid certificate code translation
+* Review improvements
+* Style changes
+* BuddyPress ajax bug fix
+* Show annoucements in Course
+* Required plugins filter
+* version 1.9.2.1
+* BuddyPress avatar issue
+* BuddyPress split js error
 * PMPro Fixes
 * translation files
 * Welcome changes

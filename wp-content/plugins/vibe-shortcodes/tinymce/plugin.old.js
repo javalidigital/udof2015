@@ -30,6 +30,7 @@
                     a.addWithPopup( b, "Accordion", "accordion" );	
 					a.addWithPopup( b, "Buttons", "button" );
                     a.addWithPopup( b, "Columns", "columns" );
+                    a.addWithPopup( b, "Counter", "counter" );
                     a.addWithPopup( b, "Course", "course" );
                     a.addWithPopup( b, "Divider", "divider" );
 					a.addWithPopup( b, "Forms", "forms" );

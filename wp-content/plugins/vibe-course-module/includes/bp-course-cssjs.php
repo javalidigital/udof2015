@@ -15,8 +15,8 @@ function bp_course_add_js() {
 	global $bp;
 	if ( ! function_exists( 'vibe_logo_url' ) ) return; // Checks if WPLMS is active in current site in WP Multisite
 
-	wp_enqueue_script( 'bp-html2canvas-js', plugins_url( '/vibe-course-module/includes/js/course-module-js.min.js' ) );
-	wp_enqueue_script( 'bp-course-js', plugins_url( '/vibe-course-module/includes/js/course.js' ),array('jquery','wp-mediaelement','jquery-ui-core','jquery-ui-sortable','jquery-ui-droppable'));
+	wp_enqueue_script( 'bp-html2canvas-js', plugins_url( '/vibe-course-module/includes/js/course-module-js.min.js' ),array('jquery'),'1.9.6.5');
+	wp_enqueue_script( 'bp-course-js', plugins_url( '/vibe-course-module/includes/js/course.js' ),array('jquery','wp-mediaelement','jquery-ui-core','jquery-ui-sortable','jquery-ui-droppable'),'1.9.6.5');
 	$color=bp_wplms_get_theme_color();
 	$single_dark_color=bp_wplms_get_theme_single_dark_color();
 	$translation_array = array( 
@@ -56,6 +56,9 @@ function bp_course_add_js() {
 		'start_quiz_notification'=> __( 'You\'re about to start the Quiz. Please click confirm to begin the quiz.','vibe' ), 
 		'submit_quiz_notification'=> __( 'Are you sure you want to submit the quiz. Submitting the quiz will freeze all your answers, you can not change them.  Please confirm.','vibe' ), 
 		'check_results'=> __( 'Check results','vibe' ), 
+		'correct'=> __( 'Correct','vibe' ), 
+		'incorrect'=> __( 'Incorrect','vibe' ),
+		'unanswered_questions' => __( 'You have few unanswered questions. Are you sure you want to continue ?','vibe' ), 
 		);
 	wp_localize_script( 'bp-course-js', 'vibe_course_module_strings', $translation_array );
     	

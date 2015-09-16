@@ -59,9 +59,12 @@ jQuery(document).ready(function($){
       });
       return false;
     });
-        $('select.chosen').chosen();
-        $('.chzn-select').chosen();
-
+    $('select.chosen').each(function(){
+      $(this).chosen({
+          allow_single_deselect: true,
+          disable_search_threshold: 8
+        });
+    });
   
 
 });

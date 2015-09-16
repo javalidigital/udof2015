@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) || class_exists( 'WPLMS_Assignments_Auto_Update' ) )
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
-class WPLMS_Assignments_Auto_Update{
+class WPLMS_Assignments_Auto_Update{ 
 
 	/**
 	 * @var $config the config for the updater
@@ -283,10 +283,11 @@ class WPLMS_Assignments_Auto_Update{
 		$updater_data = $this->updater_data();
 
 		/* Get data from server */
-		$remote_url = add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahpr_check' => $updater_data['version'] ), $updater_data['repo_uri'] );
+		$remote_url = esc_url_raw( add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahpr_check' => $updater_data['version'] ), $updater_data['repo_uri'] ));
 		$remote_request = array( 'timeout' => 20, 'body' => array( 'key' => $updater_data['key'], 'login' => $updater_data['login'], 'autohosted' => $updater_data['autohosted'] ), 'user-agent' => 'WordPress/' . $wp_version . '; ' . $updater_data['domain'] );
 		$raw_response = wp_remote_post( $remote_url, $remote_request );
 
+		
 		/* Error check */
 		$response = '';
 		if ( !is_wp_error( $raw_response ) && ( $raw_response['response']['code'] == 200 ) )
@@ -367,7 +368,7 @@ class WPLMS_Assignments_Auto_Update{
 		if ( $plugin_slug == $updater_data['slug'] && $action == 'plugin_information' ){
 
 			/* Get data from server */
-			$remote_url = add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahpr_info' => $updater_data['version'] ), $updater_data['repo_uri'] );
+			$remote_url = esc_url_raw( add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahpr_info' => $updater_data['version'] ), $updater_data['repo_uri'] ));
 			$remote_request = array( 'timeout' => 20, 'body' => array( 'key' => $updater_data['key'], 'login' => $updater_data['login'], 'autohosted' => $updater_data['autohosted'] ), 'user-agent' => 'WordPress/' . $wp_version . '; ' . $updater_data['domain'] );
 			$request = wp_remote_post( $remote_url, $remote_request );
 
@@ -580,7 +581,7 @@ class WPLMS_Assignments_Auto_Update{
 			$domain = $updater_data['domain'];
 
 			/* Get data from server */
-			$remote_url = add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahr_check_key' => 'validate_key' ), $updater_data['repo_uri'] );
+			$remote_url = esc_url_raw( add_query_arg( array( 'plugin_repo' => $updater_data['repo_slug'], 'ahr_check_key' => 'validate_key' ), $updater_data['repo_uri'] ));
 			$remote_request = array( 'timeout' => 20, 'body' => array( 'key' => md5( $key ), 'login' => $username, 'autohosted' => $updater_data['autohosted'] ), 'user-agent' => 'WordPress/' . $wp_version . '; ' . $updater_data['domain'] );
 			$raw_response = wp_remote_post( $remote_url, $remote_request );
 

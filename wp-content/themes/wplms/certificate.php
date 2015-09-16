@@ -36,12 +36,13 @@ do_action('wplms_certificate_before_full_content');
         <div class="row">
             <div class="col-md-12">
                 <?php do_action('wplms_certificate_before_content'); ?>
-                <div class="extra_buttons" style="margin-top:60px;">
+                <div class="extra_buttons">
                     <?php do_action('wplms_certificate_extra_buttons');
                           echo '<a href="#" class="certificate_print"><i class="icon-printer-1"></i></a>';
+                          echo '<a href="#" class="certificate_pdf"><i class="icon-file"></i></a>';
                     ?>
                 </div>
-                <div class="certificate certificate_content">
+                <div class="certificate certificate_content" data-width="800" data-height="640">
                    	<h1><?php echo apply_filters('wplms_certificate_heading',__('CERTIFICATE OF COMPLETION','vibe')); ?></h1>
 
                    	<h6><?php echo apply_filters('wplms_certificate_sub_heading',__('Awarded to','vibe')); ?></h6>

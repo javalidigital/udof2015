@@ -1,3 +1,33 @@
+* version1.9.8
+* Check if empty files
+* version1.9.7
+* language files updated
+* Isset 9999 condition check
+* version1.9.6.2
+* version1.9.6.1
+* Submissions bug fix
+* version1.9.6
+* Translation files updated
+* Assignment scripts inclusion only on assignment and front end pages
+* Attachment ids variable bugfix
+* Assignment scripts inclusion only on assignment and front end pages
+* Multiple File uploads in Assignments
+* BuddyPress course activity refactor
+* version 1.9.5.1
+* Maximum marks inclusion in Course evaluation
+* version1.9.5
+* Translation files added
+* Plugin update fixes
+* version 1.9.4.1
+* Assignment marks in course auto evaluation bug
+* version1.9.4
+* Translation files
+* initialise assignment priority change
+* Show result after user has done the assignment.
+* results button
+* esc_url in add_query_arg
+* version1.9.3.1
+* Assignment upload issue
 * Translation fixes
 * version1.9.3
 * notices not working issue in assignments

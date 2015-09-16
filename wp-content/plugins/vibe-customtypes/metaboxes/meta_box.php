@@ -31,20 +31,22 @@ class custom_add_meta_box {
 		add_action( 'admin_enqueue_scripts', array( $this, 'persistent_admin_scripts' ));
 		add_action( 'admin_head',  array( $this, 'admin_head' ) );
 		add_action( 'admin_menu', array( $this, 'add_box' ) );
-		add_action( 'save_post',  array( $this, 'save_box' ));
+		add_action( 'save_post',  array( $this, 'save_box' ),999);
     }
 	
 	function admin_enqueue_scripts() {
-	        wp_enqueue_script( 'jquery-ui-datepicker', array( 'jquery', 'jquery-ui-core' ) );
-			wp_enqueue_script( 'jquery-ui-slider', array( 'jquery', 'jquery-ui-core' ) );
-			wp_enqueue_script( 'timepicker_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.timePicker.min.js', array( 'jquery' ) );
-			wp_enqueue_script( 'graph_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.flot.min.js', array( 'jquery' ) );
-			wp_enqueue_script( 'graph_resize_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.flot.resize.min.js', array( 'jquery' ) );
-	        wp_register_style( 'jqueryui', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/css/jqueryui.css' );
+        wp_enqueue_script( 'jquery-ui-datepicker', array( 'jquery', 'jquery-ui-core' ) );
+		wp_enqueue_script( 'jquery-ui-slider', array( 'jquery', 'jquery-ui-core' ) );
+		wp_enqueue_script( 'timepicker_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.timePicker.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'graph_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.flot.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'graph_resize_box', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/jquery.flot.resize.min.js', array( 'jquery' ) );
+        wp_register_style( 'jqueryui', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/css/jqueryui.css' );
 	}
 	
 	function persistent_admin_scripts(){
-			wp_enqueue_script( 'meta_box_js', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/scripts.js', array( 'jquery','iris','jquery-ui-core','jquery-ui-sortable','jquery-ui-slider','jquery-ui-datepicker' ) );
+			if(defined('VIBE_URL'))
+        	wp_enqueue_script('chosen',  VIBE_URL.'/js/chosen.jquery.js');
+			wp_enqueue_script( 'meta_box_js', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/js/scripts.js', array( 'jquery','iris','jquery-ui-core','jquery-ui-sortable','jquery-ui-slider','jquery-ui-datepicker','chosen') );
 			wp_enqueue_style( 'meta_box_css', VIBE_PLUGIN_URL . '/vibe-customtypes/metaboxes/css/meta_box.css');
 	}
 	// scripts
@@ -3946,7 +3948,7 @@ class custom_add_meta_box {
                                             
                         case 'tax_select':
 							echo '<select name="' . $id . '" id="' . $id . '">
-									<option value="">Select One</option>'; // Select One
+									<option value="">'.__('Select ','vibe-customtypes').'</option>'; // Select One
 							$terms = get_terms( $id, 'get=all' );
 							$selected = wp_get_object_terms( $post->ID, $id );
 							foreach ( $terms as $term ) 
@@ -3990,8 +3992,30 @@ class custom_add_meta_box {
 											<br clear="all" />' . $desc;
 						break;
 						// repeatable
+						case 'questions_repeatable':
+							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">'.__('Add Question','vibe-customtypes').'</a>
+									<ul id="' . $field['id'] . '-repeatable" class="meta_box_repeatable">';
+							$i = 0;
+							if ( $meta ) {
+								foreach( $meta as $row ) {
+									$user_info = get_userdata($row);
+									echo '<li><span class="sort handle dashicons dashicons-sort"></span>
+												<input type="text" name="' . $field['id'] . '[]" id="' . $field['id'] . $i .'" value="' . esc_attr( $row ) . '" size="30" /><span>'. $user_info->user_login.'</span>
+												<a class="meta_box_repeatable_remove" href="#"><span class="dashicons dashicons-no"></span></a></li>';
+									$i++;
+								}
+							} 
+								echo '<li class="hide"><span class="sort handle dashicons dashicons-sort"></span>
+										<input type="text" rel-name="' . $field['id'] . '[question][]" id="' . $field['id'] .$i .'" value="" placeholder="'.__('Type Question','vibe-customtypes').'" size="30" />
+										<input type="text" rel-name="' . $field['id'] . '[option][]" id="' . $field['id'] .$i .'" value="" placeholder="'.__('Type Question','vibe-customtypes').'" size="30" />
+										<a class="meta_box_repeatable_remove" href="#"><span class="dashicons dashicons-no"></span></a></li>';
+							
+							echo '</ul>
+								<span class="description">' . $field['desc'] . '</span>';
+						break;
+						// repeatable
 						case 'user_repeatable':
-							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">Add More</a>
+							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">'.__('Add More','vibe-customtypes').'</a>
 									<ul id="' . $field['id'] . '-repeatable" class="meta_box_repeatable">';
 							$i = 0;
 							if ( $meta ) {
@@ -4012,7 +4036,7 @@ class custom_add_meta_box {
 						break;
 
 						case 'repeatable':
-							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">Add More</a>
+							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">'.__('Add More','vibe-customtypes').'</a>
 									<ul id="' . $field['id'] . '-repeatable" class="meta_box_repeatable">';
 	
 							if ( $meta ) {
@@ -4030,7 +4054,7 @@ class custom_add_meta_box {
 								<span class="description">' . $field['desc'] . '</span>';
 						break;
 						case 'repeatable_count':
-							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">Add More</a>
+							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">'.__('Add More','vibe-customtypes').'</a>
 									<ul id="' . $field['id'] . '-repeatable" class="meta_box_repeatable">';
 							$i=1;
 							
@@ -4050,7 +4074,7 @@ class custom_add_meta_box {
 						break;
 						// repeatable
 						case 'repeatable_select':
-							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">Add More</a>
+							echo '<a class="meta_box_repeatable_add button button-primary button-large" href="#">'.__('Add More','vibe-customtypes').'</a>
 									<ul id="' . $field['id'] . '-repeatable" class="meta_box_repeatable">';
 							$i = 0;
 							if ( $meta ) {

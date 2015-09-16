@@ -3,7 +3,7 @@
 Plugin Name: Vibe Course Module
 Plugin URI: http://www.VibeThemes.com
 Description: This is the Course module for WPLMS WordPress Theme by VibeThemes
-Version: 1.9.3
+Version: 1.9.8.3
 Requires at least: WP 3.8, BuddyPress 1.9 
 Tested up to: 2.0.1
 License: (Themeforest License : http://themeforest.net/licenses)
@@ -85,4 +85,4 @@ function vibe_course_module_translations(){
         load_textdomain( 'vibe', $mofile_local );
     }   
 }
-?>
+

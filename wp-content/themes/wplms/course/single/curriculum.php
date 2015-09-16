@@ -58,7 +58,7 @@ if(isset($course_curriculum)){
 							$hours = intval($minutes/60);
 							$minutes = $minutes - $hours*60;
 						}
-					echo apply_filters('wplms_curriculum_time_filter','<span><i class="icon-clock"></i> '.(isset($hours)?$hours.__(' Hours','vibe'):'').' '.$minutes.' '.__('minutes','vibe').'</span><b>'.((isset($hours) && $hours)?sprintf('%02d',$hours):"00").':'.sprintf('%02d', $minutes).'</b>',$min);
+					echo apply_filters('wplms_curriculum_time_filter','<span><i class="icon-clock"></i> '.(isset($hours)?$hours.__(' Hours','vibe'):'').' '.$minutes.' '.__('minutes','vibe').'</span><b>'.((isset($hours) && $hours)?sprintf('%02d',$hours):"00").':'.sprintf('%02d', $minutes).'</b>',$min,$lesson);
 					}	
 
 					echo '</div>';

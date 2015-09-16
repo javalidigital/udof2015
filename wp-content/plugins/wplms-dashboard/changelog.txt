@@ -1,3 +1,37 @@
+* version1.9.8
+* version1.9.7
+* language files updated
+* Commissions table fix
+* Bug fix, in My Modules
+* Announcements action bug fix
+* version1.9.6.1
+* Fixes in Instructor commissions
+* version1.9.6.1
+* bugfix for commissions
+* version1.9.6
+* Translation files updated
+* Graph Labels in translation
+* Commissions Payout graph
+* Correction in My Modules widget
+* Instructing modules widget
+* Hook added for course announcements
+* Bp_is_my_profile Fix
+* function_exists check on bp_is_my_profile
+* version1.9.5
+* Language files updated
+* Dashboard js/css links
+* Course progress bar fixes
+* Conditionally including scripts
+* Plugin update fixes
+* version1.9.4
+* Translation updates
+* In making
+* My modules
+* News bug fix
+* My modules widget
+* Translation files added
+* esc_url in add_query_arg
+* Spanish files updated
 * version1.9.3
 * Translation files updated
 * Added announcement option "Evenryone"

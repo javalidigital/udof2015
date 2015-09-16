@@ -365,13 +365,7 @@ function wplms_renew_free_course(){
 		$course_duration_parameter = apply_filters('vibe_course_duration_parameter',86400);
 		$new_expiry = time() + $course_duration*$course_duration_parameter;
 		update_user_meta($user_id,$course_id,$new_expiry);
-		bp_course_record_activity(array(
-            'action' => __('Student renewed a course','vibe'),
-            'content' => sprintf(__('Student %s renewd the course %s','vibe'),bp_core_get_userlink($user_id),get_the_title($course_id)),
-            'type' => 'renew_course',
-            'item_id' => $course_id,
-            'primary_link'=>get_permalink($course_id),
-	    )); 
+		
 	    do_action('wplms_renew_course',$course_id,$user_id);
 	}
 }

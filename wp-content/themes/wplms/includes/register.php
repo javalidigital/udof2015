@@ -87,7 +87,7 @@ if(!function_exists('vibe_header_essentials')){
         if(!isset($favicon))
             $favicon = VIBE_URL.'/images/favicon.png';
 
-          $credits = vibe_get_option('credits');
+        $credits = vibe_get_option('credits');
         echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta name="author" content="'.(isset($credits)?$credits:'vibethemes').'">
                 <link rel="shortcut icon" href="'.$favicon.'" />
@@ -95,7 +95,7 @@ if(!function_exists('vibe_header_essentials')){
                 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
                 <!--[if lt IE 9]>
                   <script src="'.VIBE_URL.'/js/html5shiv.js"></script>
-                  <script src="'.VIBE_URL.'/js/respond.js"></script>
+                  <script src="'.VIBE_URL.'/js/respond.min.js"></script>
                 <![endif]-->';
 
     }
@@ -108,8 +108,6 @@ add_action('wp_enqueue_scripts', 'vibe_header_essentials');
 
 function wplms_enqueue_admin(){
     wp_enqueue_style( 'admin-css', VIBE_URL .'/css/admin.css' );
-    wp_enqueue_style( 'chosen-css', VIBE_URL .'/css/chosen.css' );
-    wp_enqueue_script( 'chosen-js', VIBE_URL .'/js/chosen.jquery.js');
     wp_enqueue_script( 'admin-js', VIBE_URL .'/js/vibe_admin.js');
 }
 add_action("admin_enqueue_scripts", "wplms_enqueue_admin");
@@ -129,24 +127,47 @@ function wplms_enqueue_head() {
      $font_string='';
      $google_fonts=vibe_get_option('google_fonts');
      if(isset($google_fonts) && is_array($google_fonts)){
+        $font_weights = array();
+        $font_subsets = array();
         foreach($google_fonts as $font){
-           $font= preg_replace('/(?<! )(?<!^)[A-Z]/',' $0', $font);
-           $font=str_replace(' ','+',$font);
-           $font_string.=$font.':300,400,600,700,800|';
+          $font_var = explode('-',$font);
+
+          if(is_array($font_weights[$font_var[0]])){
+            if(!in_array($font_var[1],$font_weights[$font_var[0]]))
+              $font_weights[$font_var[0]][] = $font_var[1];
+          }else{
+            $font_weights[$font_var[0]] = array($font_var[1]);
+          }
+
+          if(is_array($font_subsets[$font_var[0]])){
+            if(!in_array($font_var[2],$font_subsets[$font_var[0]]))
+            $font_subsets[$font_va[0]][]=$font_var[2];
+          }else{
+            $font_subsets[$font_va[0]]= array($font_var[2]);
+          }
+
         }
+        foreach($font_weights as $font_name => $font_weight){
+          $strings[$font_name] = implode(',',$font_weight);
+        }
+        foreach ($font_subsets as $font_name => $font_subset) {
+           $strings[$font_name] .='&subset='. implode(',',$font_subset);
+        }
+        if(is_array($strings)){
+          foreach($strings as $key => $str){
+            if($key){
+             $key = str_replace(' ','+',$key);
+             $font_string .= $key.':'.$str.'|';
+            }
+          }
+        }
+        
         $font_string .='Oswald:600'; // Used for price display, hard coded in the Theme
-        $google_fonts_subsets = vibe_get_option('google_fonts_subsets');
-        if(isset($google_fonts_subsets) && is_array($google_fonts_subsets)){
-          $google_fonts_subsets = implode(',',$google_fonts_subsets);
-        }else{
-          $google_fonts_subsets = 'latin,latin-ext';
-        }
         $query_args = apply_filters('vibe_font_query_args',array(
-        'family' => $font_string,
-        'subset' => $google_fonts_subsets,
+        'family' => $font_string
         ));
         wp_enqueue_style('google-webfonts',
-        add_query_arg($query_args, "$protocol://fonts.googleapis.com/css" ),
+        esc_url(add_query_arg($query_args, "$protocol://fonts.googleapis.com/css" )),
         array(), null);
      }
     
@@ -156,12 +177,12 @@ function wplms_enqueue_head() {
        //wp_enqueue_style( 'progress-css', VIBE_URL .'/css/nprogress.css' );//Added in Bootstrap
       wp_enqueue_style( 'search-css', VIBE_URL .'/css/chosen.css' );
       if(function_exists('bp_is_active')){
-        wp_enqueue_style( 'buddypress-css', VIBE_URL .'/css/buddypress.css' );
+        wp_enqueue_style( 'buddypress-css', VIBE_URL .'/css/buddypress.css', array(),'0.2' );
       }
       if ( in_array( 'bbpress/bbpress.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )){
         wp_enqueue_style( 'bbpress-css', VIBE_URL .'/css/bbpress.css' );
       }
-      wp_enqueue_style( 'style-css', VIBE_URL .'/css/style.css' );
+      wp_enqueue_style( 'style-css', VIBE_URL .'/css/style.css',array(),'0.1' );
      
      $layout=vibe_get_option('layout');
      if(isset($layout) && $layout){
@@ -206,14 +227,13 @@ function wplms_enqueue_footer() {
     if(!is_admin()){ 
       wp_enqueue_script( 'modernizr', VIBE_URL.'/js/modernizr.custom.js');
       wp_enqueue_script( 'flexslider-js', VIBE_URL.'/js/jquery.flexslider-min.js');
-      wp_enqueue_script( 'isotope', VIBE_URL.'/js/jquery.isotope.min.js');
       wp_enqueue_script( 'chosen', VIBE_URL.'/js/chosen.jquery.js');
       wp_enqueue_script( 'sidebareffects', VIBE_URL.'/js/sidebarEffects.js');
       //wp_enqueue_script( 'jquery-cookie', VIBE_URL.'/js/jquery.cookie.js'); // Added in BuddyPress
       wp_enqueue_script( 'knob-js', VIBE_URL .'/js/jquery.knob.js' ); 
       
       if(function_exists('bp_is_active')){
-        wp_enqueue_script( 'buddypress-js', VIBE_URL .'/js/buddypress.js' );
+        wp_enqueue_script( 'buddypress-js', VIBE_URL .'/js/buddypress.js',array('jquery'),'0.1');
       }
 
       $params = array(
@@ -230,6 +250,10 @@ function wplms_enqueue_footer() {
           'show_x_comments'     => __( 'Show all %d comments', 'vibe' ),
           'unsaved_changes'     => __( 'Your profile has unsaved changes. If you leave the page, the changes will be lost.', 'vibe' ),
           'view'                => __( 'View', 'vibe' ),
+          'too_short'           => __( 'Too short', 'vibe' ),
+          'weak'                => __( 'Weak', 'vibe' ),
+          'good'                => __( 'Good', 'vibe' ),
+          'strong'              => __( 'Strong', 'vibe' ),
       );
       // localise
       wp_localize_script( 'buddypress-js', 'BP_DTheme', $params );
@@ -247,9 +271,14 @@ function wplms_force_enqueue_head(){
   if(is_page($page_id) || is_singular('quiz')){
     wp_enqueue_style( 'wp-mediaelement' );
     wp_enqueue_script( 'wp-mediaelement' );
+    if(class_exists('Vc_Base')){
+      Vc_base::frontJsRegister();
+    }
   }
 }
 add_action('wp_enqueue_scripts', 'wplms_force_enqueue_head');
+
+
 /*============================================*/
 /*===========  REGISTER MENUS  ============*/
 /*============================================*/
@@ -393,10 +422,19 @@ if ( ! function_exists( 'storegoogle_webfonts' ) ){
     function storegoogle_webfonts(){
         $google_webfonts=get_option('google_webfonts');
             if(!isset($google_webfonts) || $google_webfonts ==''){
-                $url='http://api.vibethemes.com/fonts.php';       
-                $fonts = wp_remote_retrieve_body( wp_remote_get($url));
-                $fonts=(string)$fonts;
-                add_option( 'google_webfonts', "$fonts",'', 'no');
+                $api_key = vibe_get_option('google_fonts_api_key');
+                if(isset($api_key) && $api_key){
+                  //Call jSon format save in $fonts
+                  $url='https://www.googleapis.com/webfonts/v1/webfonts?key='.$api_key;       
+                  $fonts = wp_remote_retrieve_body( wp_remote_get($url));
+
+                  add_option( 'google_webfonts', "$fonts",'', 'no');
+                }else{
+                  $url='http://api.vibethemes.com/fonts.php';       
+                  $fonts = wp_remote_retrieve_body( wp_remote_get($url));
+                  $fonts=(string)$fonts;
+                  add_option( 'google_webfonts', "$fonts",'', 'no');
+                }
             }
     }
 }

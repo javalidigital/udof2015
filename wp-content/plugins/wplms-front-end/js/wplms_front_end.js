@@ -1,9 +1,5 @@
 jQuery(document).ready(function($){
-    $(".live-edit").liveEdit({
-        afterSaveAll: function(params) {
-          return false;
-        }
-    });
+    $(".live-edit").liveEdit();
 
     $('#course-category-select').change(function(event){
       
@@ -24,6 +20,11 @@ jQuery(document).ready(function($){
         }
     });
 
+$('.remove_text_click').on('click',function(){
+    var defaulttext=$(this).text();
+    $(this).text('');
+
+});
 $('body').delegate('*[data-help-tag]','click',function(event){
   
      var n=parseInt($(this).attr('data-help-tag'));
@@ -139,7 +140,7 @@ jQuery('.upload_badge_button').on('click', function( event ){
     // Open the uploader
     media_uploader1.open();
   });
-  $('#course-title').click(function(){
+  $('#course-title,#new_course_category').click(function(){
     var defaulttext = $(this).attr('data-default');
     var $cthis = $(this);
     if($cthis.html() == defaulttext){
@@ -771,6 +772,11 @@ jQuery('.upload_badge_button').on('click', function( event ){
             course_pricing['vibe_mycred_subscription']=$('.vibe_mycred_subscription:checked').val();
             course_pricing['vibe_mycred_duration']=$('#vibe_mycred_duration').val();
         }
+
+        if($('.vibe_coming_soon').length){
+            course_pricing['vibe_coming_soon']=$('.vibe_coming_soon:checked').val();
+        }
+
         var extras = [];
         $('.vibe_extras').each(function() {
             extras.push({ 
@@ -940,9 +946,16 @@ jQuery('.upload_badge_button').on('click', function( event ){
         var vibe_free = $('.vibe_free:checked').val();
         var vibe_duration = $('#vibe_duration').val();
 
-        var vibe_assignment = '';
-        if($('#vibe_assignment').length)
+        var assignment_ids = [];
+        if($('#assignments_list').length){
+            $('#assignments_list li').each(function(){
+                var attr = $(this).attr('data-id');
+                if (typeof attr !== typeof undefined && attr !== false) {
+                    assignment_ids.push({id:attr});
+                }
+            });
          vibe_assignment = $('#vibe_assignment').val();
+        }
 
         var extras = [];
         $('.vibe_extras').each(function() {
@@ -970,7 +983,7 @@ jQuery('.upload_badge_button').on('click', function( event ){
                             vibe_type:vibe_type,
                             vibe_free:vibe_free,
                             vibe_duration:vibe_duration,
-                            vibe_assignment:vibe_assignment,
+                            vibe_assignment:JSON.stringify(assignment_ids),
                             vibe_forum:vibe_forum,
                             extras:JSON.stringify(extras)
                           },
@@ -1046,7 +1059,13 @@ jQuery('.upload_badge_button').on('click', function( event ){
         var vibe_quiz_retakes=$('#vibe_quiz_retakes').val();
         var vibe_quiz_random = $('.vibe_quiz_randome:checked').val();
         var vibe_quiz_message = $('#vibe_quiz_message').html();
-
+        var extras = [];
+        $('.vibe_extras').each(function() {
+            extras.push({ 
+                           element:$(this).attr('id'),
+                           value: $(this).val()
+                       });
+        });
         var questions = [];
         var qid,qmarks;
         $('#questions > li').each(function() {
@@ -1080,7 +1099,8 @@ jQuery('.upload_badge_button').on('click', function( event ){
                             vibe_quiz_marks_per_question:vibe_quiz_marks_per_question,
                             vibe_quiz_retakes:vibe_quiz_retakes, 
                             vibe_quiz_random:vibe_quiz_random, 
-                            vibe_quiz_message:vibe_quiz_message,             
+                            vibe_quiz_message:vibe_quiz_message,   
+                            extras:    JSON.stringify(extras),      
                             questions: JSON.stringify(questions)
                           },
                     cache: false,
@@ -1304,6 +1324,15 @@ jQuery('.upload_badge_button').on('click', function( event ){
       li.fadeOut(200);
       $('#save_unit_settings').removeClass('disabled');
   });
+  $('.add_existing_assignment').click(function(){
+        var cloned = $('#assignments_list li.hide').clone();
+        $(cloned).removeClass('hide');
+        cloned.find('select').chosen();
+        $('#assignments_list').append(cloned);
+        $('#assignments_list select').on('change',function(){ 
+            $(this).parent().parent().attr('data-id',$(this).val());
+        });
+  });
   $('body').delegate('.new_assignment_actions .publish','click',function(event){
         
         var unit_id=$('#save_unit_settings').attr('data-id');
@@ -1321,13 +1350,20 @@ jQuery('.upload_badge_button').on('click', function( event ){
                     data: { action: 'create_assignment', 
                             security: $('#security').val(),
                             unit_id: unit_id,
-                            title: title
+                            title: title,
+                            dataType: 'json'
                           },
                     cache: false,
-                    success: function (html) {
-                        $('#vibe_assignment').append(html);
-                        $('#vibe_assignment').trigger('change');
-                        $("#vibe_assignment").trigger("chosen:updated");
+                    success: function (response) {
+                        response = JSON.parse(response);
+                        var cloned = $('#assignments_list li.hide').clone();
+                        $(cloned).removeClass('hide');
+                        $(cloned).attr('data-id',response.id);
+                        $(cloned).find('strong').html('<i class="icon-text-document"></i>'+response.title);
+                        $(cloned).find('.edit_unit').attr('href',response.link+'/edit');
+                        $(cloned).find('.preview_unit').attr('href',response.link);
+                        console.log(cloned);
+                        $('#assignments_list').append(cloned);
                         $('#save_unit_settings').removeClass('disabled');
                         $('#assignment_link').removeClass('hide');
                         $('.new_assignment_actions > li:last-child').fadeOut(200);

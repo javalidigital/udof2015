@@ -14,8 +14,10 @@ class wplms_student_stats extends WP_Widget {
     $widget_ops = array( 'classname' => 'wplms_student_stats', 'description' => __('Student Statistics widget', 'wplms-dashboard') );
     $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'wplms_student_stats' );
     $this->WP_Widget( 'wplms_student_stats', __(' DASHBOARD : Student Stats', 'wplms-dashboard'), $widget_ops, $control_ops );
-    wp_enqueue_script( 'wplms-raphael',WPLMS_DASHBOARD_URL.'/js/raphael-min.js',array('jquery'),true);
-    wp_enqueue_script( 'wplms-morris',WPLMS_DASHBOARD_URL.'/js/morris.min.js',array('jquery'),true);
+    if(function_exists('bp_is_my_profile') && bp_is_my_profile()){
+      wp_enqueue_script( 'wplms-raphael',WPLMS_DASHBOARD_URL.'/js/raphael-min.js',array('jquery'),true);
+      wp_enqueue_script( 'wplms-morris',WPLMS_DASHBOARD_URL.'/js/morris.min.js',array('jquery'),true);
+    }
   }
         
  
@@ -229,7 +231,7 @@ class wplms_student_stats extends WP_Widget {
                     data: student_data$r,
                     xkey: 'label',
                     ykeys: ['marks', 'average'],
-                    labels: ['MY MARKS', 'AVERAGE'],
+                    labels: ['".__('MY MARKS','wplms-dashboard')."', '".__('AVERAGE','wplms-dashboard')."'],
                     lineColors: ['#23b7e5','#bbb'],
                     ymin:0,
                     lineWidth: 2,
@@ -248,7 +250,7 @@ class wplms_student_stats extends WP_Widget {
                     data: quiz_data$r,
                     xkey: 'label',
                     ykeys: ['marks', 'average'],
-                    labels: ['MY MARKS', 'AVERAGE'],
+                    labels: ['".__('MY MARKS','wplms-dashboard')."', '".__('AVERAGE','wplms-dashboard')."'],
                     lineColors: ['#27c24c','#bbb'],
                     ymin:0,
                     lineWidth: 2,
@@ -267,7 +269,7 @@ class wplms_student_stats extends WP_Widget {
                     data: assignment_data$r,
                     xkey: 'label',
                     ykeys: ['marks', 'average'],
-                    labels: ['MY MARKS', 'AVERAGE'],
+                    labels: ['".__('MY MARKS','wplms-dashboard')."', '".__('AVERAGE','wplms-dashboard')."'],
                     lineColors: ['#27c24c','#bbb'],
                     ymin:0,
                     lineWidth: 2,

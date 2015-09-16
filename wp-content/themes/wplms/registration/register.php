@@ -1,4 +1,10 @@
-<?php get_header( 'buddypress' ); ?>
+<?php get_header( 'buddypress' ); 
+
+$page_array=get_option('bp-pages');
+if(isset($page_array['register'])){
+	$id = $page_array['register'];
+}
+?>
 
 <section id="content">
 	<div class="container">
@@ -23,11 +29,11 @@
 
 			<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 
-				<h2><?php _e( 'Create an Account', 'vibe' ); ?></h2>
+				<h2><?php echo get_the_title($id); ?></h2>
 
 				<?php do_action( 'template_notices' ); ?>
 
-				<p><?php _e( 'Registering for this site is easy, just fill in the fields below and we\'ll get a new account set up for you in no time.', 'vibe' ); ?></p>
+				<p><?php the_sub_title($id); ?></p>
 
 				<?php do_action( 'bp_before_account_details_fields' ); ?>
 
@@ -293,7 +299,7 @@
 		<div class="col-md-3 col-sm-4">
 			<div class="sidebar">
 			<?php
-		 		$sidebar = apply_filters('wplms_sidebar','buddypress',get_the_ID());
+		 		$sidebar = apply_filters('wplms_sidebar','buddypress',$id);
                 if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
            	<?php endif; ?>
 			</div>

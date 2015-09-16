@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
 	});
 	
         	
-        jQuery('.meta_box_clear_slider_image_button').click(function() {
+    jQuery('.meta_box_clear_slider_image_button').click(function() {
 		var defaultImage = jQuery(this).parent().siblings('.meta_box_preview_image').attr('rel-default');
 		jQuery(this).parent().siblings('.meta_box_upload_image').val('');
 		jQuery(this).parent().siblings('.meta_box_preview_image').attr('src', defaultImage);
@@ -380,7 +380,9 @@ jQuery(document).ready(function($) {
 	
 });
 
-jQuery(document).ready(function(){
+
+
+    jQuery(document).ready(function($){
              var builder_enable=jQuery('.builder_enable').find('#builder_enable');
              
                 if(builder_enable.is(':checked')){ 
@@ -453,8 +455,7 @@ jQuery(document).ready(function(){
                         allow_single_deselect: true,
                         disable_search_threshold: 8
                     });
-                 });
-
+                 }); 
                  jQuery( ".date-picker-field" ).datepicker({
                     dateFormat: "yy-mm-dd",
                     numberOfMonths: 1,
@@ -469,3 +470,83 @@ jQuery(document).ready(function(){
                 });
     });
 
+jQuery(document).ready(function($){
+    $('#wplms_email_template').each(function(){
+        var html = $(this).val();
+        $('.wplms_email_template iframe').contents().find('html').html(html);
+    });
+    jQuery('.colorpicker').iris({
+        palettes: ['#125', '#459', '#78b', '#ab0', '#de3', '#f0f'],
+        change: function(event, ui){
+            var ref = $(event.target).attr('data-ref').split(',');
+            for ( var i = 0, l = ref.length; i < l; i++ ) { 
+                var css = $(event.target).attr('data-css');
+                if(css === 'color'){ 
+                    var element = $('.wplms_email_template iframe').contents().find(ref[i]);
+
+                    if(element.children().length>0){
+                        element.find('*').each(function(i) { 
+                            if( $(this).text().length > 5){
+                                $(this).css(css,$(event.target).val());
+                                $(this).css('border-color',$(event.target).val());
+                            }
+                        });
+                    }else{
+                        $('.wplms_email_template iframe').contents().find(ref[i]).css(css,$(event.target).val());
+                    }
+                    
+                }else{
+                    $('.wplms_email_template iframe').contents().find(ref[i]).css(css,$(event.target).val());
+                    $('.wplms_email_template iframe').contents().find(ref[i]).attr('bgcolor',$(event.target).val());
+                }
+            }
+            var html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />'+$('.wplms_email_template iframe').contents().find('html').html()+'</html>';
+            $('#wplms_email_template').val(html);
+        }
+    });
+    jQuery('.colorpicker').click(function(){
+        jQuery(this).iris('toggle');
+    });
+    $('#show_generated').click(function(){
+        $('#wplms_email_template').slideToggle(200);
+    });
+    $('#restore_default').click(function(){
+        var r = confirm("Are you sure you want to restore to default ? This will remove all your changes in the Template, after restore press apply changes to save.");
+        if (r == true) {
+            $.ajax({
+                 type: "POST",
+                  url: ajaxurl,
+                  data: { action: 'lms_restore_email_template', 
+                          security: $('#security').val(),
+                        },
+                  cache: false,
+                  success: function (html) {
+                    $('.wplms_email_template iframe').contents().find('html').html(html);
+                    $('#wplms_email_template').val(html);
+                  }
+            });
+        } 
+    });
+    $('#apply_settings').click(function(){
+        var defaultxt = $(this).text();
+        var $this = $(this);
+        var r = confirm("Are you sure you want to save the template ?");
+        if (r == true) {
+            $.ajax({
+                 type: "POST",
+                  url: ajaxurl,
+                  data: { action: 'lms_save_email_template', 
+                          security: $('#security').val(),
+                          template:$('#wplms_email_template').val()
+                        },
+                  cache: false,
+                  success: function (html) {
+                     $this.text(html);
+                     setTimeout(function(){
+                        $this.text(defaultxt);
+                     },2000);
+                  }
+            });
+        }
+    });
+});

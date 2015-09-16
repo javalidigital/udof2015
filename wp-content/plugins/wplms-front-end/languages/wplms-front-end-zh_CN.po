@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPLMS Front End v1.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 14:18+0530\n"
-"PO-Revision-Date: 2015-03-31 14:18+0530\n"
+"POT-Creation-Date: 2015-08-03 16:27+0530\n"
+"PO-Revision-Date: 2015-08-03 16:27+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: partyfave <service@partyfave.me>\n"
 "Language: zh_CN\n"
@@ -22,129 +22,129 @@ msgstr ""
 "wplms-front-end\n"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:70
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:73
 msgid "Please change the course title"
 msgstr "请修改课程标题"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:71
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:74
 msgid "This will create a new course in the site, do you want to continue ?"
 msgstr "这将创建一个新的课程，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:72
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:75
 msgid "Yes, create a new course"
 msgstr "是的,我想创建一个新的课程"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:73
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:76
 msgid ""
 "This will overwrite the previous course settings, do you want to continue ?"
 msgstr "这会覆盖原有的课程设置，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:74
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:77
 msgid "Save course"
 msgstr "保存课程"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:75
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:78
 msgid "This will create a new unit in the site, do you want to continue ?"
 msgstr "这将创建一个新的单元，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:76
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:79
 msgid "Yes, create a new unit"
 msgstr "是的,我想创建一个新的单元"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:77
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:80
 msgid ""
 "This will overwrite the existing unit settings, do you want to continue ?"
 msgstr "这将覆盖现有的单元设置，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:78
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:81
 msgid "Yes, save unit settings"
 msgstr "是的，保存单元设置"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:79
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:82
 msgid "This will create a new question in the site, do you want to continue ?"
 msgstr "这将创建一个新的测试题，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:80
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:83
 msgid "Yes, create a new question"
 msgstr "是的,我想创建一个新的测试题"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:81
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:84
 msgid "This will create a new quiz in the site, do you want to continue ?"
 msgstr "这将创建一个新的考试，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:82
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:85
 msgid "Yes, create a new quiz"
 msgstr "是的,我想创建一个新的考试"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:83
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:86
 msgid ""
 "This will overwrite the existing quiz settings, do you want to continue ?"
 msgstr "这将覆盖现有的考试设置，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:84
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:87
 msgid "Yes, save quiz settings"
 msgstr "是的，保存考试设置"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:85
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:88
 msgid ""
 "This will delete the unit/quiz from your site, do you want to continue ?"
 msgstr "这会删除你的单元/考试，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:86
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:89
 msgid "Continue"
 msgstr "继续"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:87
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:90
 msgid "This will overwrite the previous settings, do you want to continue ?"
 msgstr "这将覆盖以前的设置，你要继续吗？"
 
 # @ default
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:88
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:91
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/front-end-editor/class-wp-front-end-editor.php:617
 msgid "Save"
 msgstr "保存"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:89
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:92
 msgid ""
 "This will create a new assignment in the site, do you want to continue ?"
 msgstr "这将创建一个新的作业，你要继续吗？"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:90
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:93
 msgid "Yes, create a new assignment"
 msgstr "是的,我想创建一个新的作业"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:91
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:94
 msgid ""
 "Are you sure you want to take course offline, this will remove the course "
 "from course directory and it will not be visible to your students"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:92
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:95
 msgid "Are you sure you want to delete this course ?"
 msgstr ""
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:93
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/wplms-front-end.php:96
 #, fuzzy
 msgid "DELETE COURSE"
 msgstr "链接课程"
@@ -349,7 +349,7 @@ msgstr "暂无评论"
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/front-end-editor/class-wp-front-end-editor.php:472
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/front-end-editor/class-wp-front-end-editor.php:605
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/front-end-editor/class-wp-front-end-editor.php:1175
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:976
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1008
 msgid "Publish"
 msgstr "发布"
 
@@ -816,21 +816,21 @@ msgstr "编辑课程"
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:142
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:214
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:311
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:439
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:497
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:552
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:580
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:616
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:435
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:493
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:548
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:576
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:610
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:758
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:797
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:822
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1056
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1357
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1411
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1470
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1599
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1625
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1814
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1089
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1403
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1457
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1528
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1657
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1684
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1877
 msgid "Security check Failed. Contact Administrator."
 msgstr "安全检查失败，请联系管理员"
 
@@ -849,100 +849,94 @@ msgstr "无法创建课程，请联系管理员"
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:220
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:316
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:444
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:502
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:557
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:585
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:621
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:440
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:498
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:553
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:581
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:615
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:763
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:802
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:827
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1061
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1094
 msgid "Invalid Course id, please edit a course"
 msgstr "课程ID无效，请编辑课程"
 
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:226
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:322
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:450
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:508
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:591
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:627
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:446
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:504
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:587
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:621
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:769
 msgid "Invalid Course Instructor"
 msgstr "课程讲师无效"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:334
-msgid "Unable to save course setting : "
-msgstr "无法保存课程设置"
-
-# @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:434
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:430
 msgid "Can not have a blank Unit "
 msgstr "不能有空白单元内容"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:469
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:465
 msgid "Edit Unit"
 msgstr "编辑单元"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:470
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:466
 #, fuzzy
 msgid "Preview Unit"
 msgstr "免费单元"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:471
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:526
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:977
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1181
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1219
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1375
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:467
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:522
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:972
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:992
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1009
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1227
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1265
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1421
 msgid "Remove"
 msgstr "移除"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:472
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:527
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1182
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1376
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:468
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:523
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:973
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:993
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1228
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1422
 msgid "Delete"
 msgstr "删除"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:492
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:488
 msgid "Can not have a Blank Quiz"
 msgstr "考试内容不能为空白"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:525
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:521
 msgid "Edit Quiz"
 msgstr "编辑考试"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:547
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1465
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:543
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1523
 msgid "Can not delete"
 msgstr "无法删除"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:563
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1476
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:559
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1534
 msgid "Instructor can not delete this unit/quiz"
 msgstr "讲师无法删除本单元/考试"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:571
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1484
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:567
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1542
 msgid "Unable to delete"
 msgstr "无法删除"
-
-# @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:606
-msgid "Unable to save curriculum, please contact site admin"
-msgstr "无法保存课程，请联系管理员"
 
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:694
@@ -1038,13 +1032,13 @@ msgstr "设置免费单元"
 
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:935
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1695
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1758
 msgid "NO"
 msgstr "否"
 
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:937
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1693
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1756
 msgid "YES"
 msgstr "YES"
 
@@ -1069,496 +1063,511 @@ msgid "Connect Assignments"
 msgstr "链接作业"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:954
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:991
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1194
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1703
-msgid "None"
-msgstr "无"
-
-# @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:969
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:970
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:990
 msgid "Edit Assignment"
 msgstr "编辑作业"
 
 # @ wplms-front-end
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:971
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:991
+#, fuzzy
+msgid "Preview Assignment"
+msgstr "编辑作业"
+
+# @ wplms-front-end
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:981
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1023
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1240
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1766
+msgid "None"
+msgstr "无"
+
+# @ wplms-front-end
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1002
+#, fuzzy
+msgid "ADD EXISTING ASSIGNMENT"
+msgstr "增加新作业"
+
+# @ wplms-front-end
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1003
 msgid "ADD NEW ASSIGNMENT"
 msgstr "增加新作业"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:972
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1004
 msgid "Add the Assignment title"
 msgstr "添加作业标题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:988
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1020
 msgid "Unit Forum"
 msgstr "单元论坛"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:989
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1021
 msgid "Connect a Forum"
 msgstr "链接论坛"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:992
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1024
 msgid "Add new child forum in Course forum"
 msgstr "在课程论坛中添加子论坛"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:993
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1025
 msgid "Add new forum"
 msgstr "添加新论坛"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1013
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1045
 msgid "SAVE UNIT SETTINGS"
 msgstr "保存单元设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1066
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1099
 msgid "Invalid Unit id, please edit a course"
 msgstr "单元ID无效，请编辑课程"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1072
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1105
 msgid "Invalid Unit Instructor"
 msgstr "单元讲师无效"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1135
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1181
 msgid "Settings Saved"
 msgstr "设置已保存"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1137
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1183
 msgid "Unable to save settings"
 msgstr "无法保存设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1161
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1207
 msgid "Manage Quiz Questions"
 msgstr "管理考试题库"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1164
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1210
 msgid "ADD QUESTION"
 msgstr "添加测试题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1175
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1370
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1221
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1416
 msgid "Question "
 msgstr "测试题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1179
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1374
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1225
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1420
 msgid "Edit Question"
 msgstr "编辑测试题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1180
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1226
 #, fuzzy
 msgid "Preview Question"
 msgstr "编辑测试题"
 
 # @ default
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1185
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1379
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1231
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1425
 msgid "MARKS : "
 msgstr "分数: "
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1195
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1241
 msgid "ADD A NEW QUESTION"
 msgstr "添加新测试题"
 
 # @ default
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1211
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1257
 msgid "Marks : "
 msgstr "分数: "
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1213
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1259
 msgid "Question Title : "
 msgstr "测试题题目："
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1214
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1260
 msgid "Enter title for reference"
 msgstr "输入参考题目"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1218
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1264
 msgid "Publish Question"
 msgstr "发布测试题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1225
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1348
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1271
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1394
 msgid "SAVE QUIZ SETTINGS"
 msgstr "保存考试设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1248
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1294
 msgid "Enter a Quiz sub-title"
 msgstr "输入考试副标题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1258
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1304
 msgid "Enter a Quiz Completion message"
 msgstr "输入考试完成通知内容"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1264
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1310
 msgid "Quiz Settings"
 msgstr "考试设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1268
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1314
 msgid "QUIZ SUB-TITLE"
 msgstr "考试副标题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1273
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1319
 msgid "CONNECTED COURSE"
 msgstr "链接课程"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1288
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1334
 msgid "QUIZ DURATION"
 msgstr "考试时限"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1291
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1337
 msgid "QUIZ EVALUATION"
 msgstr "评估考试"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1294
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1340
 msgid "AUTO"
 msgstr "自动开始"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1296
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1342
 msgid "MANUAL"
 msgstr "手动"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1300
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1346
 msgid "QUIZ QUESTIONS TYPE"
 msgstr "考试题类型"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1303
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1349
 msgid "DYNAMIC"
 msgstr "动态测试"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1305
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1351
 msgid "STATIC"
 msgstr "静态"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1309
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1355
 msgid "SELECT QUESTION TAGS"
 msgstr "选择测试题标签"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1320
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1366
 msgid "NUMER OF QUESTIONS"
 msgstr "测试题数量"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1323
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1369
 msgid "MARKS PER QUESTION"
 msgstr "每个测试题得分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1326
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1372
 msgid "QUIZ RETAKES"
 msgstr "考试得分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1327
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1373
 msgid " Retakes"
 msgstr "重新开始"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1329
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1375
 msgid "QUESTIONS ORDER"
 msgstr "测试题排序"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1332
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1378
 msgid "RANDOM"
 msgstr "随机"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1334
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1380
 msgid "SEQUENTIAL"
 msgstr "次序排列"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1338
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1384
 msgid "QUIZ COMPLETION MESSAGE"
 msgstr "考试完成通知"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1363
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1409
 #, php-format
 msgid "Add Content for %s"
 msgstr "给 %s 添加内容"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1416
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1462
 msgid "Invalid Quiz"
 msgstr "考试无效"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1442
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1500
 msgid "Quiz Settings saved"
 msgstr "考试设置已保存"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1505
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1563
 msgid "True or False"
 msgstr "真假"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1506
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1564
 msgid "Multiple Choice"
 msgstr "多选题"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1507
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1565
 msgid "Multiple Correct"
 msgstr "多选正确"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1508
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1566
 msgid "Sort Answers"
 msgstr "答案类型"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1509
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1567
 msgid "Match Answers"
 msgstr "匹配答案"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1510
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1568
 msgid "Fill in the Blank"
 msgstr "填空"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1511
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1569
 msgid "Dropdown Select"
 msgstr "下拉列表中选择"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1512
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1570
 msgid "Small Text"
 msgstr "小文本框"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1513
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1571
 msgid "Large Text"
 msgstr "大文本框"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1517
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1575
 msgid "QUESTION SETTINGS"
 msgstr "测试题设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1519
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1577
 msgid "Question Type"
 msgstr "测试题类型"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1530
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1588
 msgid "ADD OPTION"
 msgstr "添加选项"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1540
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1598
 msgid "Click to select as Correct answer"
 msgstr "点击选择正确答案"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1549
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1607
 msgid "Correct Answer"
 msgstr "正确答案"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1550
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1608
 msgid "Answer Hint"
 msgstr "答案提示"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1551
-msgid "Answer Explaination"
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1609
+#, fuzzy
+msgid "Answer Explanation"
 msgstr "回答解析"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1559
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1617
 msgid "SAVE QUESTION SETTINGS"
 msgstr "保存测试题设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1594
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1652
 msgid "Unable to save, incorrect question"
 msgstr "无法保存，测试题错误"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1618
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1677
 msgid "Question settings successfully saved"
 msgstr "测试题设置已成功保存"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1632
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1691
 msgid "Unable to save, incorrect unit"
 msgstr "无法保存，单元错误"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1672
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1735
 msgid "ASSIGNMENT SETTINGS"
 msgstr "作业设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1676
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1739
 msgid "ASSIGNMENT SUB-TITLE"
 msgstr "作业副标题"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1682
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1745
 msgid "ASSIGNMENT MARKS"
 msgstr "作业得分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1683
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1746
 msgid "Assignment Maximum Marks"
 msgstr "作业最高分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1683
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1746
 msgid "MARKS"
 msgstr "得分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1686
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1749
 msgid "ASSIGNMENT DURATION"
 msgstr "作业时限"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1687
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1750
 msgid "Enter Assignment Duration"
 msgstr "输入作业时限"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1689
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1752
 msgid "ASSIGNMENT EVALUATION"
 msgstr "作业评估"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1690
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1753
 msgid "Include in Course Evaluation"
 msgstr "包含课程学习评估"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1700
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1763
 msgid "ASSIGNMENT COURSE"
 msgstr "作业课程"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1701
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1764
 msgid "Select Assignment Course"
 msgstr "选择作业课程"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1718
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1781
 msgid "ASSIGNMENT SUBMISISON TYPE"
 msgstr "作业提交类型"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1720
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1783
 msgid "UPLOAD"
 msgstr "上传"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1721
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1784
 msgid "TEXTAREA"
 msgstr "文本区"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1724
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1787
 msgid "ATTACHMENT TYPE"
 msgstr "附件类型"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1769
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1832
 msgid "Attachment Size"
 msgstr "附件大小"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1770
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1833
 msgid "Maximum attachment size"
 msgstr "附件最大容量"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1770
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1833
 msgid " MBs"
 msgstr "MBs"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1773
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1836
 msgid "SAVE SETTINGS"
 msgstr "保存设置"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1819
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1882
 msgid "Invalid details"
 msgstr "内容无效"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1825
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1888
 msgid "Invalid Assignment author"
 msgstr "提交作业的用户无效"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1834
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1897
 msgid "SETTINGS SAVED"
 msgstr "设置已保存"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1846
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1909
 msgid "ADD PACKAGE"
 msgstr "添加打包内容"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1850
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1913
 msgid "Seconds"
 msgstr "秒"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1851
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1914
 msgid "Minutes"
 msgstr "分"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1852
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1915
 msgid "Hours"
 msgstr "时"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1853
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1916
 msgid "Days"
 msgstr "天"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1854
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1917
 msgid "Weeks"
 msgstr "周"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1855
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1918
 msgid "Months"
 msgstr "月"
 
 # @ wplms-front-end
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1856
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/wplms-front-end/includes/class_wplms_front_end.php:1919
 msgid "Years"
 msgstr "年"

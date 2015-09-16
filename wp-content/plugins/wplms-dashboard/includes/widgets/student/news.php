@@ -8,7 +8,6 @@ function wplms_dash_news() {
 
 class wplms_dash_news extends WP_Widget {
  
- 
     /** constructor -- name this the same as the class above */
     function wplms_dash_news() {
     $widget_ops = array( 'classname' => 'wplms_dash_news', 'description' => __('News for Members', 'wplms-dashboard') );

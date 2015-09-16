@@ -1,10 +1,88 @@
+* version1.9.8.1
+* Save box priority change
+* Pmpro active check
+* styling issues
+* LMS Tree post per page
+* Linkage and Levels in export file
+* LMS Tree
+* chosen jquery fix
+* check if first unit in section is a quiz
+* version1.9.8
+* timestamp fix for start datetime units
+* Options panel get_option bug fix
+* Pay via PayPal for instructors bug fix
+* version1.9.7
+* Language files updated
+* Coming soon bug fix
+* hardcoded table name in caching fixed.
+* fixing filter names
+* Submission meta feature in WPLMS
+* Chosen jquery fix
+* version1.9.6.2
+* isset bug fix for custom css
+* Chosen bug fix when woocommerce not active
+* bug fixes
+* Email Template fix
+* version1.9.6
+* Translations updated
+* Free Course Prerequisite course bug fix
+* BBPress 404 page fix
+* Statistics extra closing div
+* Activation mail default content
+* Emails and Scheduler
+* Email template color options added
+* Course codes action added for activity recording
+* Email templates added
+* LMS settings class added
+* Select boxes fix
+* Removing chosen select from admin
+* Revert "Merge branch 'feature/Emails' into develop"
+* version1.9.5.1
+* Visual composer bug
+* Import/Export files
+* version1.9.5
+* Translation files
+* Assignment fix
+* Include masonry only where required
+* New Options added
+* Repeatable
+* Quiz type taxonomy added
+* Spelling correction
+* Plugin update fixes
+* version1.9.4.1
+* Coming soon fix
+* version1.9.4
+* Translation changes
+* PDF print option in certificates
+* Section drip fix
+* post per page in post ids
+* Astrik issue
+* Display all courses in set commissions
+* Certificate height & width
+* Responsive parallax
+* 5 More settings
+* Updated Certificate shortcode notification
+* Partice quizzes complete.
+* esc_url in add_query_arg
+* Surveys custom post type
+* post per page in post ids
+* Astrik issue
+* Display all courses in set commissions
+* version1.9.3.1
+* Add more in translation
+* Exclude from search
+* Forum Privacy
+* Remove instructor access to student courses
 * version1.9.3
 * Translation fixes
 * FAtal error on course categories statistics
 * get message slug function check
+* Emails
+* Re-structuring
 * Student Instructor menus
 * Pagination fix on filterable
 * Orderby fix
+* Initialise tabs
 * 1.9.2.2
 * New Parallax style
 * language update

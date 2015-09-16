@@ -63,7 +63,7 @@ class VIBE_Options_custom_posts_multi_select extends VIBE_Options{
 	function enqueue(){
 		
 		wp_enqueue_script(
-			'vibe-opts-field-custom-posts-multi-select-js', 
+			'chosen-js', 
 			VIBE_OPTIONS_URL.'fields/custom_posts_multi_select/chosen.jquery.min.js', 
 			array('jquery'),
 			time(),

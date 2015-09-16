@@ -43,9 +43,12 @@ SELECT post_id FROM $wpdb->postmeta WHERE meta_key = 'vibe_assignment_course' AN
 					echo '<li id="as'.$member_id.'">';
 			    	echo get_avatar($member_id);
 			    	echo '<h6>'. $bp_name . '</h6>';
+			    	echo '<span>';
 				    if ($bp_location) {
-				    	echo '<span>'. $bp_location . '</span>';
+				    	echo $bp_location ;
 				    }
+				    do_action('wplms_assignment_submission_meta',$member_id,$assignment_id);
+				    echo '</span>';
 				    // PENDING AJAX SUBMISSIONS
 				    echo '<ul> 
 				    		<li><a class="tip reset_assignment_user" data-assignment="'.$assignment_id.'" data-user="'.$member_id.'" title="'.__('Reset Assignment for User','vibe').'"><i class="icon-reload"></i></a></li>
@@ -98,9 +101,12 @@ foreach($curriculum as $c){
 					echo '<li id="qs'.$member_id.'">';
 			    	echo get_avatar($member_id);
 			    	echo '<h6>'. $bp_name . '</h6>';
+				    echo '<span>';
 				    if ($bp_location) {
-				    	echo '<span>'. $bp_location . '</span>';
+				    	echo $bp_location ;
 				    }
+				    do_action('wplms_quiz_submission_meta',$member_id,$c);
+				    echo '</span>';
 				    // PENDING AJAX SUBMISSIONS
 				    echo '<ul> 
 				    		<li><a class="tip reset_quiz_user" data-quiz="'.$c.'" data-user="'.$member_id.'" title="'.__('Reset Quiz for User','vibe').'"><i class="icon-reload"></i></a></li>
@@ -124,7 +130,7 @@ echo '<div class="submissions"><h4 class="minmax">';
 _e('COURSE SUBMISSIONS','vibe');
 echo '<i class="icon-plus-1"></i></h4>';
 // ALL MEMBERS who SUBMITTED COURSE STATUS CODE 2
-$members_submit_course = $wpdb->get_results( "select meta_key from $wpdb->postmeta where meta_value = '2' && post_id = $course_id", ARRAY_A); // Internal Query
+$members_submit_course = $wpdb->get_results( $wpdb->prepare("SELECT user_id as meta_key FROM {$wpdb->usermeta} where meta_key = %s AND meta_value = %d",'course_status'.$course_id,3), ARRAY_A); // Internal Query
 if(count($members_submit_course)){
 	echo '<ul class="course_students">';
 	foreach($members_submit_course as $submit_course ){
@@ -145,9 +151,12 @@ if(count($members_submit_course)){
 		echo '<li id="s'.$member_id.'">';
     	echo get_avatar($member_id);
     	echo '<h6>'. $bp_name . '</h6>';
+	    echo '<span>';
 	    if ($bp_location) {
-	    	echo '<span>'. $bp_location . '</span>';
+	    	echo $bp_location ;
 	    }
+	    do_action('wplms_course_submission_meta',$member_id,$course_id);
+	    echo '</span>';
 	    // PENDING AJAX SUBMISSIONS
 	    echo '<ul> 
 	    		<li><a class="tip evaluate_course_user" data-course="'.$course_id.'" data-user="'.$member_id.'" title="'.__('Evaluate Course for User','vibe').'"><i class="icon-check-clipboard-1"></i></a></li>

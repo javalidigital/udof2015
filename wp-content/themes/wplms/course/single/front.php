@@ -60,11 +60,11 @@ do_action('wplms_before_course_description');
 			$middle = strrpos(substr($content, 0, $limit), " ");
 
 			if(strlen($content) < $limit){
-				$more_flag = 10;
+				$more_flag = 0;
 			}
 			$check_vc=strpos( $post->post_content, '[vc_row]' );
 			if ( isset($check_vc) ) {
-				$more_flag=10;
+				$more_flag=0;
 				echo apply_filters('the_content',$content);
 			}else{
 				echo apply_filters('the_content',substr($content, 0, $middle));
@@ -73,7 +73,7 @@ do_action('wplms_before_course_description');
 	?>
 	<?php 
 		if($more_flag)
-			echo '<a href="#" id="more_desc" class="link" data-middle="'.$middle.'">'.__('SAIBA MAIS','vibe').'</a>';
+			echo '<a href="#" id="more_desc" class="link" data-middle="'.$middle.'">'.__('READ MORE','vibe').'</a>';
 	?>
 	</div>
 	<?php if($more_flag){ ?>

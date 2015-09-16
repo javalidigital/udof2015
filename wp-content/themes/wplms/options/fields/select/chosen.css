@@ -102,7 +102,7 @@
   white-space: nowrap;
   z-index: 1010;
 }
-.chzn-container-single .chzn-search input {
+.chzn-container-single .chzn-search input { width:90% !important;
   background: #fff url('chosen-sprite.png') no-repeat 100% -22px;
   background: url('chosen-sprite.png') no-repeat 100% -22px, -webkit-gradient(linear, 0 0, 0 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
   background: url('chosen-sprite.png') no-repeat 100% -22px, -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
@@ -237,7 +237,7 @@
 /* @group Results */
 .chzn-container .chzn-results {
   margin: 0 4px 4px 0;
-  min-width: 300px;
+  min-width: 200px;
   max-height: 240px;
   padding: 0 0 0 4px;
   position: relative;

@@ -13,7 +13,8 @@ class wplms_dash_stats extends WP_Widget {
     $widget_ops = array( 'classname' => 'wplms_dash_stats', 'description' => __('Simple stats scores for students', 'wplms-dashboard') );
     $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'wplms_dash_stats' );
     $this->WP_Widget( 'wplms_dash_stats', __(' DASHBOARD : Simple Stats', 'wplms-dashboard'), $widget_ops, $control_ops );
-    wp_enqueue_script( 'wplms-student-simple-stats', WPLMS_DASHBOARD_URL.'/js/jquery.sparkline.min.js',array('jquery'),true);
+    if(function_exists('bp_is_my_profile') && bp_is_my_profile())
+      wp_enqueue_script( 'wplms-student-simple-stats', WPLMS_DASHBOARD_URL.'/js/jquery.sparkline.min.js',array('jquery'),true);
   }
         
     function widget( $args, $instance ) {

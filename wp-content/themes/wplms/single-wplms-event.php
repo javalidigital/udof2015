@@ -111,34 +111,43 @@ do_action('wplms_before_single_event');
                         
                         <?php
                         if(apply_filters('wplms_event_access_flag',$access_flag)){
+                        ?>
+                        <div class="featured">
+                            <?php 
+                            the_post_thumbnail();
+                            ?>
+                        </div>
+                        <?php    
                             the_content(); 
                         ?>
                         <?php
                         if(vibe_validate($show_location)){
                            $map_zoom=vibe_get_option('map_zoom');
                       echo '<h3 class="heading">'.__('Event Location','vibe').'</h3>';
-                      echo '<div class="vibe_gmap"><script>
-function initialize() {
-  var myLatlng = new google.maps.LatLng('.$location['latitude'].','.$location['longitude'].');
-  var mapOptions = {
-    zoom: '.(isset($map_zoom)?$map_zoom:15).',
-    center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                      echo '<div class="vibe_gmap">
+                                <script>
+                                function initialize() {
+                                  var myLatlng = new google.maps.LatLng('.$location['latitude'].','.$location['longitude'].');
+                                  var mapOptions = {
+                                    zoom: '.(isset($map_zoom)?$map_zoom:15).',
+                                    center: myLatlng,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                  }
+                                  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: "'.get_the_title().'"
-  });
-}
+                                  var marker = new google.maps.Marker({
+                                      position: myLatlng,
+                                      map: map,
+                                      title: "'.get_the_title().'"
+                                  });
+                                }
 
-google.maps.event.addDomListener(window, "load", initialize);
+                                google.maps.event.addDomListener(window, "load", initialize);
 
                             </script> ';                        
                           
-                        echo '<div id="map-canvas"></div></div>';
+                        echo '<div id="map-canvas"></div>
+                        </div>';
                         }
                     }
                         ?>

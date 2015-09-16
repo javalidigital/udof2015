@@ -3,7 +3,7 @@
 Plugin Name: WPLMS Events
 Plugin URI: http://www.Vibethemes.com
 Description: COURSE Events plugin for WPLMS 
-Version: 1.9.3
+Version: 1.9.8
 Author: VibeThemes
 Author URI: http://www.vibethemes.com
 License: as Per Themeforest GuideLines

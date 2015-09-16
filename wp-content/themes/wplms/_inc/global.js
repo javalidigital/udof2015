@@ -676,7 +676,6 @@ jq(document).ready( function() {
 
 	/* When a navigation tab is clicked - e.g. | All Groups | My Groups | */
 	jq('div.item-list-tabs').click( function(event) {
-		alert('kutte');
 		if ( jq(this).hasClass('no-ajax') )
 			return;
 

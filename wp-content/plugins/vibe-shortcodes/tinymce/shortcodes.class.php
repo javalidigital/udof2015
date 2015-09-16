@@ -105,6 +105,29 @@ class vibe_shortcodes
 						$this->append_output( $output );
 						
 						break;   
+					case 'number' :
+						
+						// prepare
+						$output  = $row_start;
+						$output .= '<input type="number" class="vibe-form-text vibe-input" name="' . $pkey . '" id="' . $pkey . '" value="' . (isset($param['std'])?$param['std']:'') . '" />' . "\n";
+						$output .= $row_end;
+						
+						// append
+						$this->append_output( $output );
+						
+						break;
+                                            
+                                        case 'color' :
+						
+						// prepare
+						$output  = $row_start;
+						$output .= '<input type="number" class="vibe-form-text vibe-input popup-colorpicker" name="' . $pkey . '" id="' . $pkey . '" value="' . (isset($param['std'])?$param['std']:'') . '" />' . "\n";
+						$output .= $row_end;
+						
+						// append
+						$this->append_output( $output );
+						
+						break;   	
 					 case 'slide' :
 						
 						// prepare

@@ -42,12 +42,11 @@ if(!class_exists('WPLMS_Events_Interface'))
          */
         function enqueue_scripts(){
 
-            wp_enqueue_style( 'wplms-events-css', plugins_url( '../css/wplms-events.css' , __FILE__ ));
-            wp_enqueue_script( 'wplms-events-js', plugins_url( '../js/wplms-events.js' , __FILE__ ));
-
-            if(is_singular('wplms-event')){
-             $protocol = is_ssl() ? 'https' : 'http';
-              wp_enqueue_script( 'wplms-events-gmap-js', $protocol.'://maps.google.com/maps/api/js?sensor=false');
+            if(is_singular('wplms-event') || is_page() || is_post_type_archive('wplms-event') || (is_singular('course') && ($_GET['action'] == 'events'))){
+                wp_enqueue_style( 'wplms-events-css', plugins_url( '../css/wplms-events.css' , __FILE__ ));
+                wp_enqueue_script( 'wplms-events-js', plugins_url( '../js/wplms-events.js' , __FILE__ ));
+                $protocol = is_ssl() ? 'https' : 'http';
+                wp_enqueue_script( 'wplms-events-gmap-js', $protocol.'://maps.google.com/maps/api/js?sensor=false');
             }
         }
         
@@ -173,7 +172,7 @@ if(!class_exists('WPLMS_Events_Interface'))
                     if(isset($_GET['y']))
                         $monthstring .='&y='.$newyear;
                 }
-                $calendar_output .= "\n\t\t".'<td colspan="3" id="prev"><a href="?action=events&'.$monthstring.'" title="' . esc_attr( sprintf(__('View Events for %1$s %2$s','wplms-events'), $wp_locale->get_month($newmonth), date('Y', mktime(0, 0 , 0, $newmonth, 1, $newyear)))) . '"> &lsaquo; ' . $wp_locale->get_month_abbrev($wp_locale->get_month($newmonth)) .'</a></td>';
+                $calendar_output .= "\n\t\t".'<td colspan="3" id="prev"><a href="?action=events&'.$monthstring.'" title="' . esc_attr( sprintf(__('View Events for %1$s %2$s','wplms-events'), $wp_locale->get_month($newmonth), date('Y', mktime(0, 0 , 0, $newmonth, 1, $newyear)))) . '" rel="nofollow"> &lsaquo; ' . $wp_locale->get_month_abbrev($wp_locale->get_month($newmonth)) .'</a></td>';
             } else {
                 $calendar_output .= "\n\t\t".'<td colspan="3" id="prev" class="pad">&nbsp;</td>';
             }
@@ -194,7 +193,7 @@ if(!class_exists('WPLMS_Events_Interface'))
                         $monthstring .='&y='.$newyear;
                 }
 
-                $calendar_output .= "\n\t\t".'<td colspan="3" id="next"><a href="?action=events&'.$monthstring.'" title="' . esc_attr( sprintf(__('View posts for %1$s %2$s','wplms-events'), $wp_locale->get_month($newmonth), date('Y', mktime(0, 0 , 0, $newmonth, 1, $newyear))) ) . '"> '. $wp_locale->get_month_abbrev($wp_locale->get_month($newmonth)) . ' &rsaquo;</a></td>';
+                $calendar_output .= "\n\t\t".'<td colspan="3" id="next"><a href="?action=events&'.$monthstring.'" title="' . esc_attr( sprintf(__('View posts for %1$s %2$s','wplms-events'), $wp_locale->get_month($newmonth), date('Y', mktime(0, 0 , 0, $newmonth, 1, $newyear))) ) . '"  rel="nofollow"> '. $wp_locale->get_month_abbrev($wp_locale->get_month($newmonth)) . ' &rsaquo;</a></td>';
             } else {
                 $calendar_output .= "\n\t\t".'<td colspan="3" id="next" class="pad">&nbsp;</td>';
             }
@@ -280,7 +279,7 @@ if(!class_exists('WPLMS_Events_Interface'))
                     $calendar_output .= '<td>';
 
                 if ( isset($eventdays[$day]) ) // any posts today?
-                        $calendar_output .= '<a href="#" class="event_list" data-course="'.((get_post_type() == BP_COURSE_SLUG)?get_the_ID():'*').'" data-day="'.$day.'" data-month="'.$thismonth.'" data-year="'.$thisyear.'">'.$day.' <span>'.$eventdays[$day].'</span></a>';
+                        $calendar_output .= '<a href="#" class="event_list" data-course="'.((get_post_type() == BP_COURSE_SLUG)?get_the_ID():'*').'" data-day="'.$day.'" data-month="'.$thismonth.'" data-year="'.$thisyear.'"  rel="nofollow">'.$day.' <span>'.$eventdays[$day].'</span></a>';
                 else
                     $calendar_output .= $day;
                 $calendar_output .= '</td>';
@@ -346,7 +345,7 @@ if(!class_exists('WPLMS_Events_Interface'))
                $color =  get_post_meta(get_the_ID(),'vibe_color',true);
                $start_time =  get_post_meta(get_the_ID(),'vibe_start_time',true);
                $end_time =  get_post_meta(get_the_ID(),'vibe_end_time',true);
-               echo '<li><a href="'.get_permalink().'">'.(isset($icon)?'<strong style="background-color:'.$color.'"><i class="'.$icon.'"></i></strong>':'').get_the_title().' <span>From : '.$start_time.' - To : '.$end_time.'</span></a></li>';
+               echo '<li><a href="'.get_permalink().'"  rel="nofollow">'.(isset($icon)?'<strong style="background-color:'.$color.'"><i class="'.$icon.'"></i></strong>':'').get_the_title().' <span>From : '.$start_time.' - To : '.$end_time.'</span></a></li>';
                endwhile;
                echo '</ul>';
                endif;

@@ -24,7 +24,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
             if(is_user_logged_in()){
                 if(isset($quiztaken) && $quiztaken){
                     if($quiztaken > time()){
-                        echo '<a class="button create-group-button full begin_quiz" data-quiz="'.get_the_ID().'"> '.__('Continue Quiz','vibe').'</a>';
+                        echo apply_filters('wplms_continue_quiz_button','<a class="button create-group-button full begin_quiz" data-quiz="'.get_the_ID().'"> '.__('Continue Quiz','vibe').'</a>',get_the_ID());
                             wp_nonce_field('start_quiz','start_quiz');
                     }else{ 
 
@@ -49,7 +49,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                         }
                     }
                 }else{
-                    echo '<a class="button create-group-button full begin_quiz" data-quiz="'.get_the_ID().'"> '.__('Start Quiz','vibe').'</a>';
+                    echo apply_filters('wplms_start_quiz_button','<a class="button create-group-button full begin_quiz" data-quiz="'.get_the_ID().'"> '.__('Start Quiz','vibe').'</a>',get_the_ID());
                      wp_nonce_field('start_quiz','start_quiz');
                 }
             }else{

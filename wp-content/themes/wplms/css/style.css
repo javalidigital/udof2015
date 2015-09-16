@@ -4,7 +4,7 @@
  * Author: Mr.Vibe 
  * Credits: www.VibeThemes.com
  * Project: WPLMS
- * version 1.9.3
+ * version 1.9.6
  **/
 /*========================================================================*/
 /*   TABLE OF CONTENT
@@ -99,12 +99,7 @@ iframe{max-width:100% !important;}
 /*========================================================================*/
 /*   02. GENERAL STYLING
 /*========================================================================*/
-/*
-font-family: 'Steelfish Book'
-font-family: 'Steelfish Light'
-font-family: 'Steelfish Regular'
-font-family: 'Steelfish Bold'
-*/
+
 
 h1,h2,h3,h4,h5,h6{
 	line-height:1.35em;
@@ -193,6 +188,25 @@ blockquote p{
 	border: 1px solid #EFEFEF;
 	color: #888;
 }
+select{
+  padding: 2px;
+  max-width:100%;
+  line-height: 28px;
+  height: 28px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+  background-color: #fff;
+  color: #32373c;
+  outline: 0;
+  -webkit-transition: .05s border-color ease-in-out;
+  transition: .05s border-color ease-in-out;
+}
+
+.widget select{
+	width:100%;
+}
 footer .form_field, 
 footer .input-text, 
 footer .ninja-forms-field, 
@@ -248,7 +262,7 @@ a:hover{
 	
 }
 .reply a,
-.link{
+.link,.ahref{
 	color: #78C8Ce;
 	text-decoration:none;
 	font-weight: 600;
@@ -294,10 +308,12 @@ a:hover{
 	list-style: none;
 	margin-left:0;
 }
+
 .content ol:not([class]){
 	list-style: decimal outside none;
 	margin-left:15px;
 }
+.assignment_students > li ul,
 #content .content ol,/*Main Content*/
 #content .content ul,/*Units in start-course frame*/
 .main_unit_content ul,
@@ -311,6 +327,7 @@ a:hover{
 #content .content ul.vibe_filterable{
 	margin-left:0;
 }
+.assignment_students > li ol,
 #content .content ol,
 .wpb_text_column ol,
 .main_unit_content ol{
@@ -326,6 +343,50 @@ a:hover{
 .single_unit_content,
 .single-unit-content .wp-video{position: relative;}
 
+.unit_content .commentmetadata{
+	float:right;
+	margin: 0 0 0 20px;
+}
+
+.unit_content .commentlist li {
+  border-bottom: 1px solid #EFEFEF;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.unit_content .commentlist li ul.children li{
+	border-bottom:none;
+	border-top: 1px solid #EFEFEF;
+}
+.unit_content .commentlist li .reply{
+	top:auto;
+	bottom:0;
+	cursor: pointer;
+	font-size:11px;
+}
+
+.unit_content .commentlist li .reply a:hover:after{content:'';}
+.unit_content .commentlist li .vcard img{border-radius:50%;margin-bottom:20px;}
+.unit_content .load_more_comments,
+.unit_content .add_comment{
+	font-size:11px;
+	font-weight:600;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.unit_content #discussion.loading{
+	opacity:0.4;
+}
+.unit_content .button{cursor:pointer;padding:4px 10px;}
+.unit_content .add_unit_comment_text.hide{
+	display: none;
+	webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	
+}
 /*========================================================================*/
 /*   04. CHOSEN CUSTOMIZATION
 /*========================================================================*/
@@ -1802,7 +1863,8 @@ border-bottom: 1px dotted #EFEFEF;
 }
 a.page-numbers,
 .page-numbers.current,
-.pagination span{
+.pagination span,
+.pagination label{
 	background:#F6F6F6;
 	padding:2px 6px;
 	border-radius:2px;
@@ -2049,6 +2111,8 @@ h4.block_title + .date{line-height:1.4;}
 	margin:0;
 }
 
+/*=== Registration page ===*/
+
 .register-section h4{
 	font-weight:600;
 	text-transform: uppercase;
@@ -2102,7 +2166,39 @@ h4.block_title + .date{line-height:1.4;}
 	border-bottom:1px solid #EFEFEF;
 }
 
+#account_password_field label,
+.register-section label{
+	width:100%;
+	position: relative;
+}
+#account_password_field label span,
+.register-section label span{
+	float:right;
+	font-size:12px;
+	text-transform: uppercase;
+	font-weight: 600;
+	position: absolute;
+  	top: 40px;
+  	right: 20px;
+}
+#account_password_field label span{
+	top: 32px;
+  	right: 40px;
+}
+label.short span{
+	color:#FF0000;
+}
+label.weak span{
+	color:orange;
+}
+label.good span{
+	color:#2D98F3;
+}
+label.strong span{
+	color: limegreen;
+}
 
+/*=== End REgister page ===*/
 .content ul.list{
 	list-style: disc inside none;
 }
@@ -2128,7 +2224,7 @@ h4.block_title + .date{line-height:1.4;}
 	background: #232b2d;
 	border-radius:2px;
 	opacity: 1;
-	z-index: 9;
+	z-index: 100;
 }
 #vibe_bp_login:after{
 	content:'';
@@ -2252,6 +2348,7 @@ input[type="radio"]:hover{
 	padding-left:5px;
 }
 
+
 /*========================================================================*/
 /*   07. Unit Comments
 /*========================================================================*/
@@ -2286,12 +2383,24 @@ input[type="radio"]:hover{
 }
 .notes_list .unit_comment_author+span{
 	font-size: 11px;
-text-transform: uppercase;
-color: #bbb;
+	text-transform: uppercase;
+	color: #bbb;
+	text-align:right;
+}
+.unit_comment_content .note_content{
+	display:inline-block;
+	width:100%;
 }
 .notes_list .actions li{
 	float:left;
 	margin-right:10px;
+}
+
+.notes_list .creply.loaded{
+    clear: both;
+    margin: 18px 0 0 10%;
+    display: inline-block;
+    width: 90%;
 }
 #notes_query{display: none;}
 /*========================================================================*/
@@ -2456,6 +2565,7 @@ ul.tags > li:before{
 	font-weight: 600;
 	border-radius: 2px;
 	color:#FFF;
+	margin-left: 5px; 
 }
 .page-links a span{
 	background: #EFEFEF;
@@ -2632,8 +2742,8 @@ color: #bbb;
 }
 .extra_buttons{
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 60px;
+	right: 15px;
 	padding: 0;
 	background: #EFEFEF;
 	z-index: 99;
@@ -2668,6 +2778,7 @@ color: #bbb;
 .content .question.match{
 	border:none;
 }
+#question{padding-bottom: 60px; }
 #question #respond+h5{
 	margin:30px 0 10px;
 	padding-bottom:10px;
@@ -3508,17 +3619,9 @@ top: 0;
 /*   07. CERTIFICATE
 /*========================================================================*/
 .certificate {text-align: center;font-size:16px;margin:60px 0;}
+#certificate{background: #FFF;}
 .certificate_content{position: relative;z-index:2;}
-.certificate_content:before{
-	content: "\e0e1";
-	font-family:'fonticon';
-	position: absolute;
-	top:30px;
-	left:30px;
-	font-size:240px;
-	z-index: -1;
-	color:rgba(233,233,233,0.6);
-}
+
 .certificate h1{
 	font-size: 60px;
 	font-weight: 800;
@@ -3533,21 +3636,20 @@ font-size:18px;
 	font-size:24px;
 	text-transform: uppercase;font-weight: 600;
 }
-
+.mfp-content .certificate_generated .col-md-12{margin:0;padding:0;}
 .certificate_content{
 	position: relative;
-	border:1px solid #EEE;
 	border-radius:2px;
 	background-color:#FFF;
-	padding:0px;
+	padding:0;
 	display: inline-block;
 	width:100%;
 	media:print;
 }
 
 .single-certificate #certificate{
-	max-width: 640px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .vibe_carousel.widget_carousel.flexslider .block{margin-right:0;}
 .vibe_carousel.widget_carousel.flexslider .flex-direction-nav li{border-bottom:none;}
@@ -3753,11 +3855,7 @@ hr{
 	margin:0;
 }
 
-#course_short_description{
-	display: inline-block;
-	max-width: 300px;
-	width:100%;
-}
+
 .congrats_badge .ajax-badge{
 	max-width: 36px;
 	display: block;

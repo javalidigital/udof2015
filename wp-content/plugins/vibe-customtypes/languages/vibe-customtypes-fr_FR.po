@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vibe Custom Types v1.8.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 16:20+0530\n"
-"PO-Revision-Date: 2015-03-31 16:20+0530\n"
+"POT-Creation-Date: 2015-08-03 16:23+0530\n"
+"PO-Revision-Date: 2015-08-03 16:24+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: VibeThemes <vibethemes@gmail.com>\n"
 "Language: fr_FR\n"
@@ -22,350 +22,370 @@ msgstr ""
 "vibe-customtypes\n"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:17
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:18
 msgid "Learning Management System"
 msgstr "Learning Management System"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:17
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:18
 #, fuzzy
 msgid "LMS"
 msgstr "LMS"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:18
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:19
 msgid "Statistics"
 msgstr "Statistiques"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:19
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1054
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1910
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1934
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:20
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1079
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1935
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1959
 msgid "Settings"
 msgstr "Paramètres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:56
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:57
 msgid "Course Category"
 msgstr "﻿Catégorie de la formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:57
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:58
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:59
 msgid "Category"
 msgstr "Catégorie"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:59
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:60
 msgid "Add New Course Category"
 msgstr "Ajouter une catégorie"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:60
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:61
 msgid "All Categories"
 msgstr "Toutes les catégories"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:76
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:77
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:78
 #, fuzzy
 msgid "Courses"
 msgstr "Cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:78
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:79
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:646
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:13
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:20
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:752
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:751
 msgid "Course"
 msgstr "Cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:79
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:80
 msgid "Add New Course"
 msgstr "﻿Ajouter un cours / formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:80
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:81
 #, fuzzy
 msgid "All Courses"
 msgstr "Tous les Cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:102
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:103
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:104
 msgid "Units"
 msgstr "Chapitres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:104
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:105
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:14
 msgid "Unit"
 msgstr "Chapitre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:105
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:106
 msgid "Add New Unit"
 msgstr "Nouveau chapitre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:106
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:107
 msgid "All Units"
 msgstr "Tous les chapitres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:127
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:128
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:129
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:193
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:194
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:130
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:131
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:216
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:217
 msgid "Tag"
 msgstr "Tag"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:130
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:195
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:132
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:218
 msgid "Add New Tag"
 msgstr "Ajouter un nouveau Tag"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:131
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:196
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:133
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:219
 msgid "All Tags"
 msgstr "Tous les Tags"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:145
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:146
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:147
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:148
 #, fuzzy
 msgid "Quizes"
 msgstr "Quiz"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:147
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:149
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:15
 msgid "Quiz"
 msgstr "Quiz"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:148
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:150
 msgid "All Quizes"
 msgstr "Tous les quiz"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:169
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:170
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:171
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:172
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:173
+#, fuzzy
+msgid "Quiz type"
+msgstr "Quiz"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:174
+#, fuzzy
+msgid "Add New Quiz type"
+msgstr "Ajouter nouveau type d'événement"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:175
+#, fuzzy
+msgid "All Quiz types"
+msgstr "Tous les quiz"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:191
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:192
 msgid "Question Bank"
 msgstr "﻿Banque de questions"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:171
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:193
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:16
 #, fuzzy
 msgid "Question"
 msgstr "Question"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:172
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:194
 msgid "All Questions"
 msgstr "﻿Toutes les questions"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:192
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:215
 msgid "Question Tag"
 msgstr "﻿Question Tags"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:216
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:217
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:239
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:240
 msgid "Events"
 msgstr "﻿Évènements"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:218
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:241
 msgid "Event"
 msgstr "﻿Événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:219
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:242
 msgid "Add New Events"
 msgstr "Ajouter Nouvel événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:220
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:243
 msgid "All Events"
 msgstr "﻿Tous les évènements"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:241
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:242
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:243
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:264
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:265
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:266
 msgid "Event type"
 msgstr "﻿Type d'événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:244
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:267
 msgid "Add New Event type"
 msgstr "Ajouter nouveau type d'événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:245
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:268
 msgid "All Event types"
 msgstr "Tous les types d'événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:266
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:267
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:289
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:290
 msgid "Assignments"
 msgstr "﻿Devoirs/exercices"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:268
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:291
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:17
 msgid "Assignment"
 msgstr "Devoir/ Exercice"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:269
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:292
 #, fuzzy
 msgid "Add New Assignment"
 msgstr "Nouveau devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:270
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:293
 #, fuzzy
 msgid "All Assignments"
 msgstr "Tous les devoirs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:291
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:292
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:293
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:315
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:316
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:317
 #, fuzzy
 msgid "Assignment type"
 msgstr "Type de devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:294
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:318
 #, fuzzy
 msgid "Add New Assignment type"
 msgstr "Nouveau type de devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:295
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:319
 msgid "All Assignment types"
 msgstr "﻿Tous les types de devoir/exercices"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:313
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:314
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:337
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:338
 #, fuzzy
 msgid "Payments"
 msgstr "Paiements"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:315
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:339
 msgid "Payment"
 msgstr "Paiement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:316
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:340
 msgid "Add New Payment"
 msgstr "Ajouter nouveau paiement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:317
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:341
 #, fuzzy
 msgid "Payments History"
 msgstr "Historique de paiements"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:335
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:337
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:359
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:361
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:240
 msgid "Certificate Template"
 msgstr "Modèle d'attestation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:336
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:360
 msgid "Certificates Template"
 msgstr "﻿Modèle de certificats"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:338
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:362
 msgid "Add New Certificate"
 msgstr "﻿Ajouter le nouveau certificat"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:339
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:363
 msgid "Certificate Templates"
 msgstr "﻿Modèles de certificats"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:358
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:359
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:360
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:384
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:385
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:386
 msgid "Linkage"
 msgstr "﻿Linkage"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:361
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:387
 msgid "Add New Link"
 msgstr "﻿Ajouter nouveau lien"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:362
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:388
 msgid "All Links"
 msgstr "﻿Tous les liens"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:380
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:381
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:382
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:406
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:407
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:408
 msgid "Level"
 msgstr "Niveau"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:383
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:409
 msgid "Add New Level"
 msgstr "Nouveau niveau"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:384
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:410
 msgid "All Levels"
 msgstr "Tous les niveaux"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:408
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:409
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:434
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:435
 msgid "Testimonials"
 msgstr "Témoignages"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:410
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:436
 msgid "Testimonial"
 msgstr "Témoignage"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:411
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:437
 msgid "All Testimonials"
 msgstr "Tous les témoignages"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:436
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:437
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:462
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:463
 msgid "Popups"
 msgstr "Popups"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:438
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:464
 msgid "Popup"
 msgstr "Popup"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:439
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom-post-types.php:465
 msgid "All Popups"
 msgstr "Tous les Popups"
 
@@ -407,15 +427,15 @@ msgstr ""
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:46
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:146
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:157
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:831
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1593
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:856
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1618
 msgid "Sidebar"
 msgstr "Menu latéral"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:47
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:158
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:832
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:857
 msgid "Select a Sidebar | Default : mainsidebar"
 msgstr "Sélectionner un menu latéral | Défaut : barre principale"
 
@@ -624,7 +644,6 @@ msgstr "Durée  planification  entre les unités  (dans "
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:273
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:595
 msgid "Course Curriculum"
 msgstr "Programme du cours"
 
@@ -749,7 +768,7 @@ msgstr "Podcast"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:378
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:17
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:24
 msgid "General"
 msgstr "Général"
 
@@ -908,12 +927,14 @@ msgstr "Ajouter un indice à l'élève pour la réponse"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:473
-msgid "Answer Explaination"
+#, fuzzy
+msgid "Answer Explanation"
 msgstr "﻿Explication de la réponse"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:474
-msgid "Add Answer explaination"
+#, fuzzy
+msgid "Add Answer explanation"
 msgstr "﻿Ajouter explication de réponse"
 
 # @ vibe-customtypes
@@ -928,7 +949,7 @@ msgstr "Sous-titre du Quiz"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:491
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1021
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1045
 msgid "Connected Course"
 msgstr "Cours connecté"
 
@@ -1240,101 +1261,142 @@ msgstr "Prise en charge de HTML et de shortcodes"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:727
+#, fuzzy
+msgid "All Day"
+msgstr "Tous les Tags"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:728
+#, fuzzy
+msgid "An all Day event"
+msgstr "﻿Tous les évènements"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:740
 msgid "Private Event"
 msgstr "Evénement privé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:728
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:741
 msgid "Only Invited participants can see the Event"
 msgstr "Seuls les participants invités peuvent voir l'événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:745
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:758
 msgid "Associated Product for Event Access"
 msgstr "﻿Produit connexe pour l'accès à l'événement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:746
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:759
 msgid "Purchase of this product grants Event access to the member."
 msgstr "L'achat de cet article permet au membre d'accèder à l'événement."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:757
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:770
 msgid "From"
 msgstr "﻿De"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:758
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:764
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:771
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:777
 msgid "Date on which Payment was done."
 msgstr "Date à laquelle le paiement a été effectué."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:763
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:776
 msgid "To"
 msgstr "A"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:769
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:782
 msgid "Instructor and Commissions"
 msgstr "Instructeur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:770
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:783
 msgid "Instructor commissions"
 msgstr "﻿Commissions formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:779
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:792
 msgid "Background Image/Pattern"
 msgstr "﻿Arrière plan image/pattern"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:780
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:793
 msgid "Add background image"
 msgstr "﻿Ajouter une image à l'arrière plan"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:785
-msgid "Enable Print"
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:798
+#, fuzzy
+msgid "Enable Print & PDF"
 msgstr "﻿Permettre l'impression"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:786
-msgid "Displays a Print Button on top right corner of certificate"
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:799
+#, fuzzy
+msgid ""
+"Displays a Print and Download as PDF Button on top right corner of "
+"certificate"
 msgstr ""
 "﻿Affiche un bouton imprimer sur le coin supérieur droit de l'attestation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:798
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:950
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:811
+#, fuzzy
+msgid "Certificate Width"
+msgstr "Modèle d'attestation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:812
+#, fuzzy
+msgid "Add certificate width"
+msgstr "﻿Ajouter le nouveau certificat"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:817
+#, fuzzy
+msgid "Certificate Height"
+msgstr "Modèle d'attestation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:818
+#, fuzzy
+msgid "Add certificate height"
+msgstr "﻿Ajouter le nouveau certificat"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:823
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:975
 #, fuzzy
 msgid "Custom Class"
 msgstr "Champs personnalisés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:799
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:824
 msgid "Add Custom Class over Certificate container."
 msgstr "﻿Ajouter Classe Personnalisation au conteneur de l'attestation."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:804
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:829
 #, fuzzy
 msgid "Custom CSS"
 msgstr "Champs personnalisés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:805
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:830
 msgid "Add Custom CSS for Certificate."
 msgstr "﻿Ajouter CSS personnalisé pour l'attestation."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:810
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:835
 msgid "NOTE:"
 msgstr "NOTER:"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:811
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:836
+#, fuzzy
 msgid ""
 " USE FOLLOWING SHORTCODES TO DISPLAY RELEVANT DATA : <br />1. <strong>"
 "[certificate_student_name]</strong> : Displays Students Name<br />2. <strong>"
@@ -1344,7 +1406,9 @@ msgid ""
 "Certificate was awarded to the Student<br />5. <strong>"
 "[certificate_student_email]</strong>: Displays registered email of the "
 "Student<br />6. <strong>[certificate_code]</strong>: Generates unique code "
-"for Student which can be validated from Certificate page."
+"for Student which can be validated from Certificate page.<br />7. <strong>"
+"[course_completion_date]</strong>: Displays course completion date from "
+"course activity."
 msgstr ""
 "Utilisez les Shortcodes suivants pour afficher les DONNEES PERTINENTES : "
 "<br /> 1. <strong > [certificate_student_name] </strong > : Affiche nom des "
@@ -1357,233 +1421,239 @@ msgstr ""
 "unique pour l'élève qui peut être validée depuis la page Certificat."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:824
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:849
 #, fuzzy
 msgid "Assignment Sub-Title"
 msgstr "Publier le sous-titre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:825
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:850
 #, fuzzy
 msgid "Assignment Sub-Title."
 msgstr "Publier le sous-titre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:838
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:863
 #, fuzzy
 msgid "Assignment Maximum Marks"
 msgstr "Définir la note maximale pour le devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:839
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:864
 msgid "Set Maximum marks for the assignment"
 msgstr "Définir la note maximale pour le devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:845
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:870
 #, fuzzy
 msgid "Assignment Maximum Time limit"
 msgstr "Définir la note maximale pour le devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:846
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:871
 #, fuzzy
 msgid "Set Maximum Time limit for Assignment ( in "
 msgstr "Définir la note maximale pour le devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:852
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:877
 msgid "Include in Course Evaluation"
 msgstr "Compris dans l'évaluation du cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:853
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:878
 msgid "Include assignment marks in Course Evaluation"
 msgstr "Inclure les poins obtenus dans l'évaluation des cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:865
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:890
 msgid "Include in Course"
 msgstr "﻿Inclus dans la formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:866
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:891
 msgid "Assignments marks will be shown/used in course evaluation"
 msgstr "Les points seront montrés ou utilisées dans l'évaluation du cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:872
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:897
 #, fuzzy
 msgid "Assignment Submissions"
 msgstr "Devoir"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:873
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:898
 #, fuzzy
 msgid "Select type of assignment submissions"
 msgstr "Selectionner un type de question"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:883
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:908
 msgid "Attachment Type"
 msgstr "﻿Type de pièce jointe"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:884
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:909
 #, fuzzy
 msgid "Select valid attachment types "
 msgstr "Sélectionner le Cours pour lequel l'événement est valide"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:924
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:949
 msgid "Attachment Size (in MB)"
 msgstr "﻿Taille de pièce jointe (en Mo)"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:925
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:950
 msgid "Set Maximum Attachment size for upload ( set less than "
 msgstr ""
 "﻿Définir la taille maximale des pièces jointes pour le téléchargement "
 "( définir moins que "
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:936
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:961
 msgid "Width (in px)"
 msgstr "﻿Largeur (en px)"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:937
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:962
 msgid "Set Maximum width of popup"
 msgstr "﻿Définissez la largeur Maximum du popup"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:943
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:968
 msgid "Height (in px)"
 msgstr "﻿Hauteur (en px)"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:944
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:969
 msgid "Set Maximum height of popup "
 msgstr "﻿Hauteur Maximum de popup"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:951
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:976
 msgid "Add custom class to popup "
 msgstr "﻿Ajoutez classe personnalisée pour le Popup"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:957
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:982
 #, fuzzy
 msgid "Add Custom CSS"
 msgstr "Champs personnalisés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:958
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:983
 #, fuzzy
 msgid "Custom CSS for Popup"
 msgstr "Champs personnalisés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1022
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1046
 msgid "Connect this question to a course"
 msgstr "﻿Connectez cette question à une formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1028
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1052
 #, fuzzy
 msgid "Connected Unit"
 msgstr "Cours connecté"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1029
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1053
 msgid "Connect this question to a Unit"
 msgstr "﻿Connectez cette question à une unité"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1038
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1063
 #, fuzzy
 msgid "Post Settings"
 msgstr "Paramètres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1039
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1064
 msgid "Page Settings"
 msgstr "Paramètres de la Page"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1041
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1066
 msgid "Course Settings"
 msgstr "Paramètres du Cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1043
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1068
 msgid "Course Product"
 msgstr "﻿Produit formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1045
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1070
 msgid "Course Membership"
 msgstr "Abonnement du Cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1048
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1073
 msgid "Unit Settings"
 msgstr "Paramètres du Chapitre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1050
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1075
 msgid "Question Settings"
 msgstr "Configurer Question"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1051
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1076
 msgid "Quiz Settings"
 msgstr "Configurer Qiz"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1056
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1081
 #, fuzzy
 msgid "Testimonial Author Information"
 msgstr "Afficher les infos sur l'auteur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1057
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1082
 #, fuzzy
 msgid "Payments Settings"
 msgstr "Paramètres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1058
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1083
 #, fuzzy
 msgid "Certificate Template Settings"
 msgstr "Modèle d'Attestation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1059
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1084
 #, fuzzy
 msgid "Popup Settings"
 msgstr "Paramètres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1062
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1085
+#, fuzzy
+msgid "Survey/Practice Settings"
+msgstr "Paramètres de la Page"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1088
 #, fuzzy
 msgid "Product Course Settings"
 msgstr "Ajustes del curso"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1066
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1092
 #, fuzzy
 msgid "WPLMS Events Settings"
 msgstr "WPLMS Widget ÉVÉNEMENTS"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1071
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1097
 #, fuzzy
 msgid "WPLMS Assignments Settings"
 msgstr "WPLMS Widget ÉVÉNEMENTS"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1080
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/custom_meta_boxes.php:1106
 #, fuzzy
 msgid "Page Builder"
 msgstr "Paramètres de la Page"
@@ -1698,7 +1768,9 @@ msgstr "Nom d'utilisateur"
 # @ text-domain
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/autoupdate/class-plugin-update.php:638
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4194
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:454
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:470
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4218
 msgid "Email"
 msgstr "Email"
 
@@ -1709,7 +1781,7 @@ msgstr "Nom d'utilisateur Themeforest (pour maj auto)"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:10
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:750
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:749
 msgid "Select Module"
 msgstr "﻿Sélectionner module"
 
@@ -1728,7 +1800,7 @@ msgstr "﻿Activer niveau taxonomie"
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:25
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:32
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:39
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:371
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:373
 msgid "All"
 msgstr "Tous"
 
@@ -1858,7 +1930,7 @@ msgstr "﻿Type"
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:188
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:226
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:718
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1061
 msgid "Title"
 msgstr "﻿Titre"
 
@@ -1873,9 +1945,9 @@ msgstr "﻿Date"
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:190
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:228
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/class.export.php:370
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1396
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1399
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1440
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1411
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1414
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1455
 msgid "Content"
 msgstr "﻿Contenu"
 
@@ -2137,7 +2209,7 @@ msgstr "AVIS"
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:78
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:22
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:754
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:753
 msgid "Students"
 msgstr "Elèves"
 
@@ -2147,519 +2219,692 @@ msgid " Comments"
 msgstr "Commentaires"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:259
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:263
 msgid "Event "
 msgstr "Evénement"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:264
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:268
 msgid "Start Date "
 msgstr "Date de début"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:267
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:271
 msgid "End Date "
 msgstr "Date de fin"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:271
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:275
 msgid "Start Time "
 msgstr "Début"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:274
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:278
 msgid "End Time "
 msgstr "Fin"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:277
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:281
+#, fuzzy
+msgid "All Day "
+msgstr "Tous les Tags"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:281
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:448
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:452
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:456
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:464
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:468
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:472
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:989
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1029
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:963
+msgid "Yes"
+msgstr "Oui"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:284
 msgid "Frequency "
 msgstr "Fréquence"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:277
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:284
 msgid "Every "
 msgstr "Tous"
 
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:284
+msgid "for "
+msgstr ""
+
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:280
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:287
 msgid "Venue "
 msgstr "Lieu"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:283
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:290
 msgid "View full details"
 msgstr "Afficher les détails"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:337
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/featured.php:344
 #, fuzzy
 msgid "Comments"
 msgstr "Commentaires"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:18
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:25
 msgid "Set Commissions"
 msgstr "Réglage des Commissions"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:19
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:26
 msgid "Pay Commissions"
 msgstr "﻿Payer les Commissions"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:20
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:27
 msgid "Admin Functions"
 msgstr "﻿Fonctions d'admin"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:21
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:28
 msgid "Import/Export"
 msgstr "Importer/Exporter"
 
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:29
+msgid "Touch Points"
+msgstr ""
+
+# @ text-domain
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:91
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:30
+#, fuzzy
+msgid "Emails"
+msgstr "Email"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:122
+#, fuzzy
+msgid "Settings Saved"
+msgstr "Paramètres"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:124
+#, fuzzy
+msgid "Unable to Save settings"
+msgstr "﻿Impossible de créer un nouvel utilisateur."
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:130
 msgid "LMS General Settings"
 msgstr "﻿Paramètres généraux de LMS"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:95
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:134
 msgid "Student Login redirect"
 msgstr "﻿Redirection de connexion élève"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:99
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:112
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:138
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:151
 msgid "Home page"
 msgstr "﻿Page d'accueil"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:100
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:113
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:139
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:152
 msgid "Profile page"
 msgstr "﻿Page de profil"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:101
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:114
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:140
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:153
 msgid "My Courses page"
 msgstr "﻿Ma page de formations"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:102
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:116
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:141
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:155
 msgid "Dashboard page"
 msgstr "﻿Page du tableau de bord"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:103
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:117
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:142
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:156
 #, fuzzy
 msgid "Same page"
 msgstr "﻿Page d'accueil"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:105
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:119
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:144
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:158
 #, fuzzy
 msgid "Default is home page"
 msgstr "﻿Valeur par défaut est la page en cours"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:108
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:147
 msgid "Instructor Login redirect"
 msgstr "Formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:115
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:154
 msgid "Instructing Courses page"
 msgstr "﻿Page d'instruction de formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:122
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:161
 msgid "Hide Members section in Single Course page"
 msgstr "﻿Masquer les membres dans la page de cours unique"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:125
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:164
 msgid " Hides member section in course pages"
 msgstr "﻿Masquer les membres dans la page de formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:128
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:167
 msgid "Show curriculum below Course description"
 msgstr "﻿Voir programme au-dessous de la description de formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:131
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:170
 msgid "Show curriculum below course description"
 msgstr "﻿Voir programme au-dessous de la description de formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:134
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:173
 msgid "Course Timeline Accordion style"
 msgstr "﻿Timeline de formation en style accordéon"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:137
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:176
 msgid "Show curriculum accordion style"
 msgstr "﻿Voir le programme en style accordéon"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:140
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:179
 msgid "Show User progress in Course Admin"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:143
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:182
 msgid ""
-"Small prgress bar is displayed for every user below her name in course -> "
-"admin section, * requires WPLMS Dashboards plugin & Course progress bar "
-"dashboard widget."
+"Small progress bar is displayed for every user below her name in course -> "
+"admin section"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:146
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:185
 msgid "Enable Unit/Quiz Start Date time"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:149
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:188
 msgid "Units and Quizzes start at a particular date and time"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:152
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:191
 msgid "Enable One session per user"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:155
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:194
 msgid "A User can login from one unique user id (excludes administrators)"
 msgstr ""
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:158
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:197
 #, fuzzy
 msgid "Enable In-Course Quiz"
 msgstr "﻿Total cours étudiants "
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:161
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:200
 msgid "Quizzes open inside course like units"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:164
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:203
 msgid "In-Course Quiz questions per page"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:167
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:206
 msgid "set number of questions appearing per page in in-course quizzes"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:170
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:209
 msgid "Hide Administrators in Instructors"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:173
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:212
 msgid "Hide Administrator in all instructors page & elsewhere"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:176
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:215
 #, fuzzy
 msgid "Enable message to Instructor in Course Page"
 msgstr "﻿Page d'instruction de formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:179
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:218
 msgid "Enables a Message icon to send message to Instructor"
 msgstr ""
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:182
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:221
 #, fuzzy
 msgid "Enable Course Codes"
 msgstr "﻿Total cours étudiants "
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:184
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:223
 msgid ""
 "Student can purchase/access courses by using custom defined codes for "
 "courses in course pricing section"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:188
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:227
+msgid "Coming soon courses"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:229
+msgid "Enable coming soon option for courses"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:233
+#, fuzzy
+msgid "Enable Section Drip feed"
+msgstr ""
+"Activez de la planification. Les élèves verront la session suivante après X "
+"jours."
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:235
+msgid "Drip feed is applied section wise instead of unit wise."
+msgstr ""
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:239
+#, fuzzy
+msgid "Enable passing score for Quiz"
+msgstr "﻿Total cours étudiants "
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:241
+#, fuzzy
+msgid "Student progress to next"
+msgstr "﻿Redirection de connexion élève"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:245
+#, fuzzy
+msgid "Hide correct answers"
+msgstr "Bonne réponse"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:247
+msgid ""
+"Correct answers in quizzes are not displayed unless student has finished/"
+"submitted the course."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:251
+msgid "Enable negative marking"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:253
+msgid "Enables negative marking for questions in quizzes"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:257
 msgid "Show WooCommerce/Pmpro account in profile"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:190
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:259
 msgid "Display WooCommerce account in profile"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:194
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:263
 #, fuzzy
 msgid "Enable Front end course deletion"
 msgstr ""
 "Activez de la planification. Les élèves verront la session suivante après X "
 "jours."
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:196
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:265
 msgid ""
 "Instructors will be able to delete course and related content from front end"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:200
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:218
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:269
 msgid "Disable Auto allocation of Free courses"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:202
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:220
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:271
 msgid "Disables auto allocation of free courses"
 msgstr ""
 
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:275
+#, fuzzy
+msgid "Show Assignments in Course Curriculum"
+msgstr "Programme du cours"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:277
+#, fuzzy
+msgid "Assignments will be displayed in Course Curriculum"
+msgstr "Les points seront montrés ou utilisées dans l'évaluation du cours"
+
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:206
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:281
 #, fuzzy
 msgid "Enable Student menus"
 msgstr "Total des Elèves"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:208
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:283
 msgid "Adds New menu locations for Students"
 msgstr ""
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:212
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:287
 #, fuzzy
 msgid "Enable Instructor menus"
 msgstr "Total des Professeurs"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:214
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:289
 msgid "Adds New menu locations for Instructors"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:224
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:293
+#, fuzzy
+msgid "Enable Course forum privacy"
+msgstr "﻿Total cours étudiants "
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:295
+msgid "Only course students can access course forums"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:299
+msgid "Display Submission time in Course/Quiz/Assignment submissions"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:302
+msgid ""
+"Displays time (eg 2 hrs) with manual submissions, * requires activity to be "
+"enabled"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:305
 msgid "Default order in course directory"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:228
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:309
 #, fuzzy
 msgid "Recent"
 msgstr "récent"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:229
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:310
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:323
 msgid "Alphabetical"
 msgstr ""
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:230
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:311
 #, fuzzy
 msgid "Number of Students"
 msgstr "Nombre d'élèves"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:231
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:312
 msgid "Rating"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:233
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:314
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:325
 #, fuzzy
 msgid "Default is menu order"
 msgstr "﻿Valeur par défaut est la page en cours"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:236
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:317
+msgid "Default order in Members directory"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:321
+msgid "Last active"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:322
+msgid "Newest registered"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:328
 msgid "Instructor Signup Ninja Forms Form ID"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:239
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:331
 msgid "Set Ninja Form ID for Instructor Signup"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:242
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:334
 msgid "Limit Number of Courses per Instructor"
 msgstr "﻿Limiter le nombre de formations par formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:245
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:337
 msgid "( 0 for unlimited course per instructor )"
 msgstr "﻿(0 pour formation illimitée par formateur)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:248
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:340
 msgid "Limit Number of Units Created per Instructor"
 msgstr "﻿Limiter le nombre d'unités/châpitres créées par formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:251
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:343
 msgid " ( 0 for unlimited )"
 msgstr "﻿(0 pour illimité)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:254
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:346
 msgid "Limit Number of Quiz Created per Instructor "
 msgstr "﻿Limiter le nombre de quiz créés par formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:257
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:349
 msgid "(0 for unlimited course per instructor )"
 msgstr "﻿(0 pour formation illimitée par formateur)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:288
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:380
 msgid "You have reached your monthly post limit"
 msgstr "﻿Vous avez atteint votre limite mensuelle d'article"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:296
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:385
 msgid "LMS Admin Functions [ For Ad-Hoc Management]"
 msgstr "﻿LMS fonctions Administrateur [pour la gestion l'Ad-Hoc]"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:298
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:387
 #, fuzzy
 msgid "Custom Field Value"
 msgstr "Champs personnalisés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:299
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:388
 msgid "Custom Field for Student Value"
 msgstr "﻿Champ personnalisé pour la valeur de l'élève"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:300
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:389
 msgid "Current Time Stamp "
 msgstr "﻿Horodatage actuel"
 
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:444
+msgid "STUDENT"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:446
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:462
+msgid "Message"
+msgstr ""
+
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:352
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:447
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:451
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:455
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:463
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:467
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:471
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:988
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1028
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:963
+msgid "No"
+msgstr "Non"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:450
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:466
+#, fuzzy
+msgid "Notification"
+msgstr "Localisation"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:460
+msgid "INSTRUCTOR"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:488
 msgid "Save Settings"
 msgstr "Enregistrer les Paramétres"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:368
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:502
 msgid "Field Value Changed"
 msgstr "﻿Valeur de champ a changé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:370
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:504
 msgid "Error Field value not changed"
 msgstr "﻿Valeur de champ d'erreur n'a ne pas changé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:372
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:506
 msgid "Error Field value not entered"
 msgstr "Champ d'erreur  la valeur n'est ne pas entré"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:385
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:519
 msgid "Student Value Changed"
 msgstr "﻿La valeur du participant a changé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:387
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:521
 msgid "Student value not changed"
 msgstr "﻿La valeur de l'élève n'a ne pas changé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:389
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:523
 msgid "Student value not entered"
 msgstr "La valeur de l'élève n'est ne pas entrée"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:427
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:559
 msgid "Set Instructor Commisions"
 msgstr "Réglage commissions des formateurs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:431
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:563
 msgid "Instructor Commissions Saved"
 msgstr "﻿Commissions formateur sauvegardées"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:433
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:565
 msgid "Instructor Commissions not saved, contact Site-Admin !"
 msgstr "﻿Commissions formateurs non sauvegardées, contactez Site-Admin !"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:442
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:574
 msgid "Course Name"
 msgstr "﻿Nom de la formation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:442
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:574
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:21
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:753
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:212
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4194
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:752
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:606
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4218
 msgid "Instructor"
 msgstr "Professeur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:442
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:574
 msgid "PERCENTAGE"
 msgstr "﻿POURCENTAGE"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:471
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:603
 msgid "Set Commisions"
 msgstr "Réglage des Commissions"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:476
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:608
 msgid "Pay Instructor Commisions"
 msgstr "﻿Payer les commissions du formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:486
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:618
 #, php-format
 msgid "Commission Payments on %s"
 msgstr "﻿Paiements de commissions sur %s"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:494
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:626
 msgid " Commission Payments Saved"
 msgstr "﻿Paiements commissions sauvegardées"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:496
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:628
 msgid "Commission payments not saved !"
 msgstr "﻿Paiements de commissions non sauvegardées !"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:507
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:639
 msgid "CHECK NOW"
 msgstr "﻿VERIFIER MAINTENAT"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:514
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:646
 msgid "SET TIME PERIOD"
 msgstr "CHOISIR LA DUREE"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:524
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:656
 msgid "Instructor Name"
 msgstr "Nom du formateur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:524
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4194
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:656
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4218
 msgid "Commission"
 msgstr "Commission"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:524
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:656
 msgid "PAYPAL EMAIL"
 msgstr "﻿EMAIL PAYPAL"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:524
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3869
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3906
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:656
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3871
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3908
 msgid "Select"
 msgstr "Sélectionner"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:524
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:546
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:656
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:678
 msgid "Pay via PayPal"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:553
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:685
 msgid "Mark as Paid"
 msgstr "﻿Marquer comme payé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:559
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:691
 #, fuzzy
 msgid "Instructor Commission"
 msgstr "﻿Commissions formateur"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:582
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:714
 msgid "Import/Export WPLMS Elements"
 msgstr "﻿Importer/exporter des éléments WPLMS"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:583
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:715
 msgid ""
 "Download and upload in CSV format. Import/Export WPLMS elements with user "
 "statuses: Courses, Quizzes, Units, Assignments, Questions and Events."
@@ -2668,9 +2913,444 @@ msgstr ""
 "avec le statut de l'utilisateur : formations, quiz, unités, des "
 "affectations, des Questions et des événements."
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:585
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:717
 msgid "EXPORT SETTINGS"
 msgstr "EXPORTATION DES REGLAGES"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:733
+msgid "User Touch Points"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:734
+msgid ""
+"Set touch points for Students and Instructors in WPLMS. Connect with Student "
+"or Instructor via following touch points"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:738
+#, fuzzy
+msgid "Annoucements"
+msgstr "﻿Devoirs/exercices"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:745
+msgid "News"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:752
+#, fuzzy
+msgid "Course Subscribed"
+msgstr "Cours repris"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:759
+#, fuzzy
+msgid "User added to Course"
+msgstr "﻿Inclus dans la formation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:766
+#, fuzzy
+msgid "Course Certificate"
+msgstr "Attestation de réussite"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:773
+#, fuzzy
+msgid "Course Badge"
+msgstr "﻿Nom de la formation"
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:781
+#, fuzzy
+msgid "Course Reset by Instructor"
+msgstr "Nombre Total des Cours évalués par le Professeur "
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:788
+#, fuzzy
+msgid "Course Retake by User"
+msgstr "Cours repris"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:795
+#, fuzzy
+msgid "Course Submit"
+msgstr "Forum du cours"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:802
+#, fuzzy
+msgid "Course Evaluation"
+msgstr "Compris dans l'évaluation du cours"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:809
+#, fuzzy
+msgid "Course Reviews"
+msgstr "Cours repris"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:816
+#, fuzzy
+msgid "Unsubscribe Course"
+msgstr "Cours Associés"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:823
+msgid "Unit marked complete by User"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:830
+msgid "Unit comment added by User"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:838
+msgid "Quiz Start by user"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:845
+#, fuzzy
+msgid "Quiz Submitted by user"
+msgstr "Sous-titre du Quiz"
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:852
+#, fuzzy
+msgid "Quiz Reset by Instructor"
+msgstr "Nombre Total des Quiz évalués par le Professeur "
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:859
+msgid "Quiz Retake by User"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:866
+#, fuzzy
+msgid "Quiz Evaluation"
+msgstr "Auto évaluation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:873
+#, fuzzy
+msgid "Assignment Start by user"
+msgstr "Type de devoir"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:880
+#, fuzzy
+msgid "Assignment Submitted by user"
+msgstr "Publier le sous-titre"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:887
+#, fuzzy
+msgid "Assignment Evaluation"
+msgstr "Auto évaluation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:900
+#, fuzzy
+msgid "Email Settings"
+msgstr "Paramètres de la Page"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:901
+#, php-format
+msgid "Configure email template for Emails, recommended plugin for emails %s"
+msgstr ""
+
+# @ text-domain
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:904
+#, fuzzy
+msgid "Email Options"
+msgstr "Email: "
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:905
+msgid "Account Activation Email"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:906
+msgid "Email Schedule"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:907
+#, fuzzy
+msgid "Email Template"
+msgstr "Modèle de publication"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:933
+msgid "FROM \"Name\""
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:936
+msgid "From Name in emails"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:939
+msgid "FROM \"Email\""
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:942
+msgid "From Email in emails"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:945
+msgid "Charset"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:949
+msgid "UTF"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:950
+msgid "ISO"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:952
+msgid "Set email charset"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:961
+msgid "Subject"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:964
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1010
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1050
+msgid "Subject in Activation email"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:967
+msgid "Message (supports HTML)"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:970
+msgid ""
+"Activation email message, user {{activationlink}} to add the activation link"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:979
+msgid "Schedule Drip Feed Email"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:984
+#, fuzzy
+msgid "Enable Drip Feed Email"
+msgstr ""
+"Activez de la planification. Les élèves verront la session suivante après X "
+"jours."
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:991
+msgid "Email students when the drip feed units are available"
+msgstr ""
+
+# @ text-domain
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:994
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1034
+#, fuzzy
+msgid "Schedule Email"
+msgstr "Email"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:998
+msgid "Before 24 Hours of unit availability"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:999
+msgid "Before 12 Hours of unit availability"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1000
+msgid "Before 6 Hours of unit availability"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1001
+msgid "Before 1 Hours of unit availability"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1002
+msgid "When Unit is available"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1004
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1044
+msgid "Accuracy of email depends upon site traffic and resources."
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1007
+#, fuzzy
+msgid "Drip Feed Mail Subject"
+msgstr "Durée de la formation continue"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1013
+msgid "Drip Feed Mail Message (supports HTML)"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1016
+msgid ""
+"{{unit}} for Unit name, {{course}} for Course name & link, {{user}} for User "
+"name"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1019
+msgid "Schedule Course Expiry Email"
+msgstr ""
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1024
+#, fuzzy
+msgid "Enable Course Expire Email"
+msgstr "﻿Total cours étudiants "
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1031
+#, fuzzy
+msgid "Email students when the course expires"
+msgstr "Total des Elèves qui prennent Mes Cours"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1038
+msgid "Before 24 Hours of Course expiry"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1039
+msgid "Before 12 Hours of Course expiry"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1040
+msgid "Before 6 Hours of Course expiry"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1041
+msgid "Before 1 Hours of Course expiry"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1042
+#, fuzzy
+msgid "When Course expires"
+msgstr "Cours repris"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1047
+msgid "Course Expire Mail Subject"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1053
+msgid "Course expire Mail Message (supports HTML)"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1056
+msgid "{{course}} for Course name & link, {{user}} for User name"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1076
+#, fuzzy
+msgid "Customize Template"
+msgstr "Modèle de publication"
+
+# @ text-domain
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1078
+#, fuzzy
+msgid "Email Bg"
+msgstr "Email: "
+
+# @ text-domain
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1079
+#, fuzzy
+msgid "Email Color"
+msgstr "Email: "
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1080
+#, fuzzy
+msgid "Title Bg"
+msgstr "﻿Titre"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1081
+#, fuzzy
+msgid "Title Color"
+msgstr "Evénement"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1082
+#, fuzzy
+msgid "Greetings BG"
+msgstr "Paramètres"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1083
+#, fuzzy
+msgid "Greetings Color"
+msgstr "Evénement"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1084
+msgid "Message BG"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1085
+msgid "Message Color"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1086
+msgid "Sender BG"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1087
+#, fuzzy
+msgid "Sender Color"
+msgstr "Evénement"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1088
+msgid "Item BG"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1089
+#, fuzzy
+msgid "Item Color"
+msgstr "Evénement"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1090
+msgid "Footer BG"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1091
+#, fuzzy
+msgid "Footer Color"
+msgstr "Evénement"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1094
+#, fuzzy
+msgid "View Generated Template"
+msgstr "Modèle d'attestation"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1095
+msgid "Restore Default"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1096
+#, fuzzy
+msgid "Apply Changes"
+msgstr "Enregistrer les Modifications"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1127
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1144
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:741
+msgid "Security check Failed. Contact Administrator."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/musettings.php:1149
+msgid "Template saved"
+msgstr ""
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:19
@@ -2682,7 +3362,7 @@ msgid "Overview"
 msgstr "﻿vue d&rsquo;ensemble"
 
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:23
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:805
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:804
 msgid "Download Stats"
 msgstr "﻿Télécharger les stats"
 
@@ -2726,7 +3406,7 @@ msgstr "Nombre d'élèves"
 
 # @ vibe
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:234
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1052
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1051
 msgid "Total Students"
 msgstr "Total des Elèves"
 
@@ -2741,25 +3421,25 @@ msgstr "Total des Elèves"
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:596
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:602
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:608
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:931
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:937
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:943
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1054
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1060
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1066
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1171
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1177
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1183
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1455
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1461
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1467
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1473
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:930
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:936
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:942
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1053
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1059
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1065
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1169
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1175
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1181
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1453
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1459
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1465
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1471
 msgid "n/a"
 msgstr "n/c"
 
 # @ vibe
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:240
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:929
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:928
 msgid "Total Instructors"
 msgstr "Total des Professeurs"
 
@@ -2780,19 +3460,19 @@ msgstr "Total des Attestations"
 
 # @ vibe
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:267
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1190
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1188
 msgid "This year's monthly subscriptions"
 msgstr "Nombre d'Abonnements mensuels de cette année"
 
 # @ vibe
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:269
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1192
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1190
 msgid "This month's daily subscriptions"
 msgstr "Nombre d'Abonnements quotidiens du mois"
 
 # @ vibe
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:365
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1293
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1291
 msgid "Number of Courses Started"
 msgstr "Nombre de Cours Commencés"
 
@@ -2822,520 +3502,577 @@ msgid "Total Quiz Finished by Students"
 msgstr "Nombre Total des Quiz terminés par les Elèves "
 
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:650
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1084
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1083
 msgid "Prev"
 msgstr "﻿Prec"
 
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:659
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1093
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1092
 msgid "Next"
 msgstr "﻿Suivant"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:747
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:746
 msgid "Download Standard Reports"
 msgstr "﻿Télécharger les rapports Standard"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:807
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:806
 msgid "Generate report"
 msgstr "﻿Générez un rapport."
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:935
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:934
 msgid "Total Courses Evaluated by Instructor"
 msgstr "Nombre Total des Cours évalués par le Professeur "
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:941
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:940
 msgid "Total Quiz Evaluated by Instructor"
 msgstr "Nombre Total des Quiz évalués par le Professeur "
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1058
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1057
 msgid "Total Active Students"
 msgstr "﻿Nombre total de participants actifs"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1064
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1063
 msgid "Total Course Students "
 msgstr "﻿Total cours étudiants "
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1169
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1167
 msgid "Total Students in My Courses"
 msgstr "Total des Elèves qui prennent Mes Cours"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1175
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1173
 msgid "Total Badges given in My Courses"
 msgstr "Nombre Total de Médailles données dans Mes Cours"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1181
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1179
 msgid "Total Certificates given in My Courses"
 msgstr "Nombre Total d'Attestations données dans Mes Cours"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1453
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1451
 msgid "Total Students taking my courses"
 msgstr "Nombre total d'élèves qui suivent mes cours"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1459
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1457
 msgid "My Courses Finished by Students"
 msgstr "Mes cours terminés par les élèves"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1465
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1463
 msgid "My Units Finished by Students"
 msgstr "Mes Chapitres terminés par les élèves"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1471
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/statistics.php:1469
 msgid "My Quiz Finished by Students"
 msgstr "Mes Quiz terminés par les élèves"
 
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:172
+#, fuzzy
+msgid "Assignment :"
+msgstr "Devoir/ Exercice"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:193
+msgid "Quiz passing score"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:194
+msgid ""
+"Passing score for quiz. Combined with Prev.Unit/Quiz lock the user progress "
+"can be restricted."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:207
+msgid "SET QUIZ PASSING SCORE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:232
+msgid "NEGATIVE MARKS PER QUESTION"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:249
+msgid "Negative Marks per Question"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:250
+#, fuzzy
+msgid "Deduct marks for a Wrong answer."
+msgstr "Notes pour une Réponse Correcte"
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:328
+msgid "COMING SOON"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:335
+msgid "Coming soon Mode"
+msgstr ""
+
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:139
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:336
+#, fuzzy
+msgid "Enable Coming soon mode"
+msgstr "﻿Total cours étudiants "
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:364
+msgid "Coming Soon mode"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:367
+msgid "Disable"
+msgstr ""
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:369
+#, fuzzy
+msgid "Enable"
+msgstr "﻿Permettre l'impression"
+
+# @ vibe
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:533
 #, fuzzy
 msgid "Top Menu for Students"
 msgstr "﻿Total cours étudiants "
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:140
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:534
 #, fuzzy
 msgid "Main Menu for Students"
 msgstr "﻿La plupart des participants"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:141
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:535
 #, fuzzy
 msgid "Mobile Menu for Students"
 msgstr "Nombre d'élèves"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:148
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:542
 #, fuzzy
 msgid "Top Menu for Instructor"
 msgstr "Professeur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:149
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:543
 #, fuzzy
 msgid "Main Menu for Instructor"
 msgstr "Professeur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:150
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:544
 #, fuzzy
 msgid "Mobile Menu for Instructor"
 msgstr "Professeur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:165
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:559
 #, fuzzy
 msgid "Make Instructor"
 msgstr "Professeur"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:207
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:601
 msgid "There was some error"
 msgstr ""
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:209
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:603
 #, fuzzy
 msgid "Make Student"
 msgstr "﻿La plupart des participants"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:227
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:621
 msgid "Send Message"
 msgstr ""
 
 # @ text-domain
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:231
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:625
 #, fuzzy
 msgid "Send Email"
 msgstr "Email"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:308
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:705
 #, fuzzy
 msgid "Take this Course"
 msgstr "﻿Inclus dans la formation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:323
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:720
 msgid "My Orders"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:331
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:728
 #, fuzzy
 msgid "My Membership"
 msgstr "ADHESION"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:344
-msgid "Security check Failed. Contact Administrator."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:349
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:355
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:746
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:752
 msgid "Code does not exist. Please check the code."
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:365
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:383
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:763
 #, fuzzy
 msgid "Course code applied"
 msgstr "Cours repris"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:373
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:391
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:772
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:784
 msgid "Congratulations! You are now added to the course."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:375
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:393
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:774
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:786
 msgid "User already in course."
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:378
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:777
 #, fuzzy
 msgid "Maximum number of usage for course code exhausted"
 msgstr "Nombre d'élèves qui peuvent suivre le cours en même temps."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:415
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:808
 #, fuzzy
 msgid "Course Codes"
 msgstr "Cours"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:416
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:809
 msgid "Enter Course codes (XXX|2,YYY|4)"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:431
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:824
 msgid "Set Course purchase codes"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:432
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:825
 msgid ""
 "Student can gain access to Course using course codes (multiple codes comma "
 "saperated, usage count pipe saperate eg : xxx|2,yyy|4)"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:441
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:834
 msgid "Access Date"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:442
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:835
 #, fuzzy
 msgid "Date on which unit is accessible"
 msgstr "Date à laquelle se termine l'Evénement"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:447
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:840
 msgid "Access Time"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:448
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:841
 msgid "Time after which unit is accessible"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:482
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:875
 msgid "Unit access date"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:483
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:876
 msgid "Access date"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:485
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:878
 msgid "Unit access time"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:486
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:879
 msgid "Access time"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:616
-msgid "FREE"
-msgstr "GRATUIT"
-
-# @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:630
-msgid " Hours"
-msgstr " Heures"
-
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:630
-msgid "minutes"
-msgstr "minutes"
-
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:652
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:995
 msgid "<strong>ERROR</strong>: User already logged in."
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:672
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1015
 #, fuzzy
 msgid "WPLMS Course codes widget"
 msgstr "﻿Ma page de formations"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:674
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1017
 #, fuzzy
 msgid "WPLMS Course Codes"
 msgstr "﻿Mes Formations"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:698
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1041
 msgid "Submit"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:713
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1056
 #, fuzzy
 msgid "Enter Course code"
 msgstr "Cours connecté"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:714
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1057
 msgid "Place holder text"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:719
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/includes/tips.php:1062
 msgid "Course Codes input box text"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3614
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3663
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4131
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4180
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3616
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3665
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4155
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4204
 msgid "None"
 msgstr "Aucun"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3712
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3714
 msgid "Select One"
 msgstr "﻿Choisissez en un"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3789
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3791
 msgid "Latitude"
 msgstr "Latitude"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3790
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3792
 msgid "Longitude"
 msgstr "Longitude"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3791
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3793
 msgid "Closest Matching Address"
 msgstr "Adresse la plus proche correspondante"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3794
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3796
 msgid "Street Address"
 msgstr "Rue"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3795
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3797
 msgid "City"
 msgstr "Ville"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3796
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3798
 msgid "State"
 msgstr "Etat"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3797
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3799
 msgid "Zip/Pin Code"
 msgstr "﻿Code postal"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3798
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3800
 msgid "Country"
 msgstr "Pays"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3821
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3844
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3823
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3846
 msgid "Buddypress Groups is not Active"
 msgstr "Les Groupes BuddyPress ne sont pas actifs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3829
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3831
 msgid "Select groups"
 msgstr "﻿Sélectionner groupes"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3850
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3852
 msgid "Add Section"
 msgstr "Ajouter une Partie"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3960
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3951
+#, fuzzy
+msgid "Select "
+msgstr "Sélectionner"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3962
 msgid "Select Taxonomy"
 msgstr "﻿Sélectionnez la taxonomie"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4083
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:3996
+#, fuzzy
+msgid "Add Question"
+msgstr "﻿Toutes les questions"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4009
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4010
+#, fuzzy
+msgid "Type Question"
+msgstr "Question"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4018
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4039
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4057
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4077
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4107
 msgid "Add More"
 msgstr "Ajouter Plusieurs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4137
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4186
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4161
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4210
 msgid "Marks for a Correct answer"
 msgstr "Notes pour une Réponse Correcte"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4190
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4214
 msgid "Total marks for the Quiz :"
 msgstr "Total des points de Quiz :"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4216
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4240
 msgid "Delete image"
 msgstr "Supprimer l'image"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4216
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4279
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4358
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4421
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4500
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4563
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4240
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4303
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4382
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4445
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4524
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4587
 msgid "Delete"
 msgstr "Effacer"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4230
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4254
 msgid "Add Gallery images"
 msgstr "Ajouter une Galerie d'images"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4256
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4280
 msgid "Add Images to Gallery"
 msgstr "Ajouter des Images à la Galerie"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4258
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4282
 msgid "Add to Gallery"
 msgstr "Ajouter à la Galerie"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4358
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4382
 msgid "Delete audio file"
 msgstr "Supprimer un fichier audio"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4372
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4396
 msgid "Add Audio Files"
 msgstr "Ajouter des Fichiers Audio"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4398
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4400
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4422
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4424
 msgid "Add Audio"
 msgstr "Ajouter  Audio"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4500
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4524
 msgid "Delete video file"
 msgstr "Supprimer un fichier vidéo"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4514
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4540
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4538
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4564
 msgid "Add Video Files"
 msgstr "Ajouter des Fchiers Vidéo"
 
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4542
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/meta_box.php:4566
 msgid "Add Video"
 msgstr "Ajouter une Vidéo"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:687
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:695
 msgid "Loading.."
 msgstr "Chargement en cours.."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:688
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:696
 msgid "No more to load"
 msgstr "Plus rien à charger"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:948
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:963
 msgid "Confirm Delete?"
 msgstr "Confirmer la Suppression?"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:948
-msgid "Yes"
-msgstr "Oui"
-
-# @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:948
-msgid "No"
-msgstr "Non"
-
-# @ vibe-customtypes
 # @ vibe
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:948
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:963
 msgid "Saving..."
 msgstr "Enregistrement en cours..."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:948
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:963
 msgid "Saved."
 msgstr "Enregistré."
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:985
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1000
 msgid "Carousels/Rotating Blocks"
 msgstr "﻿Carrousels/rotation des blocs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:989
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1004
 msgid "Title/Heading"
 msgstr "﻿Titre/En-tête"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:991
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1136
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1248
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1006
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1151
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1263
 msgid "Heading"
 msgstr "Entête"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:995
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1139
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1251
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1010
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1154
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1266
 msgid "Show Title"
 msgstr "Afficher le titre"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1002
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1017
 #, fuzzy
 msgid "Show more link"
 msgstr "Afficher le lien En savoir plus"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1009
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1024
 msgid "More Link (User redirected to this page on click)"
 msgstr "﻿Plus le lien (Redirigé vers cette page au clic de l'utilisateur)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1015
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1030
 msgid "Show Controls"
 msgstr "﻿Afficher les contrôles"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1022
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1037
 msgid ""
 "Enter Post Type<br /><span style=\"font-size:11px;\">(Select Post Type from "
 "Posts/Courses/Clients/Products ...)</span>"
@@ -3345,15 +4082,15 @@ msgstr ""
 "</span>"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1025
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1148
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1260
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1040
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1163
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1275
 msgid "post"
 msgstr "publication"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1029
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1264
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1044
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1279
 msgid ""
 "Enter Taxonomy Slug (optional)<br /><span style=\"font-size:11px;\">(A "
 "\"Taxonomy\" is a grouping mechanism for posts. Like Category for Posts, "
@@ -3362,163 +4099,163 @@ msgid ""
 msgstr "﻿Entrez Taxonomy Slug (facultatif)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1035
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1270
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1050
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1285
 msgid "Enter Taxonomy Term Name (optional, only if above is selected): "
 msgstr ""
 "﻿Entrez le nom de terme de taxonomie (facultatif, uniquement si ci-dessus est "
 "sélectionnée) :"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1040
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1055
 msgid "Or Enter Specific Post Ids"
 msgstr "﻿Ou entrez l'ID d'une publication spécifique"
-
-# @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1045
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1161
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1281
-msgid "Course Types [Only for Post type = Course]"
-msgstr "﻿Types de formation [uniquement pour le type d'article = formation]"
-
-# @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1054
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1170
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1290
-msgid "recent"
-msgstr "récent"
-
-# @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1057
-msgid "Carousel/Rotating Block Style"
-msgstr "﻿Style de bloc Carousel/rotation"
 
 # @ vibe-customtypes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1060
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1176
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1296
+msgid "Course Types [Only for Post type = Course]"
+msgstr "﻿Types de formation [uniquement pour le type d'article = formation]"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1069
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1185
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1305
+msgid "recent"
+msgstr "récent"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1072
+msgid "Carousel/Rotating Block Style"
+msgstr "﻿Style de bloc Carousel/rotation"
+
+# @ vibe-customtypes
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1075
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1191
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1311
 msgid "excerpt"
 msgstr "extrait"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1063
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1078
 msgid "Auto slide/rotate"
 msgstr "﻿Diapositive/rotation automatique"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1069
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1084
 msgid "Width each crousel block"
 msgstr "﻿Largeur de chaque bloc carousel"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1071
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1086
 msgid "268"
 msgstr "268"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1074
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1089
 msgid "Maximum Number of blocks in One screen"
 msgstr "﻿Nombre maximum de blocs sur un seul écran"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1076
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1091
 msgid "4"
 msgstr "4"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1079
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1094
 msgid "Minimum Number of blocks in one Screen"
 msgstr "﻿Nombre minimum de blocs sur un seul écran"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1081
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1096
 msgid "2"
 msgstr "2"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1084
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1099
 msgid "Total Number of Blocks"
 msgstr "﻿Nombre total de blocs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1086
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1197
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1331
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1101
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1212
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1346
 msgid "6"
 msgstr "6"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1090
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1105
 msgid "Excerpt Length in Block (in characters)"
 msgstr "﻿Extrait de longueur en bloc (en caractères)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1092
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1192
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1351
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1107
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1207
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1366
 msgid "100"
 msgstr "100"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1095
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1110
 msgid "Show Lightbox button on image hover[Opens Full image]"
 msgstr "﻿Voir la Lightbox bouton au survol de l'image [image ouvre complète]"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1101
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1116
 msgid "Show Link button on image hover"
 msgstr "﻿Afficher le bouton de lien au survol de l'image"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1107
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1219
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1369
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1404
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1475
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1527
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1570
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1602
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1122
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1234
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1384
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1419
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1500
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1552
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1595
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1627
 msgid "Show Advanced settings"
 msgstr "﻿Afficher les paramètres avancés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1112
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1224
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1374
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1415
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1486
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1532
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1575
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1607
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1703
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1127
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1239
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1389
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1430
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1511
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1557
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1600
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1632
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1728
 msgid "* Custom Class name (Add Custom Class to this Block)"
 msgstr ""
 "﻿* Nom de la classe personnalisée (ajouter une classe personnalisée pour ce "
 "bloc)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1116
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1228
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1378
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1419
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1490
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1536
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1579
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1611
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1707
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1131
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1243
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1393
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1434
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1515
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1561
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1604
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1636
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1732
 msgid "* Class for on containing Layout column"
 msgstr "﻿* Classe pour la mise en classe de la colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1120
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1232
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1382
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1423
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1494
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1540
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1583
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1615
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1711
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1135
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1247
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1397
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1438
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1519
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1565
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1608
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1640
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1736
 msgid ""
 "* Add Custom CSS (Use <strong>.</strong> for class name, <strong>:hover</"
 "strong> for hover styles etc..)"
@@ -3527,150 +4264,150 @@ msgstr ""
 "classe , <strong>: . Hover </strong > pour les styles hover etc .. )"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1130
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1145
 msgid "Filterable Posts"
 msgstr "Posts filtrables"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1134
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1149
 msgid "Filterable Block Title"
 msgstr "﻿Titre bloc filtrables"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1145
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1160
 msgid "Select a Post Type"
 msgstr "﻿Sélectionnez un type de publication"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1151
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1166
 #, fuzzy
 msgid ""
 "Enter relevant Taxonomy name used for Filter buttons (example : course-cat,"
 "event-type..)"
 msgstr "﻿Entrez nom de taxinomie pertinente utilisée pour les boutons de filtre"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1156
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1171
 msgid "Enter terms (comma saperated term slugs) to be \"excluded\" in filters"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1173
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1293
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1188
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1308
 msgid "Featured Media Block Style"
 msgstr "﻿Style du bloc Media recommandés"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1179
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1194
 msgid "Show All link"
 msgstr "Afficher tous les Liens"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1185
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1200
 msgid "Column Width (in px)"
 msgstr "﻿Largeur de la colonne (en px)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1190
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1349
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1205
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1364
 msgid "Excerpt Length (in characters)"
 msgstr "Longueur de l'extrait (en caractères)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1195
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1210
 msgid "Total Number of blocks"
 msgstr "﻿Nombre total de blocs"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1200
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1215
 msgid "Show Pagination"
 msgstr "﻿Afficher la pagination"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1207
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1355
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1222
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1370
 msgid "Show Lightbox [Opens Full image]"
 msgstr "﻿Voir la Lightbox [image ouvre complète]"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1213
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1228
 msgid "Show Link [Links to Post]"
 msgstr "﻿Afficher lien [Lien vers Publication]"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1242
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1257
 msgid "Post Grid"
 msgstr "﻿Grille d'articles"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1246
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1261
 msgid "Grid Title"
 msgstr "﻿Titre de la grille"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1257
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1272
 msgid "Custom Post Type"
 msgstr "Publication Personnalisée (custom post type)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1276
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1291
 msgid "Or Enter Specific Post Ids (comma saperated)"
 msgstr ""
 "﻿Ou entrez l'ID de publication(s) spécifique(s) (séparées par des virgules)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1300
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1315
 msgid "Grid Masonry Layout"
 msgstr "Mise en page grille maçonnerie"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1307
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1322
 msgid "Grid Columns"
 msgstr "﻿Colonnes de la grille"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1319
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1334
 msgid "Masonry Grid Column Width(in px)"
 msgstr "﻿Largeur de colonne maçonnerie (en px)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1324
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1339
 msgid "Spacing between Columns (in px)"
 msgstr "﻿Espacement entre les colonnes (en px)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1329
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1344
 msgid "Total Number of Blocks in Grid"
 msgstr "﻿Nombre total de blocs dans la grille"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1335
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1350
 msgid "Infinite Scroll"
 msgstr "Défilement infini"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1342
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1357
 msgid "Enable Pagination (If infinite scroll is off)"
 msgstr "Activez la Pagination (si défilement infini est désactivé)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1362
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1377
 msgid "Show Link"
 msgstr "﻿Afficher lien"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1391
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1406
 msgid "WP Editor"
 msgstr "﻿Éditeur de WP"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1394
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1435
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1409
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1450
 msgid "Reference Title"
 msgstr "Titre de référence"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1409
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1480
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1424
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1505
 msgid ""
 "* On-Load CSS3 Animation effect on the block (<a href=\"http://vibethemes."
 "com/forums/showthread.php?914-CSS3-Animation-Effects&p=2488\" target=\"_blank"
@@ -3681,239 +4418,250 @@ msgstr ""
 "\"\">plus</a>)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1432
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1447
 msgid "Parallax Content"
 msgstr "﻿Contenu de la parallaxe"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1437
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1452
 msgid "Parallax Title"
 msgstr "﻿Titre de parallaxe"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1445
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1460
 msgid "Upload Parallax Background image"
 msgstr "﻿Télécharger l'image d'arrière-plan de la parallaxe"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1450
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1465
 #, fuzzy
 msgid "Background Effect"
 msgstr "Effet d'Animation"
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1453
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1468
 msgid "Image Scrolls with scroll"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1454
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1469
 msgid "Image Static with Scroll"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1455
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1470
 msgid "Full Parallax Static with Scroll"
 msgstr ""
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1460
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1475
 msgid "Parallax Block Height (in px)"
 msgstr "﻿Hauteur du bloc du parallax (en px)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1465
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1480
 msgid "Parallax value (Scroll senstivity, lower value means higher scroll)"
 msgstr ""
 "﻿Valeur du parallax (sensibilité du défilement, valeur basse = défilement "
 "rapide)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1470
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1485
 msgid "Adjust background (in px)"
 msgstr "﻿Ajuster le fond (en px)"
 
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1490
+msgid "Top Padding(in px)"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1495
+msgid "Bottom Padding(in px)"
+msgstr ""
+
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1519
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1544
 msgid "Revolution Slider"
 msgstr "﻿Revolution Slider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1522
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1565
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1547
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1590
 msgid "Select Slider"
 msgstr "Sélectionner un Slider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1562
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1587
 msgid "Layer Slider"
 msgstr "﻿Layer Slider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1596
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1621
 msgid "Select a Sidebar"
 msgstr "Sélectionner un Sidebar"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1599
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1624
 msgid "MainSidebar"
 msgstr "﻿Barre latérale principale"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1623
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1648
 msgid "FlexSlider"
 msgstr "﻿FlexSlider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1626
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1651
 msgid "Slider ID (for reference & Css)"
 msgstr "﻿ID Diaporama (en référence & Css)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1631
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1656
 msgid "Slide Style"
 msgstr "Style de Slide"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1643
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1668
 msgid "Animation Effect"
 msgstr "Effet d'Animation"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1645
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1670
 msgid "fade"
 msgstr "fondu"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1645
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1670
 msgid "slide"
 msgstr "slide"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1650
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1675
 msgid "Slider settings"
 msgstr "Paramètres du Slider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1655
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1680
 msgid "Auto slide Images"
 msgstr "﻿Auto slide Images"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1661
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1686
 msgid "Loop Slides"
 msgstr "﻿Diapositives en boucle"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1667
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1692
 msgid "Randomize Slides"
 msgstr "﻿Diapositives au hasard"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1673
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1698
 msgid "Show Slider Direction arrows"
 msgstr "Afficher les flèches Suivant/Précédant"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1679
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1704
 msgid "Show Slider Control buttons"
 msgstr "﻿Afficher les boutons de contrôle Slider"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1685
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1710
 msgid "Animation Duration (in ms)"
 msgstr "﻿Durée de l'animation (en ms)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1691
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1716
 msgid "Auto Animation Speed (in ms)"
 msgstr "﻿Vitesse d'Animation auto (en ms)"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1696
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1721
 msgid "Pause Slider On Hover"
 msgstr "﻿Pause slider au survol"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1728
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1753
 msgid "1/2 Column"
 msgstr "1/2 Colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1729
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1754
 msgid "1/3 Column"
 msgstr "1/3 Colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1730
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1755
 msgid "1/4 Column"
 msgstr "1/4 Colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1731
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1756
 msgid "2/3 Column"
 msgstr "2/3 Colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1732
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1757
 msgid "3/4 Column"
 msgstr "3/4 Colonne"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1733
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1758
 msgid "Full-Width Resizable Column"
 msgstr "﻿Pleine largeur colonne redimensionnable"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1734
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1759
 msgid "FullScreen Stripe with Container"
 msgstr "﻿Plein écran Stripe avec conteneur"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1735
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1760
 msgid "FullScreen Stripe"
 msgstr "Plein écran Stripe"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1760
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1785
 msgid "COLUMNS"
 msgstr "COLONNES"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1761
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1786
 msgid "CONTENT"
 msgstr "CONTENU"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1762
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1787
 msgid "SAVED LAYOUTS"
 msgstr "MISES EN PAGE ENREGISTREE"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1813
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1838
 msgid "Enter name of Sample Layout"
 msgstr "﻿Entrez le nom du schéma prédéterminé"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1814
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1839
 msgid "Save Layout"
 msgstr "Enregistrer la Mise en Page"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1824
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1916
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:2034
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1849
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1941
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:2059
 msgid "Save Changes"
 msgstr "Enregistrer les Modifications"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1825
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1850
 msgid "Save as New Layout"
 msgstr "Enregistrer en tant que Nouvelle Mise en Page"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1826
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:1851
 msgid "Generated Shortcode"
 msgstr "﻿Shortcode généré"
 
 # @ vibe-customtypes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:2111
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-customtypes/metaboxes/library/vibe-editor.php:2136
 msgid "Show Page Content"
 msgstr "Afficher le Contenu de la Page"
+
+#~ msgid "FREE"
+#~ msgstr "GRATUIT"

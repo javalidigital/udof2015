@@ -23,6 +23,7 @@ if (!class_exists('WPLMS_Assignments')){
             add_action('admin_init', array($this, 'adminInit'));
             add_action('wplms_student_course_reset',array($this,'reset_assignments'),10,2);
             add_action('wplms_before_single_assignment',array($this,'wplms_assignments_before_single_assignment'));
+            //add_action('wplms_assignment_after_content',array($this,'assignment_result'));
         }
 
 
@@ -46,26 +47,8 @@ if (!class_exists('WPLMS_Assignments')){
               $user_id = get_current_user_id();
               if(wplms_assignment_answer_posted()){
                 if(update_post_meta($post->ID,$user_id,0)){
-                  if(function_exists('messages_new_message')){
-                    $message = __('Assignment ','wplms-assignments').get_the_title($post->ID).__(' submitted by student ','wplms-assignments').bp_core_get_userlink($user_id);
-                    messages_new_message( array('sender_id' => $user_id, 'subject' => __('Assignment submitted by Student','wplms-assignments'), 'content' => $message,   'recipients' => $post->post_author ) );
-                  }
-                    
-                    $activity_id=bp_course_record_activity(array(
-                      'action' => __('Student submitted assignment ','wplms-assignments'),
-                      'content' => __('Student ','wplms-assignments').bp_core_get_userlink($user_id).__(' submitted the assignment  ','wplms-assignments').get_the_title($post->ID),
-                      'type' => 'assignment_submitted',
-                      'primary_link' => get_permalink($post->ID),
-                      'item_id' => $post->ID,
-                      'secondary_item_id' => $user_id
-                    ));
-                    bp_course_record_activity_meta(array(
-                      'id' => $activity_id,
-                      'meta_key' => 'instructor',
-                      'meta_value' => $post->post_author
-                      ));
-                    do_action('badgeos_wplms_submit_assignment',$post->ID);
-                    return;
+                    do_action('wplms_submit_assignment',$post->ID,$user_id);
+                   return;
                 }
               }
           }
@@ -142,9 +125,11 @@ if (!class_exists('WPLMS_Assignments')){
          * Define plugin constatns
          */
 
-        private function defineConstants()
-        {
-            define('ATT_REQ',   TRUE );
+        private function defineConstants(){
+            
+            if(!defined(ATT_REQ))
+                define('ATT_REQ',   TRUE );
+
             define('ATT_BIND',  TRUE );
             define('ATT_DEL',   TRUE );
             define('ATT_LINK',  TRUE );
@@ -352,6 +337,9 @@ if (!class_exists('WPLMS_Assignments')){
             if(!function_exists('vibe_sanitize'))
                 return;
             $attachment_type=vibe_sanitize(get_post_meta($post->ID,'vibe_attachment_type',false));
+            if(in_array('JPG',$attachment_type)){
+                $attachment_type[]='JPEG';
+            }
             return $attachment_type;
         }
 
@@ -389,12 +377,51 @@ if (!class_exists('WPLMS_Assignments')){
         }
 
         function _mime_content_type($filename) {
+
+            /**
+            *    mimetype
+            *    Returns a file mimetype. Note that it is a true mimetype fetch, using php and OS methods. It will NOT
+            *    revert to a guessed mimetype based on the file extension if it can't find the type.
+            *    In that case, it will return false
+            **/
+            if (!file_exists($filename) || !is_readable($filename)) return false;
             if(class_exists('finfo')){
                 $result = new finfo();
                 if (is_resource($result) === true) {
                     return $result->file($filename, FILEINFO_MIME_TYPE);
                 }
             }
+            
+             // Trying finfo
+             if (function_exists('finfo_open')) {
+               $finfo = finfo_open(FILEINFO_MIME);
+               $mimeType = finfo_file($finfo, $filename);
+               finfo_close($finfo);
+               // Mimetype can come in text/plain; charset=us-ascii form
+               if (strpos($mimeType, ';')) list($mimeType,) = explode(';', $mimeType);
+               return $mimeType;
+             }
+            
+             // Trying mime_content_type
+             if (function_exists('mime_content_type')) {
+               return mime_content_type($filename);
+             }
+            
+
+             // Trying to get mimetype from images
+             $imageData = getimagesize($filename);
+             if (!empty($imageData['mime'])) {
+               return $imageData['mime'];
+             }
+             // Trying exec
+             if (function_exists('exec')) {
+               $mimeType = exec("/usr/bin/file -i -b $filename");
+               if(strpos($mimeType,';')){
+                 $mimeTypes = explode(';',$mimeType);
+                 return $mimeTypes[0];
+               }
+               if (!empty($mimeType)) return $mimeType;
+             }
             return false;
         }
 
@@ -611,23 +638,56 @@ if (!class_exists('WPLMS_Assignments')){
 
             $required = ATT_REQ ? ' <span class="required">*</span>' : '';
             echo '<p class="comment-form-url comment-form-attachment">'.
-                '<label for="attachment">' . ATT_TITLE . $required .'<small class="attachmentRules">&nbsp;&nbsp;('.__('Allowed file types','wplms-assignments').': <strong>'. $this->displayAllowedFileTypes() .'</strong>, '.__('maximum file size','wplms-assignments').': <strong>'. $this->getmaxium_upload_file_size() .__('MB(s)','wplms-assignments').'.</strong></small></label>'.
+                    '<label for="attachment">' . ATT_TITLE . $required .'<small class="attachmentRules">&nbsp;&nbsp;('.__('Allowed file types','wplms-assignments').': <strong>'. $this->displayAllowedFileTypes() .'</strong>, '.__('maximum file size','wplms-assignments').': <strong>'. $this->getmaxium_upload_file_size() .__('MB(s)','wplms-assignments').'.</strong></small></label>'.
                 '</p>';
 
             if(isset($answers) && is_array($answers) && count($answers)){
-                $attachmentID = get_comment_meta($answer->comment_ID,'attachmentId',true);
-                $attachmentName = basename(get_attached_file($attachmentID));
-                $att=wp_get_attachment_url($attachmentID);
-            echo '<p class="assignment_submission"><strong>'.__('RECENTLY UPLOADED','wplms-assignments').' : </strong><a class="attachmentLink" target="_blank" href="'.$att.'">'.$attachmentName.'</a><a id="clear_previous_submissions" data-id="'.get_the_ID().'" data-security="'.wp_create_nonce('user'.$user_id).'"><i class="icon-x"></i></a></p>';
+                    $attachmentIDs = get_comment_meta($answer->comment_ID,'attachmentId',true);
+                    echo '<p class="assignment_submission"><strong>'.__('RECENTLY UPLOADED','wplms-assignments').' : </strong>';
+                if(is_array($attachmentIDs)){
+                    foreach($attachmentIDs as $attachmentID){
+                        $attachmentName = basename(get_attached_file($attachmentID));
+                        $att=wp_get_attachment_url($attachmentID);
+                        echo '<br><a class="attachmentLink" target="_blank" href="'.$att.'">'.$attachmentName.'</a>';
+                    }
+                }else{
+                    $attachmentID = $attachmentIDs;
+                    // if comma saperated the foreach
+                    $attachmentName = basename(get_attached_file($attachmentID));
+                    $att=wp_get_attachment_url($attachmentID);
+                    echo '<a class="attachmentLink" target="_blank" href="'.$att.'">'.$attachmentName.'</a>';
+                }
+                echo '<a id="clear_previous_submissions" data-id="'.get_the_ID().'" data-security="'.wp_create_nonce('user'.$user_id).'"><i class="icon-x"></i></a></p>';
             }
 
-
+            $extensions = $this->getAllowedFileExtensions();
+            $extensions = implode('|',$extensions);
             echo '<p class="comment-form-url comment-form-attachment">
-                    <input id="attachment" name="attachment" type="file" /></p>';
+                    <input id="attachment" name="attachment[]" type="file" class="multi" accept="'.$extensions.'"/>
+                  </p>';
 
         }
 
+        /**
+         * Rearrange $_Files array
+         *
+         * @param $data
+         * @return mixed
+         */
+        function reArrayFiles(&$file_post) {
 
+            $file_ary = array();
+            $file_count = count($file_post['name']);
+            $file_keys = array_keys($file_post);
+
+            for ($i=0; $i<$file_count; $i++) {
+                foreach ($file_keys as $key) {
+                    $file_ary[$i][$key] = $file_post[$key][$i];
+                }
+            }
+
+            return $file_ary;
+        }
         /**
          * Checks attachment, size, and type and throws error if something goes wrong.
          *
@@ -635,8 +695,7 @@ if (!class_exists('WPLMS_Assignments')){
          * @return mixed
          */
 
-        public function checkAttachment($data)
-        {   
+        public function checkAttachment($data){   
 
             if(get_post_type($data['comment_post_ID']) != WPLMS_ASSIGNMENTS_CPT)
                 return $data;
@@ -646,46 +705,36 @@ if (!class_exists('WPLMS_Assignments')){
             if($assignmenttype != 'upload')
                 return $data;
 
-            if($_FILES['attachment']['size'] > 0 && $_FILES['attachment']['error'] == 0){
+            if(!empty($_FILES)){
+                $files = $this->reArrayFiles($_FILES['attachment']);
+                foreach($files as $file){
+                    if($file['size'] > 0 && $file['error'] == 0){
 
-                $fileInfo = pathinfo($_FILES['attachment']['name']);
-                $fileExtension = strtolower($fileInfo['extension']);
+                        $fileInfo = pathinfo($file['name']);
+                        $fileExtension = strtolower($fileInfo['extension']);
+                        $fileType = $this->_mime_content_type($file['tmp_name']); // custom function
+                        if (!in_array($fileType, $this->getAllowedMimeTypes()) || !in_array(strtoupper($fileExtension), $this->getAllowedFileExtensions()) || $file['size'] > ($this->getmaxium_upload_file_size() * 1048576)) { // file size from admin
+                            wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('File you upload must be valid file type','wplms-assignments').' <strong>('. $this->displayAllowedFileTypes() .')</strong>'.__(', and under ','wplms-assignments'). $this->getmaxium_upload_file_size() .__('MB(s)!','wplms-assignments'));
+                        }
 
-                if(function_exists('finfo_file')){
-                    $fileType = finfo_file(finfo_open(FILEINFO_MIME_TYPE), $_FILES['attachment']['tmp_name']);
-                } elseif(function_exists('mime_content_type')) {
-                    $fileType = mime_content_type($_FILES['attachment']['tmp_name']);
-                } else {
-                    if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
-                        $fileType = $this->_mime_content_type($_FILES['attachment']['tmp_name']);
-                    }else{
-                        $fileType = $_FILES['attachment']['type'];
+                    } elseif (ATT_REQ && $file['error'] == 4) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Please upload an Attachment.','wplms-assignments'));
+                    } elseif($file['error'] == 1) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file exceeds the upload_max_filesize directive in php.ini.','wplms-assignments'));
+                    } elseif($file['error'] == 2) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.','wplms-assignments'));
+                    } elseif($file['error'] == 3) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file was only partially uploaded. Please try again later.','wplms-assignments'));
+                    } elseif($file['error'] == 6) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Missing a temporary folder.','wplms-assignments'));
+                    } elseif($file['error'] == 7) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Failed to write file to disk.','wplms-assignments'));
+                    } elseif($file['error'] == 7) {
+                        wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('A PHP extension stopped the file upload.','wplms-assignments'));
                     }
                 }
-
-                
-
-                // Is: allowed mime type / file extension, and size? extension making lowercase, just to make sure
-                if (!in_array($fileType, $this->getAllowedMimeTypes()) || !in_array(strtoupper($fileExtension), $this->getAllowedFileExtensions()) || $_FILES['attachment']['size'] > ($this->getmaxium_upload_file_size() * 1048576)) { // file size from admin
-                    wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('File you upload must be valid file type','wplms-assignments').' <strong>('. $this->displayAllowedFileTypes() .')</strong>'.__(', and under ','wplms-assignments'). $this->getmaxium_upload_file_size() .__('MB(s)!','wplms-assignments'));
-                }
-
-            // error 4 is actually empty file mate
-            } elseif (ATT_REQ && $_FILES['attachment']['error'] == 4) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Please upload an Attachment.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 1) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file exceeds the upload_max_filesize directive in php.ini.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 2) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 3) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('The uploaded file was only partially uploaded. Please try again later.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 6) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Missing a temporary folder.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 7) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('Failed to write file to disk.','wplms-assignments'));
-            } elseif($_FILES['attachment']['error'] == 7) {
-                wp_die('<strong>'.__('ERROR:','wplms-assignments').'</strong> '.__('A PHP extension stopped the file upload.','wplms-assignments'));
             }
+            
             return $data;
         }
 
@@ -701,9 +750,17 @@ if (!class_exists('WPLMS_Assignments')){
         public function notificationText($notify_message,  $comment_id)
         {
             if(WPLMS_Assignments::hasAttachment($comment_id)){
-                $attachmentId = get_comment_meta($comment_id, 'attachmentId', TRUE);
-                $attachmentName = basename(get_attached_file($attachmentId));
-                $notify_message .= __('Attachment:','wplms-assignments') . "\r\n" .  $attachmentName . "\r\n\r\n";
+                $attachmentIds = get_comment_meta($comment_id, 'attachmentId', TRUE);
+                if(is_Array($attachmentIds)){
+                    foreach($attachmentIds as $attachmentId){
+                        $attachmentName = basename(get_attached_file($attachmentId));
+                        $notify_message .= __('Attachment:','wplms-assignments') . "\r\n" .  $attachmentName . "\r\n\r\n";
+                    }
+                }else{
+                    $attachmentId = $attachmentIds;
+                    $attachmentName = basename(get_attached_file($attachmentId));
+                    $notify_message .= __('Attachment:','wplms-assignments') . "\r\n" .  $attachmentName . "\r\n\r\n";
+                }
             }
             return $notify_message;
         }
@@ -739,15 +796,24 @@ if (!class_exists('WPLMS_Assignments')){
             if(get_post_type($_POST['comment_post_ID']) != WPLMS_ASSIGNMENTS_CPT)    
                 return;
             
-            if($_FILES['attachment']['size'] > 0){
-                $bindId = ATT_BIND ? $_POST['comment_post_ID'] : 0; // TRUE
-                $attachId = $this->insertAttachment('attachment', $bindId);
-                if(add_comment_meta($commentId, 'attachmentId', $attachId)){
-                    $savedassignment=get_comment($commentId);
-                    update_post_meta($savedassignment->comment_post_ID,$comment_post_ID->user_id,0);
+            $assignmenttype = get_post_meta($_POST['comment_post_ID'],'vibe_assignment_submission_type',true);
+
+            if($assignmenttype != 'upload')
+                return;
+
+            $files = $this->reArrayFiles($_FILES['attachment']);
+            foreach($files as $file){
+                if($file['size'] > 0){
+                    $_FILES = array ('attachment' => $file); 
+                    $bindId = ATT_BIND ? $_POST['comment_post_ID'] : 0; // TRUE
+                    $attachId = $this->insertAttachment('attachment', $bindId);
+                    $attachIds[]=$attachId;
+                    unset($_FILES);
                 }
-                unset($_FILES);
             }
+            $savedassignment=get_comment($commentId);
+            update_post_meta($savedassignment->comment_post_ID,$comment_post_ID->user_id,0);
+            update_comment_meta($commentId, 'attachmentId', $attachIds);
         }
 
 
@@ -761,71 +827,76 @@ if (!class_exists('WPLMS_Assignments')){
 
         public function displayAttachment($comment)
         {
-            $attachmentId = get_comment_meta(get_comment_ID(), 'attachmentId', TRUE);
-            if(is_numeric($attachmentId) && !empty($attachmentId)){
+            $attachmentIds = get_comment_meta(get_comment_ID(), 'attachmentId', TRUE);
+            if(!is_array($attachmentIds)){
+                $attachmentIds = array($attachmentIds);
+            }
+            foreach($attachmentIds as $attachmentId){
+                if(is_numeric($attachmentId) && !empty($attachmentId)){
 
-                // atachement info
-                $attachmentLink = wp_get_attachment_url($attachmentId);
-                $attachmentMeta = wp_get_attachment_metadata($attachmentId);
-                $attachmentName = basename(get_attached_file($attachmentId));
-                $attachmentType = get_post_mime_type($attachmentId);
-                $attachmentRel  = '';
+                    // atachement info
+                    $attachmentLink = wp_get_attachment_url($attachmentId);
+                    $attachmentMeta = wp_get_attachment_metadata($attachmentId);
+                    $attachmentName = basename(get_attached_file($attachmentId));
+                    $attachmentType = get_post_mime_type($attachmentId);
+                    $attachmentRel  = '';
 
-                // let's do wrapper html
-                $contentBefore  = '<div class="attachmentFile"><p>' . $this->settings[$this->adminPrefix . 'ThumbTitle'] . ' ';
-                $contentAfter   = '</p><div class="clear clearfix"></div></div>';
+                    // let's do wrapper html
+                    $contentBefore  = '<div class="attachmentFile"><p>' . $this->settings[$this->adminPrefix . 'ThumbTitle'] . ' ';
+                    $contentAfter   = '</p><div class="clear clearfix"></div></div>';
 
-                // admin behaves differently
-                if(is_admin()){
-                    $contentInner = $attachmentName;
-                } else {
-                    // shall we do image thumbnail or not?
-                    if(ATT_THUMB && in_array($attachmentType, $this->getImageMimeTypes()) && !is_admin()){
-                        $attachmentRel = 'rel="lightbox"';
-                        $contentInner = wp_get_attachment_image($attachmentId, ATT_TSIZE);
-                        // audio player?
-                    } elseif (ATT_PLAY && in_array($attachmentType, $this->getAudioMimeTypes())){
-                        if(shortcode_exists('audio')){
-                            $contentInner = do_shortcode('[audio src="'. $attachmentLink .'"]');
-                        } else {
-                            $contentInner = $attachmentName;
-                        }
-                        // video player?
-                    } elseif (ATT_PLAY && in_array($attachmentType, $this->getVideoMimeTypes())){
-                        if(shortcode_exists('video')){
-                            $contentInner .= do_shortcode('[video src="'. $attachmentLink .'"]');
-                        } else {
-                            $contentInner = $attachmentName;
-                        }
-                        // rest ..
+                    // admin behaves differently
+                    if(is_admin()){
+                        $contentInner = $attachmentName;
                     } else {
-                        $contentInner = '&nbsp;<strong>' . $attachmentName . '</strong>';
+                        // shall we do image thumbnail or not?
+                        if(ATT_THUMB && in_array($attachmentType, $this->getImageMimeTypes()) && !is_admin()){
+                            $attachmentRel = 'rel="lightbox"';
+                            $contentInner = wp_get_attachment_image($attachmentId, ATT_TSIZE);
+                            // audio player?
+                        } elseif (ATT_PLAY && in_array($attachmentType, $this->getAudioMimeTypes())){
+                            if(shortcode_exists('audio')){
+                                $contentInner = do_shortcode('[audio src="'. $attachmentLink .'"]');
+                            } else {
+                                $contentInner = $attachmentName;
+                            }
+                            // video player?
+                        } elseif (ATT_PLAY && in_array($attachmentType, $this->getVideoMimeTypes())){
+                            if(shortcode_exists('video')){
+                                $contentInner .= do_shortcode('[video src="'. $attachmentLink .'"]');
+                            } else {
+                                $contentInner = $attachmentName;
+                            }
+                            // rest ..
+                        } else {
+                            $contentInner = '&nbsp;<strong>' . $attachmentName . '</strong>';
+                        }
                     }
-                }
 
-                // attachment link, if it's not video / audio
-                if(is_admin()){
-                    $contentInnerFinal = '<a '.$attachmentRel.' class="attachmentLink" target="_blank" href="'. $attachmentLink .'" title="'.__('Download','wplms-assignments').': '. $attachmentName .'">';
-                        $contentInnerFinal .= $contentInner;
-                    $contentInnerFinal .= '</a>';
-                } else {
-                    if((ATT_LINK) && !in_array($attachmentType, $this->getAudioMimeTypes()) && !in_array($attachmentType, $this->getVideoMimeTypes())){
-                        $contentInnerFinal = '<a '.$attachmentRel.' class="attachmentLink" target="_blank" href="'. $attachmentLink .'" title="Download: '. $attachmentName .'">';
+                    // attachment link, if it's not video / audio
+                    if(is_admin()){
+                        $contentInnerFinal = '<a '.$attachmentRel.' class="attachmentLink" target="_blank" href="'. $attachmentLink .'" title="'.__('Download','wplms-assignments').': '. $attachmentName .'">';
                             $contentInnerFinal .= $contentInner;
                         $contentInnerFinal .= '</a>';
                     } else {
-                        $contentInnerFinal = $contentInner;
+                        if((ATT_LINK) && !in_array($attachmentType, $this->getAudioMimeTypes()) && !in_array($attachmentType, $this->getVideoMimeTypes())){
+                            $contentInnerFinal = '<a '.$attachmentRel.' class="attachmentLink" target="_blank" href="'. $attachmentLink .'" title="Download: '. $attachmentName .'">';
+                                $contentInnerFinal .= $contentInner;
+                            $contentInnerFinal .= '</a>';
+                        } else {
+                            $contentInnerFinal = $contentInner;
+                        }
                     }
-                }
 
-                // bring a sellotape, this needs taping together
-                $contentInsert = $contentBefore . $contentInnerFinal . $contentAfter;
+                    // bring a sellotape, this needs taping together
+                    $contentInsert = $contentBefore . $contentInnerFinal . $contentAfter;
 
-                // attachment comment position
-                if(ATT_APOS == 'before' && !is_admin()){
-                    $comment = $contentInsert . $comment;
-                } elseif(ATT_APOS == 'after' || is_admin()) {
-                    $comment .= $contentInsert;
+                    // attachment comment position
+                    if(ATT_APOS == 'before' && !is_admin()){
+                        $comment = $contentInsert . $comment;
+                    } elseif(ATT_APOS == 'after' || is_admin()) {
+                        $comment .= $contentInsert;
+                    }
                 }
             }
             return $comment;
@@ -927,7 +998,7 @@ if (!class_exists('WPLMS_Assignments')){
         {
             $currentUser = wp_get_current_user();
             if (isset($_GET['AssignmentAttachmentIgnoreNag']) && '1' == $_GET['AssignmentAttachmentIgnoreNag'] && current_user_can('install_plugins')){
-                add_user_meta($currentUser->ID, 'AssignmentAttachmentIgnoreNag', 'true', true);
+                update_user_meta($currentUser->ID, 'AssignmentAttachmentIgnoreNag', 'true', true);
             }
         }
 
@@ -949,6 +1020,20 @@ if (!class_exists('WPLMS_Assignments')){
             flush_rewrite_rules(false );
         }
 
+        function assignment_result(){
+            if(!is_user_logged_in())
+                return;
+            $user_id = get_current_user_id();
+            global $post;
+            $expiry=get_user_meta($user_id,$post->ID,true);
+            if($expiry < time()){
+                $verify = get_post_meta($post->ID,$user_id,true);
+                if(!is_numeric($verify)){
+                    update_post_meta($post->ID,$user_id,2);
+                }
+            }
+
+        }
         protected function __clone(){}
 
     }

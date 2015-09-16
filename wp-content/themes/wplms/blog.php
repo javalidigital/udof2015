@@ -62,7 +62,7 @@ $page_id = get_the_ID();
                                     </p>
                                 </div>
                                 <p>'.get_the_excerpt().'</p>
-                                <a href="'.get_permalink().'" class="link">'.__('Leia mais','vibe').'</a>
+                                <a href="'.get_permalink().'" class="link">'.__('Read More','vibe').'</a>
                             </div>
                         </div>';
 

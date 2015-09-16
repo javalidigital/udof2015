@@ -36,7 +36,7 @@ class vibe_customtypes_cache{
 	        delete_transient($key);
 	        if($post->post_type == 'course'){
 		        global $wpdb;
-		        $wpdb->query("DELETE FROM wp_options WHERE option_name LIKE '%wplms_%_course%'");
+		        $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '%wplms_%_course%'");
 	    	}
 		}	
 	}
@@ -64,7 +64,7 @@ class vibe_customtypes_cache{
 			delete_transient($key);
 			if($post->post_type == 'course'){
 		        global $wpdb;
-		        $wpdb->query("DELETE FROM wp_options WHERE option_name LIKE '%wplms_%_course%'");
+		        $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '%wplms_%_course%'");
 	    	}
 		}	
 	}

@@ -16,9 +16,10 @@ class wplms_instructor_stats extends WP_Widget {
     $this->WP_Widget( 'wplms_instructor_stats', __(' DASHBOARD : Instructor Stats', 'wplms-dashboard'), $widget_ops, $control_ops );
     add_action('wp_ajax_generate_ranges',array($this,'generate_ranges'));
     add_action('wp_ajax_load_quiz_assignment_list',array($this,'load_quiz_assignment_list'));
-    
-    wp_enqueue_script( 'wplms-raphael',WPLMS_DASHBOARD_URL.'/js/raphael-min.js',array('jquery'),true);
-    wp_enqueue_script( 'wplms-morris',WPLMS_DASHBOARD_URL.'/js/morris.min.js',array('jquery'),true);
+    if(function_exists('bp_is_my_profile') && bp_is_my_profile()){
+      wp_enqueue_script( 'wplms-raphael',WPLMS_DASHBOARD_URL.'/js/raphael-min.js',array('jquery'),true);
+      wp_enqueue_script( 'wplms-morris',WPLMS_DASHBOARD_URL.'/js/morris.min.js',array('jquery'),true);
+    }
   }
         
  

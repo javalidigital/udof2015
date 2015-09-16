@@ -147,18 +147,7 @@ include_once( 'menu/custom_walker.php' );
 
   function wplms_nav_menu_get_instructors_pages(){
   	$create_course_id = vibe_get_option('create_course');
-  	$wplms_page_args = array(/*
-  	'instructing_courses'=>(object) array(
-      'ID'             => -1,
-      'post_title'     => __('My Instructing Courses','vibe'),
-      'post_author'    => 0,
-      'post_date'      => 0,
-      'post_excerpt'   => BP_COURSE_INSTRUCTOR_SLUG,
-      'post_type'      => 'page',
-      'post_status'    => 'publish',
-      'comment_status' => 'closed',
-      'guid'           => bp_loggedin_user_domain().BP_COURSE_INSTRUCTOR_SLUG
-    ),*/
+  	$wplms_page_args = array(
     'edit_course'=>(object) array(
        'ID'             => $create_course_id,
       'post_title'     => __('Create/Edit Course page','vibe'),
@@ -179,39 +168,24 @@ include_once( 'menu/custom_walker.php' );
 	$notes_discussion_id = vibe_get_option('unit_comments');
 
    $wplms_page_args = array(
+    'dashboard'=>(object) array(
+      'ID'             => -1,
+      'post_title'     => __('Dashboard','vibe'),
+      'post_excerpt'   => 'dashboard',
+      'post_type'      => 'page',
+      'post_status'    => 'publish',
+      'comment_status' => 'closed',
+      'guid'           => bp_loggedin_user_domain().'dashboard'
+    ),
   	'my_courses'=>(object) array(
       'ID'             => -1,
       'post_title'     => __('My Courses','vibe'),
-      'post_author'    => 0,
-      'post_date'      => 0,
       'post_excerpt'   => BP_COURSE_SLUG,
       'post_type'      => 'page',
       'post_status'    => 'publish',
       'comment_status' => 'closed',
       'guid'           => bp_loggedin_user_domain().BP_COURSE_SLUG
-    ),/*
-  	'results'=>(object) array(
-      'ID'             => -1,
-      'post_title'     => __('My Results','vibe'),
-      'post_author'    => 0,
-      'post_date'      => 0,
-      'post_excerpt'   => BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG,
-      'post_type'      => 'page',
-      'post_status'    => 'publish',
-      'comment_status' => 'closed',
-      'guid'           => bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG
     ),
-  	'stats'=>(object) array(
-      'ID'             => -1,
-      'post_title'     => __('Course Stats','vibe'),
-      'post_author'    => 0,
-      'post_date'      => 0,
-      'post_excerpt'   => BP_COURSE_SLUG.'/'.BP_COURSE_STATS_SLUG,
-      'post_type'      => 'page',
-      'post_status'    => 'publish',
-      'comment_status' => 'closed',
-      'guid'           => bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_STATS_SLUG
-    ),*/
     'start_course'=>(object) array(
       'ID'             => $start_course_id,
       'post_title'     => __('Start Course page','vibe'),
@@ -228,20 +202,6 @@ include_once( 'menu/custom_walker.php' );
       'comment_status' => 'closed',
       'guid'           => get_permalink($notes_discussion_id)
     ),
-  	);
-  /*
-	if ( defined( 'WPLMS_DASHBOARD_SLUG' ) ){
-  	$wplms_page_args['dashboard']=(object) array(
-		'ID'             => -1,
-		'post_title'     => __('WPLMS Dashboard','vibe'),
-		'post_author'    => 0,
-		'post_date'      => 0,
-		'post_excerpt'   => WPLMS_DASHBOARD_SLUG,
-		'post_type'      => 'page',
-		'post_status'    => 'publish',
-		'comment_status' => 'closed',
-		'guid'           => bp_loggedin_user_domain().WPLMS_DASHBOARD_SLUG
-		);
-  }	*/
+  );
   return $wplms_page_args;
 }

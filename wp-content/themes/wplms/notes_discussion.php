@@ -102,12 +102,19 @@ $args = apply_filters('wplms_notes_dicussion_args',array(
                 	<div id="notes_query"><?php echo json_encode($args); ?></div>
                 	<div id="notes_discussions">
                     <?php
+                    if(is_user_logged_in() || (!is_user_logged_in() && count($args['comment__in']))){
+                    	$comments_query = new WP_Comment_Query;
+						$comments = $comments_query->query( $args );
 
-					$comments_query = new WP_Comment_Query;
-					$comments = $comments_query->query( $args );
-					// Comment Loop
-					$vibe_notes_discussions= new vibe_notes_discussions();
-					$vibe_notes_discussions->comments_loop($comments);
+						// Comment Loop
+						$vibe_notes_discussions= new vibe_notes_discussions();
+						$vibe_notes_discussions->comments_loop($comments);
+                    }else{
+                    	?>
+                    	<div class="message"><?php _e('No public comments found !','vibe') ?></div>
+                    	<?php
+                    }
+					
 					?>
 					</div>
                 </div>

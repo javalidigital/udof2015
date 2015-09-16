@@ -1,23 +1,4 @@
 <?php
-
-$flag=0;
-if(!current_user_can('edit_posts')){
-    $flag=1;
-}else{
-    $flag=0;
-    $instructor_privacy = vibe_get_option('instructor_content_privacy');
-    $user_id=get_current_user_id();
-    if(isset($instructor_privacy) && $instructor_privacy){
-        if($user_id != $post->post_author)
-          $flag=1;
-    }
-}
-
-if($flag){
-    wp_die(__('DIRECT ACCESS TO QUESTIONS IS NOT ALLOWED','vibe'),__('DIRECT ACCESS TO QUESTIONS IS NOT ALLOWED','vibe'),array('back_link'=>true));
-}
-
-
 get_header('buddypress');
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>

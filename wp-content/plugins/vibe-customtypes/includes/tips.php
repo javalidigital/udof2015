@@ -3,6 +3,8 @@
 class WPLMS_tips{
 
 	var $settings;
+	var $temp;
+
 	function __construct(){
 		
 		$lms_settings = get_option('lms_settings');
@@ -11,15 +13,18 @@ class WPLMS_tips{
 			foreach($this->settings as $key=>$setting){
 				switch($key){
 					case 'instructor_login_redirect':
-					case 'student_login_redirect':
-						add_filter('login_redirect',array($this,'login_redirect'),100,3);
-						if($this->settings['student_login_redirect'] == 'same'){
-							add_filter('wplms_login_widget_action',array($this,'wplms_login_same_page'));
-						}
 						if($this->settings['instructor_login_redirect'] == 'same'){
 							add_filter('wplms_login_widget_action',array($this,'wplms_login_same_page'));	
+						}else{
+							add_filter('login_redirect',array($this,'login_redirect'),100,3);
 						}
 					break;
+					case 'student_login_redirect':
+						if($this->settings['student_login_redirect'] == 'same'){
+							add_filter('wplms_login_widget_action',array($this,'wplms_login_same_page'));
+						}else{
+							add_filter('login_redirect',array($this,'login_redirect'),100,3);
+						}
 					break;
 					case 'hide_course_members':
 						add_filter('wplms_course_nav_menu',array($this,'coursenav_remove_members'));
@@ -59,6 +64,7 @@ class WPLMS_tips{
 						add_filter('wplms_private_course_button',array($this,'manual_subscription'),10,2);
 						add_filter('wplms_private_course_button_label',array($this,'free_label'),10,2);
 						add_action('bp_before_course_body',array($this,'subscribe_free_course'));
+						add_action('wplms_course_product_id',array($this,'return_blank_for_free'));
 					break;
 					case 'user_progress_course_admin':
 						add_action('wplms_user_course_admin_member',array($this,'show_progressbar_user'),10,2);
@@ -93,10 +99,401 @@ class WPLMS_tips{
   						add_filter('wplms-main-menu',array($this,'instructor_main_menu'),100);
   						add_filter('wplms-top-menu',array($this,'instructor_top_menu'),100);
 					break;
+					case 'enable_forum_privacy':
+						add_filter('bbp_has_forums',array($this,'bpp_filter_forums_by_permissions'), 10, 2);
+						add_action('bbp_template_redirect', array($this,'bpp_enforce_permissions'), 1);
+					break;
+					case 'course_coming_soon':
+						add_filter('wplms_course_product_metabox',array($this,'wplms_coming_soon_backend'));
+						add_action('wplms_front_end_pricing_content',array($this,'wplms_coming_soon_front_end_pricing'),10,1);
+						add_action('wplms_front_end_save_course_pricing',array($this,'save_coming_soon'),10,1);
+
+						add_filter('wplms_course_product_id',array($this,'wplms_coming_soon_link'),10,2);
+						add_filter('wplms_course_credits',array($this,'coming_soon_display'),10,2);
+						add_filter('wplms_private_course_button_label',array($this,'coming_soon_display'),10,2);
+						add_filter('wplms_take_this_course_button_label',array($this,'coming_soon_display'),10,2);
+					break;
+					case 'course_drip_section':
+						add_filter('wplms_drip_value',array($this,'section_wise_drip'),10,4);
+					break;
+					case 'quiz_passing_score':
+						add_filter('wplms_next_unit_access',array($this,'wplms_next_access'),10,2);
+						add_filter('wplms_quiz_metabox',array($this,'wplms_quiz_passing_score'),10);
+						add_filter('wplms_front_end_quiz_settings',array($this,'quiz_passing_score_control'));
+						add_action('wplms_front_end_quiz_settings_action',array($this,'quiz_passing_score_setting'),10,1);
+					break;
+					case 'quiz_correct_answers':
+						add_filter('wplms_show_quiz_correct_answer',array($this,'wplms_show_quiz_correct_answer'),10,2);
+					break;
+					case 'quiz_negative_marking':
+						add_filter('wplms_incorrect_quiz_answer',array($this,'negative_marks_per_question'),10,2);
+						add_filter('wplms_quiz_metabox',array($this,'wplms_quiz_negative_marking'),10);
+						add_filter('wplms_front_end_quiz_settings',array($this,'negative_marking_control'));
+						add_action('wplms_front_end_quiz_settings_action',array($this,'negative_marking_setting'),10,1);
+						add_action('wplms_front_end_save_quiz_settings_extras',array($this,'save_front_end_marks'),10,1);
+					break;
+					case 'wplms_course_assignments':
+						add_filter('wplms_curriculum_time_filter',array($this,'show_assignments_in_units'),10,3);
+					break;
+					case 'members_default_order':
+						add_filter('bp_ajax_querystring',array($this,'default_members_order'),20,2);
+						add_filter('wplms_members_default_order',array($this,'set_default_members_order'));
+					break;
+					case 'submission_meta':
+						add_action('wplms_assignment_submission_meta',array($this,'submission_meta'),10,2);
+						add_action('wplms_quiz_submission_meta',array($this,'submission_meta'),10,2);
+						add_action('wplms_course_submission_meta',array($this,'submission_meta'),10,2);
+					break;
 				}
 			}
 		}
 	}
+
+	function submission_meta($user_id,$id){
+		global $bp,$wpdb;
+
+		$meta = $wpdb->get_var($wpdb->prepare("SELECT date_recorded FROM {$bp->activity->table_name} WHERE user_id = %d AND item_id = %d",$user_id,$id));
+		echo human_time_diff(strtotime($meta),current_time('timestamp'));
+	}
+	function set_default_members_order($order){
+		return $this->settings['members_default_order'];
+	}
+	function default_members_order($string,$object){
+		if ( bp_is_active( 'members' ) ){
+			$string.='&type='.$this->settings['members_default_order'];
+    	}
+
+		return $string;
+	}
+	function show_assignments_in_units($html,$mins,$unit_id){
+		$assignments = vibe_sanitize(get_post_meta($unit_id,'vibe_assignment',false));
+		if(isset($assignments) && is_array($assignments) && count($assignments)){
+			foreach($assignments as $assignment){
+				$html .= '<small><strong>'.__('Assignment :','vibe-customtypes').'</strong>'.get_the_title($assignment).'</small>';
+			}
+		}
+		return $html;
+	}
+	function wplms_next_access($access,$quiz_id){
+		$nextunit_access = vibe_get_option('nextunit_access');
+		if(get_post_type($quiz_id) == 'quiz' && $nextunit_access){
+			$user_id = get_current_user_id();
+			$marks = get_post_meta($quiz_id,$user_id,true);
+			$passing_marks = get_post_meta($quiz_id,'vibe_quiz_passing_score',true);
+			
+			if($marks < $passing_marks)
+				return false;
+		}
+		return $access;
+	}
+	function wplms_quiz_passing_score($metabox){
+		foreach($metabox as $key=>$value){
+			if($key == 'vibe_quiz_questions'){
+				$newmetabox['vibe_quiz_passing_score'] = array( // Text Input
+					'label'	=> __('Quiz passing score','vibe-customtypes'), // <label>
+					'desc'	=> __('Passing score for quiz. Combined with Prev.Unit/Quiz lock the user progress can be restricted.','vibe-customtypes'), // description
+					'id'	=> 'vibe_quiz_passing_score', // field id and name
+					'type'	=> 'text', // type of field
+					'std'   => 0
+				);
+			}
+			$newmetabox[$key] = $value;
+		}
+		return $newmetabox; 
+	}
+
+	function quiz_passing_score_setting($setting){
+		?>
+		<li><label><?php _e('SET QUIZ PASSING SCORE','wplms-front-end'); ?></label>
+            <input type="text" class="small_box vibe_extras" id="vibe_quiz_passing_score" value="<?php echo $setting['vibe_quiz_passing_score']; ?>" />
+        </li>
+		<?php
+	}
+	function quiz_passing_score_control($settings){
+		$value = get_post_meta(get_the_ID(),'vibe_quiz_passing_score',true);
+		 if(is_numeric($value))
+		 	$settings['vibe_quiz_passing_score'] = $value;
+		 else
+		 	$settings['vibe_quiz_passing_score'] = 0;
+		return $settings;
+	}
+
+	function negative_marks_per_question($marks,$quiz_id){
+		if(is_numeric($quiz_id)){
+			$nmarks = get_post_meta($quiz_id,'vibe_quiz_negative_marks_per_question',true);
+			if(isset($nmarks) && $nmarks)
+				$marks = -1*$nmarks;
+		}
+		return $marks;
+	}
+
+	function negative_marking_setting($setting){
+		?>
+		<li><label><?php _e('NEGATIVE MARKS PER QUESTION','wplms-front-end'); ?></label>
+            <input type="text" class="small_box vibe_extras" id="vibe_quiz_negative_marks_per_question" value="<?php echo $setting['vibe_quiz_negative_marks_per_question']; ?>" />
+        </li>
+		<?php
+	}
+	function negative_marking_control($settings){
+		$value = get_post_meta(get_the_ID(),'vibe_quiz_negative_marks_per_question',true);
+		 if(is_numeric($value))
+		 	$settings['vibe_quiz_negative_marks_per_question'] = $value;
+		 else
+		 	$settings['vibe_quiz_negative_marks_per_question'] = 0;
+		return $settings;
+	}
+	function wplms_quiz_negative_marking($metabox){
+		foreach($metabox as $key=>$value){
+			if($key == 'vibe_quiz_questions'){
+				$newmetabox['vibe_quiz_negative_marks_per_question'] = array( // Text Input
+					'label'	=> __('Negative Marks per Question','vibe-customtypes'), // <label>
+					'desc'	=> __('Deduct marks for a Wrong answer.','vibe-customtypes'), // description
+					'id'	=> 'vibe_quiz_negative_marks_per_question', // field id and name
+					'type'	=> 'text', // type of field
+					'std'   => 0
+				);
+			}
+			$newmetabox[$key] = $value;
+		}
+		
+		return $newmetabox;
+	}
+	function wplms_show_quiz_correct_answer($return,$quiz_id){ 
+		$course_id = get_post_meta($quiz_id,'vibe_quiz_course',true);
+		if(is_numeric($course_id)){
+			$user_id = get_current_user_id();
+			$course_status = bp_course_get_user_course_status($user_id,$course_id);
+
+			if($course_status >= 3){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		return $return;
+	}
+	function section_wise_drip($value,$pre_unit_id,$course_id,$unit_id){
+		$curriculum = vibe_sanitize(get_post_meta($course_id,'vibe_course_curriculum',false));
+
+
+		$user_id = get_current_user_id();
+		$drip_duration = get_post_meta($course_id,'vibe_course_drip_duration',true);
+
+
+		if(is_array($curriculum)){
+			$key = array_search($unit_id,$curriculum);
+			if(!isset($key) || !$key)
+				return $value;
+			//GET Previous Two Sections
+			$i=$key;
+			while($i>=0){
+				if(!is_numeric($curriculum[$i])){
+					if(!isset($k2)){
+						$k2 = $i;
+					}else if(!isset($k1)){
+						$k1 = $i;
+					}
+				}
+				$i--;
+			}
+
+			//First section incomplete
+			if(!isset($k2) || !isset($k1) || !$k2 || $k1 == $k2 || $k2<$k1)
+				return 0;
+
+			//Get first unit in previous section
+			for($i=$k1;$i<=$k2;$i++){
+				if(is_numeric($curriculum[$i]) && get_post_type($curriculum[$i]) == 'unit') 
+					break;
+			}
+
+			if($i == $k2){
+				return 0; // section drip feed disabled if a section has all quizzes
+			}
+			$start_section_timestamp = get_post_meta($curriculum[$i],$user_id,true);
+			$drip_duration_parameter = apply_filters('vibe_drip_duration_parameter',86400);
+            $value = $start_section_timestamp + $drip_duration*$drip_duration_parameter;
+			
+			
+		}
+		return $value;
+	}
+	function wplms_coming_soon_link($pid,$course_id){
+		$coming_soon = get_post_meta($course_id,'vibe_coming_soon',true);
+		if(vibe_validate($coming_soon)){
+			return '#';
+		}
+		return $pid;
+	}
+	function coming_soon_display($credits,$course_id){
+		$coming_soon = get_post_meta($course_id,'vibe_coming_soon',true);
+		if(vibe_validate($coming_soon)){
+			return '<strong><span class="amount">'.__('COMING SOON','vibe-customtypes').'</span></strong>';
+		}
+		return $credits;
+	}
+
+	function wplms_coming_soon_backend($metabox){
+		$metabox[] = array( // Text Input
+					'label'	=> __('Coming soon Mode','vibe-customtypes'), // <label>
+					'desc'	=> __('Enable Coming soon mode','vibe-customtypes'), // description
+					'id'	=> 'vibe_coming_soon', // field id and name
+					'type'	=> 'yesno', // type of field
+			        'options' => array(
+			          array('value' => 'H',
+			                'label' =>'Hide'),
+			          array('value' => 'S',
+			                'label' =>'Show'),
+			        ),
+			        'std'   => 'H'
+				);
+		return $metabox;
+	}
+	function save_coming_soon($course_id){
+		if(isset($_POST['vibe_coming_soon']) && in_array($_POST['vibe_coming_soon'],array('H','S')) && is_numeric($course_id)){
+			update_post_meta($course_id,'vibe_coming_soon',$_POST['vibe_coming_soon']);
+		}
+	}
+
+	function wplms_coming_soon_front_end_pricing($course_id){
+
+		if(isset($course_id) && $course_id){
+			$vibe_coming_soon = get_post_meta($course_id,'vibe_coming_soon',true);	
+		}else{
+			$vibe_coming_soon = 'H';
+		}
+		
+		echo '<li>
+                <h3>'.__('Coming Soon mode','vibe-customtypes').'<span>
+                    <div class="switch coming_soon">
+                            <input type="radio" class="switch-input vibe_coming_soon" name="vibe_coming_soon" value="H" id="disable_coming_soon" '; checked($vibe_coming_soon,'H'); echo '>
+                            <label for="disable_coming_soon" class="switch-label switch-label-off">'.__('Disable','vibe').'</label>
+                            <input type="radio" class="switch-input vibe_coming_soon" name="vibe_coming_soon" value="S" id="enable_coming_soon" '; checked($vibe_coming_soon,'S'); echo '>
+                            <label for="enable_coming_soon" class="switch-label switch-label-on">'.__('Enable','vibe').'</label>
+                            <span class="switch-selection"></span>
+                          </div>
+                </span></h3>
+            </li>
+            ';
+	}
+
+	function bpp_filter_forums_by_permissions($args = ''){
+		
+
+		$bbp = bbpress();
+	    // Setup possible post__not_in array
+	    $post_stati[] = bbp_get_public_status_id();
+
+	    // Check if user can read private forums
+	    if (current_user_can('read_private_forums'))
+	        $post_stati[] = bbp_get_private_status_id();
+
+	    // Check if user can read hidden forums
+	    if (current_user_can('read_hidden_forums'))
+	        $post_stati[] = bbp_get_hidden_status_id();
+
+	    // The default forum query for most circumstances
+	    $meta_query = array(
+	        'post_type' => bbp_get_forum_post_type(),
+	        'post_parent' => bbp_is_forum_archive() ? 0 : bbp_get_forum_id(),
+	        'post_status' => implode(',', $post_stati),
+	        'posts_per_page' => get_option('_bbp_forums_per_page', 50),
+	        'orderby' => 'menu_order',
+	        'order' => 'ASC'
+	    );
+
+	    //Get an array of IDs which the current user has permissions to view
+	    $allowed_forums = $this->bpp_get_permitted_forum_ids();
+
+	    // The default forum query with allowed forum ids array added
+	    $meta_query['post__in'] = $allowed_forums;
+
+	    $bbp_f = bbp_parse_args($args, $meta_query, 'has_forums');
+
+	    // Run the query
+	    $bbp->forum_query = new WP_Query($bbp_f);
+
+	    return apply_filters('bpp_filter_forums_by_permissions', $bbp->forum_query->have_posts(), $bbp->forum_query);
+	}
+
+	function bpp_get_permitted_forum_ids(){
+		$user_id = get_current_user_id();
+		global $wpdb;
+		$forum_ids = array();
+		$course_ids_array = $wpdb->get_results($wpdb->prepare("SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %d AND post_id IN (SELECT ID FROM {$wpdb->posts} WHERE post_type = '%s' AND post_status = '%s')",$user_id,BP_COURSE_CPT,'publish'),ARRAY_A);
+		if(is_array($course_ids_array)){
+			foreach($course_ids_array as $course_id){
+				if(isset($course_id['post_id'])){
+					$forum_id = get_post_meta($course_id['post_id'],'vibe_forum',true);
+					if(is_numeric($forum_id)){
+						$forum_ids[] = $forum_id;
+					}
+				}
+			}
+			array_unique($forum_ids);
+			return $forum_ids;
+		}else{
+			return false;
+		}
+
+	}
+
+	function bpp_get_permitted_subforums($forum_list){
+			$filtered_forums = array();
+			foreach ($forum_list as $forum) {
+				$forum_id = $forum->ID;
+				$permitted_forums = $this->bpp_get_permitted_forum_ids();
+				if(in_array($forum_id,$permitted_forums))
+				{
+					array_push($filtered_forums,$forum);
+				}
+			}
+			
+			return (array) $filtered_forums;
+	}
+	function bpp_enforce_permissions(){
+		// Bail if not viewing a bbPress item
+	    if (!is_bbpress())
+	        return;
+
+	    // Bail if not viewing a single item or if user has caps
+	    if (!is_singular() || bbp_is_user_keymaster() || current_user_can('read_hidden_forums') || bbp_is_forum_archive())
+	        return;
+
+	    global $post;
+
+	    
+	    if (!$this->bpp_can_user_view_post($post->ID)) {
+	        if (!is_user_logged_in()) { 
+	        	if(is_numeric($this->temp)){
+	        		$link =get_permalink($this->temp).'?error=not-accessible';
+	        		wp_redirect($link,'302');
+	        		exit();
+	        	}else{
+	        		auth_redirect();
+	        	}
+	        }else {
+	        	if(is_numeric($this->temp)){
+	        		wp_safe_redirect(get_permalink($this->temp).'?error=not-accessible','302');
+	        	}else{
+	        		bbp_set_404();
+	        	}
+	        }
+	    }
+
+	}
+	
+	function bpp_can_user_view_post($post_id){
+		global $wpdb;
+		$user_id = get_current_user_id();
+		$parents = get_post_ancestors( $post_id );
+		$id = ($parents) ? $parents[count($parents)-1]: $post_id;
+		
+		$course_id = $wpdb->get_var($wpdb->prepare("SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND meta_value = %d",'vibe_forum',$id));
+		$this->temp = $course_id;
+		return wplms_user_course_check($user_id,$course_id);
+	}
+	
 	function student_mobile_menu($args){
 		if(is_user_logged_in()){
 			$args['theme_location'] = 'student-mobile-menu';
@@ -264,21 +661,17 @@ class WPLMS_tips{
 		if(empty($order['orderby'])){
 			switch($this->settings['default_order']){
 				case 'date':
-					$order['orderby']='date';
-					$order['order']='DESC';
+					$order['orderby']=array('menu_order' => 'DESC', 'date' => 'DESC');
 				break;
-				case 'title':echo '*';
-					$order['orderby']='title';
-					$order['order']='ASC';
+				case 'title':
+					$order['orderby']=array('menu_order' => 'DESC', 'title' => 'ASC');
 				break;
 				case 'popular':
-					$order['orderby']='meta_value';
-					$order['order']='DESC';
+					$order['orderby']=array('menu_order' => 'DESC', 'meta_value' => 'DESC');
 					$order['meta_key']='vibe_students';
 				break;
 				case 'rated':
-					$order['orderby']='meta_value';
-					$order['order']='DESC';
+					$order['orderby']=array('menu_order' => 'DESC', 'meta_value' => 'DESC');
 					$order['meta_key']='average_rating';
 				break;
 			}
@@ -294,6 +687,13 @@ class WPLMS_tips{
 				bp_course_add_user_to_course($user_id,$post->ID);
 			}
 		}
+	}
+	function return_blank_for_free($pid){
+		global $post;
+		$free = get_post_meta($post->ID,'vibe_course_free',true);
+		if(vibe_validate($free))
+			return '';
+		return $pid;
 	}
 	function manual_subscription($link,$course_id){
 		$free = get_post_meta($course_id,'vibe_course_free',true);
@@ -324,6 +724,7 @@ class WPLMS_tips{
                           'link' =>get_permalink( $myaccount_page_id )
                           );
             }
+             if ( in_array( 'paid-memberships-pro/paid-memberships-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && is_user_logged_in()) {
             $pmpro_account_page_id = get_option('pmpro_account_page_id');
             if ( isset($pmpro_account_page_id ) && is_numeric($pmpro_account_page_id ) ) {
               $loggedin_menu['membership']=array(
@@ -331,7 +732,8 @@ class WPLMS_tips{
                           'label' => __('My Membership','vibe-customtypes'),
                           'link' =>get_permalink( $pmpro_account_page_id )
                           );
-            }
+           		 }
+           	}
 		return  $loggedin_menu;
     }
 
@@ -357,7 +759,8 @@ class WPLMS_tips{
 	    		}else{	
 	    			global $wpdb,$bp;
 					if(isset($matches[3]) && is_numeric($matches[3])){
-						$total_count = $matches[2];
+						$total_count = $matches[3];
+						
 						$count = $wpdb->get_var($wpdb->prepare("SELECT count(*) FROM {$bp->activity->table_name} WHERE component = %s AND type = %s AND content = %s AND item_id = %d",'course','course_code',$code,$course_id));
 		    			if($count <= $total_count){
 		    				if(!wplms_user_course_check($user_id,$course_id)){
@@ -369,6 +772,7 @@ class WPLMS_tips{
 						          'primary_link'=>get_permalink($course_id),
 						          'secondary_item_id'=>$user_id
 						        )); 
+						        do_action('wplms_course_code',$code,$course_id,$user_id);
 						        bp_course_add_user_to_course($user_id,$course_id);
 						        echo '<p class="message success">'.__('Congratulations! You are now added to the course.','vibe-customtypes').'</p>';
 				    		}else{
@@ -379,14 +783,8 @@ class WPLMS_tips{
 		    			}
 					}else{
 						if(!wplms_user_course_check($user_id,$course_id)){
-		    				bp_course_record_activity(array(
-					          'action' => __('Course code applied','vibe-customtypes'),
-					          'content' => $code,
-					          'type' => 'course_code',
-					          'item_id' => $course_id,
-					          'primary_link'=>get_permalink($course_id),
-					          'secondary_item_id'=>$user_id
-					        )); 
+		    				 
+					        do_action('wplms_course_code',$code,$course_id,$user_id);
 			    			bp_course_add_user_to_course($user_id,$course_id);
 			    			echo '<p class="message success">'.__('Congratulations! You are now added to the course.','vibe-customtypes').'</p>';
 			    		}else{
@@ -495,13 +893,14 @@ class WPLMS_tips{
 	           update_post_meta($unit_id,$c->element,$c->value);
 	        }
 		}
-	}
+	} 
 
 	function apply_unit_date_time_drip_feed($value,$pre_unit_id,$course_id,$unit_id){
 		$vibe_access_date= get_post_meta($unit_id,'vibe_access_date',true);
 		$vibe_access_time= get_post_meta($unit_id,'vibe_access_time',true);
 		if(isset($vibe_access_date) && isset($vibe_access_time) && $vibe_access_date && $vibe_access_time){
 			$value=strtotime($vibe_access_date.' '.$vibe_access_time);
+			$value = $value -1*(current_time('timestamp') - time()); // Adjustment to UTC timestamp
 		}
 		return $value;
 	}
@@ -512,45 +911,29 @@ class WPLMS_tips{
 		global $bp;
 		global $user;
 		if(is_a($user,'WP_User')){
+			$redirect_array = apply_filters('wplms_redirect_location',array(
+					'home' => home_url(),
+					'profile' => bp_core_get_user_domain($user->ID),
+					'mycourses' => bp_core_get_user_domain($user->ID).'/'.BP_COURSE_SLUG,
+					'instructing_courses' => bp_core_get_user_domain($user->ID).'/'.BP_COURSE_SLUG.'/'.BP_COURSE_INSTRUCTOR_SLUG,
+					'dashboard' => bp_core_get_user_domain($user->ID).'/'.WPLMS_DASHBOARD_SLUG,
+					'same' => '',
+					));
+			
+			$flag=0;
 			if (isset($user->allcaps['edit_posts'])) {
-				switch($this->settings['instructor_login_redirect']){
-					case 'profile':
-						$redirect_url=bp_core_get_user_domain($user->ID);
-					break;
-					case 'mycourses':
-						$redirect_url=bp_core_get_user_domain($user->ID).'/'.BP_COURSE_SLUG;
-					break;
-					case 'instructing_courses': 
-						$redirect_url=bp_core_get_user_domain($user->ID).'/'.BP_COURSE_SLUG.'/instructor-courses';
-					break;
-					case 'dashboard':
-						$redirect_url=bp_core_get_user_domain($user->ID).'/dashboard';
-					break;
-					case 'same':
-					break;
-					default:
-						$redirect_url=site_url();
-					break;
-				}
+				$redirect_url=$redirect_array[$this->settings['instructor_login_redirect']];
+				if($this->settings['instructor_login_redirect'] == 'same')
+					$flag=1;
 			}else{
-				switch($this->settings['student_login_redirect']){
-					case 'profile':
-						$redirect_url=bp_core_get_user_domain($user->ID);
-					break;
-					case 'mycourses':
-						$redirect_url=bp_core_get_user_domain($user->ID).'/'.BP_COURSE_SLUG;
-					break;
-					case 'dashboard':
-						$redirect_url=bp_core_get_user_domain($user->ID).'/dashboard';
-					break;
-					case 'same':
-					break;
-					default:
-						$redirect_url=site_url();
-					break;
-				}
+				$redirect_url=$redirect_array[$this->settings['student_login_redirect']];
+				if($this->settings['student_login_redirect'] == 'same')
+					$flag=1;
 			}
 		}
+		if((!isset($redirect_url) || !$redirect_url) && !$flag)
+			$redirect_url=home_url();
+
 		return $redirect_url;
 	}
 	function wplms_login_same_page($url){
@@ -566,12 +949,6 @@ class WPLMS_tips{
 	function hide_admin_in_instructor($flag){ 
 		return 0;
 	}
-	function instructor_login_redirect($redirect_url,$request_url,$user){
-		global $bp; 
-		$user_id = get_current_user_id();
-		if(current_user_can('edit_posts'))
-		return $redirect_url;
-	}
 
 	function coursenav_remove_members($menu_array){
 		unset($menu_array['members']);
@@ -583,59 +960,15 @@ class WPLMS_tips{
         return $menu_array;
 	}
 	function course_curriculum_below_description(){
-
 		global $post;
 		$id= get_the_ID();
 		$class='';
 		if(isset($this->settings['curriculum_accordion']))
 			$class="accordion";
 		?>
-
 			<div class="course_curriculum <?php echo $class; ?>">
-				<h3 class="review_title"><?php  _e('Course Curriculum','vibe-customtypes'); ?></h3>
-			<?php
-			do_action('wplms_course_curriculum_section',$id);
-			$course_curriculum = vibe_sanitize(get_post_meta($id,'vibe_course_curriculum',false));
-
-			if(isset($course_curriculum)){
-
-
-				foreach($course_curriculum as $lesson){
-					if(is_numeric($lesson)){
-						$icon = get_post_meta($lesson,'vibe_type',true);
-
-						if(get_post_type($lesson) == 'quiz')
-							$icon='task';
-
-								$href=get_the_title($lesson);
-								$free='';
-								$free = get_post_meta($lesson,'vibe_free',true);
-
-								$curriculum_course_link = apply_filters('wplms_curriculum_course_link',0);
-								if(vibe_validate($free) || ($post->post_author == get_current_user_id()) || current_user_can('manage_options') || $curriculum_course_link){
-									$href=apply_filters('wplms_course_curriculum_free_access','<a href="'.get_permalink($lesson).'?id='.get_the_ID().'">'.get_the_title($lesson).(vibe_validate($free)?'<span>'.__('FREE','vibe-customtypes').'</span>':'').'</a>',$lesson,$free);
-								}
-
-						echo '<div class="course_lesson">
-								<i class="icon-'.$icon.'"></i><h6>'.apply_filters('wplms_curriculum_course_lesson',$href,$lesson).'</h6>';
-								$minutes=0;
-								$hours=0;
-								$min = get_post_meta($lesson,'vibe_duration',true);
-								$minutes = $min;
-								if($minutes){
-									if($minutes > 60){
-										$hours = intval($minutes/60);
-										$minutes = $minutes - $hours*60;
-									}
-								echo apply_filters('wplms_curriculum_time_filter','<span><i class="icon-clock"></i> '.(isset($hours)?$hours.__(' Hours','vibe-customtypes'):'').' '.$minutes.' '.__('minutes','vibe-customtypes').'</span><b>'.((isset($hours) && $hours)?$hours:"00").':'.$minutes.'</b>',$min);
-								}	
-
-								echo '</div>';
-					}else{
-						echo '<h5 class="course_section">'.$lesson.'</h5>';
-					}
-				}
-			}
+				<?php
+					include VIBE_PATH.'/course/single/curriculum.php';
 				?>
 			</div>
 		<?php
@@ -647,9 +980,25 @@ class WPLMS_tips{
 			return $user;
 		}
 		$sessions = WP_Session_Tokens::get_instance( $user->ID );
+
     	$all_sessions = $sessions->get_all();
 		if ( count($all_sessions) ) {
-			$user = new WP_Error('already_signed_in', __('<strong>ERROR</strong>: User already logged in.','vibe-customtypes'));
+			$flag=0;
+			$previous_login = get_user_meta($user->ID,'last_activity',true);
+			if(isset($previous_login) && $previous_login){
+				$threshold = apply_filters('wplms_login_threshold',1800);
+				$difference = time()-strtotime($previous_login) - $threshold;
+				if($difference <= 0){ // If the user Logged in within 30 Minutes
+					$flag=1;
+				}else{
+					$token = wp_get_session_token();
+					$sessions->destroy_others( $token );
+				} 
+			}else{
+				$flag = 1;
+			}
+			if($flag)
+				$user = new WP_Error('already_signed_in', __('<strong>ERROR</strong>: User already logged in.','vibe-customtypes'));
 		}
 	    return $user;
 	}

@@ -253,8 +253,12 @@ function thumbnail_generator($custom_post,$featured_style,$cols='medium',$n=100,
                 $start_time=get_post_meta($custom_post->ID,'vibe_start_time',true);
                 $end_time=get_post_meta($custom_post->ID,'vibe_end_time',true);
                 $show_location=get_post_meta($custom_post->ID,'vibe_show_location',true);
+                $all_day=get_post_meta($custom_post->ID,'vibe_all_day',true);
                 $location=vibe_sanitize(get_post_meta($custom_post->ID,'vibe_location',false));
-
+                $repeatable = get_post_meta($custom_post->ID,'vibe_repeatable',true);
+                $repeat_value = get_post_meta($custom_post->ID,'vibe_repeat_value',true);
+                $repeat_unit = get_post_meta($custom_post->ID,'vibe_repeat_unit',true);
+                $repeat_count = get_post_meta($custom_post->ID,'vibe_repeat_count',true);
                 $return .= ' <span class="event_icon" style="color:'.$color.'"><i class="'.$icon_class.'"></i></span>
                         <h4 style="background:'.$color.'"><i class="'.$icon_class.'"></i> '.__('Event ','vibe-customtypes').'</label><span><a href="'.get_permalink($custom_post->ID).'">'.get_the_title($custom_post->ID).'</a></span></h4>
                         <ul>
@@ -273,8 +277,11 @@ function thumbnail_generator($custom_post,$featured_style,$cols='medium',$n=100,
                         if(isset($end_time) && $end_time !=''){
                             $return .= '<li><label><i class="icon-clock"></i> '.__('End Time ','vibe-customtypes').'</label><span>'.$end_time.'</span>';
                         }
+                        if(vibe_validate($all_day)){
+                            $return .= '<li><label><i class="icon-circle-full"></i> '.__('All Day ','vibe-customtypes').'</label><span>'.__('Yes','vibe-customtypes').'</span>';
+                        }
                         if(vibe_validate($repeatable)){
-                            $return .= '<li><label><i class="icon-flash"></i> '.__('Frequency ','vibe-customtypes').'</label><span>'.__('Every ','vibe-customtypes').((isset($repeat_value) && $repeat_value > 1)?$repeat_value:'').' '.$repeat_unit.'</span>';
+                            $return .= '<li><label><i class="icon-flash"></i> '.__('Frequency ','vibe-customtypes').'</label><span>'.__('Every ','vibe-customtypes').((isset($repeat_value) && $repeat_value > 1)?$repeat_value:'').' '.$repeat_unit.' '.__('for ','vibe-customtypes').$repeat_count.' '.$repeat_unit.'</span>';
                         }
                         if(vibe_validate($show_location)){
                             $return .= '<li><label><i class="icon-pin-alt"></i> '.__('Venue ','vibe-customtypes').'</label><span>'.(isset($location['staddress'])?$location['staddress']:'').(isset($location['city'])?', '.$location['city']:'').(isset($location['state'])?', '.$location['state']:'').(isset($location['country'])?', '.$location['country']:'').(isset($location['pincode'])?' - '.$location['pincode']:'').'</span>';

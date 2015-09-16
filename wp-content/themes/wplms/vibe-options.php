@@ -132,19 +132,20 @@ $args['help_tabs'][] = array(
 							'id' => 'vibe-opts-1',
 							'title' => __('Support', 'vibe'),
 							'content' => '<p>'.__('We provide support via three mediums (in priority)','vibe').':
-                                                            <ul><li><a href="vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms" target="_blank">'.THEME_FULL_NAME.' VibeThemes Forums</a></li><li>'.__('Support Email: VibeThemes@gmail.com', 'vibe').'</li><li>'.__('ThemeForest Item Comments','vibe').'</li></ul>
+                                                            <ul><li><a href="http://support.vibethemes.com" target="_blank">'.THEME_FULL_NAME.' VibeThemes Forums</a></li><li>'.__('Support Email: VibeThemes@gmail.com', 'vibe').'</li><li>'.__('ThemeForest Item Comments','vibe').'</li></ul>
                                                             </p>',
 							);
 $args['help_tabs'][] = array(
 							'id' => 'vibe-opts-2',
 							'title' => __('Documentation & Links', 'vibe'),
-							'content' => '<ul><li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms" target="_blank">'.THEME_FULL_NAME.' Support Forums</a></li>
-                                                                          <li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/tips-tricks-docs/7312-wplms-theme-setup" target="_blank">'.THEME_FULL_NAME.' Theme Setup</a></li>
-                                                                          <li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/tips-tricks-docs/7311-theme-guide" target="_blank">'.THEME_FULL_NAME.' Theme Guide</a></li>  
-                                                                          <li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/7309-issue-log" target="_blank">'.THEME_FULL_NAME.' Issue Log</a></li>
-                                                                          <li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/7310-feature-requests" target="_blank">'.THEME_FULL_NAME.' Feature Requests</a></li>    
-                                                                          <li><a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/tips-tricks-docs/7313-wplms-faqs" target="_blank">'.THEME_FULL_NAME.' Common FAQs</a></li>    
-                                                                      </ul>
+							'content' => '<ul><li><a href="http://support.vibethemes.com" target="_blank">'.THEME_FULL_NAME.' Support Panel</a></li>
+	                                          <li><a href="http://support.vibethemes.com/solution/categories/1000126528/folders/1000215383" target="_blank">'.THEME_FULL_NAME.' Theme Setup</a></li>
+	                                          <li><a href="http://support.vibethemes.com/solution/categories/1000126528/folders/1000210638" target="_blank">'.THEME_FULL_NAME.' Common FAQs/Issues</a></li>  
+	                                          <li><a href="http://support.vibethemes.com/solution/categories/1000126528/folders/1000210637" target="_blank">'.THEME_FULL_NAME.' Tips and Tricks</a></li>
+	                                          <li><a href="http://support.vibethemes.com/discussions/forums/1000220365" target="_blank">'.THEME_FULL_NAME.' Feature Requests</a></li>    
+	                                          <li><a href="http://support.vibethemes.com/solution/categories/1000126528/folders/1000210639" target="_blank">'.THEME_FULL_NAME.' Update Log</a></li>    
+	                                          <li><a href="https://www.youtube.com/watch?v=A0RsQvmDuSM&list=PL8n4TGA_rwD_5jqsgXIxXOk1H6ar-SVCV" target="_blank">'.THEME_FULL_NAME.' Video Guide</a></li>
+	                                      </ul>
                                                             ',
 							);
 
@@ -257,7 +258,21 @@ $sections[] = array(
 							'sub_desc' => __('Select All events page sidebar', 'vibe'),
 							'desc' => __('Select a sidebar for all events page', 'vibe'),
 							'std' => 'mainsidebar'
-						),			
+						),	
+					 array(
+						'id' => 'sidebars_widgets',
+						'type' => 'import_export',
+                        'title' => __('Import/Export Sidebar settings ', 'vibe'),
+                        'sub_desc' => __('Import/Export sidebars settings', 'vibe'),
+                        'desc' => __('Use import/export functionality to import/export your Sidebar settings like Widgets included in sidebars.', 'vibe')
+						),
+					array(
+						'id' => 'widgets_settings',
+						'type' => 'widgets_import_export',
+                        'title' => __('Import/Export Widget settings ', 'vibe'),
+                        'sub_desc' => __('Import/Export widgets settings', 'vibe'),
+                        'desc' => __('Use import/export functionality to import/export your widget settings.', 'vibe')
+						)		
 					)
 				);
 
@@ -284,9 +299,9 @@ $sections[] = array(
 						),
 					array(
 						'id' => 'members_activity',
-                        'title' => __('Show Members activity', 'vibe'),
-                        'sub_desc' => __('Members latest activity is shown below the name', 'vibe'),
-                        'desc' => __('Members activity is shown in All members page.', 'vibe'),
+                        'title' => __('Show Members Meta info', 'vibe'),
+                        'sub_desc' => __('Members meta-info is shown below the name', 'vibe'),
+                        'desc' => __('Members activity, Friendship , Message button is shown in Single & members directory.', 'vibe'),
                         'type' => 'button_set',
 						'options' => array('0' => __('No','vibe'),'1'=>__('Yes','vibe')),//Must provide key => value pairs for radio options
 						'std' => '0'
@@ -371,7 +386,7 @@ $sections[] = array(
 					array(
 						'id' => 'activation_redirect',
 						'type' => 'pages_select',
-                        'title' => __('Redirect Page on User ACtivation', 'vibe'),
+                        'title' => __('Redirect Page on User Activation', 'vibe'),
                         'sub_desc' => __('User is redirected to this page on activating her account.', 'vibe'),
                         'desc' => __('After registering and activating the account the user is redirected to this page.','vibe')
 						),
@@ -455,6 +470,21 @@ $sections[] = array(
                         'sub_desc' => __('A Page with "Notes & Discussion" Page Template', 'vibe'),
 						),
 						array(
+						'id' => 'email_page',
+						'type' => 'pages_select',
+                        'title' => __('Email page', 'vibe'),
+                        'sub_desc' => __('Connect page for "View email in Borwser" in emails, use page template "Email Page"', 'vibe'),
+						),
+						array(
+						'id' => 'sync_student_count',
+                        'title' => __('Maintain accurate Student Count', 'vibe'),
+                        'sub_desc' => __('Maintains accurate student count for course', 'vibe'),
+                        'desc' => __('The Number of Student in Course count gets verified everytime user visits the Course - admin section', 'vibe'),
+                        'type' => 'button_set',
+						'options' => array('0' => __('No','vibe'),'1'=>__('Yes','vibe')),
+						'std' => '0'
+						),
+						array(
 						'id' => 'new_course_status',
                         'title' => __('Admin Approval for Course', 'vibe'),
                         'sub_desc' => __('Force instructors for Admin approval for new course', 'vibe'),
@@ -504,6 +534,15 @@ $sections[] = array(
                         'title' => __('Instructors can Add Students', 'vibe'),
                         'sub_desc' => __('Enable Instructors to be able to add students', 'vibe'),
                         'desc' => __('A Bulk Action is added in Course -> Admin -> Members which enables Instructos to add students to the course', 'vibe'),
+                        'type' => 'button_set',
+						'options' => array('0' => __('No','vibe'),'1'=>__('Yes','vibe')),
+						'std' => '0'
+						),
+						array(
+						'id' => 'instructor_change_status',
+                        'title' => __('Instructors can Manage Student Course status ', 'vibe'),
+                        'sub_desc' => __('Enable Instructors to be change Students course status', 'vibe'),
+                        'desc' => __('A Bulk Action is added in Course -> Admin -> Members which enables Instructos to manage students course status in the course', 'vibe'),
                         'type' => 'button_set',
 						'options' => array('0' => __('No','vibe'),'1'=>__('Yes','vibe')),
 						'std' => '0'
@@ -619,6 +658,15 @@ $sections[] = array(
 						'std' => ''
 						),
 						array(
+						'id' => 'notes_style',
+                        'title' => __('Notes and Discussion styles', 'vibe'),
+                        'sub_desc' => __('Set style for Notes & Discussion template', 'vibe'),
+                        'desc' => __('Display notes & Discussions', 'vibe'),
+                        'type' => 'button_set',
+						'options' => array('' => __('Per paragraph in Unit','vibe'),'1'=>__('Per Unit','vibe')),
+						'std' => '0'
+						),
+						array(
 						'id' => 'show_news',
                         'title' => __('Display News', 'vibe'),
                         'sub_desc' => __('Display News section in courses', 'vibe'),
@@ -653,6 +701,12 @@ $sections[] = array(
 				'title' => __('Fonts Manager', 'vibe'),
 				'desc' => '<p class="description">'.__('Manage Fonts to be used in the Site. Fonts selected here will be available in Theme customizer font family select options.','vibe').'..</p>',
 				'fields' => array(
+					array(
+						'id' => 'google_fonts_api_key',
+						'type' => 'text',
+                        'title' => __('Enter Google fonts API key', 'vibe'),
+                        'sub_desc' => __('Required to fetch a list of Fonts from Google', 'vibe').'<a href="http://support.vibethemes.com/solution/articles/1000194458-google-api-key-for-font-manager">Learn how to get Google fonts API</a>'
+						),
 					 array(
 						'id' => 'google_fonts',
 						'type' => 'google_webfonts_multi_select',
@@ -660,36 +714,11 @@ $sections[] = array(
                         'sub_desc' => __('Select Fonts and setup fonts in Live Editor', 'vibe'),
                         'desc' => __('Use these sample layouts in PageBuilder.', 'vibe')
 						),
-					array(
-						'id' => 'google_fonts_subsets',
-						'type' => 'multi_select',
-                        'title' => __('Select Google Fonts subsets', 'vibe'),
-                        'sub_desc' => __('Select a font subset', 'vibe').'<a href="http://academe.co.uk/2013/09/google-web-fonts-api-categories-and-subsets/"><i class="dashicons-plus-alt"></i></a>',
-                        'options' => array(
-                        	'latin'=>__('Latin','vibe'),
-							'latin-ext' =>__('Latin Ext','vibe'),
-							'menu'=>__('Menu','vibe'),
-							'greek'=>__('Greek','vibe'),
-							'greek-ext'=>__('Greek Ext','vibe'),
-							'cyrillic'=>__('Cyrillic','vibe'),
-							'cyrillic-ext'=>__('Cyrillic Ext','vibe'),
-							'vietnamese'=>__('Vietnamese','vibe'),
-							'arabic'=>__('Arabic','vibe'),
-							'khmer'=>__('Khmer','vibe'),
-							'lao'=>__('Lao','vibe'),
-							'tamil'=>__('Tamil','vibe'),
-							'bengali'=>__('Bengali','vibe'),
-							'hindi'=>__('Hindi','vibe'),
-							'korean'=>__('Korean','vibe'),
-                        	),
-                        'std' => array('latin','latin-ext'),
-                        'desc' => __('Use these font subsets for better rendering of fonts.', 'vibe')
-						),
                         array(
 						'id' => 'custom_fonts',
 						'type' => 'multi_text',
                         'title' => __('Custom Fonts (Enter CSS Font Family name)', 'vibe'),
-                        'sub_desc' => __(' Custom Fonts are added to Theme Customizer Font List.. ', 'vibe').'<a href="http://vibethemes.com/forums/forum/wordpress-html-css/wordpress-themes/wplms/tips-tricks-docs/43430-tip-add-custom-fonts-in-wplms">Learn how to add custom fonts</a>'
+                        'sub_desc' => __(' Custom Fonts are added to Theme Customizer Font List.. ', 'vibe').'<a href="http://support.vibethemes.com/solution/articles/1000165351-add-custom-fonts-in-wplms">Learn how to add custom fonts</a>'
 						)
 					 				
 					)
@@ -702,7 +731,7 @@ $sections[] = array(
 				'desc' => '<p class="description">'.__('Import/Export customizer settings. Customize your theme using ','vibe').' <a href="'.get_admin_url().'customize.php" class="button">'.__('WP Theme Customizer','vibe').'</a></p>',
 				'fields' => array(
                      array(
-						'id' => 'viz_customizer',
+						'id' => 'vibe_customizer',
 						'type' => 'import_export',
                         'title' => __('Import/Export Customizer settings ', 'vibe'),
                         'sub_desc' => __('Import/Export customizer settings', 'vibe'),
@@ -887,6 +916,14 @@ $sections[] = array(
 						'options' => array('' => __('Wide','vibe'),'boxed' => __('Boxed','vibe')),
 						'std' => ''
 						), 
+						array(
+						'id' => 'security_key',
+						'type' => 'text',
+						'title' => __('Unique Security Key', 'vibe'), 
+						'sub_desc' => __('Security key for every site. Longer keys are good', 'vibe'),
+						'desc' => __('Unique key to avoid (logged in) users from bypassing the system.', 'vibe'),
+						'std' => wp_generate_password()
+						),
 						array(
 						'id' => 'excerpt_length',
 						'type' => 'text',

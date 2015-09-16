@@ -1,4 +1,5 @@
 <?php
+
 $course_id = get_the_id();
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $num = get_option('posts_per_page');

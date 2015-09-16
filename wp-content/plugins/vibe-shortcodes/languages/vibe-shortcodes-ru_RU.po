@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vibe Shortcodes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 15:59+0530\n"
-"PO-Revision-Date: 2015-03-31 15:59+0530\n"
+"POT-Creation-Date: 2015-08-03 16:26+0530\n"
+"PO-Revision-Date: 2015-08-03 16:26+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: Olymproject <info@olymproject.org>\n"
 "Language: ru\n"
@@ -30,55 +30,92 @@ msgstr "Отправка формы для связи"
 msgid "Message sent!"
 msgstr "Сообщение отправлено!"
 
-#: shortcodes.php:129
+#: shortcodes.php:141
 msgid "EARNED"
 msgstr "НАБРАНО "
 
-#: shortcodes.php:153
+#: shortcodes.php:165
 msgid "Check all Courses created by "
 msgstr "Все курсы автора "
 
-#: shortcodes.php:154
+#: shortcodes.php:166
 msgid "More Courses by "
 msgstr "Другие курсы автора "
 
-#: shortcodes.php:1329
+#: shortcodes.php:1436
 msgid "MEMBERS"
 msgstr ""
 
-#: shortcodes.php:1332
+#: shortcodes.php:1439
 msgid "COURSES"
 msgstr ""
 
-#: shortcodes.php:1335
+#: shortcodes.php:1442
 msgid "INSTRUCTORS"
 msgstr ""
 
-#: shortcodes.php:1338
+#: shortcodes.php:1445
 msgid "GROUPS"
 msgstr ""
 
-#: shortcodes.php:1341
+#: shortcodes.php:1448
 msgid "SUBSCRIPTIONS"
 msgstr ""
 
-#: shortcodes.php:1344
+#: shortcodes.php:1451
 msgid "SALES"
 msgstr ""
 
-#: shortcodes.php:1347
+#: shortcodes.php:1454
 msgid "EARNINGS"
+msgstr ""
+
+#: shortcodes.php:1486
+msgid "SHOW HINT"
+msgstr ""
+
+#: shortcodes.php:1487
+msgid "HINT"
+msgstr ""
+
+#: shortcodes.php:1499
+msgid "FALSE"
+msgstr ""
+
+#: shortcodes.php:1499
+msgid "TRUE"
+msgstr ""
+
+#: shortcodes.php:1546 shortcodes.php:1549
+msgid "Type Answer"
+msgstr ""
+
+#: shortcodes.php:1557
+msgid "Check Answer"
+msgstr ""
+
+#: shortcodes.php:1572
+#, fuzzy
+msgid "Explanation"
+msgstr "Проверка данных"
+
+#: shortcodes.php:1599
+msgid "Type Keywords.."
+msgstr ""
+
+#: shortcodes.php:1600
+msgid "Search"
 msgstr ""
 
 #: upload_handler.php:16
 msgid "Upload ZIP"
 msgstr "Загрузить ZIP "
 
-#: upload_handler.php:37 upload_handler.php:331
+#: upload_handler.php:37 upload_handler.php:332
 msgid "Upload Library"
 msgstr "Загрузить в библиотеку"
 
-#: upload_handler.php:38 upload_handler.php:236 upload_handler.php:322
+#: upload_handler.php:38 upload_handler.php:236 upload_handler.php:323
 msgid "Upload File"
 msgstr "Загрузить файл "
 
@@ -132,11 +169,11 @@ msgstr "Файл должен представлять собой ZIP архив
 msgid "File too big"
 msgstr ""
 
-#: upload_handler.php:293
+#: upload_handler.php:294
 msgid "Please upload zip file, Index.html file not found in package"
 msgstr ""
 
-#: upload_handler.php:297
+#: upload_handler.php:298
 #, fuzzy
 msgid "Upload failed !"
 msgstr "Загрузить файл "
@@ -234,19 +271,19 @@ msgstr "Email"
 msgid "Themeforest User name ( for Auto-Updates )"
 msgstr "Логин на сайте Themeforest (для автообновления)"
 
-#: classes/vibeshortcodes.class.php:46
+#: classes/vibeshortcodes.class.php:49
 msgid "Sending mail"
 msgstr "Отправляю сообщение "
 
-#: classes/vibeshortcodes.class.php:47
+#: classes/vibeshortcodes.class.php:50
 msgid "Error :"
 msgstr "Ошибка : "
 
-#: classes/vibeshortcodes.class.php:48
+#: classes/vibeshortcodes.class.php:51
 msgid "Invalid "
 msgstr "Неверно "
 
-#: classes/vibeshortcodes.class.php:49
+#: classes/vibeshortcodes.class.php:52
 msgid "Captcha Mismatch"
 msgstr "Несовпадение кода  "
 
@@ -782,8 +819,9 @@ msgid "Insert Course Shortcode"
 msgstr "Введите короткий код курса"
 
 #: tinymce/config.php:745
-msgid "Select Testimonial"
-msgstr "Выбрать рекомендацию"
+#, fuzzy
+msgid "Select Side"
+msgstr "Выбрать размер искиза"
 
 #: tinymce/config.php:757
 msgid "Insert PullQuote Shortcode"
@@ -976,6 +1014,9 @@ msgstr ""
 #: tinymce/config.php:1012
 msgid "Insert iFrame Shortcode"
 msgstr "Вставить короткий код iFrame"
+
+#~ msgid "Select Testimonial"
+#~ msgstr "Выбрать рекомендацию"
 
 #~ msgid "Please upload zip file"
 #~ msgstr "Пожалуйста, загрузите ZIP архив"

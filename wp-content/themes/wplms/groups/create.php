@@ -21,7 +21,14 @@ if(isset($capablity)){
 	}
 
 }
+$id=0;
+$page_array=get_option('bp-pages');
+if(isset($page_array['groups'])){
+	$id = $page_array['groups'];
+}
+
 get_header( 'buddypress' ); ?>
+
 
 <?php do_action( 'bp_before_create_group_content_template' ); ?>
 <section id="grouptitle">
@@ -29,8 +36,8 @@ get_header( 'buddypress' ); ?>
         <div class="row">
             <div class="col-md-9 col-sm-8">
                 <div class="pagetitle">
-                    <h1><?php the_title(); ?></h1>
-                    <?php the_sub_title(); ?>
+                    <h1><?php echo get_the_title($id); ?></h1>
+                    <?php the_sub_title($id); ?>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4">

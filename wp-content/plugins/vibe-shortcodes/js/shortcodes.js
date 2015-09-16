@@ -43,6 +43,67 @@ jQuery(document).ready(function($){
     });
 });
 
+jQuery(document).ready(function($){  
+
+  $('.v_parallax_block').each(function(){
+      var $bgobj = $(this);
+      var i = parseInt($bgobj.attr('data-scroll'));
+      var rev = parseInt($bgobj.attr('data-rev'));
+      var ptop = $bgobj.parent().position().top;
+      var adjust = parseInt($bgobj.attr('data-adjust'));
+      var height = $bgobj.height();
+
+      var v_parallax_block_height = $bgobj.find('.parallax_content').height();
+      if(height<v_parallax_block_height)
+        height = v_parallax_block_height;
+
+
+      if(rev == 2){
+        
+      }else{
+        var $parent = $bgobj.parent().parent();
+        if($parent.hasClass('stripe')){
+            $parent.css('height',height+'px');
+        }
+      }
+      
+      $(window).scroll(function(e) {
+          e.preventDefault();
+          var $window = jQuery(window);
+          var yPos = Math.round((($window.scrollTop())/i));
+          var coords;
+           if(rev != undefined){
+               if(rev == 2){
+                yPos = Math.round((($window.scrollTop()-ptop)/i));
+                $bgobj.parent().css('-webkit-transform', 'translateY('+yPos+'px)');
+                $bgobj.parent().css('transform', 'translateY('+yPos+'px)');
+               }else if(rev == 1){
+                  yPos = yPos  - adjust;
+                  coords = '50% '+yPos+ 'px';
+                  $bgobj.css('background-position', coords);
+                }else{
+                  yPos =  adjust - yPos;
+                  coords = '50% '+yPos + 'px';//console.log(coords);
+                  $bgobj.css('background-position', coords);
+                }
+            }
+      }); 
+    });   
+
+  $('section.stripe').each(function(){  
+      var style = $(this).find('.v_column.stripe_container .v_module').attr('data-class');
+      if(style){style='stripe '+style;
+          $(this).find('.v_column.stripe .v_module').removeAttr('data-class');
+          $(this).attr('class',style);
+      }
+      var style = $(this).find('.v_column.stripe .v_module').attr('data-class');
+      if(style){style='stripe '+style;
+          $(this).find('.v_column.stripe .v_module').removeAttr('data-class');
+          $(this).attr('class',style);
+      }
+  });
+}); 
+
 jQuery(document).ready(function($){
     
 $('.nav-tabs').each(function(){
@@ -54,7 +115,9 @@ $('.nav-tabs').each(function(){
 
 $('.nav-tabs a').click(function (e) {
         e.preventDefault();
-        $(this).tab('show');
+    if((typeof $().tab == 'function')){
+      $(this).tab('show');
+    }
 });
 
 $('.accordion').each(function(){
@@ -202,10 +265,12 @@ jQuery(document).ready(function ($) {
             $(this).css('border-color','#e16038');
         }else{
             data[i]=value;
+            label[i]=$(this).attr('placeholder');
             if(parent.hasClass('isocharset')){
+              label[i]=encodeURI(label[i]);
               data[i]=encodeURI(value);
             }
-            label[i]=$(this).attr('placeholder');
+            
         }
         if(validate === 'captcha' && error === ""){
             var $num = $(this).attr('id');
@@ -324,12 +389,17 @@ jQuery(window).load(function ($) {
       $filtersdiv = $(this).find('.vibe_filterable'),
         $checkboxes = $(this).find('.vibe_filterable a');
     
-
-  $container.imagesLoaded( function(){  
-    $container.isotope({
-      itemSelector: '.filteritem'
-    }); 
-  });
+    if(jQuery.fn.imagesLoaded){
+      $container.imagesLoaded( function(){  
+        $container.isotope({
+          itemSelector: '.filteritem'
+        }); 
+      });
+    } else{
+      $container.isotope({
+          itemSelector: '.filteritem'
+        });
+    }    
   
     $checkboxes.click(function(event){
       event.preventDefault();

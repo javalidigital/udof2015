@@ -28,7 +28,7 @@ $dom_array = array(
                                           .vibe_filterable li.active a,.tabbable .nav.nav-tabs li:hover a,
                                           .btn,a.btn.readmore:hover,
                                           footer .tagcloud a:hover,.tagcloud a,
-                                          .pagination a:hover,.in_quiz .pagination ul li span,
+                                          .pagination a:hover,.in_quiz .pagination ul li span,.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
                                           .hover-link:hover,#buddypress .activity-list li.load-more a:hover,
                                           .pagination .current,#question #submit:hover,.ques_link:hover,.reset_answer:hover',
                             'css' => 'color'
@@ -229,13 +229,15 @@ $dom_array = array(
   'content_link_color'  => array(
                             'element' => '.content p a,.course_description p a,#buddypress a.activity-time-since,.author_info .readmore,
                             .assignment_heading.heading a,.v_text_block a,.main_unit_content a:not(.button),
-                            .reply a, .link',
+                            .reply a, .link,.ahref',
                             'css' => 'color'
                             ),
   'price_color'  => array(
-                            'element' => 'span.amount,.block.courseitem .block_content .star-rating+strong, .block.courseitem .block_content .star-rating+a, .block.courseitem .instructor_course+strong,
+                            'element' => '.block.courseitem .star-rating+strong .amount, .block.courseitem .star-rating+ a strong .amount,
+                            .block.courseitem .star-rating+strong>span, .block.courseitem .star-rating+a strong>span,
+                            span.amount,.block.courseitem .block_content .star-rating+strong, .block.courseitem .block_content .star-rating+a, .block.courseitem .instructor_course+strong,
                              .block.courseitem .instructor_course+a,.pricing_course li strong,.widget .course_details > ul > li:first-child a, .widget .course_details > ul > li:first-child strong > span,
-                             .item-credits, .item-credits a,.pricing_course li strong span.subs,.widget .course_details > ul > li:first-child a strong > span, .widget .course_details > ul > li:first-child span.subs',
+                             .item-credits, .curriculum_check li span.done,.item-credits a,.pricing_course li strong span.subs,.widget .course_details > ul > li:first-child a strong > span, .widget .course_details > ul > li:first-child span.subs',
                             'css' => 'color'
                             ),
   'body_font_size'  => array(
@@ -257,7 +259,7 @@ $dom_array = array(
                             ),
   'main_button_color' => array(
                             'element' => '.button.primary,#vibe_bp_login li span,#buddypress li span.unread-count,
-                              #buddypress tr.unread span.unread-count',
+                              #buddypress tr.unread span.unread-count,#searchsubmit',
                             'css' => 'background-color'
                             ),
   'footer_bg'  => array(
@@ -327,6 +329,11 @@ foreach($dom_array as $style => $value){
             case 'max-height':
                   echo $value['element'].'{max-height:'.$theme_customizer[$style].'px;
                   }';  
+            break;
+            case 'font-family':
+              $font = explode('-',$theme_customizer[$style]);
+
+              echo $value['element'].'{font-family:"'.$font[0].'";}'; 
             break;
             case 'padding-left-right':
                 echo $value['element'].'{
@@ -401,14 +408,17 @@ foreach($dom_array as $style => $value){
                       .active .quiz_question span,.vbplogin em,#buddypress div.item-list-tabs#subnav ul li.switch_view a.active,
                       #buddypress .activity-list li.load-more a:hover,.note-tabs ul li.selected a, .note-tabs ul li.current a,
                       .data_stats li:hover, .data_stats li.active,.course_students li .progress .bar,
-                      .in_quiz .pagination ul li span,.quiz_meta .progress .bar{
+                      .in_quiz .pagination ul li span,.quiz_meta .progress .bar,
+                      .page-links span{
                             background-color:'.$theme_customizer[$style].'; 
                       }
                       .unit_content p span.side_comment:hover, .unit_content p span.side_comment.active,
                       #buddypress .activity-list li.load-more a:hover, .load-more a:hover,.instructor strong span{
                         background:'.$theme_customizer[$style].' !important; 
                       }
-                      #notes_discussions .actions a:hover, #notes_discussions .actions a.reply_unit_comment.meta_info, .side_comments ul.actions li a:hover, .side_comments a.reply_unit_comment.meta_info{
+                      #notes_discussions .actions a:hover, #notes_discussions .actions a.reply_unit_comment.meta_info, 
+                      .side_comments ul.actions li a:hover, .side_comments a.reply_unit_comment.meta_info,
+                      .widget .item-options a.selected,.footerwidget .item-options a.selected{
                       color:'.$theme_customizer[$style].' !important; 
                       }
                       .button,
@@ -447,7 +457,9 @@ foreach($dom_array as $style => $value){
                       .checkoutsteps ul li.checkout_begin,
                       .widget_course_list a:hover img,.widget_course_list a:hover img,
                       .quiz_timeline li.active,.widget_course_list a:hover img,
-                      .vcard:hover img,.postsmall .post_thumb a:hover,.button.hero{
+                      .vcard:hover img,.postsmall .post_thumb a:hover,.button.hero,
+                      .unit_content .commentlist li.bypostauthor >.comment-body>.vcard img,
+                      .unit_content .commentlist li:hover >.comment-body>.vcard img{
                         border-color:'.$theme_customizer[$style].';
                       }
                       a:hover,

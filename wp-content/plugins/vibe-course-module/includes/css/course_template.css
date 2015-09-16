@@ -1,8 +1,49 @@
-/* #######################################################
+/**
+ * File: course_template.css
+ * Description : Contains all necessary styling for the BP Course Module
+ * Author: Mr.Vibe 
+ * Credits: www.VibeThemes.com
+ * Project: WPLMS
+ * version 1.9.5
+ **/
+/*========================================================================*/
+/*   TABLE OF CONTENT
+/*========================================================================*/
+/*
+/*		01. COURSE DIRECTORY
+/*		02. GENERAL STYLING
+/*		03. LOGO
+/*		04. BUTTONS
+/*		05. SLIDERS	
+/*      06. NAVIGATION
+/*		07. HEADER
+/*		08. CONTENT
+/*		09. FOOTER
+/*		10. HOME
+/*		11. ABOUT
+/*      12. GRID, PARALLAX & FEATURED EFFECT
+/*		13. SERVICES
+/*		14. PORTFOLIO
+/*		15. PORTFOLIO GRID
+/*		16. BLOG
+/*      17. SINGLE PORTFOLIO
+/*		18. SINGLE
+/*		19. COMMENTS
+/*		20. MISCELLANEOUS
+/*		21. AD-HOC Fixes
+/*		22. RESPONSIVE FIXES
+/*
+/*========================================================================*/
+ 
 
-START COURSE SPECIFIC : Version 1.8.2
+/*========================================================================*/
+/*   01. Minified scripts
+/*========================================================================*/
 
-######################################################## */
+.live-edit-sidebar{display:block;position:fixed;left:20px;top:20px;width:40px;height:auto}.live-edit-sidebar .save-button{display:none;width:40px;height:40px;background:#333;text-align:center;line-height:40px;color:#fff;font-size:20px;text-decoration:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;box-shadow:0 0 1px rgba(0,0,0,.4)}.live-edit-sidebar .save-button:hover{background:#111}.live-edit-sidebar.loading-state .save-button{text-indent:-9999px;background:url(images/loading.gif) center center no-repeat #333}.text-options{opacity:0;display:block;position:absolute;left:-999px;top:-999px;width:202px;-webkit-transition:opacity .2s cubic-bezier(.54,.24,.35,.68);-moz-transition:opacity .2s cubic-bezier(.54,.24,.35,.68);-o-transition:opacity .2s cubic-bezier(.54,.24,.35,.68);transition:opacity .2s cubic-bezier(.54,.24,.35,.68);border:1px solid;border-color:#262625 #1c1c1b #121211;box-shadow:0 1px 3px -1px rgba(0,0,0,.7),inset 0 0 1px rgba(255,255,255,.07),inset 0 0 2px rgba(255,255,255,.15000000000000002);background-image:-webkit-gradient(linear,0 0,0 100%,from(rgba(49,49,47,.97)),to(#262625));background-image:-moz-linear-gradient(top,rgba(49,49,47,.97),#262625);background-image:-webkit-linear-gradient(top,rgba(49,49,47,.97),#262625);background-image:-o-linear-gradient(top,rgba(49,49,47,.97),#262625);background-image:linear-gradient(to bottom,rgba(49,49,47,.97),#262625);background-repeat:repeat-x;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.live-edit-sidebar+.text-options.appear,.text-options.appear{opacity:1;display:block;z-index:99}.text-options button{display:inline-block;border-radius:1px;width:40px;height:40px;border:0;font-size:22px;color:#fff;outline:0;margin:0;float:left;background:0 0}.text-options .input-text{display:none;width:150px;height:40px;overflow:hidden;float:left;border-left:1px solid #222;border-right:1px solid #222}.text-options .input-text input{width:140px;height:32px;margin:5px;border:0;outline:0;background:0 0;color:#fff}.text-options.edit-url{width:352px}.text-options.edit-url .input-text{display:inline-block}.text-options .bold-button,.text-options .italic-button{font-weight:700}.text-options .strikethrough-button{text-decoration:line-through;font-size:16px}.text-options .unorderedlist-button,.text-options .url-button{font-size:18px;line-height:18px}.text-options button.italic-button{font-style:italic}.text-options.bold .bold-button,.text-options.italic .italic-button,.text-options.strikethrough .strikethrough-button,.text-options.unorderedlist .unorderedlist-button,.text-options.url .url-button{background:#000}.text-options button:hover{color:#999}.text-options:before{content:"";border-top:5px solid rgba(0,0,0,.9);border-bottom:5px solid transparent;border-right:5px solid transparent;border-left:5px solid transparent;position:absolute;bottom:-10px;height:5px;width:0;left:95px}
+/*========================================================================*/
+/*   01. COURSE Admin
+/*========================================================================*/
 
 #courselist{
 	margin:30px 0;
@@ -33,7 +74,7 @@ START COURSE SPECIFIC : Version 1.8.2
 }
 
 .bp-user .mfp-auto-cursor .mfp-content{
-	max-width:640px;
+	width:100%;
 }
 
 .show_hint{
@@ -83,6 +124,22 @@ START COURSE SPECIFIC : Version 1.8.2
 	font-size:13px;
 	background: #f6f6f6;
 }
+
+.explaination strong {
+ color: #4A4848 ;
+ font-size: 15px;
+ margin: 10px 0px;
+ display: block;
+}
+
+.explaination span {
+ float: none;
+ padding: 0;
+ margin: 0;
+}
+
+
+
 .show_hint span:before{
 	content: "[";
 }
@@ -215,8 +272,8 @@ margin-top: 1px;
 	display: block;
 	background:#f6f6f6;
 	position: absolute;
-	left:0;
-	top:4px;
+	right:0;
+	top:14px;
 }
 .curriculum_check li span.done{
 	background:#70c989;
@@ -232,6 +289,10 @@ margin-top: 1px;
 	float:right;
 	text-transform: uppercase;
 }
+.course_students .curriculum_check li {
+	padding:15px 30px 15px 0;
+}
+.check_user_quiz_results{cursor:pointer;}
 #courselist li .course_desc + ul > li span{
 	font-size:11px;
 	text-transform: uppercase;
@@ -366,6 +427,7 @@ h4.students_course strong{
 	font-weight:600;
 	margin:10px 30px 0 0;
 }
+
 .pricing_course li span.subs,
 .price span.subs{
 	font-size: 11px;
@@ -373,24 +435,33 @@ h4.students_course strong{
 	font-weight: 600;
 	color:#70c989;
 }
+
+
+select.pricing_course {
+  float: right;
+}
+
+
 .pricing_course{
 	position: relative;
 	min-height:40px;
-	min-width:120px;
+	min-width:160px;
 	float:right;
+	border-bottom:1px solid #EFEFEF;
 }
-#buddypress ul.item-list .pricing_course.active,
-.widget .course_details .pricing_course.active,
+#buddypress ul.item-list .pricing_course,
+.widget .course_details .pricing_course,
 .pricing_course.active{
 	position: absolute;
-	right:0;z-index: 99;background: #FFF;
+	right:0;z-index: 1;background: #FFF;
 }
 .pricing_course li,
 #buddypress ul.item-list .pricing_course li,
 .widget .course_details .pricing_course li{
 	padding:5px 30px 5px 5px;min-width:160px;min-height:40px;
 	display: none;
-	border:1px solid #EFEFEF;clear:both;
+	border:1px solid #EFEFEF;
+	border-bottom:none;
 }
 .pricing_course.active,
 .widget .course_details .pricing_course.active,
@@ -402,7 +473,7 @@ h4.students_course strong{
 }
 .pricing_course li strong{
 	text-transform: uppercase;
-	font-size:16px;color:#70c989;
+	font-size:14px;color:#70c989;
 	display: inline-block;
 	padding-top: 3px;
 }
@@ -516,6 +587,45 @@ h5.credits strong{
 	min-width: 120px;
 	height: 32px;
 }
+/*=== In Unit Questions ===*/
+.question_content{
+	position: relative;
+	margin-top:15px;
+	padding:15px 30px 10px 0;
+	border-top: 1px solid #EFEFEF;
+}
+.main_unit_content ul.question_options{
+	list-style:none;
+	margin-left:0;
+}
+
+.main_unit_content ul.check_options li {
+  float: left;
+  margin-right: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.main_unit_content ul.check_options {
+  list-style: none;
+  margin-left: 0;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0 0;
+}
+.main_unit_content ul.check_options li a{
+	cursor: pointer;
+}
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width:auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+/*=== End In unit questions ===*/
+
+.main_unit_content a.show_hint{right:0;}
 #ajaxloader.disabled{display: none;}
 #ajaxloader{
 	position: fixed;
@@ -566,6 +676,7 @@ h5.credits strong{
 .course_bulk_actions ul li{float:left;}
 .bulk_message,
 .bulk_add_students,
+.bulk_change_status,
 .bulk_assign_students,
 .bulk_extend_subscription_students{
 	margin:24px 0 0;
@@ -576,6 +687,7 @@ h5.credits strong{
 .bulk_message .button,
 .bulk_add_students .button,
 .bulk_assign_students .button,
+.bulk_change_status .button,
 .bulk_extend_subscription_students .button{
 	margin:10px 0;
 }
@@ -611,12 +723,26 @@ h5.credits strong{
 	padding:2px 0;
 }
 .widget .course_filters ul li input{float:right;}
-#submit_filters,.course_filters label{cursor: pointer;}
+#submit_filters,.course_filters label{cursor: pointer;font-weight:400;}
 .course_filters label{font-size:12px;}
 .sub_categories{display:none;}
 .category_filter li > .sub_categories{
 	padding-left: 10px;
 	border-left: 2px solid #EFEFEF;
+}
+
+.category_filter>li>span{
+	float:left;
+}
+.category_filter>li>span:before{
+	content: "\e05d";
+	font-family: 'fonticon';
+	font-size: 8px;
+  	margin: 0 5px 0 -10px;
+  	color: #bbb;
+}
+.category_filter>li>span.active:before{
+	content: "\e092";
 }
 #active_filters{
 	margin-bottom: 10px;
@@ -701,6 +827,12 @@ h5.credits strong{
 .unit_content p span.side_comment.active{
 	background-color:#78c8c9;
 	color:#FFF;
+}
+.heading a.post-edit-link, .heading .vc_inline-link {
+  font-size: 11px;
+  color: #bbb;
+  font-weight: 600;
+  margin-left: 5px;
 }
 .unit_wrap{
 	overflow:hidden;
@@ -972,6 +1104,16 @@ h5.credits strong{
 	margin-left:0 !important;
 	list-style:none !important;
 }
+.in_question .question.fillblank p{
+  display: inline;
+  line-height: 0;
+}
+.in_question .question.fillblank article.live-edit{
+  min-width: 160px;
+  border-bottom: 1px solid;
+  line-height: 1.5em;
+  display: inline-block;
+}
 
 .in_question .marks{float:right;margin-top:20px;}
 
@@ -1028,6 +1170,7 @@ h5.credits strong{
 	  display: inline-block;
 	  width:100%;
 }
+.in_quiz .pagination label{float:right;}
 .in_quiz .pagination ul li{float:left;}
 .in_quiz .pagination ul li a{cursor:pointer;}
 .in_quiz .pagination ul{
@@ -1038,3 +1181,53 @@ h5.credits strong{
 
 /*=== Activity page fixes === */
 .course_instructor_widget .instructor_meta{display:none !important;}
+
+
+.single_text{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#retakes9999{display:none;}
+/*========================================================================*/
+/*   01. COURSE Widgets
+/*========================================================================*/
+.course_review{
+	background: rgba(0,0,0,0.05);
+	padding: 20px;
+	border-radius: 2px;	
+}
+
+.course_review h4,
+.list_course_review h4{
+	font-size:20px;
+	font-weight:600;
+	margin-top:0;
+}
+
+.course_review h5{
+	font-size:16px;
+	 margin-bottom: 0;
+}
+.course_review h5 span{
+	display: block;
+	font-size:14px;
+}
+.course_review .review_author{
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 0;
+}
+.flexslider .slides .review_author img,
+.widget_reviews_list li .course_review img,
+.widget_reviews_list li img{
+	max-width:48px;
+	margin:10px 5px 0 0 ;
+	float:left;
+	border-radius:50%;
+}
+
+.list_course_review{
+	margin-left:60px;
+}

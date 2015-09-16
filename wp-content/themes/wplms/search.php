@@ -31,6 +31,7 @@ if (isset($_GET["post_type"]) && $_GET["post_type"] == 'course'){
             <div class="content">
                 <?php
                     if ( have_posts() ) : while ( have_posts() ) : the_post();
+
                     $categories = get_the_category();
                     $cats='<ul>';
                     if($categories){
@@ -60,7 +61,7 @@ if (isset($_GET["post_type"]) && $_GET["post_type"] == 'course'){
                                     </p>
                                 </div>
                                 <p>'.get_the_excerpt().'</p>
-                                <a href="'.get_permalink().'" class="link">'.__('Saiba mais','vibe').'</a>
+                                <a href="'.get_permalink().'" class="link">'.__('Read More','vibe').'</a>
                             </div>
                         </div>';
                     endwhile;

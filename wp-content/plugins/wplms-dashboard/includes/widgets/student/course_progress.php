@@ -16,7 +16,6 @@ class wplms_course_progress extends WP_Widget {
     $this->WP_Widget( 'wplms_course_progress', __(' DASHBOARD : Course Progress', 'wplms-dashboard'), $widget_ops, $control_ops );
 
     //Start recording Course Progress
-    add_action('badgeos_wplms_unit_complete',array($this,'wplms_course_progress_record'),10,3);
     add_action('wplms_student_course_reset',array($this,'wplms_student_course_reset'),10,2);
     add_action('wplms_student_course_remove',array($this,'wplms_student_course_remove'),10,2);
     add_action( 'wp_ajax_reset_course_user', array($this,'reset_course_user'),20 ); // RESETS COURSE FOR USER
@@ -91,24 +90,9 @@ class wplms_course_progress extends WP_Widget {
         $query->the_post();
 
         $st = get_post_meta(get_the_ID(),$user_id,true);
-        $percentage = 100;
-        switch($st){
-          case 0: $status = __('START','wplms-dashboard');
-          $percentage = 0;
-          break;
-          case 1: $status = __('CONTINUE','wplms-dashboard');
-          $prgrss='progress'.get_the_ID();
-
-          $percentage = get_user_meta($user_id,$prgrss,true);
-          if(!isset($percentage) || !$percentage){
-            $percentage = $this->calculate_course_progress(get_the_ID());
-          }
-          break;
-          case 2: $status = __('SUBMITTED','wplms-dashboard');
-          break;
-          default: $status = __('FINISHED','wplms-dashboard');
-          break;
-        }
+        $percentage = 100;        
+        $prgrss='progress'.get_the_ID();
+        $percentage = get_user_meta($user_id,$prgrss,true);
 				echo '<li>
               <strong><a href="'.get_permalink().'">'.get_the_title().'</a><span>'.$percentage.'%</span></strong>
 							<div class="progress course_progress" data-course="'.get_the_ID().'">
@@ -174,12 +158,7 @@ class wplms_course_progress extends WP_Widget {
         <?php 
     }
 
-    function wplms_course_progress_record($unit_id,$course_progress,$course_id){
-        $user_id = get_current_user_id();
-        $progress='progress'.$course_id;
-        $course_progress = round($course_progress*100);
-        update_user_meta($user_id,$progress,$course_progress);
-    }
+    
     function wplms_student_course_reset($course_id,$user_id){
       $progress='progress'.$course_id;
       update_user_meta($user_id,$progress,0);

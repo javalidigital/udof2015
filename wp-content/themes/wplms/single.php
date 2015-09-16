@@ -12,6 +12,12 @@ if(!isset($title) || !$title || (vibe_validate($title))){
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-8">
+                <div class="pagetitle">
+                    <h1><?php the_title(); ?></h1>
+                    <?php the_sub_title(); ?>
+                </div>
+            </div>
+             <div class="col-md-3 col-sm-4">
                  <?php 
                     $breadcrumbs=get_post_meta(get_the_ID(),'vibe_breadcrumbs',true);
                     if(!isset($breadcrumbs) || !$breadcrumbs || vibe_validate($breadcrumbs)){
@@ -19,13 +25,6 @@ if(!isset($title) || !$title || (vibe_validate($title))){
                     }   
                 ?>
             </div>
-            <div class="col-md-9 col-sm-8">
-                <div class="pagetitle">
-                     <h1><?php the_category(); ?></h1>
-                    <?php the_sub_title(); ?>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
@@ -35,7 +34,7 @@ if(!isset($title) || !$title || (vibe_validate($title))){
 ?>
 <section id="content">
     <div class="container">
-        <h1><?php the_title(); ?></h1>
+        
         <div class="row">
             <?php
                 $template = get_post_meta(get_the_ID(),'vibe_template',true);
@@ -62,7 +61,10 @@ if(!isset($title) || !$title || (vibe_validate($title))){
                     <?php echo '<div class="indate"><i class="icon-clock"></i> ';the_date();echo '</div>';the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
                     <?php wp_link_pages('before=<div class="page-links"><ul>&link_before=<li>&link_after=</li>&after=</ul></div>'); ?>
                         <div class="social_sharing">
-                             <?php echo social_sharing(); ?>   
+                            <?php 
+                             if(function_exists('social_sharing'))
+                                echo social_sharing(); 
+                            ?>   
                         </div>
                     </div>
                 </div>
@@ -106,14 +108,13 @@ if(!isset($title) || !$title || (vibe_validate($title))){
                             <h6><?php the_author_meta( 'display_name' ); ?></h6>
                             <div class="author_desc">
                                 <p>
-                                 <?php  the_author_meta( 'description' );?>
-                                 </p>
-                                 <p class="website"><?php _e('Website','vibe');?> : <a href="<?php  the_author_meta( 'url' );?>" target="_blank"><?php  the_author_meta( 'url' );?></a></p>
-                                         <?php
-                                $author_id=  get_the_author_meta('ID');
-                                vibe_author_social_icons($author_id);
-                            ?>  
-                                
+                                    <?php  the_author_meta( 'description' );?>
+                                </p>
+                                <p class="website"><?php _e('Website','vibe');?> : <a href="<?php  the_author_meta( 'url' );?>" target="_blank"><?php  the_author_meta( 'url' );?></a></p>
+                                <?php
+                                    $author_id=  get_the_author_meta('ID');
+                                    vibe_author_social_icons($author_id);
+                                ?>  
                             </div>     
                         </div>    
                     </div>

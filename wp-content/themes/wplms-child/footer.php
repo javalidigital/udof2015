@@ -27,7 +27,7 @@ do_shortcode('[et_bloom_inline optin_id="optin_1"]'
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2 id="footerlogo"><a href="<?php echo vibe_site_url(); ?>"><img src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/05/logo-footer-udof.png" alt="<?php echo get_bloginfo('name'); ?>" /></a></h2>
+                <h2 id="footerlogo"><a href="<?php echo vibe_site_url(); ?>"><img src="http://localhost/udof2015/wp-content/uploads/2015/05/logo-footer-udof.png" alt="<?php echo get_bloginfo('name'); ?>" /></a></h2>
             </div>
             <div class="col-md-9">
                         <div id="footermenu">

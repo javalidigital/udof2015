@@ -100,8 +100,8 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 	                'label' =>'Show'),
 	        ),
 	                'std'   => 'H'
-		),
-	);
+			),
+		);
 		break;
 		case 'page':
 			$metabox_settings=array(
@@ -470,8 +470,8 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 					'std'	=> ''
 				),
 				$prefix.'question_explaination'=>array( // Text Input
-					'label'	=> __('Answer Explaination','vibe-customtypes'), // <label>
-					'desc'	=> __('Add Answer explaination','vibe-customtypes'), // description
+					'label'	=> __('Answer Explanation','vibe-customtypes'), // <label>
+					'desc'	=> __('Add Answer explanation','vibe-customtypes'), // description
 					'id'	=> $prefix.'question_explaination', // field id and name
 					'type'	=> 'editor', // type of field
 					'std'	=> ''
@@ -724,6 +724,19 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 					'type'	=> 'editor' // type of field
 				),
 				array( // Text Input
+					'label'	=> __('All Day','vibe-customtypes'), // <label>
+					'desc'	=> __('An all Day event','vibe-customtypes'), // description
+					'id'	=> $prefix.'all_day', // field id and name
+					'type'	=> 'yesno', // type of field
+			        'options' => array(
+			          array('value' => 'H',
+			                'label' =>'Hide'),
+			          array('value' => 'S',
+			                'label' =>'Show'),
+			        ),
+			        'std'   => 'H'
+				),
+				array( // Text Input
 					'label'	=> __('Private Event','vibe-customtypes'), // <label>
 					'desc'	=> __('Only Invited participants can see the Event','vibe-customtypes'), // description
 					'id'	=> $prefix.'private_event', // field id and name
@@ -782,8 +795,8 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 					'type'	=> 'image', // type of field
 				),
 				array( // Text Input
-					'label'	=> __('Enable Print','vibe-customtypes'), // <label>
-					'desc'	=> __('Displays a Print Button on top right corner of certificate','vibe-customtypes'), // description
+					'label'	=> __('Enable Print & PDF','vibe-customtypes'), // <label>
+					'desc'	=> __('Displays a Print and Download as PDF Button on top right corner of certificate','vibe-customtypes'), // description
 					'id'	=> $prefix.'print', // field id and name
 					'type'	=> 'yesno', // type of field
 			        'options' => array(
@@ -793,6 +806,18 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 			                'label' =>'Show'),
 			        ),
 			        'std'   => 'H'
+				),
+				array( // Text Input
+					'label'	=> __('Certificate Width','vibe-customtypes'), // <label>
+					'desc'	=> __('Add certificate width','vibe-customtypes'), // description
+					'id'	=> $prefix.'certificate_width', // field id and name
+					'type'	=> 'text', // type of field
+				),
+				array( // Text Input
+					'label'	=> __('Certificate Height','vibe-customtypes'), // <label>
+					'desc'	=> __('Add certificate height','vibe-customtypes'), // description
+					'id'	=> $prefix.'certificate_height', // field id and name
+					'type'	=> 'text', // type of field
 				),
 				array( // Text Input
 					'label'	=> __('Custom Class','vibe-customtypes'), // <label>
@@ -808,7 +833,7 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 				),
 				array( // Text Input
 					'label'	=> __('NOTE:','vibe-customtypes'), // <label>
-					'desc'	=> __(' USE FOLLOWING SHORTCODES TO DISPLAY RELEVANT DATA : <br />1. <strong>[certificate_student_name]</strong> : Displays Students Name<br />2. <strong>[certificate_course]</strong> : Displays Course Name<br />3. <strong>[certificate_student_marks]</strong> : Displays Students Marks in Course<br />4. <strong>[certificate_student_date]</strong>: Displays date on which Certificate was awarded to the Student<br />5. <strong>[certificate_student_email]</strong>: Displays registered email of the Student<br />6. <strong>[certificate_code]</strong>: Generates unique code for Student which can be validated from Certificate page.','vibe-customtypes'), // description
+					'desc'	=> __(' USE FOLLOWING SHORTCODES TO DISPLAY RELEVANT DATA : <br />1. <strong>[certificate_student_name]</strong> : Displays Students Name<br />2. <strong>[certificate_course]</strong> : Displays Course Name<br />3. <strong>[certificate_student_marks]</strong> : Displays Students Marks in Course<br />4. <strong>[certificate_student_date]</strong>: Displays date on which Certificate was awarded to the Student<br />5. <strong>[certificate_student_email]</strong>: Displays registered email of the Student<br />6. <strong>[certificate_code]</strong>: Generates unique code for Student which can be validated from Certificate page.<br />7. <strong>[course_completion_date]</strong>: Displays course completion date from course activity.','vibe-customtypes'), // description
 					'id'	=> $prefix.'note', // field id and name
 					'type'	=> 'note', // type of field
 				),
@@ -959,12 +984,8 @@ function vibe_meta_box_arrays($metabox){ // References added to Pick labels for 
 					'id'	=> $prefix.'custom_css', // field id and name
 					'type'	=> 'textarea', // type of field
 			        'std'   => ''
-			        ), 
-				);
-		break;
-		case 'post':
-		break;
-		case 'post':
+		        ), 
+			);
 		break;
 	}
 	return $metabox_settings;
@@ -1012,7 +1033,10 @@ function add_vibe_metaboxes(){
 	$certificate_metabox = apply_filters('wplms_certificate_metabox',$certificate_metabox);
 
 	$wplms_assignments_metabox = vibe_meta_box_arrays('wplms-assignment');
-	$certificate_metabox = apply_filters('wplms_assignment_metabox',$certificate_metabox);
+	$wplms_assignments_metabox = apply_filters('wplms_assignments_metabox',$wplms_assignments_metabox);
+
+	$survey_metabox = vibe_meta_box_arrays('survey');
+	$survey_metabox = apply_filters('wplms_survey_metabox',$survey_metabox);
 
 	$wplms_popup_metabox = vibe_meta_box_arrays('popup');
 
@@ -1034,7 +1058,8 @@ function add_vibe_metaboxes(){
 	);
 
 	$payments_metabox = apply_filters('wplms_payments_metabox',$payments_metabox);
-	$wplms_assignments_metabox = apply_filters('wplms_assignments_metabox',$wplms_assignments_metabox);
+	
+
 	$post_metabox = new custom_add_meta_box( 'post-settings', __('Post Settings','vibe-customtypes'), $post_metabox, 'post', true );
 	$page_metabox = new custom_add_meta_box( 'page-settings', __('Page Settings','vibe-customtypes'), $page_metabox, 'page', true );
 
@@ -1057,6 +1082,7 @@ function add_vibe_metaboxes(){
 	$payments_metabox = new custom_add_meta_box( 'page-settings', __('Payments Settings','vibe-customtypes'), $payments_metabox, 'payments', true );
 	$certificates_metabox = new custom_add_meta_box( 'page-settings', __('Certificate Template Settings','vibe-customtypes'), $certificate_metabox, 'certificate', true );
 	$popup_metabox= new custom_add_meta_box( 'page-settings', __('Popup Settings','vibe-customtypes'), $wplms_popup_metabox, 'popups', true );
+	$surveys_metabox = new custom_add_meta_box( 'page-settings', __('Survey/Practice Settings','vibe-customtypes'), $survey_metabox, 'survey', true );
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || (function_exists('is_plugin_active_for_network') && is_plugin_active_for_network( 'woocommerce/woocommerce.php'))) {
 		$product_box = new custom_add_meta_box( 'page-settings', __('Product Course Settings','vibe-customtypes'), $product_metabox, 'product', true );

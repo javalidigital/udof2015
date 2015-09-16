@@ -11,7 +11,7 @@ global $post;
 
 $vcourses=array();
 
-$vcourses=vibe_sanitize(get_post_meta($post->ID,'vibe_courses',false));
+$vcourses=apply_filters('wplms_product_course_order_filter',vibe_sanitize(get_post_meta($post->ID,'vibe_courses',false)));
 
 if(count($vcourses)){
 	echo '<div class="connected_courses"><h6>';

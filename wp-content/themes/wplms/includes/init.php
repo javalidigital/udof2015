@@ -26,9 +26,17 @@ add_post_type_support( 'wplms-event', 'front-end-editor' );
 add_post_type_support( 'wplms-assignment', 'front-end-editor' );
 add_post_type_support( 'testimonials', 'front-end-editor' );
 add_post_type_support( 'popups', 'front-end-editor' );
+add_post_type_support( 'news', 'front-end-editor' );
 add_post_type_support( 'topic', 'front-end-editor' );
 add_post_type_support( 'reply', 'front-end-editor' );
-add_post_type_support( 'news', 'front-end-editor' );
+
+add_post_type_support( 'course', 'buddypress-activity' );
+add_post_type_support( 'unit', 'buddypress-activity' );
+add_post_type_support( 'quiz', 'buddypress-activity' );
+add_post_type_support( 'question', 'buddypress-activity' );
+add_post_type_support( 'wplms-event', 'buddypress-activity' );
+add_post_type_support( 'wplms-assignment', 'buddypress-activity' );
+add_post_type_support( 'news', 'buddypress-activity' );
 
 $defaults = array(
     'default-color'          => '',
@@ -53,10 +61,12 @@ function vibe_admin_url($url='/') {
 
 function vibe_site_url($url='/') {
     if (is_multisite()) {
-        return network_site_url($url);
+        //return network_site_url($url);
+        $link = home_url($url);
     } else {
-        return site_url($url);
+        $link = site_url($url);
     }
+    return apply_filters('wplms_site_link',$link);
 }
 
 add_filter('wplms_logo_url','vibe_logo_url');
@@ -252,12 +262,17 @@ function vibe_custom_background_cb(){
         $attachment = " background-attachment: $attachment;";
 
         $style .= $image . $repeat . $position . $attachment;
+
+        echo '
+            <div id="background_fixed">
+                <img src="'.$background.'" />
+            </div>
+            <style type="text/css" id="custom-background-css">
+                #background_fixed{position: fixed;top:0;left:0;width:200%;height:200%;}
+                body.custom-background,body.custom-background .pusher { background:transparent; }
+            </style>
+        ';
     }
-?>
-<style type="text/css" id="custom-background-css">
-body.custom-background .pusher { <?php echo trim( $style ); ?> }
-</style>
-<?php
 
 }
 
@@ -297,7 +312,7 @@ function register_required_plugins() {
         array(
             'name'                  => 'Buddypress', // The plugin name
             'slug'                  => 'buddypress', // The plugin slug (typically the folder name)
-            'source'                => 'http://downloads.wordpress.org/plugin/buddypress.2.1.zip', // The plugin source
+            'source'                => 'http://downloads.wordpress.org/plugin/buddypress.2.2.3.1.zip', // The plugin source
             'required'              => true, // If false, the plugin is only 'recommended' instead of required
             'version'               => '1.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'      => $force_activate, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
@@ -307,7 +322,7 @@ function register_required_plugins() {
         array(
             'name'                  => 'WooCommerce', // The plugin name
             'slug'                  => 'woocommerce', // The plugin slug (typically the folder name)
-            'source'                => 'http://downloads.wordpress.org/plugin/woocommerce.2.2.4.zip', // The plugin source
+            'source'                => 'http://downloads.wordpress.org/plugin/woocommerce.2.3.8.zip', // The plugin source
             'required'              => false, // If false, the plugin is only 'recommended' instead of required
             'version'               => '1.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
@@ -317,7 +332,7 @@ function register_required_plugins() {
         array(
             'name'                  => 'BBPress', // The plugin name
             'slug'                  => 'bbpress', // The plugin slug (typically the folder name)
-            'source'                => 'http://downloads.wordpress.org/plugin/bbpress.2.5.4.zip', // The plugin source
+            'source'                => 'http://downloads.wordpress.org/plugin/bbpress.2.5.7.zip', // The plugin source
             'required'              => false, // If false, the plugin is only 'recommended' instead of required
             'version'               => '1.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
@@ -569,4 +584,21 @@ function wplms_disable_layerslider_notification(){
 }
 //Disable VC notification
 
+
+// Enable Tags in Assignments
+
+function wplms_allow_pres() {
+    global $allowedtags;
+    $allowedtags['pre'] = array('class'=>array());
+    $allowedtags["ol"] = array();
+    $allowedtags["ul"] = array();
+    $allowedtags["li"] = array();
+    $allowedtags["h2"] = array();
+    $allowedtags["h3"] = array();
+    $allowedtags["h4"] = array();
+    $allowedtags["h5"] = array();
+    $allowedtags["h6"] = array();
+    $allowedtags["span"] = array( "style" => array() );
+}
+add_action('comment_post', 'wplms_allow_pres');
 ?>

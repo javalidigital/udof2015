@@ -284,13 +284,14 @@ class WPLMS_ZIP_UPLOAD_HANDLER{
 	         $zip->extractTo($target);
 	         $zip->close();
 			 $file = $this->getFile($target);
+			 ;
 			if($file){
 				 $arr[0] = 'uploaded'; 
 				 $arr[1] = $this->getUploadsUrl().$dir."/".$file; 
 				 $arr[2] = $dir;
 				 $arr[3] =$file;
 			 }else{
-				 $arr[0] = __('Please upload zip file, Index.html file not found in package','vibe-shortcodes');
+				 $arr[0] = __('Please upload zip file, Index.html file not found in package','vibe-shortcodes').$target.print_r($file);
 				 $this->rrmdir($target);
 			 }
 	     }else{

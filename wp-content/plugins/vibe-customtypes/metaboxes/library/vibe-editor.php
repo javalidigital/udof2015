@@ -120,8 +120,8 @@ function custom_post_carousel($atts, $content = null) {
           return $error->get_error('unsaved_editor');
         }
        
-       
-	$attributes = v_get_attributes( $atts, "custom_post_carousel" );
+     
+	   $attributes = v_get_attributes( $atts, "custom_post_carousel" );
 	
         if(!isset($atts['auto_slide']))
             $atts['auto_slide']='';
@@ -200,7 +200,7 @@ function custom_post_carousel($atts, $content = null) {
         }else{
 
           $cus_posts_ids=explode(",",$atts['post_ids']);
-        	$query_args=array( 'post_type' => $atts['post_type'], 'post__in' => $cus_posts_ids , 'orderby' => 'post__in'); 
+        	$query_args=array( 'post_type' => $atts['post_type'], 'post__in' => $cus_posts_ids , 'orderby' => 'post__in','posts_per_page'=>count($cus_posts_ids)); 
         	$the_query = new WP_Query($query_args);
         }
         
@@ -276,6 +276,8 @@ function custom_post_carousel($atts, $content = null) {
 add_shortcode('v_filterable', 'custom_post_filterable');
 function custom_post_filterable($atts, $content = null) {
         
+        wp_enqueue_script( 'isotope', VIBE_URL.'/js/jquery.isotope.min.js');
+
         $error = new VibeErrors();
         if(!isset($atts) || !isset($atts['post_type'])){
           return $error->get_error('unsaved_editor');
@@ -456,7 +458,9 @@ function custom_slider($atts, $content) {
             $output = '<style>'.$atts['custom_css'].'</style>';
         else
             $output= '';
-       
+
+       wp_enqueue_script( 'flexslider-js', VIBE_URL.'/js/jquery.flexslider-min.js');
+
        $title = preg_replace('/[^a-zA-Z0-9\']/', '_', $title);
        $title = str_replace("'", '', $title).rand(1,999);;
        echo '<script>jQuery(document).ready(function(){
@@ -511,7 +515,10 @@ function custom_attachment($atts, $content) {
 }
 
 
-
+add_action('template_redirect','remove_vc_outdated_isotope');
+function remove_vc_outdated_isotope(){ 
+  wp_dequeue_script('isotope');  
+}
 
 add_shortcode('v_grid', 'vibe_post_grid');
 function vibe_post_grid($atts, $content = null) {
@@ -524,9 +531,10 @@ function vibe_post_grid($atts, $content = null) {
         }
        
        
-	$attributes = v_get_attributes( $atts, "vibe_post_grid" );
+	     $attributes = v_get_attributes( $atts, "vibe_post_grid" );
 	
         if(isset($atts['masonry']) && $atts['masonry']){
+            wp_enqueue_script( 'masonry-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/masonry.min.js',array('jquery'),'1.0',true);
             $atts['custom_css'] .= '.grid.masonry li .block { margin-bottom:'.(isset($atts['gutter'])?$atts['gutter']:'30').'px;}';
         }  
         
@@ -702,11 +710,12 @@ function vibe_post_grid($atts, $content = null) {
 
 add_shortcode('v_layerslider', 'vibe_layerslider');
 function vibe_layerslider($atts, $content = null) {
-       if($atts['custom_css'] && strlen($atts['custom_css'])>5)    
+
+       if(isset($atts['custom_css']) && strlen($atts['custom_css'])>5)    
             $output = '<style>'.$atts['custom_css'].'</style>';
         else
             $output= '';
-       $attributes = v_get_attributes( $atts, "custom_post_carousel" );
+       $attributes = v_get_attributes( $atts, "layerslider" );
        $output .= "<div {$attributes['class']}{$attributes['inline_styles']}>";
 
         if(isset($atts['title']) && $atts['title'] && $atts['title'] != 'Content'){
@@ -715,8 +724,9 @@ function vibe_layerslider($atts, $content = null) {
             $ntitle = str_replace("'", '', $ntitle);
             $output .='<div id="'.$ntitle.'"></div>';
         }
-        
-       $output .=do_shortcode('[layerslider id="'.$atts['id'].'"]');
+       
+      if(isset($atts['id'])) 
+        $output .=do_shortcode('[layerslider id="'.$atts['id'].'"]');
        
        $output .= '</div>';
 	return $output;
@@ -728,7 +738,7 @@ function vibe_revslider($atts, $content = null) {
             $output = '<style>'.$atts['custom_css'].'</style>';
         else
             $output= '';
-       $attributes = v_get_attributes( $atts, "custom_post_carousel" );
+       $attributes = v_get_attributes( $atts, "revslider" );
        $output .= "<div {$attributes['class']}{$attributes['inline_styles']}>";
        
         if(isset($atts['title']) && $atts['title'] && $atts['title'] != 'Content'){
@@ -863,22 +873,26 @@ function vibe_text_block($atts, $content = null) {
 
 add_shortcode('v_parallax_block', 'vibe_parallax_block');
 function vibe_parallax_block($atts, $content = null) {
-	$attributes = v_get_attributes( $atts, "v_parallax_block" );
+  $attributes = v_get_attributes( $atts, "v_parallax_block" );
   $rand ='parallax'.rand(1,999);
-  $scroll = ($atts['scroll'])?$atts['scroll']:2;
-  $rev = ($atts['rev'])?$atts['rev']:'0';
+  $scroll = isset($atts['scroll'])?$atts['scroll']:2;
+  $rev = isset($atts['rev'])?$atts['rev']:'0';
+  $height = isset($atts['height'])?$atts['height']:'0';
+  $adjust = isset($atts['adjust'])?$atts['adjust']:'0';
+  $padding_top = isset($atts['padding_top'])?$atts['padding_top']:'0';
+  $padding_bottom = isset($atts['padding_bottom'])?$atts['padding_bottom']:'0';
 
-  $adjust = ($atts['adjust'])?$atts['adjust']:'0';
-
-	$output = '<style>#'.$rand.' {
-            background: url('.$atts['bg_image'].') 50% -'.($adjust).'px;
+  $output = '<style>#'.$rand.' {
+            background: url('.(isset($atts['bg_image'])?$atts['bg_image']:'').') 50% -'.($adjust).'px;
             position:relative;background-size: cover;
-            height: '.$atts['height'].'px;
-            } '.$atts['custom_css'].'</style>'; 
-        
-        
+            min-height:'.$height.'px;
+            } #'.$rand.' .parallax_content{
+              '.(($padding_top)?'padding-top:'.$padding_top.'px;':'').'
+            '.(($padding_bottom)?'padding-bottom:'.$padding_bottom.'px;':'').'
+            }'.(isset($atts['custom_css'])?$atts['custom_css']:'').'
+            </style>'; 
 	
-	$output .= 	"<div id='$rand' data-rev={$rev} data-scroll={$scroll} data-adjust={$adjust} {$attributes['class']}{$attributes['inline_styles']} >
+	$output .= 	"<div id='$rand' data-rev={$rev} data-scroll={$scroll} data-height={$atts['height']} data-adjust={$adjust} {$attributes['class']}{$attributes['inline_styles']} >
                             <div class='parallax_content'>";
         
 	if(isset($atts['title']) && $atts['title'] && $atts['title'] != 'Content'){
@@ -888,6 +902,7 @@ function vibe_parallax_block($atts, $content = null) {
         $output .='<div id="'.$ntitle.'"></div>';
         }
         
+
 	$output .= do_shortcode( v_fix_shortcodes($content) ) .
 				"</div></div>";
 
@@ -936,7 +951,7 @@ function new_widget_area($atts, $content = null) {
 		wp_enqueue_script( 'jquery-ui-resizable' );
 		
     if(defined('VIBE_URL'))
-      wp_enqueue_script( 'chosen-js', VIBE_URL . '/js/chosen.jquery.min.js');        
+      wp_enqueue_script( 'chosen-js', VIBE_URL . '/js/chosen.jquery.js');        
 
     
     
@@ -1468,6 +1483,16 @@ $v_modules['carousel'] = array(
                 ),
                 'adjust' => array(
                   'title' => __('Adjust background (in px)', 'vibe-customtypes'),
+                  'type' => 'text',
+                  'std' => '0'
+                ),
+                'padding_top' => array(
+                  'title' => __('Top Padding(in px)', 'vibe-customtypes'),
+                  'type' => 'text',
+                  'std' => '0'
+                ),
+                'padding_bottom' => array(
+                  'title' => __('Bottom Padding(in px)', 'vibe-customtypes'),
                   'type' => 'text',
                   'std' => '0'
                 ),           

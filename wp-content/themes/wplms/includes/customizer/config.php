@@ -109,13 +109,6 @@ $vibe_customizer = array(
                               'h1_font_weight' => array(
                                                             'label' => 'H1: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                               
                              'h1_color' => array(
@@ -138,13 +131,6 @@ $vibe_customizer = array(
                                'h2_font_weight' => array(
                                                             'label' => 'H2: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                              
                              'h2_color' => array(
@@ -166,13 +152,6 @@ $vibe_customizer = array(
                              'h3_font_weight' => array(
                                                             'label' => 'H3: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                               
                              'h3_color' => array(
@@ -194,13 +173,6 @@ $vibe_customizer = array(
                              'h4_font_weight' => array(
                                                             'label' => 'H4: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                               
                              'h4_color' => array(
@@ -222,13 +194,6 @@ $vibe_customizer = array(
                              'h5_font_weight' => array(
                                                             'label' => 'H5: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                               
                              'h5_color' => array(
@@ -250,13 +215,6 @@ $vibe_customizer = array(
                              'h6_font_weight' => array(
                                                             'label' => 'H6: Font Weight',
                                                             'type'  => 'select',
-                                                            'choices' => array(
-                                                                '300'=>'300 : Light',
-                                                                '400'=>'400 : Normal',
-                                                                '600'=>'600 : Bold',
-                                                                '700'=>'700 : Bolder',
-                                                                '800'=>'800 : Bolder'
-                                                            ),
                                                             'default' => '400'
                                                             ),                               
                              'h6_color' => array(

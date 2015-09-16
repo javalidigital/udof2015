@@ -15,12 +15,13 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 
 	switch($post_type){
 		case 'wplms-assignment':
-			$assignment_id = $id;
+			$assignment_id = $id; 
 			$assignment_post=get_post($assignment_id);
     		$assignment_marks = get_post_meta($assignment_id,$user_id,true);
     		$total_assignment_marks = get_post_meta($assignment_id,'vibe_assignment_marks',true);
 
 		    echo '<div class="assignment_content">';
+		    echo '<h3 class="heading">'.get_the_title($id).'</h3>';
 		    echo apply_filters('the_content',$assignment_post->post_content);
 
 		    echo '<h3 class="heading">'.__('My Submission','vibe').'</h3>';
@@ -142,11 +143,13 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 						$marks=get_comment_meta( $comment->comment_ID, 'marks', true );
 					}// END- COMMENTS-FOR
 					
-					if(isset($correct_answer) && $correct_answer !='' && isset($marks) && $marks !=''){
+					$flag = apply_filters('wplms_show_quiz_correct_answer',true,$quiz_id);
+					
+					if(isset($correct_answer) && $correct_answer !='' && isset($marks) && $marks !='' && $flag){
 						$explaination = get_post_meta($question,'vibe_question_explaination',true);
 						echo '<strong>';
 						_e('Correct Answer :','vibe');
-						echo '<span>'.do_shortcode($ans).' '.((isset($explaination) && $explaination && strlen($explaination) > 5)?'<a class="show_explaination tip" title="'.__('View answer explaination','vibe').'"></a>':'').'</span></strong>';
+						echo '<span>'.do_shortcode($ans).' '.((isset($explaination) && $explaination && strlen($explaination) > 5)?'<a class="show_explaination tip" title="'.__('View answer explanation','vibe').'"></a>':'').'</span></strong>';
 					}
 						
 					
@@ -154,17 +157,18 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 					echo '<span> '.__('Total Marks :','vibe').' '.$questions['marks'][$key].'</span>';
 
 					if(isset($marks) && $marks !=''){
-						if($marks){
+						if($marks > 0){
 							echo '<span>'.__('MARKS OBTAINED','vibe').' <i class="icon-check"></i> '.$marks.'</span>';
-							$sum = $sum+intval($marks);
 						}else{
 							echo '<span>'.__('MARKS OBTAINED','vibe').' <i class="icon-x"></i> '.$marks.'</span>';
 						}
+						$sum = $sum+intval($marks);
 					}else{
 						echo '<span>'.__('Marks Obtained','vibe').' <i class="icon-alarm"></i></span>';
 					}
-					if(isset($explaination) && $explaination && strlen($explaination) > 5){
-						echo '<div class="explaination">'.$explaination.'</div>';
+
+					if(isset($explaination) && $explaination && strlen($explaination) > 5 && $flag){
+						echo '<div class="explaination">'.do_shortcode($explaination).'</div>';
 					}
 					
 					echo '</li>';
@@ -187,10 +191,11 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 										ORDER BY date_recorded DESC
 									" ,$user_id,$quiz_id));
 
-					if(($retakes - count($quiz_retakes)) > 0){
+					$retakes_left = apply_filters('wplms_quiz_retakes_left',($retakes - count($quiz_retakes)),$quiz_id);
+					if( $retakes_left > 0){
 						echo '<form method="post" class="quiz_retake_form '.apply_filters('wplms_in_course_quiz','').'" action="'.get_permalink($quiz_id).'">';
 						echo '<input type="submit" name="initiate_retake" value="'.__('RETAKE QUIZ','vibe').'" />';
-						echo '<p>'.__('Number of retakes ','vibe').' : <strong>'.count($quiz_retakes).__(' out of ','vibe').$retakes.'</strong></p>';
+						echo '<p id="retakes'.$retakes.'">'.__('Number of retakes ','vibe').' : <strong>'.count($quiz_retakes).__(' out of ','vibe').$retakes.'</strong></p>';
 						wp_nonce_field('retake'.$user_id,'security');
 						echo '</form>';
 					}
@@ -219,9 +224,10 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 			break;
 			}	
 
-		}else{
+		}else{ // Show all Results 
 
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+
 		$the_quiz=new WP_QUERY(array(
 			'post_type'=>'quiz',
 			'paged' => $paged,
@@ -272,14 +278,34 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 				echo '<span><strong>'.$value.' / '.$max.'</strong></span>';
 			?>
 		</li>
-
 		<?php
 			endwhile;
-			wp_reset_query();
 			?>
 			</ul>
 			<?php
-		  	
+				if($the_quiz->max_num_pages>1){?>
+						<div class="pagination">
+						<div class="pag-count" id="course-dir-count-top">
+							<?php echo sprintf(__('Viewing %d out of %d','vibe'),$paged,$the_quiz->max_num_pages) ?>
+						</div>
+						<div class="pagination-links">
+							<?php
+						    for($i=1;$i<=$the_quiz->max_num_pages;$i++){
+						    	if(($paged==$i)){
+						    		?>
+						    		<span class="page-numbers current"><?php echo $i;?></span>
+						    		<?php
+						    	}else{
+						    		?>
+						    		<a href="<?php echo bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG.'/page/' . $i; ?>" class="page-numbers"><?php echo $i;?></a>
+						    		<?php
+						    	}
+						    }
+						    ?>
+						</div>
+					</div>
+				<?php }
+				wp_reset_query();
 		  	}
 
 		  	//ASSIGNMENTS	
@@ -329,7 +355,29 @@ if(isset($_GET['action']) && $_GET['action']){ // Check Action
 		  	endwhile;
 		  	?>
 		  	</ul>
-		  	<?php
+			<?php
+				if($the_assignment->max_num_pages>1){?>
+						<div class="pagination">
+						<div class="pag-count" id="course-dir-count-top">
+							<?php echo sprintf(__('Viewing %d out of %d','vibe'),$paged,$the_assignment->max_num_pages) ?>
+						</div>
+						<div class="pagination-links">
+							<?php
+						    for($i=1;$i<=$the_assignment->max_num_pages;$i++){
+						    	if(($paged==$i)){
+						    		?>
+						    		<span class="page-numbers current"><?php echo $i;?></span>
+						    		<?php
+						    	}else{
+						    		?>
+						    		<a href="<?php echo bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG.'/page/' . $i; ?>" class="page-numbers"><?php echo $i;?></a>
+						    		<?php
+						    	}
+						    }
+						    ?>
+						</div>
+					</div>
+				<?php }
 				wp_reset_query();
 		  		}// End Assignment -> Have posts
 			}

@@ -19,12 +19,46 @@
 	<?php do_action( 'bp_before_member_messages_threads'   ); ?>
 
 	<table id="message-threads" class="messages-notices">
+		<thead>
+				<tr>
+					<th></th>	
+					<th scope="col" class="thread-count">
+					</th>
+					<?php if ( bp_is_active( 'messages', 'star' ) ) : ?>
+					<th scope="col" class="thread-star"><span class="message-action-star"><span class="icon"></span> <span class="screen-reader-text"><?php _e( 'Star', 'buddypress' ); ?></span></span></th>
+					<?php endif; ?>
+					<th scope="col" class="thread-from"><?php _e( 'From', 'buddypress' ); ?></th>
+					<th scope="col" class="thread-info"><?php _e( 'Subject', 'buddypress' ); ?></th>
+
+					<?php
+
+					/**
+					 * Fires inside the messages box table header to add a new column.
+					 *
+					 * This is to primarily add a <th> cell to the messages box table header. Use
+					 * the related 'bp_messages_inbox_list_item' hook to add a <td> cell.
+					 *
+					 * @since BuddyPress (2.3.0)
+					 */
+					do_action( 'bp_messages_inbox_list_header' ); ?>
+
+					<th scope="col" class="thread-options"><?php _e( 'Actions', 'buddypress' ); ?></th>
+				</tr>
+			</thead>
 		<?php while ( bp_message_threads() ) : bp_message_thread(); ?>
 
 			<tr id="m-<?php bp_message_thread_id(); ?>" class="<?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?> unread<?php else: ?> read<?php endif; ?>">
+				<td width="1%" class="thread-select">
+					<input type="checkbox" name="message_ids[]" value="<?php bp_message_thread_id(); ?>" />
+				</td>
 				<td width="1%" class="thread-count">
 					<span class="unread-count"><?php bp_message_thread_unread_count(); ?></span>
 				</td>
+				<?php if ( bp_is_active( 'messages', 'star' ) ) : ?>
+					<td width="1%" class="thread-star">
+						<?php bp_the_message_star_action_link( array( 'thread_id' => bp_get_message_thread_id() ) ); ?>
+					</td>
+				<?php endif; ?>
 				<td width="1%" class="thread-avatar"><?php bp_message_thread_avatar(); ?></td>
 
 				<?php if ( 'sentbox' != bp_current_action() ) : ?>
@@ -46,9 +80,8 @@
 
 				<?php do_action( 'bp_messages_inbox_list_item' ); ?>
 
-				<td width="13%" class="thread-options">
-					<input type="checkbox" name="message_ids[]" value="<?php bp_message_thread_id(); ?>" />
-					<a class="button confirm" href="<?php bp_message_thread_delete_link(); ?>" title="<?php _e( "Delete Message", "buddypress" ); ?>"><?php _e( 'Delete', 'vibe' ); ?></a> &nbsp;
+				<td width="1%" class="thread-options">
+					<a class="ahref confirm" href="<?php bp_message_thread_delete_link(); ?>" title="<?php _e( "Delete Message", "buddypress" ); ?>"><?php _e( 'Delete', 'vibe' ); ?></a> &nbsp;
 				</td>
 			</tr>
 

@@ -61,7 +61,7 @@ $curauth = $wp_query->get_queried_object();
                                         </p>
                                     </div>
                                     <p>'.get_the_excerpt().'</p>
-                                    <a href="'.get_permalink().'" class="link">'.__('Saiba mais','vibe').'</a>
+                                    <a href="'.get_permalink().'" class="link">'.__('Read More','vibe').'</a>
                                 </div>
                             </div>';
                         endwhile;

@@ -733,7 +733,6 @@ function lms_stats_course_content($subtab='overview'){
 				</div>
 			</div>
 		</div>
-	</div>
 	<?php
 }
 
@@ -1098,7 +1097,6 @@ global $wpdb;
 				</div>
 			</div>
 		</div>
-	</div>
 	<?php
 }
 

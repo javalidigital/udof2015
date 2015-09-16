@@ -14,9 +14,11 @@ if ( !defined( 'ABSPATH' ) ) exit;
 add_action( 'admin_menu', 'register_lms_menu_page' );
 
 function register_lms_menu_page(){
+	$settings = new lms_settings;
     add_menu_page( __('Learning Management System','vibe-customtypes'), __('LMS','vibe-customtypes'), 'edit_posts', 'lms', 'vibe_lms_dashboard','',7 );
     add_submenu_page( 'lms', __('Statistics','vibe-customtypes'), __('Statistics','vibe-customtypes'),  'edit_posts', 'lms-stats', 'vibe_lms_stats' );
-    add_submenu_page( 'lms', __('Settings','vibe-customtypes'), __('Settings','vibe-customtypes'),  'manage_options', 'lms-settings', 'vibe_lms_settings' );
+    add_submenu_page( 'lms', __('Settings','vibe-customtypes'), __('Settings','vibe-customtypes'),  'manage_options', 'lms-settings', array($settings,'vibe_lms_settings'));
+    add_submenu_page( 'lms', __('Lms Tree','vibe-customtypes'), __('Lms Tree','vibe-customtypes'),  'manage_options', 'lms-tree', array($settings,'vibe_lms_tree'));
     //admin.php?page=lms
    // add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function )
 }
@@ -112,6 +114,7 @@ function register_lms() {
             'has_archive' => true,
 			'show_in_menu' => 'lms',
 			'show_in_admin_bar' => true,
+			'exclude_from_search' => true, 
 			'show_in_nav_menus' => true,
 			'supports' => array( 'title', 'editor', 'author','comments', 'post-formats', 'revisions','custom-fields' ),
 			'hierarchical' => true,
@@ -152,16 +155,36 @@ function register_lms() {
 			'show_ui' => true,
             'has_archive' => true,
 			'show_in_menu' => 'lms',
+			'exclude_from_search' => true, 
 			'show_in_admin_bar' => true,
 			'show_in_nav_menus' => true,
 			'permalink_epmask' => EP_PAGES,
-			'supports' => array( 'title','author','editor', 'revisions','custom-fields' ),
+			'supports' => array( 'title','author','thumbnail','editor', 'revisions','custom-fields' ),
 			'hierarchical' => true,
             'show_in_nav_menus' => false,
 			'rewrite' => array( 'slug' => WPLMS_QUIZ_SLUG,'hierarchical' => true, 'with_front' => false )
 		)
 	 );  
 
+	 register_taxonomy( 'quiz-type', array( 'quiz'),
+			array(
+				'labels' => array(
+					'name' => __('Quiz type','vibe-customtypes'),
+					'menu_name' => __('Quiz type','vibe-customtypes'),
+					'singular_name' => __('Quiz type','vibe-customtypes'),
+					'add_new_item' => __('Add New Quiz type','vibe-customtypes'),
+					'all_items' => __('All Quiz types','vibe-customtypes')
+				),
+				'public' => true,
+				'hierarchical' => true,
+				'show_ui' => true,
+				'show_in_menu' => 'lms',
+				'show_admin_column' => true,
+				'show_in_admin_bar' => true,
+				'show_in_nav_menus' => true,
+				'rewrite' => array( 'slug' => 'quiz-type', 'hierarchical' => true, 'with_front' => false ),
+			)
+		);
     	 
 	 register_post_type( 'question',
 		array(
@@ -176,6 +199,7 @@ function register_lms() {
 			'show_ui' => true,
             'has_archive' => true,
 			'show_in_menu' => 'lms',
+			'exclude_from_search' => true, 
 			'show_in_admin_bar' => true,
 			'show_in_nav_menus' => true,
 			'supports' => array( 'title','author','editor', 'comments','revisions' ,'custom-fields'),
@@ -184,7 +208,7 @@ function register_lms() {
 			'rewrite' => array( 'slug' => WPLMS_QUESTION_SLUG,'hierarchical' => true, 'with_front' => false )
 		)
 	 ); 
-
+	 
     	 
 	 register_taxonomy( 'question-tag', array( 'question'),
 		array(
@@ -275,6 +299,7 @@ function register_lms() {
 				'show_ui' => true,
 	            'has_archive' => true,
 				'show_in_menu' => 'lms',
+				'exclude_from_search' => true, 
 				'show_in_admin_bar' => true,
 				'show_in_nav_menus' => true,
 				'supports' => array( 'title', 'editor', 'author', 'post-formats', 'revisions','custom-fields' ),
@@ -348,7 +373,7 @@ function register_lms() {
 			'hierarchical' => false,
 			'rewrite' => array( 'slug' => 'certificates', 'hierarchical' => false, 'with_front' => false )
 		)
-	 ); 
+	 );
 	/*====== Version 1.6.2 LINKAGE =====*/
 	$linkage = vibe_get_option('linkage');
 	if(isset($linkage) && $linkage){
@@ -463,7 +488,12 @@ add_action( 'init', 'register_popups' );
 
 if(!function_exists('vibe_get_option')){ // Defining GET OPTION function
 	function vibe_get_option($field,$compare = NULL){
-	    $option=get_option('wplms');
+		if(defined('THEME_SHORT_NAME')){
+			$option=get_option(THEME_SHORT_NAME);
+		}else{
+			$option=get_option('wplms');
+		}
+	    
 	    $return = isset($option[$field])?$option[$field]:NULL;
 	    if(isset($return)){
 	        if(isset($compare)){

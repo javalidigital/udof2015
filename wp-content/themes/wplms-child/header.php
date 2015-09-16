@@ -139,9 +139,10 @@ wp_head();
                             }
                         ?>
                     </div>
-                    <div class="apoio"><p>Apoio educacional</p>
-                    <img class="uefa-logo" src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA"> <img class="unicef-logo" src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">
-                        </div>
+                    <div class="apoio">
+                        <p>Apoio educacional</p>
+                        <img class="uefa-logo" src="http://localhost/udof2015/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA"> <img class="unicef-logo" src="http://localhost/udof2015/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">
+                    </div>
                     <div class="col-md-9 col-sm-9">
                         <?php
                             $args = apply_filters('wplms-main-menu',array(

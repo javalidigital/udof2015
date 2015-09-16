@@ -173,10 +173,10 @@ class vibe_course_categories extends WP_Widget {
     echo $before_title . $title . $after_title;
     
 
-    $args = array(
+    $args = apply_filters('wplms_course_filters_course_cat',array(
     		'orderby'    => $order,
 		 	  'order' => $sort
-    	);
+    	));
     if (isset($exclude_ids))
     	$args['exclude'] = $exclude_ids;
 
@@ -248,7 +248,7 @@ class vibe_course_categories extends WP_Widget {
             </select>
         </p>
         <p>
-          <label for="<?php echo $this->get_field_id('exclude_ids'); ?>"><?php _e('Exclude Course Category Terms Ids (comma saperated):','vibe'); ?></label> 
+          <label for="<?php echo $this->get_field_id('exclude_ids'); ?>"><?php _e('Exclude Course Category Terms slugs (comma saperated):','vibe'); ?></label> 
           <input class="regular_text" id="<?php echo $this->get_field_id('exclude_ids'); ?>" name="<?php echo $this->get_field_name('exclude_ids'); ?>" type="text" value="<?php echo $exclude_ids; ?>" />
         </p>
         

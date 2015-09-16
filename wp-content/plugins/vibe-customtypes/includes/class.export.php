@@ -238,29 +238,31 @@ class wplms_export{
 		global $wpdb;
 		switch($post_type){
 			case 'course':
-				$taxonomy='course-cat';
+				$taxonomies=array('linkage','level','course-cat');
 			break;
 			case 'unit':
-				$taxonomy='module-tag';
+				$taxonomies=array('linkage','level','module-tag');
 			break;
 			case 'question':
-				$taxonomy='question-tag';
+				$taxonomies=array('linkage','level','question-tag');
 			break;
 			case 'wplms-assignment':
-				$taxonomy='assignment-type';
+				$taxonomies=array('linkage','level','assignment-type');
 			break;
 			default:
 			 	return;
 			break;
 		}
 
-		$terms = wp_get_post_terms( $post_id, $taxonomy);
-		if(isset($terms) && is_array($terms)){
-			foreach($terms as $term){
-				$terms_array[]=$term->name;
+		foreach($taxonomies as $taxonomy){
+			$terms = wp_get_post_terms( $post_id, $taxonomy);
+			if(isset($terms) && is_array($terms)){
+				foreach($terms as $term){
+					$terms_array[]=$term->name;
+				}
+				if(is_array($terms_array) && count($terms_array))
+					$this->csv[]=array($wpdb->prefix.'terms',$post_id,$taxonomy,__('Terms','vibe-customtypes'),implode(',',$terms_array));
 			}
-			if(is_array($terms_array) && count($terms_array))
-				$this->csv[]=array($wpdb->prefix.'terms',$post_id,$taxonomy,__('Terms','vibe-customtypes'),implode(',',$terms_array));
 		}
 
 	}

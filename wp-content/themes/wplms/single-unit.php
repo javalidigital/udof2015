@@ -1,29 +1,5 @@
 <?php
-
-
 get_header();
-
-global $post;
-$flag=0;
-$free=get_post_meta(get_the_ID(),'vibe_free',true);
-
-if(vibe_validate($free)){
-    $flag=1;
-}else if((isset($_SERVER['HTTP_X_REQUESTED_WITH']) && is_user_logged_in())){
-    $flag=1;
-}else if(current_user_can('edit_posts')){
-    $flag=1;
-    $instructor_privacy = vibe_get_option('instructor_content_privacy');
-    $user_id=get_current_user_id();
-    if(isset($instructor_privacy) && $instructor_privacy){
-        if($user_id != $post->post_author)
-          $flag=0;
-    }
-}
-
-$flag = apply_filters('wplms_before_unit',$flag);
-
-if($flag || current_user_can('manage_options')){ 
 $unit_comments = vibe_get_option('unit_comments');
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
@@ -70,7 +46,11 @@ $unit_comments = vibe_get_option('unit_comments');
             <div class="col-md-9 col-sm-8">
                 <div class="unit_wrap <?php if(isset($unit_comments) && is_numeric($unit_comments)){echo 'enable_comments';} ?>">
                     <div id="unit_content" class="unit_content">
-                    <div class="main_unit_content single_unit_content">
+                    <?php
+                    $unit_class = 'unit_class single_unit_content';
+                    $unit_class=apply_filters('wplms_unit_classes',$unit_class,$id);
+                    ?>
+                    <div class="main_unit_content <?php echo $unit_class;?>">
                     <?php if(has_post_thumbnail()){ ?>
                     <div class="featured">
                         <?php the_post_thumbnail(get_the_ID(),'full'); ?>
@@ -203,17 +183,5 @@ $unit_comments = vibe_get_option('unit_comments');
     </div>
 </section>
 <?php
-}else{
-?>
-<section id="title">
-    <div class="container">
-        <?php echo apply_filters('wplms_direct_access_not_allowed',__('<h1>.Direct Access to Units is not allowed</h1>','vibe')); ?>
-        <?php
-        do_action('wplms_direct_access_not_allowed');
-        ?>
-    </div>
-</section>
-<?php
-}
 get_footer();
 ?>

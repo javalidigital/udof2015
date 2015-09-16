@@ -55,6 +55,15 @@ if(!function_exists('the_assignment_timer')){
 
       $user_id = get_current_user_id();
       $assignmenttaken=get_user_meta($user_id,$post->ID,true);
+
+      if(!isset($hours))
+            $hours=intval(get_post_meta($post->ID,'vibe_assignment_duration',true));
+
+      if(!$hours) {$hours=1; echo "Duration not Set"; return;}
+      if($hours > 9998){
+          return;
+      }
+
       $assignment_duration_parameter = apply_filters('vibe_assignment_duration_parameter',86400);
       $hours = $hours*$assignment_duration_parameter;
       $start=0;
@@ -68,11 +77,6 @@ if(!function_exists('the_assignment_timer')){
           }
           
       }else{
-          if(!isset($hours))
-            $hours=intval(get_post_meta($post->ID,'vibe_assignment_duration',true));
-
-          if(!$hours) {$hours=1; echo "Duration not Set";}
-
           $remaining = $hours; // Converting to seconds
       } 
 
@@ -83,6 +87,7 @@ if(!function_exists('the_assignment_timer')){
       }
 
       if($remaining > 86400){
+
         echo '<div class="assignment_timer '.(($start)?'start':'').'" data-time="'.$remaining.'">
           <span class="timer" data-timer="'.$remaining.'"></span>
           <span class="counttime">'.floor($remaining/86400).'</span>
@@ -194,9 +199,8 @@ function assignment_submit_button(){
     }
 }
 
-function assignment_results_button(){
+function assignment_results_button(){  
     echo '<a href="'.bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG.'/?action='.get_the_ID().'" class="button primary full">'.__('CHECK RESULTS','wplms-assignments').'</a>';
-        return;
 }
 
 add_action('wplms_before_single_assignment','wplms_assignment_start');
@@ -216,20 +220,8 @@ function wplms_assignment_start(){
         
         if(add_user_meta($user_id,$post->ID,time())){
             //Record activity
-            $activity_id=bp_course_record_activity(array(
-              'action' => __('Student started assignment ','wplms-assignments').get_the_title($post->ID),
-              'content' => __('Student ','wplms-assignments').bp_core_get_userlink($user_id).__(' started the assignment  ','wplms-assignments').get_the_title($post->ID),
-              'type' => 'assignment_started',
-              'primary_link' => get_permalink($post->ID),
-              'item_id' => $post->ID,
-              'secondary_item_id' => $user_id
-            ));
-            bp_course_record_activity_meta(array(
-              'id' => $activity_id,
-              'meta_key' => 'instructor',
-              'meta_value' => $post->post_author
-              ));
-            do_action('badgeos_wplms_start_assignment',$post->ID);
+       
+            do_action('wplms_start_assignment',$post->ID,$user_id);
             return;
         }else
             wp_die(__('Assignment can not be re-started','wplms-assignments'));
@@ -254,20 +246,8 @@ function wplms_assignment_start(){
             messages_new_message( array('sender_id' => $user_id, 'subject' => __('Assignment submitted by Student','wplms-assignments'), 'content' => $message,   'recipients' => $post->post_author ) );
           }
             
-            $activity_id=bp_course_record_activity(array(
-              'action' => __('Student submitted assignment ','wplms-assignments'),
-              'content' => __('Student ','wplms-assignments').bp_core_get_userlink($user_id).__(' submitted the assignment  ','wplms-assignments').get_the_title($post->ID),
-              'type' => 'assignment_submitted',
-              'primary_link' => get_permalink($post->ID),
-              'item_id' => $post->ID,
-              'secondary_item_id' => $user_id
-            ));
-            bp_course_record_activity_meta(array(
-              'id' => $activity_id,
-              'meta_key' => 'instructor',
-              'meta_value' => $post->post_author
-              ));
-            do_action('badgeos_wplms_submit_assignment',$post->ID);
+            do_action('wplms_submit_assignment',$post->ID,$user_id);
+
             return;
 
         }
@@ -336,8 +316,14 @@ function wplms_evaluate_assignment(){
         $answer = end($answers);
         echo $answer->comment_content;
         $attachment_id=get_comment_meta($answer->comment_ID, 'attachmentId',true);
-        if(isset($attachment_id) && $attachment_id)
-        echo '<div class="download_attachment"><a href="'.wp_get_attachment_url($attachment_id).'" target="_blank"><i class="icon-download-3"></i> '.__('Download Attachment','wplms-assignments').'</a></div>';
+        if(isset($attachment_id))
+          if(is_array($attachment_id)){
+            foreach($attachment_id as $attachid){
+              echo '<div class="download_attachment"><a href="'.wp_get_attachment_url($attachid).'" target="_blank"><i class="icon-download-3"></i> '.__('Download Attachment','wplms-assignments').'</a></div>';
+            }
+          }else{
+            echo '<div class="download_attachment"><a href="'.wp_get_attachment_url($attachment_id).'" target="_blank"><i class="icon-download-3"></i> '.__('Download Attachment','wplms-assignments').'</a></div>';
+          }
     }
     echo '</div>';
 
@@ -345,8 +331,9 @@ function wplms_evaluate_assignment(){
     $max_marks = get_post_meta($assignment_id,'vibe_assignment_marks',true);
     echo '<div class="marks_form">
     <input type="number" value="" class="form_field" id="assignment_marks" placeholder="Enter marks out of '.$max_marks.'" />
-    <label>'.__('REMARKS (if any)','wplms-assignments').'</label><textarea id="remarks_message"></textarea>
-    <a id="give_assignment_marks" class="button small" data-ans-id="'.$answer->comment_ID.'">'.__('GIVE MARKS','wplms-assignments').'</a></div>';
+    <label>'.__('REMARKS (if any)','wplms-assignments').'</label>';
+    echo '<textarea id="remarks_message"></textarea>';
+    echo '<a id="give_assignment_marks" class="button small" data-ans-id="'.$answer->comment_ID.'">'.__('GIVE MARKS','wplms-assignments').'</a></div>';
     die();
 }
 
@@ -372,28 +359,20 @@ function wplms_reset_assignment(){
         die();
     }
 
-    if(delete_user_meta($user_id,$assignment_id)){
+      delete_user_meta($user_id,$assignment_id);
 
       delete_post_meta($assignment_id,$user_id); // Optional validates that user can retake the quiz
 
         global $wpdb; // DUMPING ASSIGNMENT SUBMISSION
+        echo $assignment_id;
         $result=$wpdb->query($wpdb->prepare("UPDATE $wpdb->comments SET comment_approved='trash' WHERE comment_post_ID=%d AND user_id=%d",$assignment_id,$user_id));
         if($result)
             echo '<p>'.__('Assignment Reset for Selected User','wplms-assignments').'</p>';
         else
             echo '<p>'.__('Could not find Assignment for User. Contact Admin.','wplms-assignments').'</p>';
-    }else{
-      echo '<p>'.__('Could not find Assignment for User. Contact Admin.','wplms-assignments').'</p>';
-    }
+
     
-    bp_course_record_activity(array(
-      'action' => __('Instructor Reseted the Assignment for User','wplms-assignments'),
-      'content' => sprintf(__('Assignment %s was reset by the Instructor for user %s','wplms-assignments'),get_the_title($assignment_id),bp_core_get_userlink( $user_id )),
-      'type' => 'reset_assignment',
-      'primary_link' => get_permalink($assignment_id),
-      'item_id' => $assignment_id,
-      'secondary_item_id' => $user_id
-      ));
+    do_action('wplms_assignment_reset',$assignment_id,$user_id);
     die();
 }
 
@@ -406,31 +385,18 @@ if(is_numeric($answer_id) && is_numeric($value)){
   update_comment_meta( $answer_id, 'marks',$value);
   $comment=get_comment($answer_id);
   if(is_object($comment))
-    if(update_post_meta($comment->comment_post_ID,$comment->user_id,$value)){
+      update_post_meta($comment->comment_post_ID,$comment->user_id,$value);
+    
       $max_marks = get_post_meta($comment->comment_post_ID,'vibe_assignment_marks',true);
       $message = __('You\'ve obtained ','wplms-assignments').$value.(is_numeric($max_marks)?'/'.$max_marks:'').__(' in Assignment :','wplms-assignments').' <a href="'.get_permalink($comment->comment_post_ID).'">'.get_the_title($comment->comment_post_ID).'</a>
       <a href="'.bp_core_get_user_domain( $comment->user_id ).'course/course-results/?action='.$comment->comment_post_ID.'">'.__('Check Results','wplms-assignments').'</a>
       <h3>'.__('Additional Remarks form Instructor','wplms-assignments').'</h3>
       <br />'.$remarks;
-      
-      $message_id=messages_new_message( array('sender_id' => get_current_user_id(), 'subject' => __('Assignment results available','wplms-assignments'), 'content' => $message,   'recipients' => $comment->user_id ) );
-      $max_marks=get_post_meta($comment->comment_post_ID,'vibe_assignment_marks',true);
-      $activity_id=bp_course_record_activity(array(
-      'action' => __('Instructor Evaluated the Assignment for User','wplms-assignments'),
-      'content' => __('Assignment ','wplms-assignments').get_the_title($comment->comment_post_ID).__(' was evaluated by the Instructor for user','wplms-assignments').bp_core_get_userlink( $comment->user_id ).' ='.$value.'/'.$max_marks,
-      'type' => 'evaluate_assignment',
-      'primary_link' => get_permalink($comment->comment_post_ID),
-      'item_id' => $comment->comment_post_ID,
-      'secondary_item_id' => $comment->user_id
-      ));
-      bp_course_record_activity_meta(array(
-        'id' => $activity_id,
-        'meta_key' => 'remarks',
-        'meta_value' => $message_id
-        ));
-
-      do_action('badgeos_wplms_evaluate_assignment',$comment->comment_post_ID,$value, $comment->user_id);
-    }  
+      $message_id='';
+      if(function_exists('messages_new_message')){
+        $message_id=messages_new_message( array('sender_id' => get_current_user_id(), 'subject' => __('Assignment results available','wplms-assignments'), 'content' => $message,   'recipients' => $comment->user_id ) );
+      }
+      do_action('wplms_evaluate_assignment',$comment->comment_post_ID,$value,$comment->user_id,$max_marks,$message_id);
 }
 die();
 }
@@ -485,21 +451,30 @@ function wplms_assignment_student_marks($student_marks,$course_id,$user_id){
     $members_assignment_marks = $wpdb->get_results( $wpdb->prepare("SELECT meta_value as marks,post_id as assignment_id FROM {$wpdb->postmeta} where meta_key=%d AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key='vibe_assignment_course' AND meta_value = %d)",$user_id,$course_id), ARRAY_A);
     if(isset($members_assignment_marks) && is_array($members_assignment_marks) && count($members_assignment_marks))
     foreach($members_assignment_marks as $members_assignment_mark){
-         $student_marks += intval($members_assignment_mark['marks']);
+        $include_in_course = get_post_meta($members_assignment_mark['assignment_id'],'vibe_assignment_evaluation',true);
+        if(vibe_validate($include_in_course)){
+          $student_marks += intval($members_assignment_mark['marks']);
+        }
     }
-
     return $student_marks;
 }
 
 function wplms_assignment_maximum_marks($maximum_marks,$course_id,$user_id){
   global $wpdb;
-    $members_assignment_marks = $wpdb->get_results( $wpdb->prepare("SELECT post_id as assignment_id FROM {$wpdb->postmeta} where meta_key=%d AND post_id IN (SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key='vibe_assignment_course' AND meta_value = %d)",$user_id,$course_id), ARRAY_A);
-    if(isset($members_assignment_marks) && is_array($members_assignment_marks) && count($members_assignment_marks))
-    foreach($members_assignment_marks as $members_assignment_mark){
-         $newmaximum_marks=get_post_meta($members_assignment_mark['assignment_id'],'vibe_assignment_marks',true);
-         $maximum_marks += intval($newmaximum_marks);
+  $members_assignments = $wpdb->get_results($wpdb->prepare("SELECT post_id as assignment_id FROM {$wpdb->postmeta} WHERE meta_key='vibe_assignment_course' AND meta_value = %d",$course_id), ARRAY_A);
+
+  if(isset($members_assignments) && is_array($members_assignments) && count($members_assignments)){
+    foreach($members_assignments as $members_assignment){
+        $include_in_course = get_post_meta($members_assignment['assignment_id'],'vibe_assignment_evaluation',true);
+        if(vibe_validate($include_in_course)){
+           $newmaximum_marks=get_post_meta($members_assignment['assignment_id'],'vibe_assignment_marks',true);
+           if(is_numeric($newmaximum_marks)){
+              $maximum_marks += $newmaximum_marks;
+           }
+        }
     }
-    return $maximum_marks;
+  }
+  return $maximum_marks;
 }
 
 add_filter('wplms_course_stats_list','wplms_assignments_stats');

@@ -12,7 +12,6 @@ $evaluation=get_post_meta($post->ID,'vibe_assignment_evaluation',true);
 $assignment_submission_type=get_post_meta($post->ID,'vibe_assignment_submission_type',true);
 
 
-
 if(is_user_logged_in()){
     $assignment_taken = get_user_meta($user_id,$post->ID,true);
     $assignment_finished = get_post_meta($post->ID,$user_id,true);
@@ -29,6 +28,7 @@ if(isset($assignment_taken) && $assignment_taken !=''){
 
 if(isset($assignment_finished) && is_numeric($assignment_finished) && $assignment_finished>0)
     $flag=2;
+
 
 if($user_id == $post->post_author || current_user_can('manage_options'))
     $flag=1;
@@ -101,7 +101,6 @@ if($user_id == $post->post_author || current_user_can('manage_options'))
                                  }else{
                                     comments_template('/assignment-upload.php',true); 
                                  }
-                                //assignment_submit_button();
                                 break;
                                 case 2:
                                 the_content(); 
@@ -109,7 +108,7 @@ if($user_id == $post->post_author || current_user_can('manage_options'))
                                 break;
                                 case 3:
                                 the_content(); 
-                                //assignment_submit_button();
+                                assignment_results_button();
                                 break;
                             }
                             if(current_user_can('manage_options') || ($user_id == $post->post_author)){
@@ -147,7 +146,7 @@ if($user_id == $post->post_author || current_user_can('manage_options'))
                 ?>
                 </div>
                 <?php       
-                    if(isset($_GET['edit'])){
+                    if(isset($_GET['edit']) || isset($wp_query->query_vars['edit']) ){
                         do_action('wplms_front_end_assignment_controls');    
                     }else{
                         

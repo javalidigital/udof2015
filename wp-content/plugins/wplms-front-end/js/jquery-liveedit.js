@@ -80,7 +80,7 @@
             $(selectedText.focusNode).closest("[data-text-options=true]").length > 0 &&
             $(selectedText.focusNode).closest("li").length == 0 &&
             $(selectedText.focusNode).closest(".caption").length == 0) {
-          document.execCommand("formatBlock", false, "p");
+            document.execCommand("formatBlock", false, "p");
         }
         if (selectedText.isCollapsed === true && lastType === false) {
           hideTextOptions();
@@ -248,7 +248,7 @@
         + '<button class="strikethrough-button">' + opts.strikethroughButtonLabel + '</button>'
         + '<button class="unorderedlist-button">' + opts.unorderedlistButtonLabel + '</button>'
         + '</span>';
-      $("body").append(sidebarInterface);
+      //$("body").append(sidebarInterface);
       $("body").append(textOptionsInterface);
     };
     

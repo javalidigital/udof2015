@@ -90,11 +90,11 @@ line-height:1.5;
     display:inline-block;
 }
 section.stripe{
-    padding-bottom:30px;
     margin:0;
-    overflow:hidden;
     z-index:3;
+    overflow:hidden;
 }
+
 .stripe .v_column{
     margin-bottom:0;
 }
@@ -433,10 +433,8 @@ border-top: 1px solid #EFEFEF;
 /* ------------------------------------------------------------------------ */ 
  
 .parallax_content{
-    position:absolute;
-    top:30px;
     width:100%;
-    padding-bottom:30px;
+    display: inline-block;
 }
  
 /* ------------------------------------------------------------------------ */
@@ -1160,7 +1158,7 @@ textarea,
 .mfp-ajax-holder .mfp-content{
     width:auto;
     max-width:720px;
-    margin:0 20%;
+    margin:0 auto;
 }
 .popup_content{
     background:#FFF;

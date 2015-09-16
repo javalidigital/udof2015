@@ -1,3 +1,42 @@
+* verison1.9.8
+* WPML compatible links
+* WPLMS Front end compatibility with WPML
+* version1.9.7
+* language files
+* Save course pricing action
+* Add action to extend third party plugins
+* FE added
+* Live edit dependency
+* Unable to update curriculum
+* version1.9.6.2
+* style changes
+* Restructuring fields
+* Update post meta bug fix
+* Removed live editor css
+* style changes
+* True and false bug fix
+* Liveedit fix
+* Removed Live edit
+* version1.9.6
+* translations updated
+* conditional loading of scripts
+* Live editor css changes merged
+* Products meta bug fix
+* version1.9.5
+* Translation files
+* New Assignments addition code
+* Css fixes in edit screens
+* Plugin update fix
+* version1.9.4
+* New language files
+* Remove default text on click
+* coming soon courses
+* coming soon option
+* esc_url in add_query_arg
+* Group creation fix
+* Child forum creation fix
+* version1.9.3
+* language files updated
 * Translation files updated
 * version 1.9.2
 * Preview unit/quiz in front end
@@ -5,6 +44,7 @@
 * Language files updated
 * Fixed featured images in units, quizzes, questions etc.
 * Delete Course/Modify Course option
+* Restructuring fields
 * version1.9
 * translation files
 * Course retakes in front end.

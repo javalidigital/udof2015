@@ -23,8 +23,20 @@ function wplms_dashboard_template() {
 		wp_redirect(site_url());
 
 	$template ='templates/dashboard';
-	wp_enqueue_style( 'wplms-dashboard-css', plugins_url( '../css/wplms-dashboard.css' , __FILE__ ));
-	wp_enqueue_script( 'wplms-dashboard-js', plugins_url( '../js/wplms-dashboard.js' , __FILE__ ),array('jquery'));
+	if(function_exists('bp_is_my_profile') && bp_is_my_profile()){
+		wp_enqueue_style( 'wplms-dashboard-css',  WPLMS_DASHBOARD_URL.'/css/wplms-dashboard.css',array(),'1.0');
+		wp_enqueue_script( 'wplms-dashboard-js', WPLMS_DASHBOARD_URL.'/js/wplms-dashboard.js',array('jquery'),'1.0');
+		$translation_array = array(
+			'earnings' => __('Earnings','wplms-dashboard'),
+			'payout'=>__('Payout','wplms-dashboard'),
+			'students'=>__('# Students','wplms-dashboard'),
+			'saved'=>__('SAVED','wplms-dashboard'),
+			'saving'=>__('SAVING ...','wplms-dashboard'),
+			'stats_calculated'=>__('Stats Calculated, reloading page ...','wplms-dashboard')
+			);
+		wp_localize_script( 'wplms-dashboard-js', 'wplms_dashboard_strings', $translation_array );
+	}
+	
 
 	$located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template );	
 	if ( $located_template && $located_template !='' )	{

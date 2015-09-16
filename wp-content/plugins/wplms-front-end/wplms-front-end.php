@@ -3,7 +3,7 @@
 Plugin Name: WPLMS Front End
 Plugin URI: http://www.Vibethemes.com
 Description: FRONT END Content Creation plugin for WPLMS 
-Version: 1.9.3
+Version: 1.9.8
 Author: VibeThemes
 Author URI: http://www.vibethemes.com
 License: as Per Themeforest GuideLines
@@ -56,15 +56,22 @@ add_action('wp_enqueue_scripts','wplms_front_end_enqueue_scripts');
 function wplms_front_end_enqueue_scripts(){
         if(function_exists('vibe_get_option')){
             $edit_course = vibe_get_option('create_course');
+            
+            if(function_exists('icl_object_id'))
+                $edit_course = icl_object_id($edit_course, 'page', true);
+
             if(is_numeric($edit_course) && is_page($edit_course)){
                 wp_enqueue_media($edit_course);
+            }else{
+                global $wp_query;
+                if((!isset($_GET['edit']) && !isset($wp_query->query_vars['edit'])) || !current_user_can('edit_posts'))
+                    return;
             }
         }
-        
-		wp_enqueue_style( 'liveedit-css', plugins_url( 'css/jquery-liveedit.css', __FILE__ ));
-        wp_enqueue_style( 'wplms-front-end-css', plugins_url( 'css/wplms_front_end.css' , __FILE__ ));
-        wp_enqueue_script( 'wplms-front-end-js', plugins_url( 'js/wplms_front_end.js' , __FILE__ ), array( 'jquery-ui-core','jquery-ui-sortable','jquery-ui-slider','jquery-ui-datepicker' ) );
-        wp_enqueue_script( 'liveedit-js', plugins_url( 'js/jquery-liveedit.js', __FILE__ ));
+
+
+        wp_enqueue_style( 'wplms-front-end-css', plugins_url( 'css/wplms_front_end.css' , __FILE__ ),array(),'1.9.6');
+        wp_enqueue_script( 'wplms-front-end-js', plugins_url( 'js/wplms_front_end.js' , __FILE__ ), array( 'bp-html2canvas-js','jquery-ui-core','jquery-ui-sortable','jquery-ui-slider','jquery-ui-datepicker' ) ,'1.9.6');
         
         $translation_array = array(
             'course_title' => __( 'Please change the course title','wplms-front-end' ), 

@@ -48,6 +48,7 @@ input[type="file"]{
 --------------------------------------------------------------*/
 #bpavatar{
 	float:left;
+	max-width:80px;
 }
 #bpavatar img{
 	width:64px;
@@ -411,6 +412,7 @@ body.no-js #buddypress form#whats-new-form textarea {
 	display: inline-block;
 	width:auto;
 }
+
 .course_students li > ul > li > a,
 .quiz_students li > ul > li > a,
 .assignment_students li > ul > li > a{
@@ -1619,7 +1621,6 @@ a.bp-title-button {
 #buddypress table.messages-notices,
 #buddypress table.forum {
 	width: 100%;
-	color:#bbb;
 	font-size:12px;
 	font-weight:600;
 }
@@ -1637,7 +1638,9 @@ a.bp-title-button {
 #buddypress table.wp-profile-fields thead tr,
 #buddypress table.messages-notices thead tr,
 #buddypress table.forum thead tr {
-	background: #eaeaea;
+	background: none;
+	color:#444;
+	border-bottom:1px solid #EFEFEF;
 }
 #buddypress table#message-threads {
 	clear: both;
@@ -1669,7 +1672,7 @@ a.bp-title-button {
 #buddypress table.wp-profile-fields tr th,
 #buddypress table.messages-notices tr th,
 #buddypress table.forum tr th {
-	padding: 15px;
+	padding: 10px;
 	vertical-align: middle;
 }
 
@@ -1699,15 +1702,18 @@ a.bp-title-button {
 #buddypress table.forum td {
 	text-align: center;
 }
-#buddypress table.notifications tr.alt td,
-#buddypress table.notifications-settings tr.alt td,
-#buddypress table.profile-fields tr.alt td,
-#buddypress table.wp-profile-fields tr.alt td,
-#buddypress table.messages-notices tr.alt td,
+#buddypress table.notifications tr.alt,
+#buddypress table.notifications-settings tr.alt,
+#buddypress table.profile-fields tr.alt,
+#buddypress table.wp-profile-fields tr.alt,
+#buddypress table.messages-notices tr.alt,
 #buddypress table.forum tr.alt td {
-	background: #f5f5f5;
+	background: rgba(0,0,0,0.02);
 }
 
+.bulk-select-all .bp-screen-reader-text{
+	display: none;
+}
 .profile-fields tr{
 	border-bottom:1px solid #EFEFEF;
 }
@@ -1865,10 +1871,8 @@ a.bp-title-button {
 	padding: 0;
 	color: #bbb;
 	font-size: 12px;
-	margin-left: 90px;
 	text-align: right;
 	display: inline-block;
-	float: right;
 }
 #buddypress div.generic-button a.leave-group{float:right;}
 #buddypress span.user-nicename {
@@ -1968,6 +1972,24 @@ a.bp-title-button {
 	content: "\e05f";
 }
 */
+.message-action-star .screen-reader-text,
+.message-action-star .bp-screen-reader-text,
+.message-action-unstar .bp-screen-reader-text{
+	display: none;
+}
+.message-action-star span.icon:before, .message-action-unstar span.icon:before {
+  font-family: 'dashicons';
+  font-size: 18px;
+}
+
+.message-action-star span.icon:before {
+  color: #aaa;
+  content: "\f154";
+}
+.message-action-unstar span.icon:before {
+  color: #FCDD77;
+  content: "\f155";
+}
 #buddypress div#item-header div#item-header-content {
 	padding:20px 20px 10px;
 	font-size:12px;
@@ -2137,7 +2159,11 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 #buddypress ul.single-line li {
 	border: none;
 }
-
+#buddypress .widget ul.item-list li .item-avatar{
+	border-radius:0;
+	width:48px;
+	height:auto;
+}
 #buddypress .widget ul.item-list li img.avatar{
 	max-width:48px;
 }
@@ -2251,7 +2277,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 */
 
 #buddypress #group-create-tabs.item-list-tabs ul li{
-	max-width:151px;
+	max-width:141px;
 	border:none;
 	border-right:1px solid rgba(255,255,255,0.1);
 }
@@ -2451,18 +2477,23 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 
 .widget .item-options{
 	padding:0;
-	color:rgba(255,255,255,0.2);
-	background: #313b3d;
+	color:rgba(0,0,0,0.05);
+	border-bottom:1px solid rgba(0,0,0,0.05);
 	text-align: center;
 	border-radius: 2px;
+	margin-bottom:20px;
 }
 
 .widget .item-options a{
-	font-weight:600;
 	padding:8px;
-	color:#FFF;
+	font-size:11px;
+	color:#444;
 	text-transform: uppercase;
 	display: inline-block;
+}
+.widget .item-options a.selected{
+	color:#78c8ce;
+	font-weight:600;
 }
 
 #buddypress .widget_title{
@@ -2481,11 +2512,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	font-size:14px;
 }
 #buddypress .widget span.activity{
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: 600;
-	background: none;
-	margin:2px;
+
 }
 
 .item-list-tabs#subnav label{
@@ -2505,6 +2532,12 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 }
 
 .item-list-tabs .message-search label{display: inline-block;}
+
+#buddypress a.loading, #buddypress input.loading{
+	box-shadow:none;
+	-webkit-animation:none;
+	-moz-animation:none;
+}
 /*--------------------------------------------------------------
 3.9 - Private Messaging Threads
 --------------------------------------------------------------*/
@@ -2516,31 +2549,39 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 }
 #buddypress li span.unread-count,
 #buddypress tr.unread span.unread-count {
-	background: #fa7252;
-	color: #fff;
-	font-weight: bold;
-	padding: 2px 7px;
-	border-radius:20px;
+	  color: #fa7252;
+	  font-weight: bold;
+	  padding: 2px 7px;
+	  border-radius: 20px;
+	  border: 1px solid #fa7252;
 }
 #buddypress div.item-list-tabs ul li a span.unread-count {
 	padding: 1px 6px;
 	color: #fff;
 }
-#buddypress div.messages-options-nav {
-	background: #eee;
+#buddypress div.messages-options-nav,
+#buddypress .notifications-options-nav {
+	border-top:1px solid #efefef;
 	font-size:11px;
 	font-weight:600;
 	margin: 0;
-	padding: 5px 0;
+	padding: 15px 0 0;
 	text-align: right;
 }
-#buddypress div.messages-options-nav a{font-weight:600;text-transform: uppercase; color:#fa7252;}
+#buddypress div.messages-options-nav a,
+.notifications-options-nav a{font-weight:600;text-transform: uppercase; color:#fa7252;}
+
+.messages-options-nav label.bp-screen-reader-text,
+.notifications-options-nav label.bp-screen-reader-text{display: none;}
+.messages-options-nav #message-type-select{
+	float:left;
+}
 #buddypress div#message-thread div.message-box {
 	margin: 0;
 	padding: 15px;
 }
-#buddypress div#message-thread div.alt {
-	background: #f4f4f4;
+#buddypress div#message-thread tr.alt {
+	background: #fff;
 }
 #buddypress div#message-thread p#message-recipients {
 	margin: 10px 0 20px 0;
@@ -2663,10 +2704,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 border-radius:50%;
 }
 
-.favorite-toggle {
-  float: right;
-  color: #FFF;
-}
+
 /*--------------------------------------------------------------
 3.10 - NOTES & DISCUSSIONS
 --------------------------------------------------------------*/
@@ -2730,7 +2768,8 @@ border-radius:50%;
 	border-radius:2px;
 }
 
-#budd
+.widget #members-list .item-avatar,
+.footerwidget #members-list .item-avatar{border-radius:0;}
 /*--------------------------------------------------------------
 3.10 - Extended Profiles
 --------------------------------------------------------------*/
@@ -2930,7 +2969,7 @@ body.register #buddypress div.page ul {
 	float:left;
 }
 .item-instructor .instructor_course+.instructor_course{
-	clear:both;
+	margin-top:20px;
 }
 
 #course-dir-list .item-avatar img{
@@ -3059,7 +3098,8 @@ body.register #buddypress div.page ul {
 .course_reviews{
 	margin-top:30px;
 }
-.review_title{
+.review_title,
+.course_description + .course_curriculum .course_title h2{
 	padding: 10px 0;
 	text-align: center;
 	background: #EFEFEF;
@@ -3375,7 +3415,7 @@ border-radius: 2px;
 	padding-top:20px;
 }
 .course_button.button{
-	padding: 20px 32px !important;
+	padding: 2em 0.1em !important;
 	background-color: #78c8ce;
 	width:100%;
 	text-align: center;
@@ -3499,7 +3539,7 @@ del{opacity:0.3;}
 	padding:6px 0;position: relative;
 	font-size: 12px;
 }
-.widget .course_details ul.pricing_course{width:100%;}
+.widget .course_details ul.pricing_course{width:100%;z-index:1;}
 .widget .course_details > ul > li:first-child>strong{
 	padding-top: 8px;color:#70c989;
 	display: inline-block;
@@ -3582,7 +3622,10 @@ del{opacity:0.3;}
 	text-transform: uppercase;
 }
 .course_lesson b{display: none;}
-
+.course_lesson small+small {
+  display: block;
+  margin-left: 26px;
+}
 /*==== Modified Course curriculum ====*/
 
 .course_curriculum.accordion .course_section{
@@ -3821,6 +3864,10 @@ margin: 0 0 10px;
 border-bottom:1px solid rgba(255,255,255,0.2);
 color: rgba(255,255,255,0.8);
 }
+.footerwidget .item-options a{
+	color: rgba(255,255,255,0.8);
+	font-weight:600;
+}
 .footerwidget .item-options{
 font-weight: 600;
 font-size: 11px;
@@ -3863,6 +3910,7 @@ color: rgba(255,255,255,0.2);
 	#course-list .item-avatar{
 		width:200px;
 	}
+	.course_button.button{letter-spacing: 0;}
 	.note-tabs ul li{width:50%;}
 	#course-list .item{
 		margin-left: 220px;
@@ -3924,6 +3972,7 @@ color: rgba(255,255,255,0.2);
 }
 @media only screen and (max-width: 580px ){
 #buddypress div.item-list-tabs#subnav ul li{max-width:100% !important;}
+#buddypress div.item-list-tabs#subnav ul li a{border-left:1px solid #EFEFEF;}
 }
 @media only screen and (max-width: 480px ){
 	#buddypress div.dir-search {

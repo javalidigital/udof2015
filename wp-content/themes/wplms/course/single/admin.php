@@ -46,9 +46,14 @@ locate_template( array( 'course/single/submissions.php'  ), true );
 }else{
 
 
-
 	global $post;
-	$students=get_post_meta(get_the_ID(),'vibe_students',true);
+	if(function_exists('bp_course_get_students_count')){
+		$students=bp_course_get_students_count(get_the_ID());
+	}else{
+		$students=get_post_meta(get_the_ID(),'vibe_students',true);	
+	}
+
+	
 ?>	
 	<h4 class="total_students"><?php _e('Total number of Students in course','vibe'); ?><span><?php echo $students; ?></span></h4>
 	<h3><?php _e('Students Currently taking this course','vibe'); ?></h3>

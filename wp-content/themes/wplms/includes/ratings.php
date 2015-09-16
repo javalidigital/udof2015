@@ -43,14 +43,16 @@ if(get_post_type($_POST['comment_post_ID']) != 'course')
                 return;
 
   if ( ( isset( $_POST['review_title'] ) ) && ( $_POST['review_title'] != '') ){
-  $title = wp_filter_nohtml_kses($_POST['review_title']);
-  add_comment_meta( $comment_id, 'review_title', $title );
+    $title = wp_filter_nohtml_kses($_POST['review_title']);
+    add_comment_meta( $comment_id, 'review_title', $title );
   }
 
   if ( ( isset( $_POST['review_rating'] ) ) && ( $_POST['review_rating'] != '') ){
-  $rating = wp_filter_nohtml_kses($_POST['review_rating']);
-  add_comment_meta( $comment_id, 'review_rating', $rating );
+    $rating = wp_filter_nohtml_kses($_POST['review_rating']);
+    add_comment_meta( $comment_id, 'review_rating', $rating );
   }
+  $course_id = $_POST['comment_post_ID'];
+  do_action('wplms_course_review',$course_id,$rating,$title);
 }
 
 

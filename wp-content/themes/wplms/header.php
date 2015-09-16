@@ -44,11 +44,7 @@ wp_head();
         <div id="headertop" class="<?php if(isset($fix) && $fix){echo 'fix';} ?>">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-3"><div style="margin: 0px 10px; display: inline-block; *display: inline; *zoom:1;">
-<i class="gdlr-icon icon-phone" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> (11) 2709-2335</i>
-</div><div style="margin: 0px 10px ; display: inline-block; *display: inline;  *zoom:1;">
-<i class="gdlr-icon icon-envelope" style="color: #fc630e; font-size: 10px; text-transform: none; font-style: normal;"> atendimento@universidadedofutebol.com.br</i>
-</div>
+                    <div class="col-md-4 col-sm-3">
                        <a href="<?php echo vibe_site_url(); ?>" class="homeicon"><img src="<?php  echo apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png'); ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a> 
                     </div>
                     <div class="col-md-8 col-sm-9">
@@ -65,16 +61,10 @@ wp_head();
                         <ul class="topmenu">
                             <li><a href="#login" class="smallimg vbplogin"><?php _e('Login','vibe'); ?></a></li>
                             <li><?php if ( function_exists('bp_get_signup_allowed') && bp_get_signup_allowed() ) :
-                                printf( __( '<a href="%s" class="vbpregister" title="'.__('Create an account','vibe').'">'.__('Sign Up','vibe').'</a> ', 'vibe' ), site_url( BP_REGISTER_SLUG . '/' ) );
+                                $registration_link = apply_filters('wplms_buddypress_registration_link',site_url( BP_REGISTER_SLUG . '/' ));
+                                printf( __( '<a href="%s" class="vbpregister" title="'.__('Create an account','vibe').'">'.__('Sign Up','vibe').'</a> ', 'vibe' ), $registration_link );
                             endif; ?>
                             </li>
-                            
-                                <li><?php 
-                                        $course_search=vibe_get_option('course_search');
-                                        if(isset($course_search) && $course_search)
-                                            echo '<input type="hidden" value="course" name="post_type" />';
-                                    ?>
-                                    </li>
                         </ul>
                     <?php
                     endif;
@@ -121,9 +111,6 @@ wp_head();
                         ?>
                     </div>
                     <div class="col-md-9 col-sm-9">
-                         <div class="apoio"><p>Apoio educacional</p>
-                        <img src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA"><img src="http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">
-                        </div>
                         <div id="searchicon"><i class="icon-search-2"></i></div>
                         <div id="searchdiv">
                             <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">

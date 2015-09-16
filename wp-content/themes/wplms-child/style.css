@@ -1,9 +1,9 @@
  	/*
-Theme Name:     WPLMS-child
-Theme URI:      http:// guilhermewp.com.br
-Description:    Tema filho para o wplms
-Author:         Guilherme Fonseca
-Author URI:     http://guilhermewp.com.br
+Theme Name:     WPLMS-UdoF
+Theme URI:      http://javalidigital.com.br
+Description:    Child theme for WPLMS
+Author:         Javali Digital
+Author URI:     http://javalidigital.com.br
 Template:       wplms
 Version:        0.1.0
 */
@@ -74,7 +74,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
 .widget_course_list li img {max-width: 66px;}
 /*icons intro*/
 /*LAYER SLIDER*/
-.ls-gpuhack {background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/06/pattern-slider-home.png);}
+.ls-gpuhack {/*background-image: url(img/pattern-slider-home.png);*/}
 /*F I M  -  TOPO E INTRO*/
 /*Botão de busca*/
 #searchsubmit {width: 100%; background-color: rgb(0, 126, 0);}
@@ -91,7 +91,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
 .vc_btn-juicy_pink, a.vc_btn-juicy_pink {background-color:#50485b !important;}
 /* Páginas comuns - categorias e etc.. */
 #title, #memberstitle{
-  background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/pages-udof-dark.jpg);
+  background-image: url(img/pages-udof-dark.jpg);
   /*background-color: rgb(49, 205, 49);*/
   margin-top: -5px;
   /*padding: 99px 0 0;*/
@@ -107,7 +107,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
   float: right;
   }
 .breadcrumbs a {color:#fc630e!important;}
-.pagetitle h1 {color: #fff; margin-top: -33px}
+.pagetitle h1 {color: #fff; }
 .pagetitle h5 {color: #fff;}
 .breadcrumbs a {color: #fff;}
 /*F i m PÁGINAS*/
@@ -117,7 +117,7 @@ nav .menu li a {margin-bottom: 10px; font-size: 16px; margin: 0px 5px;}
 /*SLIDER DE POSTS*/
 h2{font-size: 20px!important;}
 /*.box_open_content {max-height: 556px;}*/
-.vc_col-sm-8 {max-height: 556px;}
+
 .wpb_gallery .wpb_flexslider .flex-direction-nav a {color: #fff;}
 .flexslider .slides img {max-height: 422px;}
 .wpb_gallery .wpb_flexslider .flex-control-nav {display: none; bottom: -4px!important;}
@@ -148,7 +148,7 @@ body > div.et_bloom_flyin.et_bloom_optin.et_bloom_resize.et_bloom_flyin_right.et
 body > div.et_bloom_flyin.et_bloom_optin.et_bloom_resize.et_bloom_flyin_right.et_bloom_optin_3.et_bloom_auto_popup.et_bloom_visible.et_bloom_animated > div > div > div.et_bloom_form_content.et_bloom_1_field.et_bloom_bottom_stacked > form > button {margin: 0 auto!important;}
 /*Widgets_home_news*/
 .flexslider {border-style:none !important;}
-.wpb_posts_slider .flex-caption{background-color:#464261 !important; /*background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/grid.png?id=218); background-color: rgb(102, 150, 237)!important;*/}
+.wpb_posts_slider .flex-caption{background-color:#464261 !important;}
 /*Depoimento home*/
 .sldr_title {text-align:center; font-size:33px !important;}
 .testimonial_slider__round.testimonial_slider_set {top:-36px; margin-bottom:-40px;}
@@ -162,7 +162,7 @@ pre {background-color: #fff;}
 .parceiros_slider img{padding-right: 20px;}
 /*FOOTER*/
 
-footer {background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/fundo_fotter.png);
+footer {background-image: url(img/fundo_fotter.png);
  background-repeat: no-repeat !important;
  background-position: center !important;
  background-size: cover !important;
@@ -176,7 +176,7 @@ footer {background-image: url(http://udof2015.javalidigital.com.br/wp-content/up
 .et_bloom .et_bloom_1_field p.et_bloom_popup_input {width: 64%}
 .et_bloom .et_bloom_form_content button {width: 16%;}
 .et_bloom .et_bloom_optin_1 .et_bloom_form_content {
-background-image: url(http://udof2015.javalidigital.com.br/wp-content/uploads/2015/04/news-bg.png);
+background-image: url(img/news-bg.png);
 background-position: 890px 0px;
   background-size: 249px 111px;
   background-repeat: no-repeat;
@@ -384,7 +384,7 @@ p.product.woocommerce.add_to_cart_inline > .amount {display: none!important;}
 #content > div > div.vc_row.wpb_row.vc_row-fluid.nossos-cursos-dest-topo > div > div > div.vc_row.wpb_row.vc_inner.vc_row-fluid > div > div > div > div > ul > li > div > a.button.add_to_cart_button.product_type_simple {background-color: #fc630e!important;}
 
 /************POSTS TITLE****/
-#title > div > div > div:nth-child(1) {margin-bottom: 68px; padding: 0px 42px!important;}
+#title > div > div > div:nth-child(1) {padding: 0px 42px!important;}
 #title > div > div > div:nth-child(1) > ul {width: 120%!important;}
 h4 {font-size: 15px!important;}
 #title > div > div > div.col-md-9.col-sm-8 > div > h1 > ul > li > a {padding: 30px;}
@@ -392,3 +392,99 @@ h4 {font-size: 15px!important;}
 #content > div > div > div.col-md-9.col-sm-8 > div > div > div.excerpt.thumb > h3 {font-size: 15px!important;}
 /*******S I N G L E POST - CATEGORIA TITLE*******/
 #title > div > div > div.col-md-9.col-sm-8 > div > h1 > ul > li > a {color: #fff!important;}
+
+
+
+
+
+/* NEW STYLES */
+
+/***** HEADER ****/
+
+#title {
+  margin-top:0;
+  margin-bottom:30px;
+  padding: 30px 0;
+}
+
+
+.page .content,
+.single .content,
+.padder.content{
+  margin:0;
+  padding: 0;  
+}
+
+.wpb_row, .wpb_content_element, ul.wpb_thumbnails-fluid > li, .last_toggle_el_margin, .wpb_button {
+  margin-bottom:0;
+}
+
+/* Slider Typo */
+
+
+
+/***** BODY ****/
+
+/* TYPOGRAPHY */
+#content ul {
+  list-style: inside !important;
+  margin-top: 3px;
+}
+
+  #content ul li {
+    margin: 3px 0;
+  }
+
+/* COMO FUNCIONA */
+.box_como_black h4, .box_como_black p {
+  color:#FFF;
+}
+
+/* PERSONAS */
+.form_leads_personas {
+  color: #FFF;
+  text-align: center;
+}
+
+  .form_leads_personas .wpb_content_element {
+    margin-bottom: 15px;
+  }
+
+  .form_leads_personas form {
+    text-align: left;
+  }
+
+  .form_leads_personas form input[type=submit] {
+    width: 100%;
+    color: #FFF;
+    background: #E57401;
+    border-radius: 4px;
+    font-size: 13px;
+    border: none;
+    padding: 12px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 7px;
+  }
+
+    .form_leads_personas form input[type=submit]:hover {
+      background-color: #fc630e;
+    }
+
+/* METODOLOGIA */
+.table_metodologia .vc_table_cell {
+  width: 44%;
+}
+
+table.vc-table-plugin-theme-simple_green.table_metodologia td {
+  padding: 3%;
+}
+
+/* QUEM SOMOS */
+.title_transformacao h4 {
+  color: #FFF;
+}
+
+
+
+

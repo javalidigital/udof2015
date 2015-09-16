@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vibe ShortCodes v1.8.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 15:59+0530\n"
-"PO-Revision-Date: 2015-03-31 15:59+0530\n"
+"POT-Creation-Date: 2015-05-04 18:05+0530\n"
+"PO-Revision-Date: 2015-05-04 18:05+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: VibeThemes <vibethemes@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -37,46 +37,83 @@ msgid "Message sent!"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:129
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:141
 msgid "EARNED"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:153
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:165
 msgid "Check all Courses created by "
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:154
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:166
 msgid "More Courses by "
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1329
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1422
 msgid "MEMBERS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1332
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1425
 msgid "COURSES"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1335
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1428
 msgid "INSTRUCTORS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1338
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1431
 msgid "GROUPS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1341
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1434
 msgid "SUBSCRIPTIONS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1344
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1437
 msgid "SALES"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1347
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1440
 msgid "EARNINGS"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1472
+msgid "SHOW HINT"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1473
+msgid "HINT"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1485
+msgid "FALSE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1485
+msgid "TRUE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1532
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1535
+msgid "Type Answer"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1543
+msgid "Check Answer"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1558
+msgid "Explaination"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1585
+msgid "Type Keywords.."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1586
+msgid "Search"
 msgstr ""
 
 # @ vibe-shortcodes
@@ -945,9 +982,8 @@ msgstr ""
 msgid "Insert Course Shortcode"
 msgstr ""
 
-# @ vibe-shortcodes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/tinymce/config.php:745
-msgid "Select Testimonial"
+msgid "Select Side"
 msgstr ""
 
 # @ vibe-shortcodes

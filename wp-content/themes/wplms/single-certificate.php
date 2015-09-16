@@ -12,10 +12,12 @@ $bgimg_id=get_post_meta($post->ID,'vibe_background_image',true);
 
 $bgimg=wp_get_attachment_info( $bgimg_id );
 
+$width = get_post_meta(get_the_ID(),'vibe_certificate_width',true);
+$height = get_post_meta(get_the_ID(),'vibe_certificate_height',true);
 
 do_action('wplms_certificate_before_full_content');
 ?>
-<section id="certificate">
+<section id="certificate" <?php echo 'style="'.(is_numeric($width)?'width:'.$width.'px;':'').''.(is_numeric($height)?'height:'.$height.'px':'').'"'; ?>>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -23,14 +25,23 @@ do_action('wplms_certificate_before_full_content');
                     <?php do_action('wplms_certificate_before_content'); ?>
                     <div class="extra_buttons">
                         <?php do_action('wplms_certificate_extra_buttons');
-                        if(vibe_validate($print)) 
+                        if(vibe_validate($print)){
                             echo '<a href="#" class="certificate_print"><i class="icon-printer-1"></i></a>';
+                            echo '<a href="#" class="certificate_pdf"><i class="icon-file"></i></a>';
+                        }
                         ?>
                     </div>
                     <div class="certificate_content <?php echo $class;?>" style="<?php
                             if(isset($bgimg_id) && $bgimg_id && isset($bgimg['src']))
                                 echo 'background:url('.$bgimg['src'].');';
-                        ?>">
+                        ?>" <?php 
+                        
+                        if(is_numeric($width))
+                            echo 'data-width="'.$width.'" ';
+                        
+                        if(is_numeric($height))
+                            echo 'data-height="'.$height.'" ';
+                        ?>>
                         <?php echo (isset($css)?'<style>'.$css.'</style>':'');?>
                         <?php
                             the_content(); 

@@ -3,7 +3,7 @@
 Plugin Name: WPLMS Dashboard
 Plugin URI: http://www.Vibethemes.com
 Description: Student/Instructor Dashboard for WPLMS theme
-Version: 1.9.3
+Version: 1.9.8
 Author: VibeThemes
 Author URI: http://www.vibethemes.com
 License: as Per Themeforest GuideLines
@@ -32,13 +32,14 @@ include_once 'includes/widgets/student/todo_task.php';
 include_once 'includes/widgets/student/student_stats.php';
 include_once 'includes/widgets/student/dash_stats.php';
 include_once 'includes/widgets/student/notes_discussions.php';
-//include_once 'includes/widgets/student/calendar.php';
+include_once 'includes/widgets/student/my_modules.php';
 include_once 'includes/widgets/student/news.php';
 include_once 'includes/widgets/instructor/break.php';
 include_once 'includes/widgets/instructor/dash_instructor_stats.php';
 include_once 'includes/widgets/instructor/instructor_stats.php';
 include_once 'includes/widgets/instructor/instructor_commissions.php';
 include_once 'includes/widgets/instructor/announcements.php';
+include_once 'includes/widgets/instructor/instructing_modules.php';
 
 add_action( 'init', 'wplms_dashboard_update' );
 function wplms_dashboard_update() {

@@ -190,6 +190,7 @@ function bp_course_admin_add_students(){
 	}
 }
 
+
 add_action('wplms_course_admin_bulk_actions','bp_course_admin_assign_students',20);
 function bp_course_admin_assign_students(){
 	$instructor_assign_students = vibe_get_option('instructor_assign_students');
@@ -205,6 +206,26 @@ function bp_course_admin_assign_students(){
 				<option value="remove_certificate">'.__('REMOVE COURSE CERTIFICATE','vibe').'</option>
 			</select>
 			<a href="#" id="assign_course_badge_certificate" data-course="'.get_the_ID().'" class="button full">'.__('Assign Action','vibe').'</a>';
+	 	echo '</div>';
+	}
+}
+
+add_action('wplms_course_admin_bulk_actions','bp_course_admin_change_status',20);
+function bp_course_admin_change_status(){
+	$instructor_assign_students = vibe_get_option('instructor_assign_students');
+	if((isset($instructor_assign_students) && $instructor_assign_students) || current_user_can('publish_posts')){
+		$user_id = get_current_user_id();
+		echo'
+		<div class="bulk_change_status">
+			<br />
+			<select id="status_action" name="status_action">
+				<option value="start_course">'.__('Start Course','vibe').'</option>
+				<option value="continue_course">'.__('Continue Course','vibe').'</option>
+				<option value="under_evaluation">'.__('Under Evaluation','vibe').'</option>
+				<option value="finish_course">'.__('Finished Course','vibe').'</option>
+			</select>
+			<input type="number" id="finish_marks" class="hide form_field" placeholder="'.__('Enter marks','vibe').'" />
+			<a href="#" id="change_course_status" data-course="'.get_the_ID().'" class="button full">'.__('Change Course Status','vibe').'</a>';
 	 	echo '</div>';
 	}
 }

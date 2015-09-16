@@ -23,8 +23,13 @@ p.yit-wcan-display-color,
 p#yit-wcan-style,
 p#yit-wcan-show-count,
 p.yit-wcan-display-tags,
-p.yit-wcan-display-brands {
+p.yit-wcan-display-brands,
+div.yit-wcan-widget-tag-list {
     display: none;
+}
+
+div.yit-wcan-widget-tag-list.tags{
+    display: block;
 }
 
 p#yit-wcan-style.yit-wcan-style-color,
@@ -179,6 +184,18 @@ input.yith-wcan-price-filter-input.widefat {
 
 input#yit_wcan_options_yith_wcan_ajax_shop_pagination,
 input#yit_wcan_options_yith_wcan_ajax_shop_container,
-input#yit_wcan_options_yith_wcan_ajax_shop_result_container {
+input#yit_wcan_options_yith_wcan_ajax_shop_result_container,
+input#yit_wcan_options_yith_wcan_ajax_widget_title_class,
+input#yit_wcan_options_yith_wcan_ajax_widget_title_tag {
     width: 230px;
+}
+
+div#yit_wcan_options_yith_wcan_custom_style-container .option {
+    width: 85%;
+}
+
+textarea#yit_wcan_options_yith_wcan_custom_style {
+    min-height: 300px;
+    padding: 8px;
+    resize: none;
 }

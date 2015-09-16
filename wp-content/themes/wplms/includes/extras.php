@@ -222,11 +222,24 @@ class vibe_extras{
     /* === End Social icons ===*/
 
     function vibe_add_user_id_column($columns) {
+        $columns['user_status'] = __('Status','vibe');
         $columns['user_id'] = __('User ID','vibe');
         return $columns;
     }
     function vibe_show_user_id_column_content($value, $column_name, $user_id) {
-        $user = get_userdata( $user_id );
+        if ( 'user_status' == $column_name ){
+            $user = get_userdata( $user_id );
+            $current_userId = get_current_user_ID();
+            $last_activity = get_user_meta($user_id,'last_activity',true);
+            $threshold = apply_filters('wplms_login_threshold',1800);
+            $difference = time()-strtotime($last_activity) - $threshold;
+
+            if($difference<=0 || $current_userId == $user_id){
+                return '<span class="user_online" title="'.__('Last Logged in on ','vibe').$last_activity.'"> '.__('Online','vibe').'</span>';
+            }else{
+                return '<span class="user_offline" title="'.__('Last Logged in on ','vibe').$last_activity.'"> '.__('Offline','vibe').'</span>';
+            }
+        }
         if ( 'user_id' == $column_name )
             return $user_id;
         return $value;
@@ -284,7 +297,6 @@ class vibe_extras{
                 if(isset($show_social_tooltip) && $show_social_tooltip)
                     $tip='data-placement="'.$tip_direction.'" title="'.__('Share on ','vibe').$social.'"';
                
-                
                 $output .='<li>';
                 $output .= '<a href="'.$social_sharing[$social].'" '.$tip.' target="_blank" class="'.strtolower($social).((isset($show_social_tooltip) && $show_social_tooltip)?' tip':'').'"><i class="icon-'.strtolower($social).'"></i></a>';
                 $output .='</li>';
@@ -299,6 +311,10 @@ new vibe_extras;
 
 if(!function_exists('social_sharing')){
     function social_sharing($tip_direction='top'){
+        if ( function_exists( 'sharing_display' ) ){
+            echo sharing_display();
+            return '';
+        }
         $vibe_extras = new vibe_extras; 
         return $vibe_extras->social_sharing($tip_direction);
     }

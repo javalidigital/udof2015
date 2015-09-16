@@ -16,9 +16,48 @@
 
 					</div><!-- #item-header -->
 			
+				<div id="item-nav">
+					<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+						<ul>
+							<?php bp_get_options_nav(); ?>
+							<?php
 
+							if(function_exists('bp_course_nav_menu'))
+								bp_course_nav_menu();
+							else{
+							?>	
+							<li id="home" class="<?php echo (!isset($_GET['action'])?'selected':''); ?>"><a href="<?php bp_course_permalink(); ?>"><?php  _e( 'Home', 'vibe' ); ?></a></li>
+							<li id="curriculum" class="<?php echo (($_GET['action']=='curriculum')?'selected':''); ?>"><a href="<?php bp_course_permalink(); ?>?action=curriculum"><?php  _e( 'Curriculum', 'vibe' ); ?></a></li>
+							<li id="members" class="<?php echo (($_GET['action']=='members')?'selected':''); ?>"><a href="<?php bp_course_permalink(); ?>?action=members"><?php  _e( 'Members', 'vibe' ); ?></a></li>
+							
+							<?php
+							}
+							$vgroup=get_post_meta(get_the_ID(),'vibe_group',true);
+							if(isset($vgroup) && $vgroup){
+								$group=groups_get_group(array('group_id'=>$vgroup));
+							?>
+							<li id="group"><a href="<?php echo bp_get_group_permalink($group); ?>"><?php  _e( 'Group', 'vibe' ); ?></a></li>
+							<?php
+							}
+							$forum=apply_filters('wplms_course_forum_privacy',get_post_meta(get_the_ID(),'vibe_forum',true));
+							if(isset($forum) && $forum){
+								//echo '<li id="forum" class="'.(($_GET['action']=='forum')?'selected':'').'"><a href="?action=forum">'._e( 'Forum', 'vibe' ).'</a></li>';
+							?>
+							<li id="forum"><a href="<?php echo get_permalink($forum); ?>"><?php  _e( 'Forum', 'vibe' ); ?></a></li>
+							<?php 
+							}
+							if(is_super_admin() || is_instructor()){
+								?>
+								<li id="admin" class="<?php echo ((isset($_GET['action']) && $_GET['action']=='admin')?'selected':''); ?>"><a href="<?php bp_course_permalink(); ?>?action=admin"><?php  _e( 'Admin', 'vibe' ); ?></a></li>
+								<?php
+							}
+							?>
+							<?php do_action( 'bp_course_options_nav' ); ?>
+						</ul>
+					</div>
+				</div><!-- #item-nav -->
 			</div>
-			<div class="single-curso-page col-md-6 col-sm-6">	
+			<div class="col-md-6 col-sm-6">	
 			<?php do_action( 'template_notices' ); ?>
 			<div id="item-body">
 
@@ -44,6 +83,9 @@
 						break;
 						case 'events':
 							locate_template( array( 'course/single/events.php'  ), true );
+						break;
+						case 'forum':
+							locate_template( array( 'course/single/forums.php'  ), true );
 						break;
 						case 'admin':
 							$uid = bp_loggedin_user_id();
@@ -79,7 +121,6 @@
 
 						bp_course_check_course_complete();
 						$user_id=get_current_user_id();
-						do_action('badgeos_wplms_submit_course',$post->ID);
 						
 					// Looking at home location
 					}else if ( bp_is_course_home() ){
@@ -123,45 +164,6 @@
 				<div class="widget pricing">
 					<?php the_course_button(); ?>
 					<?php the_course_details(); ?>
-					<!-- CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL -->
-					<!-- CAMPO - INICIO -->
-						                <?php $inicio = get_post_custom_values( 'inicio' ); ?>
-									<?php if( !empty($inicio) ) : ?>
-								<div class="course_details">
-									<ul>
-										<li class="course_details-custom">Início: <?php echo $inicio[0]; ?><i class="fa fa-calendar"></i></li>
-									</ul>
-								</div><!-- end INICIO -->
-									<?php endif; ?>
-									<!-- CAMPO - DURACAO -->
-						                <?php $duracao = get_post_custom_values( 'duracao' ); ?>
-									<?php if( !empty($duracao) ) : ?>
-								<div class="course_details">
-									<ul>
-										<li class="course_details-custom">Duração: <?php echo $duracao[0]; ?><i class="fa fa-tachometer"></i></li>
-									</ul>
-								</div><!-- end DURACAO -->
-									<?php endif; ?>
-										<!-- CAMPO - CARGA-HORARIA -->
-						                <?php $carga_horaria = get_post_custom_values( 'carga_horaria' ); ?>
-									<?php if( !empty($carga_horaria) ) : ?>
-								<div class="course_details">
-									<ul>
-										<li class="course_details-custom">Carga Horária: <?php echo $carga_horaria[0]; ?><i class="fa fa-clock-o"></i></li>
-									</ul>
-								</div><!-- end CARGA HORARIA -->
-									<?php endif; ?>
-										<!-- CAMPO - FORMATO -->
-						                <?php $formato = get_post_custom_values( 'formato' ); ?>
-									<?php if( !empty($formato) ) : ?>
-								<div class="course_details">
-									<ul>
-										<li class="course_details-custom">Formato: <?php echo $formato[0]; ?><i class="fa fa-wifi"></i></li>
-									</ul>
-								</div><!-- end FORMATO-->
-									<?php endif; ?>
-						<!-- F I M *** CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL *** -->
-						
 				</div>
 
 			 	<?php

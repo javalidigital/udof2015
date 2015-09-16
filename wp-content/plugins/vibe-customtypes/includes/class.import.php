@@ -50,7 +50,7 @@ class wplms_import{
 		    if (false === $ext = array_search(
 		        $finfo->file($_FILES['upfile']['tmp_name']),
 		        array(
-		            'text/plain','text/csv','text/tsv'
+		            'text/plain','text/csv','text/tsv','text/html'
 		        ),
 		        true
 		    )) {

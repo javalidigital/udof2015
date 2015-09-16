@@ -19,7 +19,7 @@ do_action('wplms_before_start_course');
 
 get_header('buddypress');
 
-do_action('wplms_start_course');
+do_action('wplms_start_course',get_the_ID(),get_current_user_ID());
 
 $user_id = get_current_user_id();  
 
@@ -161,6 +161,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                   echo '</div>';
 
                   echo  '<div class="col-md-6">';
+                  $quiz_passing_flag = true;
                     if(!isset($done_flag) || !$done_flag){
                             if(get_post_type($units[($k)]) == 'quiz'){
 
@@ -182,6 +183,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                         if(get_post_type($units[($k)]) == 'quiz'){
                             $quiz_status = get_user_meta($user_id,$units[($k)],true);
                             $quiz_class = apply_filters('wplms_in_course_quiz','');
+                            $quiz_passing_flag = apply_filters('wplms_next_unit_access',true,$units[($k)]);
                             if(is_numeric($quiz_status)){
                                 if($quiz_status < time()){ 
                                     echo '<a href="'.bp_loggedin_user_domain().BP_COURSE_SLUG.'/'.BP_COURSE_RESULTS_SLUG.'/?action='.$units[($k)].'" class="quiz_results_popup">'.__('Check Results','vibe').'</a>';
@@ -204,7 +206,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                     if(isset($nextunit_access) && $nextunit_access){
                         for($i=0;$i<$next;$i++){
                             $status = get_post_meta($units[$i],$user_id,true);
-                            if(!empty($status)){
+                            if(!empty($status) && (!isset($done_flag) || !$done_flag)){
                                 $nextflag=0;
                                 break;
                             }
@@ -213,14 +215,16 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                     $class = 'unit unit_button';
 
                     $unit_lock = vibe_get_option('nextunit_access');
-                    if(isset($unit_lock) && $unit_lock){
+                    if(isset($unit_lock) && $unit_lock && (!isset($done_flag) || !$done_flag)){
                         $class .=' hide';
                     }
                     if($nextflag){
                         if(get_post_type($units[$next]) == 'quiz'){
-                            echo '<a href="#" id="next_quiz" data-unit="'.$units[$next].'" class="'.$class.'">'.__('Next Quiz','vibe').'</a>';
+                            if($quiz_passing_flag)
+                                echo '<a href="#" id="next_quiz" data-unit="'.$units[$next].'" class="'.$class.'">'.__('Next Quiz','vibe').'</a>';
                         }else{
                             if(get_post_type($units[$next]) == 'unit'){ //Display Next unit link because current unit is a quiz on Page reload
+                               if($quiz_passing_flag)
                                 echo '<a href="#" id="next_unit" data-unit="'.$units[$next].'" class="'.$class.'">'.__('Next Unit','vibe').'</a>';
                             }
                         } 
@@ -304,9 +308,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
             		<a href="<?php echo get_permalink($course_id); ?>" class="unit_button full button"><?php _e('BACK TO COURSE','vibe'); ?></a>
             		<form action="<?php echo get_permalink($course_id); ?>" method="post">
             		<?php
-            		$finishbit=get_post_meta($course_id,$user_id,true);
-            		if(isset($finishbit) && $finishbit!=''){
-            			if($finishbit>0 && $finishbit < 3){
+            		$finishbit=bp_course_get_user_course_status($user_id,$course_id);
+            		if(is_numeric($finishbit)){
+            			if($finishbit < 4){
                             echo '<input type="submit" name="review_course" class="review_course unit_button full button" value="'. __('REVIEW COURSE ','vibe').'" />';
             			    echo '<input type="submit" name="submit_course" class="review_course unit_button full button" value="'. __('FINISH COURSE ','vibe').'" />';
             			}

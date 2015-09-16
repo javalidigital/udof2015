@@ -13,8 +13,10 @@ class wplms_instructor_commission_stats extends WP_Widget {
     $widget_ops = array( 'classname' => 'wplms_instructor_commission_stats', 'description' => __('WooCommerce Commission Stats  for instructors', 'wplms-dashboard') );
     $control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'wplms_instructor_commission_stats' );
     $this->WP_Widget( 'wplms_instructor_commission_stats', __(' DASHBOARD : Instructor Commission Stats', 'wplms-dashboard'), $widget_ops, $control_ops );
-    wp_enqueue_script( 'wplms-raphael', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',array('jquery'),true);
-    wp_enqueue_script( 'wplms-morris', 'http://cdn.oesmith.co.uk/morris-0.5.0.min.js',array('jquery'),true);
+    if(function_exists('bp_is_my_profile') && bp_is_my_profile()){
+      wp_enqueue_script( 'wplms-raphael', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',array('jquery'),true);
+      wp_enqueue_script( 'wplms-morris', 'http://cdn.oesmith.co.uk/morris-0.5.0.min.js',array('jquery'),true);
+    }
     add_action('wp_ajax_generate_commission_data',array($this,'generate_commission_data'));
   }
         
@@ -35,6 +37,7 @@ class wplms_instructor_commission_stats extends WP_Widget {
 
 
     $commision_array =  vibe_sanitize(get_user_meta($user_id,'commission_data',false));
+    $commission_recieved = vibe_sanitize(get_user_meta($user_id,'commission_recieved',false));
     $sales_pie = vibe_sanitize(get_user_meta($user_id,'sales_pie',false));
     $total_commission = get_user_meta($user_id,'total_commission',true);
 
@@ -56,6 +59,9 @@ class wplms_instructor_commission_stats extends WP_Widget {
           echo '<ul class="course_sales_list">';
           
           foreach($sales_pie as $cid=>$sales){
+            if($cid == 'commission'){
+              echo '<li>'.__('Commissions Paid','wplms-dashboard').'<strong>'.$sales.'</strong></li>';
+            }
             $ctitle=get_the_title($cid);
             echo '<li>'.$ctitle.'<strong>'.$sales.'</strong></li>';
             $sales_pie_array[]=array(
@@ -73,10 +79,20 @@ class wplms_instructor_commission_stats extends WP_Widget {
     echo '</div>';
     echo $after_widget.'
     </div>';
-
-     echo '<script>
+    if(isset($commision_array) && is_array($commision_array )){
+        foreach($commision_array as $key=>$commission){ 
+            if(isset($commission_recieved[$key])){ 
+              $commision_array[$key]['commission'] = $commission_recieved[$key]['commission'];
+            }else{
+              $commision_array[$key]['commission'] = 0;
+            }
+        }
+    }
+    echo '<script>
             var instructor_commission_data=[';$first=0;
+    
     if(isset($commision_array) && is_array($commision_array)) {       
+
     foreach($commision_array as $data){
       if($first)
         echo ',';
@@ -93,7 +109,7 @@ class wplms_instructor_commission_stats extends WP_Widget {
       echo str_replace('"','\'',json_encode($data,JSON_NUMERIC_CHECK));
     }
     echo  '];
-            </script>';
+    </script>';
 }
 
     /** @see WP_Widget::update -- do not rename this */
@@ -162,7 +178,7 @@ class wplms_instructor_commission_stats extends WP_Widget {
     $total_commission=0;
     $commision_array=array();
     $course_product_map=array();
-
+    $daily_val = array();
     if(count($instructor_courses)){
 
       foreach($instructor_courses as $key => $value){
@@ -183,8 +199,8 @@ class wplms_instructor_commission_stats extends WP_Widget {
         die();
       
       $product_id_string=implode(',',$product_ids);
-      $item_meta_table =$wpdb->prefix.'woocommerce_order_itemmeta';
-      $order_items_table=$wpdb->prefix.'woocommerce_order_items';
+      $item_meta_table = $wpdb->prefix.'woocommerce_order_itemmeta';
+      $order_items_table= $wpdb->prefix.'woocommerce_order_items';
 
       // CALCULATED COMMISSIONS
       $product_sales=$wpdb->get_results("
@@ -202,19 +218,12 @@ class wplms_instructor_commission_stats extends WP_Widget {
       if(is_array($product_sales) && $i){
 
         foreach($product_sales as $sale){
-         // echo $sale['date'].' => '. $sale['value'].' - '.$sale['order_id'].' | ';
           $pid=wc_get_order_item_meta( $sale['item_id'],'_product_id',true);
-          
-          $ctitle=get_the_title($course_product_map[$pid]);//.' - '.$course_product_map[$pid];
-
+          $ctitle=get_the_title($course_product_map[$pid]);
           $sales_pie[$course_product_map[$pid]] += $sale['value'];
-
           $val=$sale['value'];
-
           $order_ids[]=$sale['order_id'];
-
           $total_commission += $val;
-
           $daily_val[$sale['date']]+=$val;
         }
       }
@@ -228,7 +237,7 @@ class wplms_instructor_commission_stats extends WP_Widget {
         AND  post_meta.meta_key = '_completed_date'
         AND   order_meta.order_item_id IN (
           SELECT order_item_id
-          FROM wp_woocommerce_order_itemmeta as t
+          FROM $item_meta_table as t
           WHERE t.meta_key = '_product_id'
           AND t.meta_value IN  ($product_id_string)
           )";
@@ -265,19 +274,46 @@ class wplms_instructor_commission_stats extends WP_Widget {
 
 
         if(is_array($daily_val)){
-          ksort($daily_val);
 
-          foreach($daily_val as $key => $value){
-            $commision_array[$key]=array(
+          if(count($daily_val)){
+            ksort($daily_val);
+            foreach($daily_val as $key => $value){
+            $commission_array[$key]=array(
                 'date' => date('M', mktime(0, 0, 0, $key, 10)),
                 'sales'=>$value);
             }
-
-            
-            update_user_meta($user_id,'commission_data',$commision_array);
+          }
+           
+            update_user_meta($user_id,'commission_data',$commission_array);
             update_user_meta($user_id,'sales_pie',$sales_pie);
             update_user_meta($user_id,'total_commission',$total_commission);
         }
+
+        // Commission Paid out calculation
+        $flag = 0;
+        $commission_recieved = array();
+        $commissions_paid = $wpdb->get_results($wpdb->prepare("
+          SELECT meta_value,post_id FROM {$wpdb->postmeta} 
+          WHERE meta_key = %s
+         ",'vibe_instructor_commissions'));
+
+        if(isset($commissions_paid) && is_Array($commissions_paid) && count($commissions_paid)){
+          foreach($commissions_paid as $commission){
+             if(isset($commission->meta_value[$user_id]) && isset($commission->meta_value[$user_id]['commission'])){
+                $flag=1;
+                $commission->meta_value = unserialize($commission->meta_value);
+                $date = $wpdb->get_var($wpdb->prepare("SELECT MONTH(post_date) FROM {$wpdb->posts} WHERE ID = %d",$commission->post_id));
+                $k = date('n', mktime(0, 0, 0, $date, 10));
+                $commission_recieved[$k]=array(
+                    'date' => date('M', mktime(0, 0, 0, $date, 10)),
+                    'commission'=>$commission->meta_value[$user_id]['commission']);
+                }
+             }
+          }
+
+        if($flag || !count($commission_recieved)){
+          update_user_meta($user_id,'commission_recieved',$commission_recieved);
+        }  
         echo 1;
         die();
       }// End count courses

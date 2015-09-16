@@ -28,44 +28,6 @@ get_header();
                     ?>
                 </div>
                 <div class="sidebar">
-                                    <!-- CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL -->
-                    <!-- CAMPO - INICIO -->
-                                        <?php $inicio = get_post_custom_values( 'inicio' ); ?>
-                                    <?php if( !empty($inicio) ) : ?>
-                                <div class="course_details">
-                                    <ul>
-                                        <li class="course_details-custom">Início: <?php echo $inicio[0]; ?><i class="fa fa-calendar"></i></li>
-                                    </ul>
-                                </div><!-- end INICIO -->
-                                    <?php endif; ?>
-                                    <!-- CAMPO - DURACAO -->
-                                        <?php $duracao = get_post_custom_values( 'duracao' ); ?>
-                                    <?php if( !empty($duracao) ) : ?>
-                                <div class="course_details">
-                                    <ul>
-                                        <li class="course_details-custom">Duração: <?php echo $duracao[0]; ?><i class="fa fa-tachometer"></i></li>
-                                    </ul>
-                                </div><!-- end DURACAO -->
-                                    <?php endif; ?>
-                                        <!-- CAMPO - CARGA-HORARIA -->
-                                        <?php $carga_horaria = get_post_custom_values( 'carga_horaria' ); ?>
-                                    <?php if( !empty($carga_horaria) ) : ?>
-                                <div class="course_details">
-                                    <ul>
-                                        <li class="course_details-custom">Carga Horária: <?php echo $carga_horaria[0]; ?><i class="fa fa-clock-o"></i></li>
-                                    </ul>
-                                </div><!-- end CARGA HORARIA -->
-                                    <?php endif; ?>
-                                        <!-- CAMPO - FORMATO -->
-                                        <?php $formato = get_post_custom_values( 'formato' ); ?>
-                                    <?php if( !empty($formato) ) : ?>
-                                <div class="course_details">
-                                    <ul>
-                                        <li class="course_details-custom">Formato: <?php echo $formato[0]; ?><i class="fa fa-wifi"></i></li>
-                                    </ul>
-                                </div><!-- end FORMATO-->
-                                    <?php endif; ?>
-                        <!-- F I M *** CUSTOM FIELDS BY - GUILHERME WP & JAVALI DIGITAL *** -->
                     <?php do_action('woocommerce_sidebar'); ?>
                     <?php
                         do_action('woocommerce_after_main_content');

@@ -3,7 +3,7 @@
 Plugin Name: WPLMS Assignments
 Plugin URI: http://www.Vibethemes.com
 Description: COURSE Assignments plugin for WPLMS 
-Version: 1.9.3
+Version: 1.9.8.1
 Author: VibeThemes
 Author URI: http://www.vibethemes.com
 License: as Per Themeforest GuideLines
@@ -31,7 +31,7 @@ function initialize_assignments(){
     $wplms_assignment = new WPLMS_Assignments();    
 }
 if(class_exists('WPLMS_Assignments')){	
-    add_action('plugins_loaded','initialize_assignments');
+    add_action('plugins_loaded','initialize_assignments',100);
 }
 
 
@@ -56,16 +56,21 @@ function wplms_assignments_update() {
 add_action('wp_enqueue_scripts','wplms_assignments_enqueue_scripts');
 
 function wplms_assignments_enqueue_scripts(){
+	if(is_singular('wplms-assignment') || ($_GET['action'] == 'admin' && isset($_GET['submissions']))){
+
         wp_enqueue_style( 'wplms-assignments-css', plugins_url( 'css/wplms-assignments.css' , __FILE__ ));
         wp_enqueue_script( 'wplms-assignments-js', plugins_url( 'js/wplms-assignments.js' , __FILE__ ));
         $translation_array = array( 
-			'assignment_reset' => __( 'This step is irreversible. All Assignment subsmissions would be reset for this user. Are you sure you want to Reset the Assignment for this User? ','wplms-assignments' ), 
+			'assignment_reset' => __( 'This step is irreversible. All Assignment submissions would be reset for this user. Are you sure you want to Reset the Assignment for this User? ','wplms-assignments' ), 
 			'assignment_reset_button' => __( 'Confirm, Assignment reset for this User','wplms-assignments' ), 
 			'marks_saved' => __( 'Marks Saved','wplms-assignments' ), 
 			'assignment_marks_saved' => __( 'Assignment Marks Saved','wplms-assignments' ), 
-			'cancel' => __( 'Cancel','wplms-assignments' ), 
+			'cancel' => __( 'Cancel','wplms-assignments' ),
+			'incorrect_file_format'=> __('Incorrect file format ','wplms-assignments'),
+			'duplicate_file'=> __('File already selected ','wplms-assignments'),
 			);
     	wp_localize_script( 'wplms-assignments-js', 'wplms_assignment_messages', $translation_array );
+    }
 }
 
 

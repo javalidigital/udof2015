@@ -128,7 +128,7 @@ if(isset($_GET['action']) && is_numeric($_GET['action'])){
                                         ?>
                                     </select>
                                 </li>
-                                <li><p id="new_course_category" data-editable="true" data-name="content" data-max-length="250" data-text-options="true"><?php _e('Enter a new Course Category','vibe'); ?></p></li>
+                                <li><p id="new_course_category" data-editable="true" data-name="content" data-max-length="250" data-text-options="true" data-default="<?php _e('Enter a new Course Category','vibe'); ?>"><?php _e('Enter a new Course Category','vibe'); ?></p></li>
                             </ul>
                             
                             <hr class="clear" />
@@ -155,7 +155,7 @@ if(isset($_GET['action']) && is_numeric($_GET['action'])){
                                 echo $the_post->post_excerpt; 
                             }else{
                             ?>
-                                <p><?php _e('Enter a short description of the course, in less than 30 words. Click on text to edit it and 
+                                <p class="remove_text_click"><?php _e('Enter a short description of the course, in less than 30 words. Click on text to edit it and 
                                 delete this text. Full course description will be added later on.','vibe'); ?></p>
                             <?php
                             }
@@ -245,6 +245,9 @@ if(isset($_GET['action']) && is_numeric($_GET['action'])){
                                         'post_type'=> 'course',
                                         'numberposts'=> -1
                                         );
+                                        if(isset($_GET['action']) && is_numeric($_GET['action'])){
+                                            $args['post__not_in'] = array($_GET['action']);
+                                        }
                                         $args = apply_filters('wplms_frontend_cpt_query',$args);
                                         $kposts=get_posts($args);
                                         foreach ( $kposts as $kpost ){
@@ -582,6 +585,7 @@ if(isset($_GET['action']) && is_numeric($_GET['action'])){
                         </ul>
                         <a id="save_course_curriculum" class="button hero"><?php _e('SAVE CURRICULUM','vibe'); ?></a>
                     </div>
+                    <?php do_action('create_course_before_course_pricing',$course_id); ?>
                     <div id="course_pricing">
                         <h3 class="heading"><?php _e('COURSE PRICING','vibe'); ?></h3>
                         <ul class="course_pricing">

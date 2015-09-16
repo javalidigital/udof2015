@@ -1,3 +1,19 @@
+* version1.9.6.2
+* bug fixes for event css loading
+* Bug fix and version update
+* version1.9.6
+* version1.9.5
+* Language addition
+* Events update
+* version1.9.4
+* New language
+* No follow in events
+* esc_args in add_query_arg
+* version1.9.3
+* translation files
+* version1.9.2
+* language files updated
+* Language changes
 * version1.9.1
 * Language files updated
 * version1.9

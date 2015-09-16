@@ -261,7 +261,12 @@ li.slide{
     text-indent: -9999px;
     background:url(../images/remove.png) no-repeat;
 }
-
+.coursedata .course_curriculum li > a{
+    margin-left:20px;
+}
+.coursedata .course_curriculum li > ul{
+    margin-left:20px;
+}
 input[type="button"].vibe-btn{
     display: block;
 padding: 6px 10px;
@@ -730,6 +735,11 @@ float: right;
 .ultable strong{float:left;}
 .ultable span{float:right;}
 
+.forminp span{
+    font-size:12px;
+    opacity: 0.8;
+    padding-left: 10px;
+}
 /* === Timepicker ==== */
 div.time-picker {
   position: absolute;

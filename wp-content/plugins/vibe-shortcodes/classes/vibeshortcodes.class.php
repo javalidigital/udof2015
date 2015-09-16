@@ -9,8 +9,8 @@ class VibeShortcodes {
 		
         add_action('init', array(&$this, 'init'));
         
-        add_action('admin_init', array(&$this, 'admin_icons'));
-        add_action('admin_init', array(&$this, 'admin_init'));
+        add_action('admin_enqueue_scripts', array(&$this, 'admin_icons'),10,1);
+        add_action('admin_enqueue_scripts', array(&$this, 'admin_init'),10, 1);
         add_action('wp_enqueue_scripts', array(&$this, 'frontend'));
 	}
 	
@@ -31,15 +31,18 @@ class VibeShortcodes {
 	}
 	
     function frontend(){
+
         wp_enqueue_style( 'icons-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/fonticons.css');
         wp_enqueue_style( 'magnific-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/magnific-popup.css');
         wp_enqueue_style( 'animation-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/animation.css');
+
         wp_enqueue_script( 'knob-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/jquery.knob.js',array('jquery'),'1.0',true);
         wp_enqueue_script( 'flexslider-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/jquery.flexslider-min.js',array('jquery'),'1.0',true);
-        wp_enqueue_script( 'masonry-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/masonry.min.js',array('jquery'),'1.0',true);
         wp_enqueue_script( 'magnific-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/jquery.magnific-popup.min.js',array('jquery'),'1.0',true);
         wp_enqueue_script( 'fitvids-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/jquery.fitvids.js',array('jquery','mediaelement'),'1.0',true); 
-    	wp_enqueue_script( 'counter-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/scroller-counter.js',array('jquery'),'1.0',true);
+    	
+    	
+    	
     	wp_enqueue_style( 'shortcodes-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/shortcodes.css',array('thickbox'));
        	wp_enqueue_script( 'shortcodes-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/shortcodes.js',array('jquery','mediaelement','thickbox'),'1.0',true);
        	$translation_array = array( 
@@ -86,9 +89,9 @@ class VibeShortcodes {
 	 *
 	 * @return	void
 	 */
-	function admin_init()
-	{       
-        if(is_admin()){
+	function admin_init($hook)
+	{      
+        if(is_admin() && in_array( $hook, array( 'post-new.php', 'post.php','toplevel_page_wplms_options' ) ) ){
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'jquery-livequery', VIBE_TINYMCE_URI . '/js/jquery.livequery.js', false, '1.1.1', false );
 			wp_enqueue_script( 'jquery-appendo', VIBE_TINYMCE_URI . '/js/jquery.appendo.js', false, '1.0', false );
@@ -114,8 +117,10 @@ class VibeShortcodes {
                 }
                
         }
-        function admin_icons(){
-            wp_enqueue_style( 'icons-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/fonticons.css');
+        function admin_icons($hook){
+        	if(is_admin() && in_array( $hook, array( 'post-new.php', 'post.php' ) ) ){
+	            wp_enqueue_style( 'icons-css', VIBE_PLUGIN_URL.'/vibe-shortcodes/css/fonticons.css');
+	        }
         }
     
 }

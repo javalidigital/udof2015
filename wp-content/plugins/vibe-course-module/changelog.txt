@@ -1,3 +1,178 @@
+* 1.9.8.3
+* Quiz passing score fix
+* PMPro renew course fix
+* Course started time difference in course - admin - member stats
+* Activity with no Course id fix
+* Next unit index bug fix
+* First unit with unit lock bug fix
+* Shortcode in hint bug
+* version1.9.8.2
+* Select dropdown in single incourse quiz bug fix
+* Free course auto subscribe bug fix
+* Single Quiz essary type fix
+* Message to instructor on assignment submission not working
+* Single question match answers not working
+* Fillblank bug fix in Firefox
+* Unit attachments displayed in quizzes bug fix
+* version1.9.8.1
+* Bp Course add user fix
+* Single quiz course progress bug fix
+* Single Quiz progress bar fixes
+* Time in minus bug fix
+* Drip feed bug fix
+* version1.9.8
+* Quiz popup
+* Tick sign CSS correction in Course admin
+* Unit comment bug fix for Touch points
+* Clubbing Insert queries into 1 query for Quiz sybmit
+* Multiple replies in unit comments bug fix
+* Correct Answer filter for marking in points
+* Successive quizzes in Drip feed courses bug
+* Drip Feed fixes
+* Force add user to course on WooCommerce order completion
+* Seats check in BP course Add user to course function
+* Notification assignment message correction
+* Course status empty check
+* Duplicate comments in Unit comments
+* Course progress bar boundary conditions check
+* Check user results from course User status fix
+* Instructor courses quiz count fix
+* Text area in single quiz bug
+* BP Course User query update
+* Truefalse in single quiz
+* Course retakes fix
+* version1.9.7
+* Inaguage files updated
+* HTML Email as text issue fixed
+* Quiz without save answer Fixed
+* Quiz passing score fix
+* Quiz passing score bug fix
+* Search bug fix
+* Clean
+* course.js restored
+* quiz js
+* Revert "Merge branch 'quiz' into develop"
+* quiz update
+* consistency check
+* numeric check on mark complete
+* numeric check on mark complete
+* bp_is_user_course fix
+* Check Quiz results from Course Admin
+* auto evaluate bug fix
+* Related courses widget
+* Scroll top on unit pages
+* numeric check on mark complete
+* version1.9.6.5
+* Announcement notifications
+* Course activity meta record bugfix
+* security fixes
+* Course reset bug
+* Security Fixes
+* version1.9.6.4
+* Course Activity in Start assignment
+* Badges Warning
+* BadgeOs activity fix
+* Unit comments bug fix
+* version1.9.6.3
+* version1.9.6.3
+* bugfix for input boxes visible in Course status page
+* Congrats Message bug fix
+* version1.9.6.2
+* Mailer fixes
+* Live edit bug fix
+* version1.9.6.1
+* Bug fixes
+* Please complete the Unit Bug
+* Start date time for directly assign user to course
+* Bug fix Live edit and Quiz retake
+* Translation files updated
+* Bug fixes
+* Bug fix for bulk action member recording
+* Translation update
+* version1.9.6
+* Rounding off error
+* Drip feed bug
+* Course pricing drop down fix
+* Free course validation correction
+* Bug fixes for BP_course_Bp_mail errror while adding users to course
+* Stats Queries updated
+* version addition in scripts
+* get course students count function
+* schema validation
+* Child categories exapnd in course filters
+* CSS fixes
+* Added course scheduler and mailer
+* Course notifications restructuring
+* Restructure course activity
+* Filter by course statuses
+* Badge Certificate bugfix
+* Assignment message and email bugfix
+* Function bug fixes
+* Activity code hooks
+* BuddyPress Course Notifications added
+* bp course mail template processor added
+* Activity code refactorisation
+* Commission calculation Bug Fix
+* Notification settings
+* Course Pricing html changes
+* Removed Pricing drop down
+* Bulk Action now records member ID and action
+* Progressbar bug fix
+* Unit in Course security fix
+* version1.9.5.2
+* Unset Orderby in Single courses
+* version1.9.5.1
+* Course Filters widget fix
+* Attachment names bug
+* Execute shortcodes in Notes & Discussion
+* version1.9.5
+* Language files
+* Question and answer bug fixes
+* CSS Fixes
+* Course reviews widget added
+* Display star rating function added
+* Quiz message first two letters bug fix
+* Add pot file
+* Trigger next unit Fix for Quizzes
+* Unit Page js working fix
+* Progress bar fixes
+* Course status manage js changes
+* CSS for bulk user status change
+* Badge and Certificate assignment condition change
+* Course status manage screen
+* FillBlank and Small text answer fix
+* Filter on Take this course button label
+* The_content fileter on quiz message
+* Badge and Certificate assignment Condition change
+* Manage course status Bulk action
+* Change user role to student on order completion
+* esc_url_raw fix
+* version1.9.4.1
+* Quiz and Discussion fix
+* Coming Soon fix
+* version1.9.4
+* comments per page
+* Link styling
+* Unit comments reply
+* Language files updated
+* Certificate PDF
+* update language
+* Unit comments, Reset quiz fixes
+* html2canvas updated
+* certificate fix
+* Show all memberships connected to a course
+* Auto redirect
+* Incorrect and unanswered questions
+* next unit access & unit comments
+* Simple notes & Discussion
+* Question shortcode
+* Attachment links open in new page.
+* Language change
+* Commission reversal on refund
+* esc_url in add_query_arg
+* version1.9.3.1
+* Retake quiz bug
+* Curriculum span bug
 * version1.9.3
 * Translation fixes
 * Next quiz issue in unit locking

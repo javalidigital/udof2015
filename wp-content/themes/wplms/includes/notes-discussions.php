@@ -42,6 +42,7 @@ class vibe_notes_discussions{
   function wplms_notes_dicussion_args($args){
       if(!current_user_can('edit_posts')){
           $args['user_id']=get_current_user_id();
+
       }else{
         if(!current_user_can('manage_options')){
           $args['post_author']=get_current_user_id();
@@ -51,7 +52,14 @@ class vibe_notes_discussions{
           $args['post_id'] = $_REQUEST['unit_id'];
           if(!current_user_can('edit_posts')){
             global $wpdb;
-            $comment_ids = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE (meta_key LIKE %s OR meta_key LIKE %s)",'unit'.$args['post_id'].'_'.$args['user_id'],'unit'.$args['post_id'].'%public'),ARRAY_A);
+            if(!is_user_logged_in()){
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key LIKE %s",'unit'.$args['post_id'].'%public');
+            }else{
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE (meta_key LIKE %s OR meta_key LIKE %s)",'unit'.$args['post_id'].'_'.$args['user_id'],'unit'.$args['post_id'].'%public');  
+            }
+            
+            
+            $comment_ids = $wpdb->get_results($q,ARRAY_A);
             if(is_array($comment_ids)){
               $args['comment__in'] = array();
               foreach($comment_ids as $comment_id){
@@ -69,7 +77,13 @@ class vibe_notes_discussions{
         if(strlen($section) < 5 && is_numeric($unit_id)){
           if(current_user_can('edit_posts')){
             global $wpdb;
-            $comment_ids = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key LIKE %s AND meta_value = %s",'unit'.$args['post_id'].'%',$section),ARRAY_A);
+            if(!is_user_logged_in()){
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key LIKE %s AND meta_value = %s",'unit'.$args['post_id'].'%public',$section);
+            }else{
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key LIKE %s AND meta_value = %s",'unit'.$args['post_id'].'%',$section);
+            }
+
+            $comment_ids = $wpdb->get_results($q,ARRAY_A);
             if(is_array($comment_ids)){
               $args['comment__in'] = array();
               foreach($comment_ids as $comment_id){
@@ -79,7 +93,12 @@ class vibe_notes_discussions{
             }
           }else{
             global $wpdb;
-            $comment_ids = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE (meta_key LIKE %s OR meta_key LIKE %s OR meta_key LIKE %s) AND meta_value = %s",'unit'.$args['post_id'].'_'.$args['user_id'],'unit'.$args['post_id'].'%public',$section),ARRAY_A);
+            if(is_user_logged_in()){
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_key LIKE %s  AND meta_value = %s",'unit'.$args['post_id'].'%public',$section);
+            }else{
+              $q = $wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE (meta_key LIKE %s OR meta_key LIKE %s) AND meta_value = %s",'unit'.$args['post_id'].'_'.$args['user_id'],'unit'.$args['post_id'].'%public',$section);
+            }
+            $comment_ids = $wpdb->get_results($q,ARRAY_A);
             if(is_array($comment_ids)){
               $args['comment__in'] = array();
               foreach($comment_ids as $comment_id){
@@ -90,6 +109,7 @@ class vibe_notes_discussions{
           }
         }
       }
+
       return $args;
   }
 
@@ -281,6 +301,7 @@ class vibe_notes_discussions{
         <?php
           $comments_query = new WP_Comment_Query;
           $comments = $comments_query->query( $args );
+          print_r($comments); echo '#####';
           $this->comments_loop($comments);
           ?>
       </div>
@@ -288,72 +309,81 @@ class vibe_notes_discussions{
   }
 
   public function comments_loop($comments){
-    // Comment Loop
+    // Comment Loop 
+    
+
           if ( $comments ) {
             echo '<ul class="notes_list">';
             foreach ( $comments as $comment ) {   //print_r($comment);
               if($comment->comment_type != 'creply'){
               ?>
               <li class="loaded <?php echo $comment->comment_type.' '.(($comment->comment_parent)?'parent':''); ?>"><div class="note" data-id="<?php echo $comment->comment_ID; ?>">
-                            <?php
-                            $current_user_id = get_current_user_id();
-                            $author_id = $comment->user_id;
-                            echo get_avatar($author_id).' <a href="'.bp_core_get_user_domain($author_id).'" class="unit_comment_author"> '.bp_core_get_user_displayname( $author_id) .'</a><span class="right"><span>'.__('UNIT','vibe').' : '.$comment->post_title.'</span><br /><i class="icon-clock"></i>&nbsp;'.tofriendlytime((time()-strtotime($comment->comment_date))).'</span>';
-                            ?>
-                            <div class="unit_comment_content"><?php echo $comment->comment_content; ?></div>
-                            <?php 
-                              if($current_user_id == $author_id || current_user_can('edit_posts')){
-                            ?>
-                            <ul class="actions">
-                                <li><a class="tip edit_unit_comment" title="<?php _e('Edit','vibe'); ?>"><i class="icon-pen-alt2"></i></a></li>
-                                <?php
-                                  if($comment->comment_type == 'note'){
-                                ?>
-                                <li><a class="tip public_unit_comment" title="<?php _e('Make Public','vibe'); ?>"><i class="icon-fontawesome-webfont-3"></i></a></li>
-                                <?php
-                                }else{
-                                ?>
-                                <li><a class="tip private_unit_comment" title="<?php _e('Make Private','vibe'); ?>"><i class="icon-fontawesome-webfont-4"></i></a></li>
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                  global $wpdb; $replystr ='';
-                                  $replies = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_value = %d",$comment->comment_ID),ARRAY_A);
-                                  if(isset($replies) && is_array($replies))
-                                    if(is_array($replies[0]) && is_numeric($replies[0]['comment_id']))
-                                      $replystr= '<li><a class="tip reply_unit_comment meta_info" data-meta="'.$replies[0]['comment_id'].'" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
+                <div class="user-avatar">
+                  <?php
+                    $current_user_id = get_current_user_id();
+                    $author_id = $comment->user_id;
+                    echo get_avatar($author_id);
+                  ?>
+                </div>
+                <div class="unit_comment_content">
+                  <?php echo '<a href="'.bp_core_get_user_domain($author_id).'" class="unit_comment_author"> '.bp_core_get_user_displayname( $author_id) .'</a><span class="right"><span>'.__('UNIT','vibe').' : '.$comment->post_title.'</span><br /><i class="icon-clock"></i>&nbsp;'.human_time_diff(strtotime($comment->comment_date),current_time('timestamp')).'</span>'; ?>
+                  <div class="note_content"><?php echo $comment->comment_content; ?></div>
+                </div>
+                <div class="note_actions">
+                      <?php 
+                        if($current_user_id == $author_id || current_user_can('edit_posts')){
+                      ?>
+                      <ul class="actions">
+                          <li><a class="tip edit_unit_comment" title="<?php _e('Edit','vibe'); ?>"><i class="icon-pen-alt2"></i></a></li>
+                          <?php
+                            if($comment->comment_type == 'note'){
+                          ?>
+                          <li><a class="tip public_unit_comment" title="<?php _e('Make Public','vibe'); ?>"><i class="icon-fontawesome-webfont-3"></i></a></li>
+                          <?php
+                          }else{
+                          ?>
+                          <li><a class="tip private_unit_comment" title="<?php _e('Make Private','vibe'); ?>"><i class="icon-fontawesome-webfont-4"></i></a></li>
+                          <?php
+                          }
+                          ?>
+                          <?php
+                            global $wpdb; $replystr ='';
+                            $replies = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_value = %d",$comment->comment_ID),ARRAY_A);
+                            if(isset($replies) && is_array($replies))
+                              if(is_array($replies[0]) && is_numeric($replies[0]['comment_id']))
+                                $replystr= '<li><a class="tip reply_unit_comment meta_info" data-meta="'.$replies[0]['comment_id'].'" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
 
-                                  if(!isset($replystr))
-                                    echo '<li><a class="tip reply_unit_comment" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
-                                  else
-                                    echo $replystr;
-                                ?>
-                                <li><a class="tip instructor_reply_unit_comment" title="<?php _e('Request Instructor reply','vibe'); ?>"><i class="icon-forward-2"></i></a></li>
-                                <li><a class="tip remove_unit_comment" title="<?php _e('Remove','vibe'); ?>"><i class="icon-cross"></i></a></li>
-                            </ul>
-                            <?php
-                              }else{
-                                ?>
-                                <ul class="actions">
-                                <?php
-                                  global $wpdb;
-                                  $replies = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_value = %d",$comment->comment_ID),ARRAY_A);
-                                  if(isset($replies) && is_array($replies))
-                                    if(is_array($replies[0]) && is_numeric($replies[0]['comment_id']))
-                                      $replystr= '<li><a class="tip reply_unit_comment meta_info" data-meta="'.$replies[0]['comment_id'].'" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
+                            if(!isset($replystr))
+                              echo '<li><a class="tip reply_unit_comment" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
+                            else
+                              echo $replystr;
+                          ?>
+                          <li><a class="tip instructor_reply_unit_comment" title="<?php _e('Request Instructor reply','vibe'); ?>"><i class="icon-forward-2"></i></a></li>
+                          <li><a class="tip remove_unit_comment" title="<?php _e('Remove','vibe'); ?>"><i class="icon-cross"></i></a></li>
+                      </ul>
+                      <?php
+                        }else{
+                          ?>
+                          <ul class="actions">
+                          <?php
+                            global $wpdb;
+                            $replies = $wpdb->get_results($wpdb->prepare("SELECT comment_id FROM {$wpdb->commentmeta} WHERE meta_value = %d",$comment->comment_ID),ARRAY_A);
+                            if(isset($replies) && is_array($replies))
+                              if(is_array($replies[0]) && is_numeric($replies[0]['comment_id']))
+                                $replystr= '<li><a class="tip reply_unit_comment meta_info" data-meta="'.$replies[0]['comment_id'].'" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
 
-                                  if(!isset($replystr))
-                                    echo '<li><a class="tip reply_unit_comment" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
-                                  else
-                                    echo $replystr;
-                                ?>
-                                  <li><a class="tip instructor_reply_unit_comment" title="<?php _e('Request Instructor reply','vibe'); ?>"><i class="icon-forward-2"></i></a></li>
-                                </ul>  
-                                <?php
-                              }
-                            ?>
-                            </div></li>
+                            if(!isset($replystr))
+                              echo '<li><a class="tip reply_unit_comment" title="'.__('Reply','vibe').'"><i class="icon-curved-arrow"></i></a></li>';
+                            else
+                              echo $replystr;
+                          ?>
+                            <li><a class="tip instructor_reply_unit_comment" title="<?php _e('Request Instructor reply','vibe'); ?>"><i class="icon-forward-2"></i></a></li>
+                          </ul>  
+                          <?php
+                        }
+                      ?>
+                    </div>
+                </li>
               <?php
               }
             }
@@ -438,6 +468,7 @@ class vibe_notes_discussions{
         add_comment_meta($comment_id,'unit'.$unit_id.'_'.$user_id,$section);
       }
       echo $comment_id;
+      do_action('wplms_course_unit_comment',$unit_id,$user_id,$comment_id);
     }else
       _e('Unable to post','vibe');
     die();
@@ -496,7 +527,7 @@ class vibe_notes_discussions{
           $json_array[$i][$result['meta_value']]=array(
             'ID' => $result['comment_ID'],
             'content' => $result['comment_content'],
-            'time'=> tofriendlytime($seconds_span),
+            'time'=> human_time_diff(strtotime($result['comment_date']),current_time('timestamp')),
             'type'=>$result['comment_type'],
             'author'=>Array(
               'user_id' => $result['user_id'],  
@@ -638,7 +669,7 @@ class vibe_notes_discussions{
        _e('Security check Failed. Contact Administrator.','vibe');
        die();
     }
-
+ 
     if(current_user_can('edit_posts')){
       global $wpdb;
       $wpdb->query($wpdb->prepare("UPDATE {$wpdb->comments} SET comment_type=%s WHERE comment_ID=%d",'public',$id));

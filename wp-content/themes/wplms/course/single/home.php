@@ -6,7 +6,7 @@
  *
  * @author 		VibeThemes
  * @package 	vibe-course-module/templates
- * @version     1.8.1
+ * @version     1.9.6
  */
 
 	get_header( 'buddypress' );
@@ -52,7 +52,7 @@
 							$forum=get_post_meta(get_the_ID(),'vibe_forum',true);
 							if(isset($forum) && $forum){
 							?>
-							<li id="forum"><a href="<?php echo get_permalink($forum); ?>"><?php  _e( 'Forum', 'vibe' ); ?></a></li>
+							<li id="forum"><a href="?action=forum"><?php  _e( 'Forum', 'vibe' ); ?></a></li>
 							<?php 
 							}
 							if(is_super_admin() || is_instructor()){
@@ -115,10 +115,8 @@
 					      $withcomments = true;
 					      comments_template('/course-review.php',true);
 					}else if(isset($_POST['submit_course']) && isset($_POST['review']) && wp_verify_nonce($_POST['review'],get_the_ID())){ // Only for Validation purpose
-
+						
 						bp_course_check_course_complete();
-						$user_id=get_current_user_id();
-						do_action('badgeos_wplms_submit_course',$post->ID);
 						
 					// Looking at home location
 					}else if ( bp_is_course_home() ){

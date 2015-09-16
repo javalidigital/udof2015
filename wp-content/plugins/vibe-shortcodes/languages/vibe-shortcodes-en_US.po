@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vibe ShortCodes v1.9.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 15:59+0530\n"
-"PO-Revision-Date: 2015-03-31 15:59+0530\n"
+"POT-Creation-Date: 2015-08-03 16:26+0530\n"
+"PO-Revision-Date: 2015-08-03 16:26+0530\n"
 "Last-Translator: vibethemes@gmail.com <vibethemes@gmail.com>\n"
 "Language-Team: VibeThemes <vibethemes@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -37,53 +37,90 @@ msgid "Message sent!"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:129
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:141
 msgid "EARNED"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:153
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:165
 msgid "Check all Courses created by "
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:154
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:166
 msgid "More Courses by "
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1329
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1436
 msgid "MEMBERS"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1332
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1439
 msgid "COURSES"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1335
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1442
 msgid "INSTRUCTORS"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1338
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1445
 msgid "GROUPS"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1341
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1448
 msgid "SUBSCRIPTIONS"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1344
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1451
 msgid "SALES"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1347
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1454
 msgid "EARNINGS"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1486
+msgid "SHOW HINT"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1487
+msgid "HINT"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1499
+msgid "FALSE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1499
+msgid "TRUE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1546
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1549
+msgid "Type Answer"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1557
+msgid "Check Answer"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1572
+msgid "Explanation"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1599
+msgid "Type Keywords.."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/shortcodes.php:1600
+msgid "Search"
 msgstr ""
 
 # @ vibe-shortcodes
@@ -93,14 +130,14 @@ msgstr ""
 
 # @ vibe-shortcodes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:37
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:331
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:332
 msgid "Upload Library"
 msgstr ""
 
 # @ vibe-shortcodes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:38
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:236
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:322
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:323
 msgid "Upload File"
 msgstr ""
 
@@ -166,12 +203,12 @@ msgid "File too big"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:293
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:294
 msgid "Please upload zip file, Index.html file not found in package"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:297
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/upload_handler.php:298
 msgid "Upload failed !"
 msgstr ""
 
@@ -286,22 +323,22 @@ msgid "Themeforest User name ( for Auto-Updates )"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:46
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:49
 msgid "Sending mail"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:47
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:50
 msgid "Error :"
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:48
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:51
 msgid "Invalid "
 msgstr ""
 
 # @ vibe-shortcodes
-#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:49
+#: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/classes/vibeshortcodes.class.php:52
 msgid "Captcha Mismatch"
 msgstr ""
 
@@ -975,9 +1012,8 @@ msgstr ""
 msgid "Insert Course Shortcode"
 msgstr ""
 
-# @ vibe-shortcodes
 #: /Applications/MAMP/htdocs/wplms/wp-content/plugins/vibe-shortcodes/tinymce/config.php:745
-msgid "Select Testimonial"
+msgid "Select Side"
 msgstr ""
 
 # @ vibe-shortcodes

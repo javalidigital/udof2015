@@ -5,7 +5,7 @@ Plugin Name: Vibe ShortCodes
 Plugin URI: http://www.vibethemes.com
 Description: Create unlimited shortcodes
 Author: VibeThemes
-Version: 1.9.3
+Version: 1.9.8
 Author URI: http://www.vibethemes.com
 Text Domain: vibe-shortcodes
 */

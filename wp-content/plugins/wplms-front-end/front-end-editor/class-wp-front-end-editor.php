@@ -68,7 +68,7 @@ class WP_Front_End_Editor {
 
 			if ( strpos( $permalink, '?' ) !== false )
 
-				$link = add_query_arg( 'edit', '', $permalink );
+				$link = esc_url( add_query_arg( 'edit', '', $permalink ) );
 
 			if ( trailingslashit( $permalink ) === $permalink )
 
@@ -273,7 +273,7 @@ class WP_Front_End_Editor {
 		if ( $post->post_type === 'revision'
 			|| ! empty( $this->wp_fee['admin_edit_link'] ) )
 
-			return add_query_arg( 'redirect', 'front', $link );
+			return esc_url( add_query_arg( 'redirect', 'front', $link ));
 
 		if ( $this->is_edit() )
 
@@ -315,7 +315,7 @@ class WP_Front_End_Editor {
 			&& isset( $_GET['redirect'] )
 			&& $_GET['redirect'] === 'front' )
 
-			return add_query_arg( 'redirect', 'front', $url );
+			return esc_url( add_query_arg( 'redirect', 'front', $url ));
 
 		return $url;
 
@@ -905,17 +905,17 @@ class WP_Front_End_Editor {
 					$message = 'draft' == $status ? 10 : 1;
 			}
 	
-			$location = add_query_arg( 'message', $message, $this->edit_link( $post_id ) );
+			$location = esc_url( add_query_arg( 'message', $message, $this->edit_link( $post_id ) ));
 		} elseif ( isset($_POST['addmeta']) && $_POST['addmeta'] ) {
-			$location = add_query_arg( 'message', 2, wp_get_referer() );
+			$location = esc_url( add_query_arg( 'message', 2, wp_get_referer() ));
 			$location = explode('#', $location);
 			$location = $location[0] . '#postcustom';
 		} elseif ( isset($_POST['deletemeta']) && $_POST['deletemeta'] ) {
-			$location = add_query_arg( 'message', 3, wp_get_referer() );
+			$location = esc_url( add_query_arg( 'message', 3, wp_get_referer() ) );
 			$location = explode('#', $location);
 			$location = $location[0] . '#postcustom';
 		} else {
-			$location = add_query_arg( 'message', 4, $this->edit_link( $post_id ) );
+			$location = esc_url( add_query_arg( 'message', 4, $this->edit_link( $post_id ) ));
 		}
 		
 		$location = apply_filters( 'redirect_post_location', $location, $post_id );

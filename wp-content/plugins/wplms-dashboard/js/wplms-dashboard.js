@@ -163,7 +163,7 @@ jQuery(document).ready(function($){
       var $this = $(this);
       var defaulttxt = $this.html();
       $this.addClass('loading');
-      $this.text('saving...');
+      $this.text(wplms_dashboard_strings.saving);
 
       var data;
       var tasks = [];
@@ -189,7 +189,7 @@ jQuery(document).ready(function($){
               success: function (html) {
                 $this.removeClass('loading');
                 if($.isNumeric(html)){
-                    $this.text('SAVED');
+                    $this.text(wplms_dashboard_strings.saved);
                 }else{
                     $this.text(html);
                 }
@@ -241,7 +241,7 @@ jQuery(document).ready(function($){
                       data: data,
                       xkey: 'range',
                       ykeys: ['value'],
-                      labels: ['#Students'],
+                      labels: [wplms_dashboard_strings.students],
                       barColors: ['#23b7e5'],
                       xLabelAngle: 60,
                       lineWidth: 1,
@@ -340,13 +340,13 @@ jQuery(document).ready(function($){
        $('.announcement_message').remove();
   });
   if(jQuery('#instructor_commissions').length){
-        Morris.Area({
+        Morris.Line({
             element: 'instructor_commissions',
             data: instructor_commission_data,
             xkey: 'date',
-            ykeys: ['sales'],
-            labels: ['Earnings'],
-            lineColors: ['#23b7e5'],
+            ykeys: ['sales','commission'],
+            labels: [wplms_dashboard_strings.earnings,wplms_dashboard_strings.payout],
+            lineColors: ['#23b7e5','#fa7252'],
             lineWidth: 1,
             resize:true,
             parseTime: false
@@ -357,6 +357,7 @@ jQuery(document).ready(function($){
           colors:['#7266ba','#23b7e5','#f05050','#fad733','#27c24c','#fa7252']
         });
   }
+
   $('body').delegate('.commission_reload','click',function(event){
     var $this=$(this);
     event.preventDefault();
@@ -369,7 +370,7 @@ jQuery(document).ready(function($){
               cache: false,
               success: function (data) {
                   if($.isNumeric(data)){
-                    setTimeout(function(){$this.append('Stats Calculated, reloading page ...');}, 2000);
+                    setTimeout(function(){$this.append(wplms_dashboard_strings.stats_calculated);}, 2000);
                     window.location.reload();
                   }else{
                     setTimeout(function(){$this.append(data);}, 2000);

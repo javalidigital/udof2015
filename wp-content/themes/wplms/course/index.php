@@ -30,7 +30,7 @@ if(bp_is_course_component()){
         <div class="row">
              <div class="col-md-9 col-sm-8">
                 <div class="pagetitle">
-                	<h1><?php the_title(); ?></h1>
+                	<h1><?php echo get_the_title($id); ?></h1>
                     <?php the_sub_title($id); ?>
                 </div>
             </div>

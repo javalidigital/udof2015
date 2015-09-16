@@ -1,3 +1,35 @@
+* version 1.9.8
+* Sell content shortcode
+* function exists Check on Tabs
+* version1.9.7
+* language files updated
+* Explaination fix
+* Certificate Date with Manual Fallback
+* Question shortcode the content fix
+* Calling Shortcodes script only on the shortcodes pages
+* version1.9.6.2
+* version1.9.6.2
+* version1.9.6
+* Fetch avatar bug fix
+* Images loaded bugfix for isotope grip
+* version1.9.5
+* translation files
+* Upload handler fixes
+* Remove clert china
+* Date in i18 format
+* Parallax block code moved
+* Conditionally calling scripts
+* Plugin update fixes
+* version1.9.4
+* Translation fixes
+* Forms select box fix
+* Course Searchbox and pass_fail shortcode
+* CErtificate completion date
+* Responsive parallax
+* Counter shortcode popup fix
+* Language fix in popup
+* New Shortcodes : Question , Social sharing buttons
+* esc_url in add_query_arg
 * version1.9.3
 * translation fixes
 * Course Product shortcode

@@ -28,6 +28,63 @@ if (!function_exists('vibe_pullquote')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*	SELL CONTENT WOOCOMMERCE SHORTCODE
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_sell_content')) {
+	function vibe_sell_content( $atts, $content = null ) {
+        extract(shortcode_atts(array(
+			'product_id'    	 => '',
+	    ), $atts));
+
+        if(is_user_logged_in() && is_numeric($product_id)){
+        	$user_id = get_current_user_id();
+        	$check = wc_customer_bought_product('',$user_id,$product_id);
+        	if($check){
+        		echo apply_filters('the_content',$content);
+        	}else{  
+        		$product = get_product( $product_id );
+				if(is_object($product)){
+					$link = get_permalink($product_id);
+
+					$check=vibe_get_option('direct_checkout');
+        			if(isset($check) && $check)
+        				$link.='?redirect';
+
+        			$price_html = str_replace('class="amount"','class="amount" itemprop="price"',$product->get_price_html());
+
+        		echo '<div class="message info">'.
+        		sprintf(__('You do not have access to this content. <a href="%s" class="button"> Puchase </a> content for %s','vibe-shortcodes'),$link,$price_html).
+        		'</div>';	
+        		}else{
+        			echo '<div class="message info">'.__('You do not have access to this content','vibe-shortcodes').'</div>';
+        		}
+        	}
+        }else{
+        		$product = get_product( $product_id );
+				if(is_object($product)){
+					$link = get_permalink($product_id);
+
+					$check=vibe_get_option('direct_checkout');
+        			if(isset($check) && $check)
+        				$link.='?redirect';
+
+        			$price_html = $product->get_price_html();
+
+        		echo '<div class="message info">'.
+        		sprintf(__('You do not have access to this content. <a href="%s" class="button"> Puchase </a> content for %s','vibe-shortcodes'),$link,$price_html).
+        		'</div>';	
+        		}else{
+        			echo '<div class="message info">'.__('You do not have access to this content','vibe-shortcodes').'</div>';
+        		}
+        }
+
+        return $return;
+	}
+	add_shortcode('sell_content', 'vibe_sell_content');
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*	Social Buttons
 /*-----------------------------------------------------------------------------------*/
 
@@ -37,6 +94,18 @@ if (!function_exists('vibe_social_buttons')) {
         return $return;
 	}
 	add_shortcode('social_buttons', 'vibe_social_buttons');
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Social Sharing Buttons
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_social_sharing_buttons')) {
+	function vibe_social_sharing_buttons( $atts, $content = null ) {
+           $return = vibe_socialicons();
+        return $return;
+	}
+	add_shortcode('social_icons', 'vibe_social_sharing_buttons');
 }
 
 
@@ -58,7 +127,7 @@ if (!function_exists('vibe_number_counter')) {
         	if(is_numeric($m))
         		$max = $m;
         }
-
+        wp_enqueue_script( 'counter-js', VIBE_PLUGIN_URL . '/vibe-shortcodes/js/scroller-counter.js',array('jquery'),'1.0',true);
         $return ='<div class="numscroller" data-max="'.$max.'" data-min="'.$min.'" data-delay="'.$delay.'" data-increment="'.$increment.'">'.$min.'</div>';
         return $return;
 	}
@@ -189,16 +258,17 @@ if (!function_exists('vibe_divider')) {
 if (!function_exists('vibe_course')) {
 	function vibe_course( $atts, $content = null ) {
             extract(shortcode_atts(array(
-					'id'   => ''
+					'id'   => '',
+                    'featured_block'=>'course'
                 ), $atts));
             $course_query = new WP_Query("post_type=course&p=$id");
             
             if($course_query->have_posts()){
             	while($course_query->have_posts()){
             		$course_query->the_post();
-            					
+            	   			
             		if(function_exists('thumbnail_generator'))
-        				$return = thumbnail_generator($post,'course','medium',1,1,1);
+        				$return = thumbnail_generator($course_query->posts[0],$block,'medium',1,1,1);
 
             	}
             }
@@ -283,6 +353,7 @@ if (!function_exists('vibe_roundprogress')) {
 	}
 	add_shortcode('roundprogress', 'vibe_roundprogress');
 }
+
 
 
 
@@ -634,7 +705,7 @@ if (!function_exists('vibe_certificate_student_name')) {
 	function vibe_certificate_student_name( $atts, $content = null ) {
             $id=$_GET['u'];
             if(isset($id) && $id)
-        		return get_the_author_meta('display_name',$id);
+        		return bp_core_get_user_displayname($id);
         	else
         		return '[certificate_student_name]';
 	}
@@ -649,7 +720,7 @@ if (!function_exists('vibe_certificate_student_photo')) {
 	function vibe_certificate_student_photo( $atts, $content = null ) {
             $id=$_GET['u'];
             if(isset($id) && $id)
-        		return bp_core_get_avatar($id);
+        		return bp_core_fetch_avatar(array('item_id'=>$id,'type'=>'thumb'));
         	else
         		return '[certificate_student_photo]';
 	}
@@ -722,11 +793,55 @@ if (!function_exists('vibe_certificate_student_field')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	CERTIFICATE SHORTCODES  : CERTIFICATE DATE
+/*    CERTIFICATE SHORTCODES  : CERTIFICATE DATE
 /*-----------------------------------------------------------------------------------*/
 
 if (!function_exists('vibe_certificate_student_date')) {
-	function vibe_certificate_student_date( $atts, $content = null ) {
+    function vibe_certificate_student_date( $atts, $content = null ) {
+           $uid=$_GET['u'];
+           $cid=$_GET['c'];
+           global $bp,$wpdb;
+
+           if(isset($uid) && is_numeric($uid) && isset($cid) && is_numeric($cid) && get_post_type($cid) == 'course'){
+           $course_submission_date = $wpdb->get_var($wpdb->prepare( "
+                                SELECT activity.date_recorded FROM {$bp->activity->table_name} AS activity
+                                WHERE     activity.component     = 'course'
+                                AND     activity.type     = 'student_certificate'
+                                AND     user_id = %d
+                                AND     item_id = %d
+                                ORDER BY date_recorded DESC LIMIT 0,1
+                            " ,$uid,$cid));
+
+                  if(isset($course_submission_date)){
+                   return date_i18n( get_option( 'date_format' ), strtotime($course_submission_date));                    
+                  }else{
+                   $date = $wpdb->get_var($wpdb->prepare( "
+                                            SELECT activity.date_recorded
+                                            FROM {$bp->activity->table_name} AS activity 
+                                            LEFT JOIN {$bp->activity->table_name_meta} as meta ON activity.id = meta.activity_id
+                                            WHERE     activity.component     = 'course'
+                                            AND     activity.type     = 'bulk_action'
+                                            AND     meta.meta_key   = 'add_certificate'
+                                            AND     meta.meta_value = %d
+                                            AND     activity.item_id = %d
+                                            ORDER BY date_recorded DESC LIMIT 0,1
+                                        " ,$uid,$cid));
+
+                       if(isset($date)){
+                        return date_i18n( get_option( 'date_format' ), strtotime($date));                    
+                       }
+                  }
+           }    
+       return '[certificate_student_date]';
+    }
+    add_shortcode('certificate_student_date', 'vibe_certificate_student_date');
+}
+/*-----------------------------------------------------------------------------------*/
+/*	CERTIFICATE SHORTCODES  : COURSE COMPLETION DATE
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_certificate_course_finish_date')) {
+	function vibe_certificate_course_finish_date( $atts, $content = null ) {
             $uid=$_GET['u'];
             $cid=$_GET['c'];
             global $bp,$wpdb;
@@ -735,19 +850,19 @@ if (!function_exists('vibe_certificate_student_date')) {
             $course_submission_date = $wpdb->get_results($wpdb->prepare( "
 								SELECT activity.date_recorded as date FROM {$bp->activity->table_name} AS activity
 								WHERE 	activity.component 	= 'course'
-								AND 	activity.type 	= 'student_certificate'
+								AND 	activity.type 	= 'submit_course'
 								AND 	user_id = %d
 								AND 	item_id = %d
 								ORDER BY date_recorded DESC LIMIT 0,1
 							" ,$uid,$cid));
 
            		if(isset($course_submission_date[0]->date)){
-        			return date('F d, Y', strtotime($course_submission_date[0]->date));        			
+        			return date_i18n(get_option( 'date_format' ), strtotime($course_submission_date[0]->date));        			
            		}
         	}	
-    	return '[certificate_student_date]';
+    	return '[course_completion_date]';
 	}
-	add_shortcode('certificate_student_date', 'vibe_certificate_student_date');
+	add_shortcode('course_completion_date', 'vibe_certificate_course_finish_date');
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -782,7 +897,7 @@ if (!function_exists('vibe_certificate_course_instructor')) {
             $cid=$_GET['c'];
             if(isset($cid) && is_numeric($cid) && get_post_type($cid) == 'course'){
             	$course=get_post($cid);
-            	$instructor = apply_filters('wplms_course_instructors',$course->post_author);
+            	$instructor = apply_filters('wplms_course_instructors',$course->post_author,$course->ID);
             	if(!isset($instructor))
             		return;
             	
@@ -791,7 +906,7 @@ if (!function_exists('vibe_certificate_course_instructor')) {
             	}else{
 
             	}
-            	return get_the_aurhot_meta('display_name',$instructor);
+            	return get_the_author_meta('display_name',$instructor);
             }
             else
         		return '[course_instructor]';
@@ -800,11 +915,38 @@ if (!function_exists('vibe_certificate_course_instructor')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*	CERTIFICATE SHORTCODES  : CERTIFICATE COURSE FIELD
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_certificate_course_field')) {
+	function vibe_certificate_course_field( $atts, $content = null ) {
+			extract(shortcode_atts(array(
+			'field'   => '',
+            'course' =>'',
+	    	), $atts));
+
+	    	if(!isset($course) || !is_numeric($course)){
+	    		$course_id=$_GET['c'];
+	    	}
+
+            if(isset($course_id) && is_numeric($course_id) && get_post_type($course_id) == 'course'){
+            	$value = get_post_meta($course_id,$field,true);
+            	if(isset($value)){
+            		return $value;
+            	}else
+        			return '[certificate_course_field]';
+            }else
+        		return '[certificate_course_field]';
+	}
+	add_shortcode('certificate_course_field', 'vibe_certificate_course_field');
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*	Tabs Shortcodes
 /*-----------------------------------------------------------------------------------*/
 
-if (!function_exists('tabs')) {
-	function tabs( $atts, $content = null ) {
+if (!function_exists('vibe_tabs')) {
+	function vibe_tabs( $atts, $content = null ) {
             extract(shortcode_atts(array(
 			'style'   => '',
             'theme'   => ''
@@ -860,11 +1002,11 @@ if (!function_exists('tabs')) {
 		
 		return $output;
 	}
-	add_shortcode( 'tabs', 'tabs' );
+	add_shortcode( 'tabs', 'vibe_tabs' );
 }
 
-if (!function_exists('tab')) {
-	function tab( $atts, $content = null ) { 
+if (!function_exists('vibe_tab')) {
+	function vibe_tab( $atts, $content = null ) { 
 		$defaults = array( 'title' => 'Tab' );
 		extract( shortcode_atts( $defaults, $atts ) );
 		global $random_number;
@@ -872,7 +1014,7 @@ if (!function_exists('tab')) {
 		$tabstr=preg_replace('/[^A-Za-z0-9\-]/', '', $tabstr);
 		return '<div id="tab-'. $tabstr .'-'.$random_number.'" class="tab-pane"><p>'. do_shortcode( $content ) .'</p></div>';
 	}
-	add_shortcode( 'tab', 'tab' );
+	add_shortcode( 'tab', 'vibe_tab' );
 }
 
 
@@ -1108,7 +1250,7 @@ if (!function_exists('vibe_fillblank')) {
           'user_id' => $user_id
           ));
 
-        $content ='';
+        $content =' ';
         if(isset($answers) && is_array($answers) && count($answers)){
             $answer = reset($answers);
             $content = $answer->comment_content;
@@ -1116,8 +1258,7 @@ if (!function_exists('vibe_fillblank')) {
         if(bp_is_member())
         	return '____________';
 
-    	$return ='
-            <i class="live-edit" data-model="article" data-url="/articles"><span  class="vibe_fillblank" data-editable="true" data-name="content" data-max-length="250" data-text-options="true">'.$content.'</span></i>';
+    	$return ='<i class="live-edit" data-model="article" data-url="/articles"><span class="vibe_fillblank" data-editable="true" data-name="content" data-max-length="250" data-text-options="true">'.$content.'</span></i>';
 
     	return $return;
 	}
@@ -1250,6 +1391,8 @@ if (!function_exists('vibe_site_stats')) {
 		'subscriptions' => 0,
 		'sales' => 0,
 		'commissions' => 0,
+		'posts'=>0,
+		'comments'=>0,
 		'number'=>0
         ), $atts));
 		
@@ -1319,6 +1462,28 @@ if (!function_exists('vibe_site_stats')) {
 			if($number)
 				return $count[0]['count'];
 		}
+		if($posts){
+			global $wpdb;
+			$count = $wpdb->get_results($wpdb->prepare("SELECT count(*) as count FROM {$wpdb->posts} WHERE post_type = %s AND post_status = %s",'post','publish'),ARRAY_A);
+			if(is_array($count) && isset($count[0]['count']) && is_numeric($count[0]['count'])){
+				$return['posts']=$count[0]['count'];
+			}else{
+				$return['posts']=0;
+			}
+			if($number)
+				return $count[0]['count'];
+		}
+		if($comments){
+			global $wpdb;
+			$count = $wpdb->get_results($wpdb->prepare("SELECT count(*) as count FROM {$wpdb->comments} WHERE comment_approved = %d AND comment_post_ID IN (SELECT ID FROM {$wpdb->posts} WHERE post_type = %s AND post_status = %s)",1,'post','publish'),ARRAY_A);
+			if(is_array($count) && isset($count[0]['count']) && is_numeric($count[0]['count'])){
+				$return['comments']=$count[0]['count'];
+			}else{
+				$return['comments']=0;
+			}
+			if($number)
+				return $count[0]['count'];
+		}
 		$return_html='';
 		if(is_array($return) && count($return)){
 			$return_html='<ul class="site_stats">';
@@ -1354,6 +1519,191 @@ if (!function_exists('vibe_site_stats')) {
 		return $return_html;
 	}
 	add_shortcode('vibe_site_stats', 'vibe_site_stats');
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Question
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_question')) {
+	function vibe_question( $atts, $content = null ) {
+            extract(shortcode_atts(array(
+			'id'   => '',
+            ), $atts));
+            
+            if(!is_numeric($id) || get_post_type($id) != 'question')
+            	return '';
+
+    		$question = get_post($id);
+    		$hint = get_post_meta($id,'vibe_question_hint',true);
+  			$type = get_post_meta($id,'vibe_question_type',true);
+    		$return ='<div class="question '.$type.'">';
+    		$return .='<div class="question_content">'.apply_filters('the_content',$question->post_content);
+    		if(isset($hint) && strlen($hint)>5){
+		        $return .='<a class="show_hint tip" tip="'.__('SHOW HINT','vibe').'"><span></span></a>';
+		        $return .='<p class="hint"><i>'.__('HINT','vibe').' : '.$hint.'</i></p>';
+	      	}
+    		$return .='</div>';
+    		switch($type){
+		        case 'truefalse': 
+		        case 'single': 
+		        case 'multiple': 
+		        case 'sort':
+		        case 'match':
+		           $options = vibe_sanitize(get_post_meta($id,'vibe_question_options',false));
+
+		          if($type == 'truefalse')
+		            $options = array( 0 => __('FALSE','vibe'),1 =>__('TRUE','vibe'));
+
+		          if(isset($options) || $options){
+		        
+		            $return .= '<ul class="question_options '.$type.'">';
+		              if($type=='single'){
+		                foreach($options as $key=>$value){
+		                  $return .= '<li>
+		                            <input type="radio" id="'.$question->post_name.$key.'" class="ques'.$id.'" name="'.$id.'" value="'.($key+1).'" />
+		                            <label for="'.$question->post_name.$key.'"><span></span> '.do_shortcode($value).'</label>
+		                        </li>';
+		                }
+		              }else if($type == 'sort'){
+		                foreach($options as $key=>$value){
+		                  $return .= '<li id="'.($key+1).'" class="ques'.$question->ID.' sort_option">
+		                              <label for="'.$question->post_name.$key.'"><span></span> '.do_shortcode($value).'</label>
+		                          </li>';
+		                }        
+		              }else if($type == 'match'){
+		                foreach($options as $key=>$value){
+		                  $return .= '<li id="'.($key+1).'" class="ques'.$question->ID.' match_option">
+		                              <label for="'.$question->post_name.$key.'"><span></span> '.do_shortcode($value).'</label>
+		                          </li>';
+		                }        
+		              }else if($type == 'truefalse'){
+		                foreach($options as $key=>$value){
+		                  $return .= '<li>
+		                            <input type="radio" id="'.$question->post_name.$key.'" class="ques'.$question->ID.'" name="'.$question->ID.'" value="'.$key.'" />
+		                            <label for="'.$question->post_name.$key.'"><span></span> '.$value.'</label>
+		                        </li>';
+		                }       
+		              }else{
+		                foreach($options as $key=>$value){
+		                  $return .= '<li>
+		                            <input type="checkbox" class="ques'.$question->ID.'" id="'.$question->post_name.$key.'" name="'.$question->ID.$key.'" value="'.($key+1).'" />
+		                            <label for="'.$question->post_name.$key.'"><span></span> '.do_shortcode($value).'</label>
+		                        </li>';
+		                }
+		              }  
+		            $return .= '</ul>';
+		          }
+		        break; // End Options
+		        case 'fillblank': 
+		        break;
+		        case 'select': 
+		        break;
+		        case 'smalltext': 
+		          $return .= '<input type="text" name="'.$k.'" class="ques'.$k.' form_field" value="" placeholder="'.__('Type Answer','vibe').'" />';
+		        break;
+		        case 'largetext': 
+		          $return .= '<textarea name="'.$k.'" class="ques'.$k.' form_field" placeholder="'.__('Type Answer','vibe').'"></textarea>';
+		        break;
+		      }
+		      $return .='<ul class="check_options">';
+		      
+		      
+		      $answer = get_post_meta($id,'vibe_question_answer',true);
+		      if(isset($answer) && strlen($answer) && in_array($type,array('single','multiple','truefalse','sort','match'))){
+		         $return .='<li><a class="check_answer" data-id="'.$id.'">'.__('Check Answer','vibe').'</a></li>';		
+		      	 $ans_json = array('type' => $type);
+		      	 if(in_array($type,array('multiple'))){
+		      	 	$ans_array =  explode(',',$answer);
+		      	 	$ans_json['answer'] = $ans_array;
+		      	 }else{
+		      	 	$ans_json['answer'] = $answer; 
+		      	 }
+		      	 echo '<script>
+		      	 	var ans_json'.$id.'= '.json_encode($ans_json).';
+		      	 </script>';
+		      }
+
+		      $explaination = get_post_meta($id,'vibe_question_explaination',true);
+		      if(isset($explaination) && strlen($explaination)>2){
+		      	$return .= '<li><a href="#question_explaination'.$id.'" class="open_popup_link">'.__('Explanation','vibe').'</a></li>';
+		      
+		      	echo '<div id="question_explaination'.$id.'" class="white-popup mfp-hide">
+			      '.do_shortcode($explaination).'
+			      </div>';
+		      }
+
+    		$return .='</ul></div>';	    	
+            
+        return $return;
+	}
+	add_shortcode('question', 'vibe_question');
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Course Search box
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_course_search')) {
+	function vibe_course_search( $atts, $content = null ) {
+            extract(shortcode_atts(array(
+		'style'   => 'left'
+                ), $atts));
+        
+        $html ='<form role="search" method="get" class="'.$style.'" action="'.home_url( '/' ).'">
+		     			<input type="hidden" name="post_type" value="'.BP_COURSE_SLUG.'" />
+		     			<input type="text" value="'.(isset($_GET['s'])?$_GET['s']:'').'" name="s" id="s" placeholder="'.__('Type Keywords..','vibe').'" />
+					    <input type="submit" id="searchsubmit" value="'.__('Search','vibe').'" />';
+
+        return $html;
+	}
+	add_shortcode('course_search', 'vibe_course_search');
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Pass Fail shortcodes
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('vibe_pass_fail')) {
+	function vibe_pass_fail( $atts, $content = null ) {
+            extract(shortcode_atts(array(
+					'id'   => '',
+					'key'   => '',
+					'passing_score'   => '',
+					'pass'=>0,
+					'fail'=>0
+                ), $atts));
+        
+        if(!is_numeric($id)){
+        	return;
+        }
+        if(!isset($key) || !$key){
+        	$key = get_current_user_id();
+        }
+        if(!isset($passing_score) || !$passing_score){
+        	$post_type=get_post_type($id);
+        	if($post_type == 'course'){
+        		$passing_score = get_post_meta($id,'vibe_course_passing_percentage',true);
+        	}else if($post_type == 'quiz'){
+        		$passing_score = get_post_meta($id,'vibe_quiz_passing_score',true);
+        	}else
+        		return;
+        }
+        $score = apply_filters('wplms_pass_fail_shortcode',get_post_meta($id,$key,true));
+
+        if($pass && $score >=$passing_score){ 
+        	return apply_filters('the_content',$content);
+        }
+
+        if($fail && $score < $passing_score){
+        	return apply_filters('the_content',$content);
+        }
+        
+        return $return;
+	}
+	add_shortcode('pass_fail', 'vibe_pass_fail');
 }
 
 

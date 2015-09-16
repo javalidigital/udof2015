@@ -1,9 +1,3 @@
-<div class="newsletter">
-<?php 
-echo
-do_shortcode('[et_bloom_inline optin_id="optin_1"]'
-); ?>
-</div>
 <footer>
     <div class="container">
         <div class="row">

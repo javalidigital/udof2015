@@ -20,7 +20,7 @@ if ( ! class_exists( 'WPLMS_Install' ) ) :
  */
 class WPLMS_Install {
 
-	public $version = '1.9.3';
+	public $version = '1.9.8';
 	/**
 	 * Hook in tabs.
 	 */
@@ -195,7 +195,7 @@ class WPLMS_Install {
 		update_option('comments_per_page',5);
 		update_option('users_can_register',1);
 		update_option('default_role','student');
-		$bp_active_components = array(
+		$bp_active_components = apply_filters('wplms_setup_bp_components',array(
 			'xprofile' => 1,
 			'settings' => 1,
 			'friends' => 1,
@@ -203,7 +203,7 @@ class WPLMS_Install {
 			'activity' => 1,
 			'notifications' => 1,
 			'members' => 1 
-			);
+			));
 		update_option('bp-active-components',$bp_active_components);
 
 		$options_pages = array(
@@ -212,13 +212,13 @@ class WPLMS_Install {
 			'certificate_page' => 'default-certificate-template'
 			);
 
-		$bp_pages=array(
+		$bp_pages=apply_filters('wplms_setup_bp_pages',array(
 			'activity' => 'activity',
 			'members' => 'members',
 			'course' => 'all-courses',
 			'register' => 'register',
 			'activate' => 'activate'
-			);
+			));
 
 		$options_panel = array(
 			'last_tab' => 10,
@@ -245,6 +245,7 @@ class WPLMS_Install {
 				unset($options_panel[$key]);
 			}
 		}
+		$options_panel = apply_filters('wplms_setup_options_panel',$options_panel);
 		update_option(THEME_SHORT_NAME,$options_panel);
 		foreach($bp_pages as $key=>$page){
 			$page_id = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM " . $wpdb->posts . " WHERE post_type='page' AND post_name = %s LIMIT 1;", "{$page}" ) );	

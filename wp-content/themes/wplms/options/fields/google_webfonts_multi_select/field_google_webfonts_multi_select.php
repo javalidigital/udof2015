@@ -41,15 +41,23 @@ class VIBE_Options_google_webfonts_multi_select extends VIBE_Options{
 		
 		
                     $r = get_option('google_webfonts');
-                    $fonts=  unserialize($r);	
+                    $fonts=  json_decode($r);	
                     
-                    //print_r($fonts);
+                   
 		echo '<select id="'.$this->field['id'].'" name="'.$this->args['opt_name'].'['.$this->field['id'].'][]" '.$class.'rows="6" class="chzn-select" multiple="multiple" style="width:300px;" data-placeholder="Type to search...">';
-		if(is_array($fonts)){
-		foreach($fonts as $font){
-			$selected = (is_array($this->value) && in_array($font, $this->value))?' selected="selected"':'';
-	                echo '<option value="'.$font.'" '.$selected.'>'.$font.'</option>';
-				
+		if(is_array($fonts->items)){
+		foreach($fonts->items as $font){
+			if(isset($font->variants)){
+				foreach($font->variants as $variant){
+					if(isset($font->subsets)){
+						foreach($font->subsets as $subset){
+							$value = $font->family.'-'.$variant.'-'.$subset;
+							$selected = (is_array($this->value) && in_array($value, $this->value))?' selected="selected"':'';
+	                		echo '<option value="'.$value.'" '.$selected.'>'.$value.'</option>';
+						}
+					}
+				}
+			}
 			}
 		}
 		echo '</select>';

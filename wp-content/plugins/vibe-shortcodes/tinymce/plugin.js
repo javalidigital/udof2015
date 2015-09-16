@@ -28,7 +28,7 @@
 						editor.execCommand("vibePopup", false, {title: 'Columns',identifier: 'columns'})
 					}},
 					{text: 'Counter',onclick:function(){
-						editor.execCommand("counter", false, {title: 'Counter',identifier: 'counter'})
+						editor.execCommand("vibePopup", false, {title: 'Counter',identifier: 'counter'})
 					}},
 					{text: 'Course',onclick:function(){
 						editor.execCommand("vibePopup", false, {title: 'Course',identifier: 'course'})

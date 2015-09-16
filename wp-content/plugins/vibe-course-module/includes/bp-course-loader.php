@@ -4,7 +4,7 @@
 // It's a good idea to include this in each of your plugin files, for increased security on
 // improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
-
+ 
 /*
  * If you want the users of your component to be able to change the values of your other custom constants,
  * you can use this code to allow them to add new definitions to the wp-config.php file and set the value there.
@@ -178,7 +178,9 @@ class BP_Course_Component extends BP_Component {
 			'includes/bp-course-notifications.php',
 			'includes/bp-course-widgets.php',
 			'includes/bp-course-cssjs.php',
-			'includes/bp-course-ajax.php'
+			'includes/bp-course-ajax.php',
+			'includes/bp-course-mailer.php',
+			'includes/bp-course-scheduler.php'
 		);
 
 		parent::includes( $includes );

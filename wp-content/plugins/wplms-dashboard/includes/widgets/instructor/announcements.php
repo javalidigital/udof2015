@@ -66,12 +66,16 @@ class wplms_announcement extends WP_Widget {
           echo '<option value="'.$key.'">'.$value.'</option>';
         }
         echo '</select>';
-        echo '<select id="student_type" class="chosen">
-              <option value="1">'.__('All Students','wplms-dashboard').'</option>
-              <option value="2">'.__('Students who are pursuing the course','wplms-dashboard').'</option>
-              <option value="3">'.__('Students who finished the coruse','wplms-dashboard').'</option>
-              <option value="4">'.__('Everyone','wplms-dashboard').'</option>
-              </select>';
+        $student_types = apply_filters('wplms_annoucement_student_types',array(
+          1 => __('All Students','wplms-dashboard'),
+          2 =>__('Students who are pursuing the course','wplms-dashboard'),
+          3 =>__('Students who finished the coruse','wplms-dashboard'),
+          ));
+        echo '<select id="student_type" class="chosen">';
+        foreach($student_types as $key => $value){
+            echo ' <option value="'.$key.'">'.$value.'</option>';
+        }         
+        echo '</select>';
         //echo '<strong class="right"><input type="checkbox" id="email_announcement" value="1"/>&nbsp;<label for="email_announcement">'.__('Send email','wplms-dashboard').'</label></strong><br class="clear"/>';
         echo '<a id="submit_announcement" class="button">'.__('Submit','wplms-dashboard').'</a>';
         echo $after_widget.'
@@ -134,10 +138,7 @@ class wplms_announcement extends WP_Widget {
         _e('Course list not set','wplms-dashboard');
         die();
       }
-      if(isset($_POST['email']))
-        $email = $_POST['email'];
-      else
-        $email =0;
+
       if(isset($_POST['student_type']))
         $student_type=$_POST['student_type'];
       else
@@ -148,7 +149,7 @@ class wplms_announcement extends WP_Widget {
           if($student_type){
             update_post_meta($list,'announcement_student_type',$_POST['student_type']);
           }
-          do_action('wplms_dashboard_course_announcement',$list,$student_type,$email,$announcement);
+          do_action('wplms_dashboard_course_announcement',$list,$student_type,1,$announcement);
         }
       }
        _e('announcement successfully delivered','wplms-dashboard'); 
