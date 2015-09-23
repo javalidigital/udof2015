@@ -22,18 +22,20 @@
 # Registers:
 
 # File marks:
-'0  513  0  ~/wp-content/themes/wplms-child/style.css
-'1  509  0  ~/wp-content/themes/wplms-child/style.css
-'2  529  0  ~/wp-content/themes/wplms-child/style.css
-'3  521  0  ~/wp-content/themes/wplms-child/style.css
-'4  502  0  ~/wp-content/themes/wplms-child/style.css
-'5  434  33  ~/wp-content/themes/wplms-child/style.css
-'6  496  0  ~/wp-content/themes/wplms-child/style.css
-'7  498  0  ~/wp-content/themes/wplms-child/style.css
-'8  144  184  ~/wp-content/themes/wplms-child/header.php
-'9  491  0  ~/wp-content/themes/wplms-child/style.css
+'0  9  3  ~/.gitignore
+'1  513  0  ~/wp-content/themes/wplms-child/style.css
+'2  509  0  ~/wp-content/themes/wplms-child/style.css
+'3  529  0  ~/wp-content/themes/wplms-child/style.css
+'4  521  0  ~/wp-content/themes/wplms-child/style.css
+'5  502  0  ~/wp-content/themes/wplms-child/style.css
+'6  434  33  ~/wp-content/themes/wplms-child/style.css
+'7  496  0  ~/wp-content/themes/wplms-child/style.css
+'8  498  0  ~/wp-content/themes/wplms-child/style.css
+'9  144  184  ~/wp-content/themes/wplms-child/header.php
 
 # Jumplist (newest first):
+-'  9  3  ~/.gitignore
+-'  1  0  ~/.gitignore
 -'  513  0  ~/wp-content/themes/wplms-child/style.css
 -'  1  2  ~/wp-content/themes/wplms-child/style.css
 -'  509  0  ~/wp-content/themes/wplms-child/style.css
@@ -131,9 +133,14 @@
 -'  1  0  ~/wp-config.php
 -'  81  22  ~/wp-config.php
 -'  1  0  ~/wp-config.php
--'  81  22  ~/wp-config.php
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	"	9	3
+	^	9	4
+	.	9	4
+	+	9	4
 
 > ~/wp-content/themes/wplms-child/style.css
 	"	513	0
