@@ -242,14 +242,6 @@ h4.block_title + .date {display: none;}
 [class^="icon-"], [class*=" icon-"] {
   padding-right: 0em!important;
 }
-.testimonial_slider__round .testimonial_content_wrap {height: auto!important;}
-div.testimonial_content_wrap > div > span {font-size:15px!important;}
-.testimonial_slider__round .testimonial_slideri {margin-top:10px!important;}
-.testimonial_slider__round .testimonial_by_wrap {
-  position: absolute!important;
-  bottom: 0%!important;
-}
-/*.testimonial_avatar img {min-width: 150px!important; height: 150px!important;}*/
 /*CURSOS HOME GRID*/
 .vc_gitem-post-data h4 {margin-left: 0px!important;}
 .vc_gitem-post-data {margin-bottom: 0px!important;}
@@ -431,7 +423,7 @@ h4 {font-size: 15px!important;}
   margin-top: 3px;
 }
 
-  #content ul li {
+  #content .wpb_text_column ul li {
     margin: 3px 0;
   }
 
@@ -486,5 +478,43 @@ table.vc-table-plugin-theme-simple_green.table_metodologia td {
 }
 
 
+.block_content {
+display:none;
+}
 
 
+/* HP */
+
+.home-page .cursosdestaque-topo .amount {
+display:none;
+}
+
+.box_certificacao h3 {
+padding: 0 15px;
+}
+
+.testimonial_slider__round .testimonial_content span {
+  word-wrap: normal;
+    word-break: break-word;
+}
+
+
+.testimonial_slider__round .testimonial_content_wrap {height: auto!important;}
+div.testimonial_content_wrap > div > span {font-size:15px!important;}
+.testimonial_slider__round .testimonial_slideri {margin-top:10px!important;}
+.testimonial_slider__round .testimonial_by_wrap {
+  position: absolute!important;
+  bottom: 0%!important;
+}
+/*.testimonial_avatar img {min-width: 150px!important; height: 150px!important;}*/
+
+
+/* VITRINE */
+
+.box_calendar .eventon_fc_days .evo_fc_day {
+padding: 0 0;
+}
+
+.box_evento_list .evcal_month_line {
+display:none;
+}
