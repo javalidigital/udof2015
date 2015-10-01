@@ -2,13 +2,17 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-09-15 20:31:44+0000\n"
+"PO-Revision-Date: 2015-09-30 19:22-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: Poedit 1.7.1\n"
 "Project-Id-Version: Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.woothemes.com/woocommerce/"
@@ -1449,7 +1453,8 @@ msgstr "Endereço de Entrega"
 msgid "Save Address"
 msgstr "Salvar endereços"
 
-#: templates/myaccount/form-login.php:66 templates/myaccount/form-login.php:103
+#: templates/myaccount/form-login.php:66
+#: templates/myaccount/form-login.php:103
 msgid "Register"
 msgstr "Registrar"
 
@@ -3094,8 +3099,8 @@ msgid "Get cart should not be called before the wp_loaded action."
 msgstr "Você não deveria recuperar o carrinho antes da chamada da ação wp_loaded."
 
 #: includes/class-wc-cart.php:888 includes/class-wc-cart.php:923
-#: includes/class-wc-frontend-scripts.php:257 includes/wc-cart-functions.php:85
-#: templates/cart/mini-cart.php:76
+#: includes/class-wc-frontend-scripts.php:257
+#: includes/wc-cart-functions.php:85 templates/cart/mini-cart.php:76
 msgid "View Cart"
 msgstr "Ver carrinho"
 
@@ -10841,7 +10846,6 @@ msgstr "Chave de API revogada com sucesso!"
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Falha. Por favor, atualize a página e tente novamente."
 
-#. #-#-#-#-#  tmp-woocommerce.pot (WooCommerce 2.4.6)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/abstracts/abstract-wc-order.php:2173
 #: includes/abstracts/abstract-wc-order.php:2174
@@ -12031,7 +12035,7 @@ msgstr "CVC"
 #: includes/class-wc-product-simple.php:47
 #: includes/class-wc-product-variation.php:187
 msgid "Add to cart"
-msgstr "Comprar"
+msgstr "Conheça"
 
 #: includes/abstracts/abstract-wc-product.php:546
 msgid "Read more"

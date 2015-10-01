@@ -139,11 +139,12 @@ wp_head();
                             }
                         ?>
                     </div>
-                    <div class="apoio">
-                        <p>Apoio educacional</p>
-                        <img class="uefa-logo" src="<?php get_site_url(); ?>/wp-content/uploads/2015/04/UEFA-LOGO.png" alt="UEFA"> <img class="unicef-logo" src="<?php get_site_url(); ?>/wp-content/uploads/2015/04/UNICEF-LOGO.png" alt="UNICEF">
-                    </div>
+
                     <div class="col-md-9 col-sm-9">
+                         <div class="apoio">
+                        <p>Apoio educacional</p>
+                        <img class="unicef-logo" src="<?php echo site_url( '/wp-content/uploads/2015/04/UNICEF-LOGO.png', 'http' ); ?>" alt="UNICEF">
+                    </div>
                         <?php
                             $args = apply_filters('wplms-main-menu',array(
                                  'theme_location'  => 'main-menu',
